@@ -11,9 +11,9 @@
     overflow-wrap: anywhere;
   }
 
-  .ps4-home h1,
-  .ps4-home h2,
-  .ps4-home h3 {
+  .ps4-home:not(.ps4-home--blocks) h1,
+  .ps4-home:not(.ps4-home--blocks) h2,
+  .ps4-home:not(.ps4-home--blocks) h3 {
     color: inherit;
     font-family: var(--ps4-heading-font, var(--font-heading--family));
     font-weight: var(--font-heading--weight);
@@ -24,8 +24,8 @@
     text-wrap: balance;
   }
 
-  .ps4-home h2 { font-size: clamp(1.8rem, 3.2vw, 3rem); line-height: 1.08; }
-  .ps4-home h3 { font-size: clamp(1.05rem, 1.5vw, 1.45rem); line-height: 1.2; }
+  .ps4-home:not(.ps4-home--blocks) h2 { font-size: clamp(1.8rem, 3.2vw, 3rem); line-height: 1.08; }
+  .ps4-home:not(.ps4-home--blocks) h3 { font-size: clamp(1.05rem, 1.5vw, 1.45rem); line-height: 1.2; }
   .ps4-home a { color: inherit; text-decoration: none; }
   .ps4-home a:focus-visible,
   .ps4-home input:focus-visible,

@@ -219,6 +219,7 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "use_content_blocks": "Käytä sisältölohkoja",
     "use_color_scheme": "Käytä yhteistä värimallia",
     "mobile_font_size": "Mobiilin fonttikoko",
     "alignment": "Tasaus",

@@ -219,6 +219,7 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "use_content_blocks": "İçerik bloklarını kullan",
     "use_color_scheme": "Paylaşılan renk şemasını kullan",
     "mobile_font_size": "Mobil yazı tipi boyutu",
     "autoplay": "Otomatik oynatma",

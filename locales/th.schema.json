@@ -219,6 +219,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "use_content_blocks": "ใช้บล็อกเนื้อหา",
     "use_color_scheme": "ใช้รูปแบบสีร่วมกัน",
     "mobile_font_size": "ขนาดแบบอักษรบนมือถือ",
     "alignment": "การจัดตำแหน่ง",

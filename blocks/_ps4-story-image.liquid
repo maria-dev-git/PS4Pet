@@ -1,0 +1,78 @@
+{% doc %}
+  Editable story image with the original section image/artwork as a compatibility fallback.
+  Image selection and alternative text are controlled in this static media block.
+  @example
+  {% content_for 'block', type: '_ps4-story-image', id: 'image' %}
+{% enddoc %}
+{% liquid
+  assign story_image = block.settings.image | default: section.settings.image
+  assign story_alt = block.settings.image_alt | default: story_image.alt | default: section.settings.image_alt
+  assign story_asset = block.settings.asset
+  if story_asset == 'default'
+    assign story_asset = section.settings.asset
+  endif
+%}
+<div class="ps4-feature__media" {{ block.shopify_attributes }}>
+  {% render 'ps4-home-image', image: story_image, asset: story_asset, alt: story_alt %}
+</div>
+{% stylesheet %}
+  .ps4-feature__media {
+    inline-size: 100%;
+    block-size: 100%;
+    min-inline-size: 0;
+  }
+{% endstylesheet %}
+{% schema %}
+{
+  "name": "t:names.image",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:ps4.image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "t:ps4.image_alt"
+    },
+    {
+      "type": "select",
+      "id": "asset",
+      "label": "t:ps4.asset",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:options.default"
+        },
+        {
+          "value": "none",
+          "label": "t:ps4.none"
+        },
+        {
+          "value": "hero",
+          "label": "t:ps4.hero_asset"
+        },
+        {
+          "value": "jules",
+          "label": "t:ps4.jules_asset"
+        },
+        {
+          "value": "collar",
+          "label": "t:ps4.collar_asset"
+        },
+        {
+          "value": "toy",
+          "label": "t:ps4.toy_asset"
+        },
+        {
+          "value": "pouch",
+          "label": "t:ps4.pouch_asset"
+        }
+      ],
+      "default": "default"
+    }
+  ]
+}
+{% endschema %}

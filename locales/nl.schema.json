@@ -219,6 +219,7 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "use_content_blocks": "Inhoudsblokken gebruiken",
     "use_color_scheme": "Gedeeld kleurenschema gebruiken",
     "mobile_font_size": "Lettergrootte op mobiel",
     "autoplay": "Automatisch afspelen",

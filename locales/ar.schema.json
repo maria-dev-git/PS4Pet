@@ -731,6 +731,7 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "use_content_blocks": "استخدام كتل المحتوى",
     "use_color_scheme": "استخدام نظام ألوان مشترك",
     "mobile_font_size": "حجم الخط على الجوال",
     "accordion": "أكورديون",

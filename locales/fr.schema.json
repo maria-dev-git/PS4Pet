@@ -219,6 +219,7 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "use_content_blocks": "Utiliser des blocs de contenu",
     "use_color_scheme": "Utiliser un nuancier partagé",
     "mobile_font_size": "Taille de police sur mobile",
     "autoplay": "Lecture automatique",

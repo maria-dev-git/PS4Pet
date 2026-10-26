@@ -605,6 +605,14 @@
             "text",
             "actions"
           ]
+        },
+        "image": {
+          "type": "_ps4-story-image",
+          "static": true,
+          "settings": {
+            "asset": "jules",
+            "image_alt": "Jules, the rescue pup at the heart of PS4PETS"
+          }
         }
       }
     },

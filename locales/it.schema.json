@@ -219,6 +219,7 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "use_content_blocks": "Usa blocchi di contenuto",
     "use_color_scheme": "Usa schema di colori condiviso",
     "mobile_font_size": "Dimensione carattere su mobile",
     "alignment": "Allineamento",

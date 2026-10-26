@@ -219,6 +219,7 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "use_content_blocks": "コンテンツブロックを使用する",
     "use_color_scheme": "共通のカラースキームを使用する",
     "mobile_font_size": "モバイルのフォントサイズ",
     "alignment": "配置",

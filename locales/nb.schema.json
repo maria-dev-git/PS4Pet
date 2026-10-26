@@ -219,6 +219,7 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "use_content_blocks": "Bruk innholdsblokker",
     "use_color_scheme": "Bruk felles fargevalg",
     "mobile_font_size": "Skriftstørrelse på mobil",
     "alignment": "Justering",

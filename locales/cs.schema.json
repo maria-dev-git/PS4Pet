@@ -219,6 +219,7 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "use_content_blocks": "Použít bloky obsahu",
     "use_color_scheme": "Použít sdílené barevné schéma",
     "mobile_font_size": "Velikost písma na mobilu",
     "alignment": "Zarovnání",

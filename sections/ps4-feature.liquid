@@ -4,7 +4,7 @@
 {% endcomment %}
 {% render 'ps4-home-styles' %}
 {% render 'contrast-override', background_color: section.settings.background, section_id: section.id %}
-<section class="ps4-home color-custom-{{ section.id }}" style="--ps4-background: {{ section.settings.background }}; --ps4-heading-font: {% if section.settings.heading_style == 'theme' %}var(--font-heading--family){% else %}Georgia, 'Times New Roman', serif{% endif %};"><div class="ps4-container ps4-feature"><div class="ps4-feature__image">{% render 'ps4-home-image', image: section.settings.image, asset: section.settings.asset, alt: section.settings.image_alt %}</div><div class="ps4-feature__body{% if section.settings.use_content_blocks %} ps4-feature__body--blocks{% endif %}">
+<section class="ps4-home{% if section.settings.use_content_blocks %} ps4-home--blocks{% endif %} color-custom-{{ section.id }}" style="{% if section.settings.use_content_blocks %}--font-h2--family: var(--ps4-heading-font);{% endif %} --ps4-background: {{ section.settings.background }}; --ps4-heading-font: {% if section.settings.heading_style == 'theme' %}var(--font-heading--family){% else %}Georgia, 'Times New Roman', serif{% endif %};"><div class="ps4-container ps4-feature"><div class="ps4-feature__image">{% if section.settings.use_content_blocks %}{% content_for 'block', type: '_ps4-story-image', id: 'image' %}{% else %}{% render 'ps4-home-image', image: section.settings.image, asset: section.settings.asset, alt: section.settings.image_alt %}{% endif %}</div><div class="ps4-feature__body{% if section.settings.use_content_blocks %} ps4-feature__body--blocks{% endif %}">
   {% if section.settings.use_content_blocks %}
     {% content_for 'block', type: '_content-without-appearance', id: 'content' %}
   {% else %}
@@ -15,6 +15,33 @@
   {% endif %}
 </div></div></section>
 {% render 'section-color-scheme', section: section %}
+
+{% stylesheet %}
+  .ps4-feature__body--blocks,
+  .ps4-feature__body--blocks .text-block,
+  .ps4-feature__body--blocks .group-block {
+    min-inline-size: 0;
+  }
+
+  .ps4-feature__body--blocks .layout-panel-flex--row:not(.mobile-column) {
+    flex-wrap: nowrap;
+  }
+
+  .ps4-feature__body--blocks .layout-panel-flex--row > .icon-block:last-child {
+    margin-inline-start: auto;
+  }
+
+  .ps4-feature__body--blocks .icon-block__media {
+    max-inline-size: 100%;
+    object-fit: contain;
+  }
+
+  .ps4-feature__body--blocks .button {
+    min-inline-size: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
@@ -65,12 +92,14 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "t:ps4.image"
+      "label": "t:ps4.image",
+      "visible_if": "{{ section.settings.use_content_blocks == false }}"
     },
     {
       "type": "text",
       "id": "image_alt",
-      "label": "t:ps4.image_alt"
+      "label": "t:ps4.image_alt",
+      "visible_if": "{{ section.settings.use_content_blocks == false }}"
     },
     {
       "type": "select",
@@ -102,7 +131,8 @@
           "label": "t:ps4.pouch_asset"
         }
       ],
-      "default": "none"
+      "default": "none",
+      "visible_if": "{{ section.settings.use_content_blocks == false }}"
     },
     {
       "type": "select",
@@ -230,6 +260,10 @@
             "text",
             "actions"
           ]
+        },
+        "image": {
+          "type": "_ps4-story-image",
+          "static": true
         }
       }
     }

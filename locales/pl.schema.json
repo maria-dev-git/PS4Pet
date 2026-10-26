@@ -219,6 +219,7 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "use_content_blocks": "Użyj bloków treści",
     "use_color_scheme": "Użyj wspólnego schematu kolorów",
     "mobile_font_size": "Rozmiar czcionki na urządzeniach mobilnych",
     "autoplay": "Autoodtwarzanie",

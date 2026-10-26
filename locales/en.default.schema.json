@@ -783,6 +783,7 @@
     "below_media": "Below media"
   },
   "settings": {
+    "use_content_blocks": "Use content blocks",
     "use_color_scheme": "Use shared color scheme",
     "mobile_font_size": "Mobile font size",
     "accordion": "Accordion",

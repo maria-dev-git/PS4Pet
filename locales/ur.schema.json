@@ -731,6 +731,7 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "use_content_blocks": "مواد کے بلاکس استعمال کریں",
     "use_color_scheme": "مشترکہ رنگ سکیم استعمال کریں",
     "mobile_font_size": "موبائل فونٹ کا سائز",
     "accordion": "ایکارڈین",

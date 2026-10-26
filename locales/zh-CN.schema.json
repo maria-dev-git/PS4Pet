@@ -219,6 +219,7 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "use_content_blocks": "使用内容块",
     "use_color_scheme": "使用共享配色方案",
     "mobile_font_size": "移动端字体大小",
     "alignment": "对齐方式",

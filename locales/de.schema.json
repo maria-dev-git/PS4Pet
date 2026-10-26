@@ -219,6 +219,7 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "use_content_blocks": "Inhaltsblöcke verwenden",
     "use_color_scheme": "Gemeinsames Farbschema verwenden",
     "mobile_font_size": "Schriftgröße auf Mobilgeräten",
     "autoplay": "Autoplay",
