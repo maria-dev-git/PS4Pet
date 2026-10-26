@@ -1,0 +1,28 @@
+{% doc %}
+  Renders the supplied homepage hero photo with optional mobile art direction.
+  @param {object} settings - The original hero section settings.
+  @param {string} wrapper_class - Existing desktop/mobile visibility classes.
+  @param {string} fetch_priority - Image fetch priority determined by section position.
+  @example
+  {% render 'hero-bundled-image', settings: section.settings, wrapper_class: media_wrapper_desktop_class, fetch_priority: fetch_priority %}
+{% enddoc %}
+<picture class="{{ wrapper_class }}{% if settings.custom_mobile_media and settings.media_type_1_mobile == 'image' and settings.image_1_mobile != blank %} hero__media-wrapper--mobile{% endif %}">
+  {% if settings.custom_mobile_media and settings.media_type_1_mobile == 'image' and settings.image_1_mobile != blank %}
+    <source
+      media="(max-width: 749px)"
+      srcset="{{ settings.image_1_mobile | image_url: width: 800 }} 800w, {{ settings.image_1_mobile | image_url: width: 1600 }} 1600w"
+      sizes="100vw"
+      width="{{ settings.image_1_mobile.width }}"
+      height="{{ settings.image_1_mobile.height }}"
+    >
+  {% endif %}
+  <img
+    class="hero__media"
+    src="{{ 'ps4-hero.png' | asset_url }}"
+    width="1672"
+    height="941"
+    alt="{{ settings.bundled_image_alt | escape }}"
+    loading="{% if fetch_priority == 'high' %}eager{% else %}lazy{% endif %}"
+    fetchpriority="{{ fetch_priority }}"
+  >
+</picture>

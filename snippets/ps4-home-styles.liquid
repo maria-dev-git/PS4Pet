@@ -59,16 +59,6 @@
   }
   .ps4-button:hover { opacity: 0.85; }
   .ps4-heart { color: var(--color-accent, currentColor); font: 3rem Georgia, serif; }
-  .ps4-hero { position: relative; isolation: isolate; min-block-size: var(--ps4-hero-height); display: grid; align-items: center; }
-  .ps4-hero__media { position: absolute; inset: 0; inset-inline-start: 24%; z-index: -2; }
-  .ps4-hero__media img { inline-size: 100%; block-size: 100%; object-fit: cover; object-position: var(--ps4-position); }
-  .ps4-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to right, var(--ps4-background) 0%, var(--ps4-background) 25%, transparent 68%); }
-  [dir='rtl'] .ps4-hero::after { background: linear-gradient(to left, var(--ps4-background) 0%, var(--ps4-background) 25%, transparent 68%); }
-  .ps4-hero__content { inline-size: min(58%, 850px); padding: clamp(28px, 5vw, 80px); }
-  .ps4-hero h1 { font-size: clamp(2.4rem, 4.5vw, 5rem); line-height: 1; }
-  .ps4-hero .ps4-copy { font-size: clamp(1rem, 1.4vw, 1.4rem); margin-block: 1rem 2rem; }
-  .ps4-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-block-end: 1.3rem; }
-  .ps4-hero__note { position: absolute; inset-inline-end: 6%; inset-block-start: 8%; background: var(--ps4-background); padding: 1rem 1.5rem; transform: rotate(-10deg); font: italic clamp(1rem, 1.7vw, 1.8rem) Georgia, serif; white-space: pre-line; text-align: center; }
   .ps4-cards { padding-block: 22px 32px; }
   .ps4-section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-block-end: 20px; }
   .ps4-section-heading a { font-size: 0.85rem; padding-block: 12px; }
@@ -122,14 +112,6 @@
     .ps4-newsletter { grid-template-columns: 1fr; }
   }
   @media (max-width: 749px) {
-    .ps4-hero { display: flex; flex-direction: column; min-block-size: auto; }
-    .ps4-hero__media { position: relative; inset: auto; inline-size: 100%; order: 1; aspect-ratio: 1.5; }
-    .ps4-hero::after { display: none; }
-    .ps4-hero__content { inline-size: 100%; padding: 32px 22px 24px; }
-    .ps4-hero h1 { font-size: clamp(2.25rem, 8vw, 3.6rem); }
-    .ps4-hero__note { display: none; }
-    .ps4-actions { gap: 10px; }
-    .ps4-actions .ps4-button { flex: 1; padding-inline: 15px; }
     .ps4-section-heading { flex-wrap: wrap; gap: 4px; }
     .ps4-feature,
     .ps4-cards--promo .ps4-card-grid { grid-template-columns: 1fr; }

@@ -1,3 +1,8 @@
+{% comment %}
+  Hero contract: existing media slots and merchant-ordered theme blocks.
+  PS4PETS styling is opt-in; selecting an image replaces the bundled photo.
+  @example Homepage uses text blocks and a group containing two button blocks.
+{% endcomment %}
 
 
 {% liquid
@@ -10,6 +15,13 @@
   assign media_2_mobile = 'none'
   assign has_only_video = false
   assign has_only_video_mobile = false
+
+  assign use_bundled_image = false
+  if section.settings.use_bundled_image and section.settings.image_1 == blank and section.settings.media_type_1 == 'image'
+    assign use_bundled_image = true
+    assign media_1 = 'image'
+    assign media_count = 1
+  endif
 
   # Desktop media checks
   # For each media slot, check if the media is not blank and the media type matches the slot
@@ -115,7 +127,9 @@
 %}
 
 {% capture media_slot_1 %}
-  {%- if media_1 == 'image' and media_1_mobile == 'image' -%}
+  {%- if use_bundled_image -%}
+    {% render 'hero-bundled-image', settings: section.settings, wrapper_class: media_wrapper_desktop_class, fetch_priority: fetch_priority %}
+  {%- elsif media_1 == 'image' and media_1_mobile == 'image' -%}
     {%- comment -%} Both desktop and mobile are images. Assume similar images, and this is art direction: use picture element. {%- endcomment -%}
     <picture
       data-testid="hero-picture-1"
@@ -332,7 +346,9 @@
 {% endcapture %}
 
 {% capture media_blurred %}
-  {% if media_1 == 'image' %}
+  {% if use_bundled_image %}
+    <img class="hero__media" src="{{ 'ps4-hero.png' | asset_url }}" width="1672" height="941" alt="" loading="lazy">
+  {% elsif media_1 == 'image' %}
     {{
       section.settings.image_1
       | image_url: width: 3840
@@ -431,6 +447,8 @@
               class: 'hero__media',
               sizes: sizes
             }}
+        {% elsif use_bundled_image %}
+          <img class="hero__media" src="{{ 'ps4-hero.png' | asset_url }}" width="1672" height="941" alt="" loading="lazy">
         {% elsif media_1 == 'image' %}
           {{ section.settings.image_1
             | image_url: width: 1600
@@ -461,8 +479,12 @@
 
 <div
   id="Hero-{{ section.id }}"
-  class="hero{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}{% if section.blocks.size == 0 and section.settings.section_height == 'auto' %} hero--no-blocks-auto-height{% endif %}{% if section.settings.stack_media_on_mobile %} hero--stack-mobile{% endif %}"
+  class="hero{% if section.settings.ps4_design %} hero--ps4{% endif %}{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}{% if section.blocks.size == 0 and section.settings.section_height == 'auto' %} hero--no-blocks-auto-height{% endif %}{% if section.settings.stack_media_on_mobile %} hero--stack-mobile{% endif %}"
   style="
+    {% if section.settings.ps4_design and section.settings.heading_style == 'serif' %}
+      --font-heading--family: Georgia, 'Times New Roman', serif;
+      --font-heading--weight: 700;
+    {% endif %}
     --hero-border-style: {{ section.settings.border }};
     --hero-border-width: {{ section.settings.border_width }}px;
     --hero-border-opacity: {{ section.settings.border_opacity }}%;
@@ -762,6 +784,32 @@
       }
     }
   }
+
+  /* Optional PS4PETS composition; typography and colors stay owned by child blocks. */
+  .hero--ps4 .hero__media-grid { inset-inline-start: 24%; }
+
+  .hero--ps4 .hero__media-grid .overlay--gradient {
+    position: absolute;
+    inset-inline-start: -32%;
+    background: linear-gradient(var(--overlay-direction), var(--overlay-color) 0%, var(--overlay-color) 45%, var(--overlay-color--end) 52%);
+  }
+  .hero--ps4 .hero__content-wrapper { gap: var(--gap); }
+  .hero--ps4:dir(rtl) .hero__media-grid .overlay--gradient { transform: scaleX(-1); }
+  .hero--ps4 .hero__content-wrapper > .group-block { min-inline-size: 0; }
+  .hero--ps4 .hero__content-wrapper h1 { letter-spacing: -0.04em; text-wrap: balance; }
+  .hero--ps4 .hero__content-wrapper :is(.button, .button-secondary, .button-custom) {
+    min-block-size: 50px;
+    padding-inline: clamp(18px, 3vw, 44px);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  @media (max-width: 749px) {
+    .hero--ps4 .hero__container { padding-block-end: 280px; }
+    .hero--ps4 .hero__media-grid { inset: auto 0 0; block-size: 280px; }
+    .hero--ps4 .hero__media-grid .overlay--gradient { display: none; }
+    .hero--ps4 .hero__content-wrapper h1 { font-size: clamp(2.25rem, 8vw, 3.5rem); }
+    .hero--ps4 .hero__content-wrapper :is(.button, .button-secondary, .button-custom) { padding-inline: 18px; }
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -796,7 +844,9 @@
     }
   ],
   "disabled_on": {
-    "groups": ["header"]
+    "groups": [
+      "header"
+    ]
   },
   "settings": [
     {
@@ -1209,6 +1259,14 @@
         {
           "value": "to bottom",
           "label": "t:options.down"
+        },
+        {
+          "value": "to right",
+          "label": "t:ps4.to_right"
+        },
+        {
+          "value": "to left",
+          "label": "t:ps4.to_left"
         }
       ],
       "default": "to top",
@@ -1256,6 +1314,47 @@
       "step": 1,
       "unit": "px",
       "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:ps4.hero"
+    },
+    {
+      "type": "checkbox",
+      "id": "ps4_design",
+      "label": "t:ps4.ps4_design",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "heading_style",
+      "label": "t:ps4.heading_style",
+      "options": [
+        {
+          "value": "theme",
+          "label": "t:ps4.theme"
+        },
+        {
+          "value": "serif",
+          "label": "t:ps4.serif"
+        }
+      ],
+      "default": "theme",
+      "visible_if": "{{ section.settings.ps4_design }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_bundled_image",
+      "label": "t:ps4.use_bundled_image",
+      "default": false,
+      "visible_if": "{{ section.settings.media_type_1 == 'image' and section.settings.image_1 == blank }}"
+    },
+    {
+      "type": "text",
+      "id": "bundled_image_alt",
+      "label": "t:ps4.image_alt",
+      "default": "Jules wearing a birthday hat and holding her favorite lamb toy",
+      "visible_if": "{{ section.settings.use_bundled_image and section.settings.image_1 == blank }}"
     }
   ],
   "presets": [
@@ -1288,7 +1387,11 @@
           }
         }
       },
-      "block_order": ["text_1", "text_2", "button"],
+      "block_order": [
+        "text_1",
+        "text_2",
+        "button"
+      ],
       "settings": {
         "horizontal_alignment_flex_direction_column": "center",
         "gap": 16,
@@ -1321,7 +1424,9 @@
               }
             }
           },
-          "block_order": ["text"]
+          "block_order": [
+            "text"
+          ]
         },
         "button": {
           "type": "button",
@@ -1331,7 +1436,11 @@
           }
         }
       },
-      "block_order": ["spacer", "marquee", "button"],
+      "block_order": [
+        "spacer",
+        "marquee",
+        "button"
+      ],
       "settings": {
         "horizontal_alignment_flex_direction_column": "center",
         "vertical_alignment_flex_direction_column": "space-between",
@@ -1452,7 +1561,10 @@
                   }
                 }
               },
-              "block_order": ["text_intro", "text_main"]
+              "block_order": [
+                "text_intro",
+                "text_main"
+              ]
             },
             "text_description": {
               "type": "text",
@@ -1476,10 +1588,15 @@
               }
             }
           },
-          "block_order": ["content_group", "text_description"]
+          "block_order": [
+            "content_group",
+            "text_description"
+          ]
         }
       },
-      "block_order": ["group_main"],
+      "block_order": [
+        "group_main"
+      ],
       "settings": {
         "media_type_1": "image",
         "horizontal_alignment_flex_direction_column": "center",

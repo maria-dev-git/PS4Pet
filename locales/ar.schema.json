@@ -9,6 +9,10 @@
  */
 {
   "ps4": {
+    "ps4_design": "Use PS4PETS banner styling",
+    "use_bundled_image": "Use supplied Jules birthday photo",
+    "to_right": "To right",
+    "to_left": "To left",
   "hero": "PS4PETS hero",
   "cards": "PS4PETS cards",
   "feature": "PS4PETS story",

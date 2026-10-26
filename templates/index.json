@@ -1,20 +1,275 @@
 {
   "sections": {
     "hero_jVaWmY": {
-      "type": "ps4-hero",
+      "type": "hero",
+      "blocks": {
+        "ps4_copy": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 22,
+            "width": "custom",
+            "custom_width": 56,
+            "width_mobile": "fill",
+            "height": "fit",
+            "background_media": "none",
+            "border": "none",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_YLPk4p": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h1>Everything They Need.<br/>More Love With<br/>Every Order.</h1>",
+                "width": "100%",
+                "max_width": "none",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "4.5rem",
+                "line_height": "tight",
+                "letter_spacing": "tight",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#09232e",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "ps4_intro": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>For Pets. For Families. For Those Still Waiting for Theirs.</p>",
+                "width": "100%",
+                "max_width": "none",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "1.25rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#09232e",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "ps4_buttons": {
+              "type": "group",
+              "settings": {
+                "content_direction": "row",
+                "vertical_on_mobile": false,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 16,
+                "width": "fill",
+                "custom_width": 56,
+                "width_mobile": "fill",
+                "height": "fit",
+                "background_media": "none",
+                "border": "none",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "button_H9gpTf": {
+                  "type": "button",
+                  "name": "t:names.button",
+                  "settings": {
+                    "label": "Shop dogs →",
+                    "link": "/collections/dogs",
+                    "open_in_new_tab": false,
+                    "style_class": "button-custom",
+                    "custom_button_background": "#396e70",
+                    "custom_button_text": "#ffffff",
+                    "custom_button_border": "#396e70",
+                    "link_text_color": "",
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 100
+                  },
+                  "blocks": {}
+                },
+                "ps4_shop_cats": {
+                  "type": "button",
+                  "name": "t:names.button",
+                  "settings": {
+                    "label": "Shop cats →",
+                    "link": "/collections/cats",
+                    "open_in_new_tab": false,
+                    "style_class": "button-custom",
+                    "custom_button_background": "#bc7867",
+                    "custom_button_text": "#ffffff",
+                    "custom_button_border": "#bc7867",
+                    "link_text_color": "",
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 100
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "button_H9gpTf",
+                "ps4_shop_cats"
+              ]
+            },
+            "ps4_tagline": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>PETS TODAY. A BRIGHTER TOMORROW. ♡</p>",
+                "width": "100%",
+                "max_width": "none",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "0.75rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#09232e",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_YLPk4p",
+            "ps4_intro",
+            "ps4_buttons",
+            "ps4_tagline"
+          ]
+        },
+        "ps4_note": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "gap": 22,
+            "width": "custom",
+            "custom_width": 22,
+            "width_mobile": "fill",
+            "height": "fit",
+            "background_media": "none",
+            "border": "none",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "ps4_note_text": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p><em>Happy Pets<br/>Brighter Tomorrows ♡</em></p>",
+                "width": "100%",
+                "max_width": "none",
+                "alignment": "center",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "1.5rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#09232e",
+                "background": true,
+                "background_color": "#fbf7f3",
+                "corner_radius": 6,
+                "padding-block-start": 14,
+                "padding-block-end": 14,
+                "padding-inline-start": 14,
+                "padding-inline-end": 14
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "ps4_note_text"
+          ]
+        }
+      },
+      "block_order": [
+        "ps4_copy",
+        "ps4_note"
+      ],
+      "name": "t:names.hero",
       "settings": {
-        "heading": "Everything They Need.\nMore Love With\nEvery Order.",
-        "text": "<p>For Pets. For Families. For Those Still Waiting for Theirs.</p>",
-        "label": "Shop dogs",
-        "link": "/collections/dogs",
-        "secondary_label": "Shop cats",
-        "secondary_link": "/collections/cats",
-        "tagline": "Pets today. A brighter tomorrow.",
-        "note": "Happy Pets\nBrighter Tomorrows ♡",
-        "image_alt": "Jules wearing a birthday hat and holding her favorite lamb toy",
-        "background": "#fbf7f3",
-        "height": 560,
-        "position": "center"
+        "media_type_1": "image",
+        "image_1": "",
+        "media_type_2": "image",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "space-between",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "flex-end",
+        "gap": 24,
+        "section_width": "page-width",
+        "section_height": "large",
+        "section_height_custom": 50,
+        "background_color": "#fbf7f3",
+        "toggle_overlay": true,
+        "overlay_color": "#fbf7f3",
+        "overlay_style": "gradient",
+        "gradient_direction": "to right",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 44,
+        "padding-block-end": 44,
+        "ps4_design": true,
+        "heading_style": "serif",
+        "use_bundled_image": true,
+        "bundled_image_alt": "Jules wearing a birthday hat and holding her favorite lamb toy"
       }
     },
     "product_list_fa6P9H": {
