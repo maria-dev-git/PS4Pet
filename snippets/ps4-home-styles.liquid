@@ -59,7 +59,9 @@
   }
   .ps4-button:hover { opacity: 0.85; }
   .ps4-heart { color: var(--color-accent, currentColor); font: 3rem Georgia, serif; }
-  .ps4-cards { padding-block: 22px 32px; }
+  .ps4-cards {
+    padding-block: var(--ps4-cards-padding-start, 22px) var(--ps4-cards-padding-end, 32px);
+  }
   .ps4-section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-block-end: 20px; }
   .ps4-section-heading a { font-size: 0.85rem; padding-block: 12px; }
   .ps4-section-heading a span { margin-inline-start: 12px; }
@@ -72,7 +74,7 @@
   .ps4-cards--category .ps4-card-grid { grid-template-columns: repeat(7, minmax(0, 1fr)); }
   .ps4-cards--category .ps4-card__body { padding: 10px 3px; text-align: center; }
   .ps4-cards--category h3 { font-size: clamp(0.85rem, 1.25vw, 1.2rem); }
-  .ps4-cards--benefit { padding-block: 28px; }
+  .ps4-cards--benefit { padding-block: var(--ps4-cards-padding-start, 28px) var(--ps4-cards-padding-end, 28px); background-color: var(--ps4-benefit-background, #f2f1Ea); border-radius: 30px;}
   .ps4-cards--benefit .ps4-card-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .ps4-cards--benefit .ps4-card { display: flex; gap: 20px; align-items: center; border-inline-end: 1px solid var(--color-border); border-radius: 0; padding-inline-end: 12px; }
   .ps4-cards--benefit .ps4-card:last-child { border: 0; }
@@ -112,6 +114,9 @@
     .ps4-newsletter { grid-template-columns: 1fr; }
   }
   @media (max-width: 749px) {
+    .ps4-cards {
+      padding-block: var(--ps4-cards-padding-start-mobile, var(--ps4-cards-padding-start, 22px)) var(--ps4-cards-padding-end-mobile, var(--ps4-cards-padding-end, 32px));
+    }
     .ps4-section-heading { flex-wrap: wrap; gap: 4px; }
     .ps4-feature,
     .ps4-cards--promo .ps4-card-grid { grid-template-columns: 1fr; }

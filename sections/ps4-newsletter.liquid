@@ -5,6 +5,8 @@
 {% render 'ps4-home-styles' %}
 {% render 'contrast-override', background_color: section.settings.background, section_id: section.id %}
 <section class="ps4-home color-custom-{{ section.id }}" style="--ps4-background: {{ section.settings.background }}; --ps4-heading-font: {% if section.settings.heading_style == 'theme' %}var(--font-heading--family){% else %}Georgia, 'Times New Roman', serif{% endif %};"><div class="ps4-container ps4-newsletter"><div><h2>{{ section.settings.heading | escape }}</h2><div class="ps4-copy">{{ section.settings.text }}</div></div>{% assign form_id = 'PS4Newsletter-' | append: section.id %}{% form 'customer', id: form_id, class: 'ps4-newsletter__form' %}<input type="hidden" name="contact[tags]" value="newsletter"><label class="visually-hidden" for="PS4Email-{{ section.id }}">{{ 'blocks.email_signup.label' | t }}</label><div class="ps4-newsletter__fields"><input id="PS4Email-{{ section.id }}" type="email" name="contact[email]" autocomplete="email" required placeholder="{{ 'blocks.email_signup.placeholder' | t }}" {% if form.errors %}aria-invalid="true" aria-describedby="PS4Status-{{ section.id }}"{% endif %}><button type="submit" class="ps4-button button">{{ section.settings.label | escape }} <span aria-hidden="true">→</span></button></div><div id="PS4Status-{{ section.id }}" role="status">{% if form.errors %}{{ form.errors | default_errors }}{% endif %}{% if form.posted_successfully? %}{{ 'blocks.email_signup.success' | t }}{% endif %}</div>{% endform %}</div></section>
+{% render 'section-color-scheme', section: section %}
+
 {% schema %}
 {
   "name": "t:ps4.newsletter",
@@ -45,6 +47,19 @@
         }
       ],
       "default": "serif"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_color_scheme",
+      "label": "t:settings.use_color_scheme",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1",
+      "visible_if": "{{ section.settings.use_color_scheme }}"
     }
   ],
   "presets": [

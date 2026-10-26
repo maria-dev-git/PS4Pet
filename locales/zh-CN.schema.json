@@ -9,6 +9,8 @@
  */
 {
   "ps4": {
+    "desktop_padding": "桌面端内边距",
+    "mobile_padding": "移动端内边距",
     "ps4_design": "Use PS4PETS banner styling",
     "use_bundled_image": "Use supplied Jules birthday photo",
     "to_right": "To right",
@@ -217,6 +219,8 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "use_color_scheme": "使用共享配色方案",
+    "mobile_font_size": "移动端字体大小",
     "alignment": "对齐方式",
     "autoplay": "自动播放",
     "background": "背景",
@@ -1131,6 +1135,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "mobile_font_size": "适用于宽度小于 750px 的屏幕。默认选项保留当前的自适应大小。",
     "video_alt_text": "为使用辅助技术的用户描述视频",
     "video_autoplay": "视频将默认静音",
     "video_external": "使用 YouTube 或 Vimeo URL",

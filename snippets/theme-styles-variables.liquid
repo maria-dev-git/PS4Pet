@@ -563,7 +563,7 @@
     --button-size-md: 36px;
     --button-size: var(--minimum-touch-target);
     --button-padding-inline: 24px;
-    --button-padding-block: 16px;
+    --button-padding-block: 10px;
 
     /* Button font-family */
     --button-font-family-primary: var(--font-{{ settings.type_font_button_primary }}--family);
@@ -648,6 +648,22 @@
     --cart-secondary-font-family: var(--font-{{ settings.cart_price_font }}--family);
     --cart-secondary-font-style: var(--font-{{ settings.cart_price_font }}--style);
     --cart-secondary-font-weight: var(--font-{{ settings.cart_price_font }}--weight);
+  }
+
+  /* Explicit mobile sizes override the responsive presets only on small screens. */
+  @media screen and (max-width: 749px) {
+    :root {
+      {% liquid
+        for font_size in font_sizes
+          assign mobile_size_setting = 'type_size_' | append: font_size | append: '_mobile'
+          if settings[mobile_size_setting] != blank
+            assign mobile_size_rem = settings[mobile_size_setting] | divided_by: 16.0
+            echo '--font-size--[font_size]: [size]rem;' | replace: '[font_size]', font_size | replace: '[size]', mobile_size_rem
+            echo '--font-[font_size]--size: var(--font-size--[font_size]);' | replace: '[font_size]', font_size
+          endif
+        endfor
+      %}
+    }
   }
 
   .custom-color-quick-add {

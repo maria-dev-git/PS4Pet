@@ -66,6 +66,78 @@
           "background": "#ffffff",
           "foreground": "#000000"
         }
+      },
+      {
+        "type": "color_scheme_group",
+        "id": "color_schemes",
+        "definition": [
+          {
+            "type": "color",
+            "id": "background",
+            "label": "t:settings.background_color",
+            "default": "#ffffff"
+          },
+          {
+            "type": "color",
+            "id": "text",
+            "label": "t:settings.text_color",
+            "default": "#222222"
+          },
+          {
+            "type": "color",
+            "id": "border",
+            "label": "t:settings.border_color",
+            "default": "#dddddd"
+          },
+          {
+            "type": "color",
+            "id": "primary_button_background",
+            "label": "t:settings.primary_button_background",
+            "default": "#222222"
+          },
+          {
+            "type": "color",
+            "id": "primary_button_text",
+            "label": "t:settings.primary_button_text",
+            "default": "#ffffff"
+          },
+          {
+            "type": "color",
+            "id": "primary_button_border",
+            "label": "t:settings.primary_button_border",
+            "default": "#222222"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_background",
+            "label": "t:settings.secondary_button_background",
+            "default": "#ffffff"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_text",
+            "label": "t:settings.secondary_button_text",
+            "default": "#222222"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_border",
+            "label": "t:settings.secondary_button_border",
+            "default": "#222222"
+          }
+        ],
+        "role": {
+          "background": "background",
+          "text": "text",
+          "primary_button": "primary_button_background",
+          "on_primary_button": "primary_button_text",
+          "primary_button_border": "primary_button_border",
+          "secondary_button": "secondary_button_background",
+          "on_secondary_button": "secondary_button_text",
+          "secondary_button_border": "secondary_button_border",
+          "links": "text",
+          "icons": "text"
+        }
       }
     ]
   },
@@ -154,6 +226,39 @@
           }
         ],
         "default": "14"
+      },
+      {
+        "type": "select",
+        "id": "type_size_paragraph_mobile",
+        "label": "t:settings.mobile_font_size",
+        "options": [
+          {
+            "value": "",
+            "label": "t:options.default"
+          },
+          {
+            "value": "10",
+            "label": "10px"
+          },
+          {
+            "value": "12",
+            "label": "12px"
+          },
+          {
+            "value": "14",
+            "label": "14px"
+          },
+          {
+            "value": "16",
+            "label": "16px"
+          },
+          {
+            "value": "18",
+            "label": "18px"
+          }
+        ],
+        "default": "",
+        "info": "t:info.mobile_font_size"
       },
       {
         "type": "select",
@@ -266,6 +371,83 @@
           }
         ],
         "default": "72"
+      },
+      {
+        "type": "select",
+        "id": "type_size_h1_mobile",
+        "label": "t:settings.mobile_font_size",
+        "options": [
+          {
+            "value": "",
+            "label": "t:options.default"
+          },
+          {
+            "value": "10",
+            "label": "10px"
+          },
+          {
+            "value": "12",
+            "label": "12px"
+          },
+          {
+            "value": "14",
+            "label": "14px"
+          },
+          {
+            "value": "16",
+            "label": "16px"
+          },
+          {
+            "value": "18",
+            "label": "18px"
+          },
+          {
+            "value": "20",
+            "label": "20px"
+          },
+          {
+            "value": "24",
+            "label": "24px"
+          },
+          {
+            "value": "32",
+            "label": "32px"
+          },
+          {
+            "value": "40",
+            "label": "40px"
+          },
+          {
+            "value": "48",
+            "label": "48px"
+          },
+          {
+            "value": "56",
+            "label": "56px"
+          },
+          {
+            "value": "72",
+            "label": "72px"
+          },
+          {
+            "value": "88",
+            "label": "88px"
+          },
+          {
+            "value": "120",
+            "label": "120px"
+          },
+          {
+            "value": "152",
+            "label": "152px"
+          },
+          {
+            "value": "184",
+            "label": "184px"
+          }
+        ],
+        "default": "",
+        "info": "t:info.mobile_font_size"
       },
       {
         "type": "select",
@@ -414,6 +596,83 @@
           }
         ],
         "default": "48"
+      },
+      {
+        "type": "select",
+        "id": "type_size_h2_mobile",
+        "label": "t:settings.mobile_font_size",
+        "options": [
+          {
+            "value": "",
+            "label": "t:options.default"
+          },
+          {
+            "value": "10",
+            "label": "10px"
+          },
+          {
+            "value": "12",
+            "label": "12px"
+          },
+          {
+            "value": "14",
+            "label": "14px"
+          },
+          {
+            "value": "16",
+            "label": "16px"
+          },
+          {
+            "value": "18",
+            "label": "18px"
+          },
+          {
+            "value": "20",
+            "label": "20px"
+          },
+          {
+            "value": "24",
+            "label": "24px"
+          },
+          {
+            "value": "32",
+            "label": "32px"
+          },
+          {
+            "value": "40",
+            "label": "40px"
+          },
+          {
+            "value": "48",
+            "label": "48px"
+          },
+          {
+            "value": "56",
+            "label": "56px"
+          },
+          {
+            "value": "72",
+            "label": "72px"
+          },
+          {
+            "value": "88",
+            "label": "88px"
+          },
+          {
+            "value": "120",
+            "label": "120px"
+          },
+          {
+            "value": "152",
+            "label": "152px"
+          },
+          {
+            "value": "184",
+            "label": "184px"
+          }
+        ],
+        "default": "",
+        "info": "t:info.mobile_font_size"
       },
       {
         "type": "select",
@@ -573,6 +832,83 @@
       },
       {
         "type": "select",
+        "id": "type_size_h3_mobile",
+        "label": "t:settings.mobile_font_size",
+        "options": [
+          {
+            "value": "",
+            "label": "t:options.default"
+          },
+          {
+            "value": "10",
+            "label": "10px"
+          },
+          {
+            "value": "12",
+            "label": "12px"
+          },
+          {
+            "value": "14",
+            "label": "14px"
+          },
+          {
+            "value": "16",
+            "label": "16px"
+          },
+          {
+            "value": "18",
+            "label": "18px"
+          },
+          {
+            "value": "20",
+            "label": "20px"
+          },
+          {
+            "value": "24",
+            "label": "24px"
+          },
+          {
+            "value": "32",
+            "label": "32px"
+          },
+          {
+            "value": "40",
+            "label": "40px"
+          },
+          {
+            "value": "48",
+            "label": "48px"
+          },
+          {
+            "value": "56",
+            "label": "56px"
+          },
+          {
+            "value": "72",
+            "label": "72px"
+          },
+          {
+            "value": "88",
+            "label": "88px"
+          },
+          {
+            "value": "120",
+            "label": "120px"
+          },
+          {
+            "value": "152",
+            "label": "152px"
+          },
+          {
+            "value": "184",
+            "label": "184px"
+          }
+        ],
+        "default": "",
+        "info": "t:info.mobile_font_size"
+      },
+      {
+        "type": "select",
         "id": "type_line_height_h3",
         "label": "t:settings.line_height",
         "options": [
@@ -726,6 +1062,83 @@
           }
         ],
         "default": "24"
+      },
+      {
+        "type": "select",
+        "id": "type_size_h4_mobile",
+        "label": "t:settings.mobile_font_size",
+        "options": [
+          {
+            "value": "",
+            "label": "t:options.default"
+          },
+          {
+            "value": "10",
+            "label": "10px"
+          },
+          {
+            "value": "12",
+            "label": "12px"
+          },
+          {
+            "value": "14",
+            "label": "14px"
+          },
+          {
+            "value": "16",
+            "label": "16px"
+          },
+          {
+            "value": "18",
+            "label": "18px"
+          },
+          {
+            "value": "20",
+            "label": "20px"
+          },
+          {
+            "value": "24",
+            "label": "24px"
+          },
+          {
+            "value": "32",
+            "label": "32px"
+          },
+          {
+            "value": "40",
+            "label": "40px"
+          },
+          {
+            "value": "48",
+            "label": "48px"
+          },
+          {
+            "value": "56",
+            "label": "56px"
+          },
+          {
+            "value": "72",
+            "label": "72px"
+          },
+          {
+            "value": "88",
+            "label": "88px"
+          },
+          {
+            "value": "120",
+            "label": "120px"
+          },
+          {
+            "value": "152",
+            "label": "152px"
+          },
+          {
+            "value": "184",
+            "label": "184px"
+          }
+        ],
+        "default": "",
+        "info": "t:info.mobile_font_size"
       },
       {
         "type": "select",
@@ -885,6 +1298,83 @@
       },
       {
         "type": "select",
+        "id": "type_size_h5_mobile",
+        "label": "t:settings.mobile_font_size",
+        "options": [
+          {
+            "value": "",
+            "label": "t:options.default"
+          },
+          {
+            "value": "10",
+            "label": "10px"
+          },
+          {
+            "value": "12",
+            "label": "12px"
+          },
+          {
+            "value": "14",
+            "label": "14px"
+          },
+          {
+            "value": "16",
+            "label": "16px"
+          },
+          {
+            "value": "18",
+            "label": "18px"
+          },
+          {
+            "value": "20",
+            "label": "20px"
+          },
+          {
+            "value": "24",
+            "label": "24px"
+          },
+          {
+            "value": "32",
+            "label": "32px"
+          },
+          {
+            "value": "40",
+            "label": "40px"
+          },
+          {
+            "value": "48",
+            "label": "48px"
+          },
+          {
+            "value": "56",
+            "label": "56px"
+          },
+          {
+            "value": "72",
+            "label": "72px"
+          },
+          {
+            "value": "88",
+            "label": "88px"
+          },
+          {
+            "value": "120",
+            "label": "120px"
+          },
+          {
+            "value": "152",
+            "label": "152px"
+          },
+          {
+            "value": "184",
+            "label": "184px"
+          }
+        ],
+        "default": "",
+        "info": "t:info.mobile_font_size"
+      },
+      {
+        "type": "select",
         "id": "type_line_height_h5",
         "label": "t:settings.line_height",
         "options": [
@@ -1038,6 +1528,83 @@
           }
         ],
         "default": "16"
+      },
+      {
+        "type": "select",
+        "id": "type_size_h6_mobile",
+        "label": "t:settings.mobile_font_size",
+        "options": [
+          {
+            "value": "",
+            "label": "t:options.default"
+          },
+          {
+            "value": "10",
+            "label": "10px"
+          },
+          {
+            "value": "12",
+            "label": "12px"
+          },
+          {
+            "value": "14",
+            "label": "14px"
+          },
+          {
+            "value": "16",
+            "label": "16px"
+          },
+          {
+            "value": "18",
+            "label": "18px"
+          },
+          {
+            "value": "20",
+            "label": "20px"
+          },
+          {
+            "value": "24",
+            "label": "24px"
+          },
+          {
+            "value": "32",
+            "label": "32px"
+          },
+          {
+            "value": "40",
+            "label": "40px"
+          },
+          {
+            "value": "48",
+            "label": "48px"
+          },
+          {
+            "value": "56",
+            "label": "56px"
+          },
+          {
+            "value": "72",
+            "label": "72px"
+          },
+          {
+            "value": "88",
+            "label": "88px"
+          },
+          {
+            "value": "120",
+            "label": "120px"
+          },
+          {
+            "value": "152",
+            "label": "152px"
+          },
+          {
+            "value": "184",
+            "label": "184px"
+          }
+        ],
+        "default": "",
+        "info": "t:info.mobile_font_size"
       },
       {
         "type": "select",

@@ -9,6 +9,8 @@
  */
 {
   "ps4": {
+    "desktop_padding": "데스크톱 안쪽 여백",
+    "mobile_padding": "모바일 안쪽 여백",
     "ps4_design": "Use PS4PETS banner styling",
     "use_bundled_image": "Use supplied Jules birthday photo",
     "to_right": "To right",
@@ -217,6 +219,8 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "use_color_scheme": "공유 색상 구성표 사용",
+    "mobile_font_size": "모바일 글꼴 크기",
     "autoplay": "자동 재생",
     "background": "배경",
     "border_radius": "모서리 반경",
@@ -1131,6 +1135,7 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "mobile_font_size": "너비가 750px 미만일 때 적용됩니다. 기본값은 현재 반응형 크기를 유지합니다.",
     "carousel_layout_on_mobile": "모바일에서는 항상 캐러셀이 사용됩니다.",
     "video_alt_text": "보조 기술 사용자를 위해 비디오를 설명하세요",
     "video_autoplay": "비디오는 기본적으로 음소거됩니다",

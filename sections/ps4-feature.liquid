@@ -8,6 +8,8 @@
 <h2>{{ section.settings.heading | escape }}</h2>
 {% if section.settings.text != blank %}<div class="ps4-copy">{{ section.settings.text }}</div>{% endif %}
 {% if section.settings.label != blank and section.settings.link != blank %}<a class="ps4-button button" href="{{ section.settings.link }}">{{ section.settings.label | escape }} <span aria-hidden="true">→</span></a>{% endif %}<span class="ps4-heart" aria-hidden="true">♡</span></div></div></section>
+{% render 'section-color-scheme', section: section %}
+
 {% schema %}
 {
   "name": "t:ps4.feature",
@@ -100,6 +102,19 @@
         }
       ],
       "default": "serif"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_color_scheme",
+      "label": "t:settings.use_color_scheme",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1",
+      "visible_if": "{{ section.settings.use_color_scheme }}"
     }
   ],
   "presets": [

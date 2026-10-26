@@ -9,6 +9,8 @@
  */
 {
   "ps4": {
+    "desktop_padding": "桌面版內距",
+    "mobile_padding": "行動版內距",
     "ps4_design": "Use PS4PETS banner styling",
     "use_bundled_image": "Use supplied Jules birthday photo",
     "to_right": "To right",
@@ -217,6 +219,8 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "use_color_scheme": "使用共用配色方案",
+    "mobile_font_size": "行動版字型大小",
     "alignment": "對齊",
     "autoplay": "自動播放",
     "background": "背景",
@@ -1131,6 +1135,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "mobile_font_size": "適用於寬度小於 750px 的螢幕。預設選項保留目前的自適應大小。",
     "carousel_layout_on_mobile": "在行動裝置上一律使用輪播",
     "video_alt_text": "為使用輔助技術的使用者描述影片",
     "video_autoplay": "影片預設為靜音播放",

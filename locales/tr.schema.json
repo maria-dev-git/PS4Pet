@@ -9,6 +9,8 @@
  */
 {
   "ps4": {
+    "desktop_padding": "Masaüstü iç boşluğu",
+    "mobile_padding": "Mobil iç boşluğu",
     "ps4_design": "Use PS4PETS banner styling",
     "use_bundled_image": "Use supplied Jules birthday photo",
     "to_right": "To right",
@@ -217,6 +219,8 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "use_color_scheme": "Paylaşılan renk şemasını kullan",
+    "mobile_font_size": "Mobil yazı tipi boyutu",
     "autoplay": "Otomatik oynatma",
     "background": "Arka plan",
     "border_radius": "Köşe yarıçapı",
@@ -1131,6 +1135,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "mobile_font_size": "750 pikselin altında uygulanır. Varsayılan, mevcut duyarlı boyutu korur.",
     "video_alt_text": "Yardımcı teknoloji kullanıcıları için videoyu açıklayın",
     "video_autoplay": "Videolar varsayılan olarak sessize alınır",
     "video_external": "Bir YouTube veya Vimeo URL'si kullanın",

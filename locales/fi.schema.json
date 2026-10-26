@@ -9,6 +9,8 @@
  */
 {
   "ps4": {
+    "desktop_padding": "Sisämarginaalit tietokoneella",
+    "mobile_padding": "Sisämarginaalit mobiilissa",
     "ps4_design": "Use PS4PETS banner styling",
     "use_bundled_image": "Use supplied Jules birthday photo",
     "to_right": "To right",
@@ -217,6 +219,8 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "use_color_scheme": "Käytä yhteistä värimallia",
+    "mobile_font_size": "Mobiilin fonttikoko",
     "alignment": "Tasaus",
     "autoplay": "Automaattinen toisto",
     "background": "Tausta",
@@ -1131,6 +1135,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "mobile_font_size": "Käytössä alle 750 px:n leveydellä. Oletus säilyttää nykyisen mukautuvan koon.",
     "carousel_layout_on_mobile": "Mobiilissa käytetään aina karusellia.",
     "video_alt_text": "Kuvaile video avustavan teknologian käyttäjille",
     "video_autoplay": "Videot mykistetään oletusarvoisesti",

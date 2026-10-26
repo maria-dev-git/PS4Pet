@@ -9,14 +9,40 @@
  */
 {
   "current": {
+    "color_schemes": {
+      "scheme-1": {
+        "settings": {
+          "background": "#ffffff",
+          "text": "#222222",
+          "border": "#dddddd",
+          "primary_button_background": "#222222",
+          "primary_button_text": "#ffffff",
+          "primary_button_border": "#222222",
+          "secondary_button_background": "#ffffff",
+          "secondary_button_text": "#222222",
+          "secondary_button_border": "#222222"
+        }
+      },
+      "scheme-2": {
+        "settings": {
+          "background": "#222222",
+          "text": "#ffffff",
+          "border": "#666666",
+          "primary_button_background": "#ffffff",
+          "primary_button_text": "#222222",
+          "primary_button_border": "#ffffff",
+          "secondary_button_background": "#222222",
+          "secondary_button_text": "#ffffff",
+          "secondary_button_border": "#ffffff"
+        }
+      }
+    },
     "logo_height": 36,
     "logo_height_mobile": 28,
-    "page_background_color": "{{ settings.color_palette.background }}",
-    "page_width": "narrow",
     "page_text_color": "{{ settings.color_palette.foreground }}",
     "type_body_font": "inter_n4",
     "type_subheading_font": "inter_n5",
-    "type_heading_font": "inter_n7",
+    "type_heading_font": "times_new_roman_n7",
     "type_accent_font": "inter_n7",
     "type_size_paragraph": "14",
     "type_line_height_paragraph": "body-loose",
@@ -44,6 +70,8 @@
     "type_font_h6": "subheading",
     "type_size_h6": "12",
     "type_line_height_h6": "display-loose",
+    "page_background_color": "{{ settings.color_palette.background }}",
+    "page_width": "narrow",
     "page_transition_enabled": false,
     "transition_to_main_product": false,
     "card_hover_effect": "none",
@@ -102,6 +130,7 @@
     "variant_button_border_width": 1,
     "variant_button_radius": 14,
     "variant_button_width": "equal-width-buttons",
+    "content_for_index": [],
     "color_palette": {
       "background": "#ffffff",
       "foreground": "#000000",

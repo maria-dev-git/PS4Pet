@@ -4,11 +4,28 @@
 {% endcomment %}
 {% render 'ps4-home-styles' %}
 {% render 'contrast-override', background_color: section.settings.background, section_id: section.id %}
-<section class="ps4-home color-custom-{{ section.id }}" style="--ps4-background: {{ section.settings.background }}; --ps4-heading-font: {% if section.settings.heading_style == 'theme' %}var(--font-heading--family){% else %}Georgia, 'Times New Roman', serif{% endif %};"><div class="ps4-container ps4-cards ps4-cards--{{ section.settings.style }}">{% if section.settings.heading != blank %}<div class="ps4-section-heading"><h2>{{ section.settings.heading | escape }}</h2>{% if section.settings.label != blank and section.settings.link != blank %}<a href="{{ section.settings.link }}">{{ section.settings.label | escape }} <span aria-hidden="true">→</span></a>{% endif %}</div>{% endif %}<div class="ps4-card-grid">{% for block in section.blocks %}{% liquid
+<section class="ps4-home color-custom-{{ section.id }}" style="--ps4-cards-padding-start: {{ section.settings['padding-block-start'] }}px; --ps4-cards-padding-end: {{ section.settings['padding-block-end'] }}px; --ps4-cards-padding-start-mobile: {{ section.settings.padding_block_start_mobile }}px; --ps4-cards-padding-end-mobile: {{ section.settings.padding_block_end_mobile }}px; --ps4-background: {{ section.settings.background }}; --ps4-heading-font: {% if section.settings.heading_style == 'theme' %}var(--font-heading--family){% else %}Georgia, 'Times New Roman', serif{% endif %};"><div class="ps4-container ps4-cards ps4-cards--{{ section.settings.style }}">{% if section.settings.heading != blank %}<div class="ps4-section-heading"><h2>{{ section.settings.heading | escape }}</h2>{% if section.settings.label != blank and section.settings.link != blank %}<a href="{{ section.settings.link }}">{{ section.settings.label | escape }} <span aria-hidden="true">→</span></a>{% endif %}</div>{% endif %}<div class="ps4-card-grid">{% for block in section.blocks %}{% liquid
 assign card_image = block.settings.image | default: block.settings.collection.featured_image | default: block.settings.article.image
 assign card_link = block.settings.link | default: block.settings.collection.url | default: block.settings.article.url
 assign card_heading = block.settings.heading | default: block.settings.collection.title | default: block.settings.article.title
 %}<article class="ps4-card" {{ block.shopify_attributes }} style="--ps4-card-background: {{ block.settings.background }};">{% if card_link != blank %}<a class="ps4-card__link" href="{{ card_link }}">{% endif %}{% if section.settings.style != 'benefit' %}<div class="ps4-card__image">{% render 'ps4-home-image', image: card_image, asset: block.settings.asset, alt: block.settings.image_alt %}</div>{% elsif block.settings.symbol != blank %}<span class="ps4-symbol" aria-hidden="true">{{ block.settings.symbol | escape }}</span>{% endif %}<div class="ps4-card__body">{% if block.settings.eyebrow != blank %}<p class="ps4-eyebrow">{{ block.settings.eyebrow | escape }}</p>{% endif %}<h3>{{ card_heading | escape }}</h3>{% if block.settings.text != blank %}<div class="ps4-copy">{{ block.settings.text }}</div>{% endif %}{% if block.settings.label != blank %}<span class="ps4-card__cta">{{ block.settings.label | escape }} <span aria-hidden="true">→</span></span>{% endif %}</div>{% if card_link != blank %}</a>{% endif %}</article>{% endfor %}</div></div></section>
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-block:
+      {{ section.settings['padding-block-start'] }}px
+      {{ section.settings['padding-block-end'] }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} {
+      padding-block:
+        {{ section.settings.padding_block_start_mobile }}px
+        {{ section.settings.padding_block_end_mobile }}px;
+    }
+  }
+{% endstyle %}
+{% render 'section-color-scheme', section: section %}
+
 {% schema %}
 {
   "name": "t:ps4.cards",
@@ -73,6 +90,67 @@ assign card_heading = block.settings.heading | default: block.settings.collectio
         }
       ],
       "default": "serif"
+    },
+    {
+      "type": "header",
+      "content": "t:ps4.desktop_padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "t:ps4.mobile_padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_block_start_mobile",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "padding_block_end_mobile",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "checkbox",
+      "id": "use_color_scheme",
+      "label": "t:settings.use_color_scheme",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1",
+      "visible_if": "{{ section.settings.use_color_scheme }}"
     }
   ],
   "blocks": [

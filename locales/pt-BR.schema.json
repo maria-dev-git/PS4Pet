@@ -9,6 +9,8 @@
  */
 {
   "ps4": {
+    "desktop_padding": "Espaçamento interno no desktop",
+    "mobile_padding": "Espaçamento interno no celular",
     "ps4_design": "Use PS4PETS banner styling",
     "use_bundled_image": "Use supplied Jules birthday photo",
     "to_right": "To right",
@@ -217,6 +219,8 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "use_color_scheme": "Usar esquema de cores compartilhado",
+    "mobile_font_size": "Tamanho da fonte no celular",
     "alignment": "Alinhamento",
     "autoplay": "Reprodução automática",
     "background": "Plano de fundo",
@@ -1131,6 +1135,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "mobile_font_size": "Aplica-se abaixo de 750 px. Padrão mantém o tamanho responsivo atual.",
     "video_alt_text": "Descreva o vídeo para usuários de tecnologia assistiva",
     "video_autoplay": "Os vídeos ficarão sem som por padrão",
     "video_external": "Use um URL do YouTube ou do Vimeo",

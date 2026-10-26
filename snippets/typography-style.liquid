@@ -1,6 +1,6 @@
 {%- doc -%}
   Sets inline CSS variables for typography styles, including color, font size, weight, family, line height, and letter spacing.
-  Intended for use on the style attribute of an element.
+  Intended for use on the style attribute of an element. font_size_mobile optionally overrides the custom size below 750px.
 
   @param {object} settings - The block or section settings object containing typography values
   @param {string} [type] - The type of text element to inherit styles from, options: display, heading, body
@@ -16,6 +16,7 @@
 
 {%- capture variables -%}
   {%- if preset == 'custom' -%}
+    --font-size-mobile: {{ settings.font_size_mobile | default: 'initial' }};
     {% liquid
       unless type
         comment

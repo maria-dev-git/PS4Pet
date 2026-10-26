@@ -1,0 +1,75 @@
+{% doc %}
+  Applies a reusable theme color scheme to a section and its existing color surface.
+  Disabling use_color_scheme preserves the section's saved custom colors. Block colors and
+  global popover/drawer surfaces retain their own settings.
+
+  @param {section} section - Section whose color_scheme setting selects the shared colors.
+
+  @example
+  {% render 'section-color-scheme', section: section %}
+{% enddoc %}
+
+{% liquid
+  assign scheme = section.settings.color_scheme
+%}
+{% if section.settings.use_color_scheme and scheme != blank %}
+  {% capture selector %}:is(:where(#shopify-section-{{ section.id }}), :where(#shopify-section-{{ section.id }}) .color-custom-{{ section.id }}){% endcapture %}
+  {% render 'contrast-override',
+    background_color: scheme.settings.background,
+    text_color: scheme.settings.text,
+    border_color: scheme.settings.border,
+    section_id: section.id,
+    selector: selector
+  %}
+  {% style %}
+    {{ selector }} {
+      --color-primary-button-background: {{ scheme.settings.primary_button_background }};
+      --color-primary-button-text: {{ scheme.settings.primary_button_text }};
+      --color-primary-button-border: {{ scheme.settings.primary_button_border }};
+      --color-primary-button-focus-outline: {{ scheme.settings.primary_button_border }};
+      --color-secondary-button-background: {{ scheme.settings.secondary_button_background }};
+      --color-secondary-button-text: {{ scheme.settings.secondary_button_text }};
+      --color-secondary-button-border: {{ scheme.settings.secondary_button_border }};
+      --ps4-benefit-background: {{ scheme.settings.background }};
+      --color-input-background: {{ scheme.settings.background }};
+      --color-input-text: {{ scheme.settings.text }};
+      --color-input-text-rgb: {{ scheme.settings.text.rgb }};
+      --color-input-border: {{ scheme.settings.border }};
+      {% for button_type in (1..2) %}
+        {% liquid
+          if button_type == 1
+            assign button_name = 'primary'
+          else
+            assign button_name = 'secondary'
+          endif
+          assign background_key = button_name | append: '_button_background'
+          assign border_key = button_name | append: '_button_border'
+          capture hover_background
+            render 'util-palette-hover-shift', color: scheme.settings[background_key]
+          endcapture
+          assign hover_brightness = hover_background | color_brightness
+        %}
+        --color-{{ button_name }}-button-hover-background: {{ hover_background }};
+        --color-{{ button_name }}-button-hover-border: {% render 'util-palette-hover-shift', color: scheme.settings[border_key] %};
+        --color-{{ button_name }}-button-hover-text: {% if hover_brightness > 128 %}var(--palette-darkest){% else %}var(--palette-lightest){% endif %};
+      {% endfor %}
+    }
+
+    /* Header rows have separate color contexts; preserve transparent header states. */
+    #shopify-section-{{ section.id }}:has(> header-component) {
+      background-color: transparent;
+    }
+
+    #shopify-section-{{ section.id }} .header:not([transparent]) .header__row,
+    #shopify-section-{{ section.id }} .header[transparent='not-sticky'][data-sticky-state='active'] .header__row {
+      --color-background: {{ scheme.settings.background }};
+      --color-background-rgb: {{ scheme.settings.background.rgb }};
+      --color-foreground: {{ scheme.settings.text }};
+      --color-foreground-rgb: {{ scheme.settings.text.rgb }};
+      --color-border: {{ scheme.settings.border }};
+      --color-border-rgb: {{ scheme.settings.border.rgb }};
+      color: var(--color-foreground);
+      background-color: var(--color-background);
+    }
+  {% endstyle %}
+{% endif %}

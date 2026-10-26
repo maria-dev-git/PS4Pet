@@ -23,6 +23,7 @@
   @param {string} [background_color] - Custom background color. Nothing is output when blank or fully transparent (alpha == 0).
   @param {string} [text_color] - Explicit text color. Skips smart contrast when provided.
   @param {string} [border_color] - Optional border color to override if contrast is insufficient.
+  @param {string} [selector] - Explicit scoped CSS selector, used by shared section color schemes.
   @param {string} section_id - Unique identifier for scoping the CSS variables.
   @param {boolean} [skip_contrast] - When true, apply only the background color without any contrast overrides.
   @param {string} [preset] - One of 'content' (default) or 'ui'. Controls which token categories are emitted.
@@ -45,6 +46,8 @@
 {% enddoc %}
 
 {% liquid
+  assign default_selector = '.color-custom-' | append: section_id
+  assign selector = selector | default: default_selector
   assign skip_contrast = skip_contrast | default: false, allow_false: true
   assign preset = preset | default: 'content'
 
@@ -103,8 +106,8 @@
 
 {% if has_background %}
   {% style %}
-    .color-custom-{{ section_id }},
-    .color-custom-{{ section_id }} .text-block {
+    {{ selector }},
+    {{ selector }} .text-block {
       /* Background */
       --color-background: {{ background_color }};
       --color-background-rgb: {{ background_color.rgb }};
@@ -126,7 +129,7 @@
     }
 
     {% unless skip_contrast %}
-      .color-custom-{{ section_id }} {
+      {{ selector }} {
         /* Form-related tokens stay on .color-custom only — .text-block is a prose
            container (text/announcement/inline-text/blog-post-description/
            collection-link/price/sku) and never holds form inputs. */
@@ -137,7 +140,7 @@
       }
     {% endunless %}
 
-    .color-custom-{{ section_id }} {
+    {{ selector }} {
       color: var(--color, var(--color-foreground));
       background-color: var(--color-background);
     }
@@ -153,8 +156,8 @@
     endif
   %}
   {% style %}
-    .color-custom-{{ section_id }},
-    .color-custom-{{ section_id }} .text-block {
+    {{ selector }},
+    {{ selector }} .text-block {
       --color: {{ text_color }};
       --color-rgb: {{ text_color.rgb }};
       --color-foreground: {{ text_color }};
@@ -169,7 +172,7 @@
 
     }
 
-    .color-custom-{{ section_id }} {
+    {{ selector }} {
       /* Form-related tokens stay on .color-custom only. */
       --input-disabled-background-color: rgb({{ text_color.rgb }} / var(--opacity-10));
       --input-disabled-border-color: rgb({{ text_color.rgb }} / var(--opacity-5));
@@ -178,19 +181,19 @@
     }
 
     {% if preset == 'ui' %}
-      .color-custom-{{ section_id }} {
+      {{ selector }} {
         color: {{ text_color }};
       }
     {% else %}
-      .color-custom-{{ section_id }} {
+      {{ selector }} {
         color: var(--color-foreground);
       }
 
-      .color-custom-{{ section_id }} .text-block,
-      .color-custom-{{ section_id }} .footer-utilities__text,
-      .color-custom-{{ section_id }} .custom-typography,
-      .color-custom-{{ section_id }} .footer-utilities__icons,
-      .color-custom-{{ section_id }} .social-icons__wrapper {
+      {{ selector }} .text-block,
+      {{ selector }} .footer-utilities__text,
+      {{ selector }} .custom-typography,
+      {{ selector }} .footer-utilities__icons,
+      {{ selector }} .social-icons__wrapper {
         color: var(--color, var(--color-foreground));
       }
     {% endif %}

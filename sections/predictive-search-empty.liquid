@@ -6,10 +6,26 @@
   products_test_id: 'products-list-default--reset'
 %}
 
+{% render 'section-color-scheme', section: section %}
+
 {% schema %}
 {
   "name": "t:names.predictive_search_empty",
   "class": "predictive-search-empty-section",
-  "settings": []
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "use_color_scheme",
+      "label": "t:settings.use_color_scheme",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1",
+      "visible_if": "{{ section.settings.use_color_scheme }}"
+    }
+  ]
 }
 {% endschema %}

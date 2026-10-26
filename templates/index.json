@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero_jVaWmY": {
@@ -10,15 +19,32 @@
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
+            "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
             "gap": 22,
             "width": "custom",
             "custom_width": 56,
             "width_mobile": "fill",
+            "custom_width_mobile": 100,
             "height": "fit",
+            "custom_height": 100,
             "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
             "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -84,15 +110,32 @@
                 "vertical_on_mobile": false,
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
+                "align_baseline": false,
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 16,
                 "width": "fill",
                 "custom_width": 56,
                 "width_mobile": "fill",
+                "custom_width_mobile": 100,
                 "height": "fit",
+                "custom_height": 100,
                 "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
                 "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -184,15 +227,32 @@
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
+            "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "flex-start",
             "gap": 22,
             "width": "custom",
             "custom_width": 22,
             "width_mobile": "fill",
+            "custom_width_mobile": 100,
             "height": "fit",
+            "custom_height": 100,
             "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
             "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -202,6 +262,7 @@
             "ps4_note_text": {
               "type": "text",
               "name": "t:names.text",
+              "disabled": true,
               "settings": {
                 "text": "<p><em>Happy Pets<br/>Brighter Tomorrows ♡</em></p>",
                 "width": "100%",
@@ -216,7 +277,7 @@
                 "wrap": "pretty",
                 "text_color": "#09232e",
                 "background": true,
-                "background_color": "#fbf7f3",
+                "background_color": "rgba(0,0,0,0)",
                 "corner_radius": 6,
                 "padding-block-start": 14,
                 "padding-block-end": 14,
@@ -238,11 +299,12 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
-        "image_1": "",
+        "image_1": "shopify://shop_images/hero-banner-1.png",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
-        "custom_mobile_media": false,
+        "custom_mobile_media": true,
         "media_type_1_mobile": "image",
+        "image_1_mobile": "shopify://shop_images/hero-banner-mobile.webp",
         "media_type_2_mobile": "image",
         "link": "",
         "open_in_new_tab": false,
@@ -258,18 +320,378 @@
         "section_height": "large",
         "section_height_custom": 50,
         "background_color": "#fbf7f3",
-        "toggle_overlay": true,
-        "overlay_color": "#fbf7f3",
+        "toggle_overlay": false,
+        "overlay_color": "#ffffff",
         "overlay_style": "gradient",
         "gradient_direction": "to right",
         "blurred_reflection": false,
         "reflection_opacity": 75,
         "padding-block-start": 44,
         "padding-block-end": 44,
-        "ps4_design": true,
-        "heading_style": "serif",
-        "use_bundled_image": true,
+        "ps4_design": false,
+        "heading_style": "theme",
+        "use_bundled_image": false,
         "bundled_image_alt": "Jules wearing a birthday hat and holding her favorite lamb toy"
+      }
+    },
+    "ps4_benefits": {
+      "type": "ps4-cards",
+      "blocks": {
+        "card_0": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Pet Safety First",
+            "text": "<p>Trusted products for happier, healthier pets.</p>",
+            "label": "",
+            "link": "",
+            "background": "#F2F1EA",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "♧",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Everyday Value",
+            "text": "<p>Quality essentials for real life with pets.</p>",
+            "label": "",
+            "link": "",
+            "background": "#F2F1EA",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "♡",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Easy Auto-Reorder",
+            "text": "<p>Never run out of their favorites.</p>",
+            "label": "",
+            "link": "",
+            "background": "#F2F1EA",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "◇",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Helping Shelter Pets",
+            "text": "<p>Every order supports a brighter tomorrow.</p>",
+            "label": "",
+            "link": "",
+            "background": "#F2F1EA",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "♡",
+            "collection": "",
+            "article": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_0",
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
+      "settings": {
+        "heading": "",
+        "label": "",
+        "link": "",
+        "background": "#FBF7F3",
+        "style": "benefit",
+        "padding-block-start": 28,
+        "padding-block-end": 28,
+        "padding_block_start_mobile": 28,
+        "padding_block_end_mobile": 28,
+        "heading_style": "serif"
+      }
+    },
+    "ps4_categories": {
+      "type": "ps4-cards",
+      "blocks": {
+        "card_0": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Dog Essentials",
+            "text": "",
+            "label": "",
+            "link": "/collections/dogs",
+            "background": "#fbf7f3",
+            "image_alt": "Green everyday pet collar",
+            "asset": "collar",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Cat Essentials",
+            "text": "",
+            "label": "",
+            "link": "/collections/cats",
+            "background": "#fbf7f3",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Treats & Dental",
+            "text": "",
+            "label": "",
+            "link": "/collections/treats-dental",
+            "background": "#fbf7f3",
+            "image_alt": "Green pet treat pouch",
+            "asset": "pouch",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Walking Gear",
+            "text": "",
+            "label": "",
+            "link": "/collections/walking-gear",
+            "background": "#fbf7f3",
+            "image_alt": "Green everyday pet collar",
+            "asset": "collar",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Waste & Cleanup",
+            "text": "",
+            "label": "",
+            "link": "/collections/waste-cleanup",
+            "background": "#fbf7f3",
+            "image_alt": "Green pet treat pouch",
+            "asset": "pouch",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_5": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Toys & Enrichment",
+            "text": "",
+            "label": "",
+            "link": "/collections/toys-enrichment",
+            "background": "#fbf7f3",
+            "image_alt": "Green rope toy",
+            "asset": "toy",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_6": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Personalized Pet Gear",
+            "text": "",
+            "label": "",
+            "link": "/collections/personalized-pet-gear",
+            "background": "#fbf7f3",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_0",
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4",
+        "card_5",
+        "card_6"
+      ],
+      "settings": {
+        "heading": "Shop by Category",
+        "label": "Explore everything they need",
+        "link": "/collections/all",
+        "background": "#fbf7f3",
+        "style": "category",
+        "heading_style": "serif"
+      }
+    },
+    "ps4_story": {
+      "type": "ps4-feature",
+      "settings": {
+        "eyebrow": "Meet Jules — the heart behind PS4PETS",
+        "heading": "Jules - Rescue. Family. Forever.",
+        "text": "<p>Jules came into our family as a shelter pup and changed our lives forever. She’s a rescue pit bull, a baseball game regular, and the heart behind PS4PETS. Her story inspired our mission: give pets the things they need while helping shelter animals still waiting for their forever families.</p>",
+        "label": "Meet Jules",
+        "link": "/pages/meet-jules",
+        "background": "#f7e6e1",
+        "image_alt": "Jules, the rescue pup at the heart of PS4PETS",
+        "asset": "jules",
+        "heading_style": "serif"
+      }
+    },
+    "ps4_promos": {
+      "type": "ps4-cards",
+      "blocks": {
+        "card_0": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Our mission",
+            "heading": "Shop for yours.\nHelp one waiting for theirs.",
+            "text": "<p>We believe every pet deserves someone in their corner. That’s why PS4PETS is built to support pets and the people who love them — while helping shelter animals still waiting for their Forever Families.</p><p>♡ Shop for yours. Help one waiting for theirs.</p><p>♡ Every pet deserves someone in their corner.</p><p>♡ For Pets. For Families. For Those Still Waiting for Theirs.</p>",
+            "label": "Our mission",
+            "link": "/pages/mission",
+            "background": "#e5e9dc",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Auto-reorder",
+            "heading": "Never Run Out\nof Their Favorites",
+            "text": "<p>Set up easy auto-reorder for the essentials they always need — from food and treats to everyday must-haves. One less thing to worry about, more time for what matters.</p>",
+            "label": "Learn more",
+            "link": "/pages/auto-reorder",
+            "background": "#b9d9d7",
+            "image_alt": "Green pet treat pouch",
+            "asset": "pouch",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_0",
+        "card_1"
+      ],
+      "settings": {
+        "heading": "",
+        "label": "",
+        "link": "",
+        "background": "#fbf7f3",
+        "style": "promo",
+        "heading_style": "serif"
+      }
+    },
+    "ps4_journal": {
+      "type": "ps4-cards",
+      "blocks": {
+        "card_0": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Official Baseball Pup\nWhere’s Jules?",
+            "text": "<p>From the stands to the snacks, Jules loves a good game. Relive some of our favorite baseball adventures!</p>",
+            "label": "",
+            "link": "/blogs/jules-journal",
+            "background": "#fbf7f3",
+            "image_alt": "Jules, our rescue pup",
+            "asset": "jules",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Pet Care Tips & Happier Lives",
+            "text": "<p>Helpful tips, seasonal advice and real life with pets.</p>",
+            "label": "",
+            "link": "/blogs/jules-journal",
+            "background": "#fbf7f3",
+            "image_alt": "Green rope toy",
+            "asset": "toy",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Share Your Pet Story",
+            "text": "<p>We love celebrating our community! Share your pet’s story and be part of the PS4PETS family.</p>",
+            "label": "",
+            "link": "/pages/contact",
+            "background": "#fbf7f3",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_0",
+        "card_1",
+        "card_2"
+      ],
+      "settings": {
+        "heading": "Jules Journal & Community",
+        "label": "View all",
+        "link": "/blogs/jules-journal",
+        "background": "#fbf7f3",
+        "style": "journal",
+        "heading_style": "serif"
+      }
+    },
+    "ps4_newsletter": {
+      "type": "ps4-newsletter",
+      "settings": {
+        "heading": "Join the PS4PETS Family",
+        "text": "<p>Be the first to know about pet updates, Jules Journal, offers, birthdays/community news.</p>",
+        "label": "Sign up",
+        "background": "#f4dcd5",
+        "heading_style": "serif"
       }
     },
     "product_list_fa6P9H": {
@@ -450,6 +872,7 @@
           ]
         }
       },
+      "disabled": true,
       "name": "t:names.product_list",
       "settings": {
         "collection": "all",
@@ -469,257 +892,6 @@
         "background_color": "{{ settings.color_palette.background }}",
         "padding-block-start": 48,
         "padding-block-end": 48
-      },
-      "disabled": true
-    },
-    "ps4_benefits": {
-      "type": "ps4-cards",
-      "settings": {
-        "style": "benefit",
-        "background": "#f2f1ea"
-      },
-      "blocks": {
-        "card_0": {
-          "type": "card",
-          "settings": {
-            "heading": "Pet Safety First",
-            "text": "<p>Trusted products for happier, healthier pets.</p>",
-            "asset": "none",
-            "link": "",
-            "symbol": "♧"
-          }
-        },
-        "card_1": {
-          "type": "card",
-          "settings": {
-            "heading": "Everyday Value",
-            "text": "<p>Quality essentials for real life with pets.</p>",
-            "asset": "none",
-            "link": "",
-            "symbol": "♡"
-          }
-        },
-        "card_2": {
-          "type": "card",
-          "settings": {
-            "heading": "Easy Auto-Reorder",
-            "text": "<p>Never run out of their favorites.</p>",
-            "asset": "none",
-            "link": "",
-            "symbol": "◇"
-          }
-        },
-        "card_3": {
-          "type": "card",
-          "settings": {
-            "heading": "Helping Shelter Pets",
-            "text": "<p>Every order supports a brighter tomorrow.</p>",
-            "asset": "none",
-            "link": "",
-            "symbol": "♡"
-          }
-        }
-      },
-      "block_order": [
-        "card_0",
-        "card_1",
-        "card_2",
-        "card_3"
-      ]
-    },
-    "ps4_categories": {
-      "type": "ps4-cards",
-      "settings": {
-        "style": "category",
-        "heading": "Shop by Category",
-        "label": "Explore everything they need",
-        "link": "/collections/all",
-        "background": "#fbf7f3"
-      },
-      "blocks": {
-        "card_0": {
-          "type": "card",
-          "settings": {
-            "heading": "Dog Essentials",
-            "text": "",
-            "asset": "collar",
-            "link": "/collections/dogs",
-            "image_alt": "Green everyday pet collar"
-          }
-        },
-        "card_1": {
-          "type": "card",
-          "settings": {
-            "heading": "Cat Essentials",
-            "text": "",
-            "asset": "none",
-            "link": "/collections/cats"
-          }
-        },
-        "card_2": {
-          "type": "card",
-          "settings": {
-            "heading": "Treats & Dental",
-            "text": "",
-            "asset": "pouch",
-            "link": "/collections/treats-dental",
-            "image_alt": "Green pet treat pouch"
-          }
-        },
-        "card_3": {
-          "type": "card",
-          "settings": {
-            "heading": "Walking Gear",
-            "text": "",
-            "asset": "collar",
-            "link": "/collections/walking-gear",
-            "image_alt": "Green everyday pet collar"
-          }
-        },
-        "card_4": {
-          "type": "card",
-          "settings": {
-            "heading": "Waste & Cleanup",
-            "text": "",
-            "asset": "pouch",
-            "link": "/collections/waste-cleanup",
-            "image_alt": "Green pet treat pouch"
-          }
-        },
-        "card_5": {
-          "type": "card",
-          "settings": {
-            "heading": "Toys & Enrichment",
-            "text": "",
-            "asset": "toy",
-            "link": "/collections/toys-enrichment",
-            "image_alt": "Green rope toy"
-          }
-        },
-        "card_6": {
-          "type": "card",
-          "settings": {
-            "heading": "Personalized Pet Gear",
-            "text": "",
-            "asset": "none",
-            "link": "/collections/personalized-pet-gear"
-          }
-        }
-      },
-      "block_order": [
-        "card_0",
-        "card_1",
-        "card_2",
-        "card_3",
-        "card_4",
-        "card_5",
-        "card_6"
-      ]
-    },
-    "ps4_story": {
-      "type": "ps4-feature",
-      "settings": {
-        "eyebrow": "Meet Jules — the heart behind PS4PETS",
-        "heading": "Jules - Rescue. Family. Forever.",
-        "text": "<p>Jules came into our family as a shelter pup and changed our lives forever. She’s a rescue pit bull, a baseball game regular, and the heart behind PS4PETS. Her story inspired our mission: give pets the things they need while helping shelter animals still waiting for their forever families.</p>",
-        "label": "Meet Jules",
-        "link": "/pages/meet-jules",
-        "asset": "jules",
-        "image_alt": "Jules, the rescue pup at the heart of PS4PETS",
-        "background": "#f7e6e1"
-      }
-    },
-    "ps4_promos": {
-      "type": "ps4-cards",
-      "settings": {
-        "style": "promo",
-        "background": "#fbf7f3"
-      },
-      "blocks": {
-        "card_0": {
-          "type": "card",
-          "settings": {
-            "heading": "Shop for yours.\nHelp one waiting for theirs.",
-            "text": "<p>We believe every pet deserves someone in their corner. That’s why PS4PETS is built to support pets and the people who love them — while helping shelter animals still waiting for their Forever Families.</p><p>♡ Shop for yours. Help one waiting for theirs.</p><p>♡ Every pet deserves someone in their corner.</p><p>♡ For Pets. For Families. For Those Still Waiting for Theirs.</p>",
-            "asset": "none",
-            "link": "/pages/mission",
-            "eyebrow": "Our mission",
-            "label": "Our mission",
-            "background": "#e5e9dc"
-          }
-        },
-        "card_1": {
-          "type": "card",
-          "settings": {
-            "heading": "Never Run Out\nof Their Favorites",
-            "text": "<p>Set up easy auto-reorder for the essentials they always need — from food and treats to everyday must-haves. One less thing to worry about, more time for what matters.</p>",
-            "asset": "pouch",
-            "link": "/pages/auto-reorder",
-            "eyebrow": "Auto-reorder",
-            "label": "Learn more",
-            "background": "#b9d9d7",
-            "image_alt": "Green pet treat pouch"
-          }
-        }
-      },
-      "block_order": [
-        "card_0",
-        "card_1"
-      ]
-    },
-    "ps4_journal": {
-      "type": "ps4-cards",
-      "settings": {
-        "style": "journal",
-        "heading": "Jules Journal & Community",
-        "label": "View all",
-        "link": "/blogs/jules-journal",
-        "background": "#fbf7f3"
-      },
-      "blocks": {
-        "card_0": {
-          "type": "card",
-          "settings": {
-            "heading": "Official Baseball Pup\nWhere’s Jules?",
-            "text": "<p>From the stands to the snacks, Jules loves a good game. Relive some of our favorite baseball adventures!</p>",
-            "asset": "jules",
-            "link": "/blogs/jules-journal",
-            "image_alt": "Jules, our rescue pup"
-          }
-        },
-        "card_1": {
-          "type": "card",
-          "settings": {
-            "heading": "Pet Care Tips & Happier Lives",
-            "text": "<p>Helpful tips, seasonal advice and real life with pets.</p>",
-            "asset": "toy",
-            "link": "/blogs/jules-journal",
-            "image_alt": "Green rope toy"
-          }
-        },
-        "card_2": {
-          "type": "card",
-          "settings": {
-            "heading": "Share Your Pet Story",
-            "text": "<p>We love celebrating our community! Share your pet’s story and be part of the PS4PETS family.</p>",
-            "asset": "none",
-            "link": "/pages/contact"
-          }
-        }
-      },
-      "block_order": [
-        "card_0",
-        "card_1",
-        "card_2"
-      ]
-    },
-    "ps4_newsletter": {
-      "type": "ps4-newsletter",
-      "settings": {
-        "heading": "Join the PS4PETS Family",
-        "text": "<p>Be the first to know about pet updates, Jules Journal, offers, birthdays/community news.</p>",
-        "label": "Sign up",
-        "background": "#f4dcd5"
       }
     }
   },

@@ -9,6 +9,8 @@
  */
 {
   "ps4": {
+    "desktop_padding": "Desktop padding",
+    "mobile_padding": "Mobile padding",
     "ps4_design": "Use PS4PETS banner styling",
     "use_bundled_image": "Use supplied Jules birthday photo",
     "to_right": "To right",
@@ -269,6 +271,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "mobile_font_size": "Applies below 750px. Default keeps the existing responsive size.",
     "actions_display_style": "Icons are always used on mobile",
     "applies_on_image_only": "Applies to images only",
     "aspect_ratio_adjusted": "Adjusted in some layouts",
@@ -780,6 +783,8 @@
     "below_media": "Below media"
   },
   "settings": {
+    "use_color_scheme": "Use shared color scheme",
+    "mobile_font_size": "Mobile font size",
     "accordion": "Accordion",
     "account": "Account",
     "actions_display_style": "Menu style",

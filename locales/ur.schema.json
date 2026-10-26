@@ -9,6 +9,8 @@
  */
 {
   "ps4": {
+    "desktop_padding": "ڈیسک ٹاپ اندرونی فاصلہ",
+    "mobile_padding": "موبائل اندرونی فاصلہ",
     "ps4_design": "Use PS4PETS banner styling",
     "use_bundled_image": "Use supplied Jules birthday photo",
     "to_right": "To right",
@@ -261,6 +263,7 @@
     "work_quickly_to_ship": "<p>ہم جلد از جلد آپ کا آرڈر شپ کرنے کے لیے تیزی سے کام کریں گے۔ آپ کا آرڈر شپ ہونے کے بعد، آپ کو مزید معلومات کے ساتھ ایک ای میل موصول ہوگی۔ آپ کے مقام کے لحاظ سے ترسیل کے اوقات مختلف ہو سکتے ہیں۔</p>"
   },
   "info": {
+    "mobile_font_size": "750 پکسل سے کم چوڑائی پر لاگو ہوتا ہے۔ طے شدہ اختیار موجودہ موافق سائز برقرار رکھتا ہے۔",
     "actions_display_style": "موبائل پر ہمیشہ آئیکن استعمال ہوتے ہیں",
     "applies_on_image_only": "صرف تصاویر پر لاگو ہوتا ہے",
     "aspect_ratio_adjusted": "کچھ لے آؤٹ میں ایڈجسٹ کیا گیا",
@@ -728,6 +731,8 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "use_color_scheme": "مشترکہ رنگ سکیم استعمال کریں",
+    "mobile_font_size": "موبائل فونٹ کا سائز",
     "accordion": "ایکارڈین",
     "account": "اکاؤنٹ",
     "actions_display_style": "مینو کا اسٹائل",

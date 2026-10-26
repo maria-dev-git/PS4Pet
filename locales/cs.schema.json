@@ -9,6 +9,8 @@
  */
 {
   "ps4": {
+    "desktop_padding": "Odsazení na počítači",
+    "mobile_padding": "Odsazení na mobilu",
     "ps4_design": "Use PS4PETS banner styling",
     "use_bundled_image": "Use supplied Jules birthday photo",
     "to_right": "To right",
@@ -217,6 +219,8 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "use_color_scheme": "Použít sdílené barevné schéma",
+    "mobile_font_size": "Velikost písma na mobilu",
     "alignment": "Zarovnání",
     "autoplay": "Automatické přehrávání",
     "background": "Pozadí",
@@ -1131,6 +1135,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "mobile_font_size": "Platí při šířce pod 750 px. Výchozí volba zachová současnou responzivní velikost.",
     "video_alt_text": "Popište video pro uživatele asistivních technologií",
     "video_autoplay": "Videa budou ve výchozím nastavení ztlumená",
     "video_external": "Použijte URL z YouTube nebo Vimeo",
