@@ -4,10 +4,16 @@
 {% endcomment %}
 {% render 'ps4-home-styles' %}
 {% render 'contrast-override', background_color: section.settings.background, section_id: section.id %}
-<section class="ps4-home color-custom-{{ section.id }}" style="--ps4-background: {{ section.settings.background }}; --ps4-heading-font: {% if section.settings.heading_style == 'theme' %}var(--font-heading--family){% else %}Georgia, 'Times New Roman', serif{% endif %};"><div class="ps4-container ps4-feature"><div class="ps4-feature__image">{% render 'ps4-home-image', image: section.settings.image, asset: section.settings.asset, alt: section.settings.image_alt %}</div><div class="ps4-feature__body">{% if section.settings.eyebrow != blank %}<p class="ps4-eyebrow">{{ section.settings.eyebrow | escape }}</p>{% endif %}
+<section class="ps4-home color-custom-{{ section.id }}" style="--ps4-background: {{ section.settings.background }}; --ps4-heading-font: {% if section.settings.heading_style == 'theme' %}var(--font-heading--family){% else %}Georgia, 'Times New Roman', serif{% endif %};"><div class="ps4-container ps4-feature"><div class="ps4-feature__image">{% render 'ps4-home-image', image: section.settings.image, asset: section.settings.asset, alt: section.settings.image_alt %}</div><div class="ps4-feature__body{% if section.settings.use_content_blocks %} ps4-feature__body--blocks{% endif %}">
+  {% if section.settings.use_content_blocks %}
+    {% content_for 'block', type: '_content-without-appearance', id: 'content' %}
+  {% else %}
+{% if section.settings.eyebrow != blank %}<p class="ps4-eyebrow">{{ section.settings.eyebrow | escape }}</p>{% endif %}
 <h2>{{ section.settings.heading | escape }}</h2>
 {% if section.settings.text != blank %}<div class="ps4-copy">{{ section.settings.text }}</div>{% endif %}
-{% if section.settings.label != blank and section.settings.link != blank %}<a class="ps4-button button" href="{{ section.settings.link }}">{{ section.settings.label | escape }} <span aria-hidden="true">→</span></a>{% endif %}<span class="ps4-heart" aria-hidden="true">♡</span></div></div></section>
+{% if section.settings.label != blank and section.settings.link != blank %}<a class="ps4-button button" href="{{ section.settings.link }}">{{ section.settings.label | escape }} <span aria-hidden="true">→</span></a>{% endif %}<span class="ps4-paw" aria-hidden="true">🐾</span>
+  {% endif %}
+</div></div></section>
 {% render 'section-color-scheme', section: section %}
 
 {% schema %}
@@ -15,29 +21,40 @@
   "name": "t:ps4.feature",
   "settings": [
     {
+      "type": "checkbox",
+      "id": "use_content_blocks",
+      "label": "t:settings.use_content_blocks",
+      "default": false
+    },
+    {
       "type": "text",
       "id": "eyebrow",
-      "label": "t:ps4.eyebrow"
+      "label": "t:ps4.eyebrow",
+      "visible_if": "{{ section.settings.use_content_blocks == false }}"
     },
     {
       "type": "text",
       "id": "heading",
-      "label": "t:ps4.heading"
+      "label": "t:ps4.heading",
+      "visible_if": "{{ section.settings.use_content_blocks == false }}"
     },
     {
       "type": "richtext",
       "id": "text",
-      "label": "t:ps4.text"
+      "label": "t:ps4.text",
+      "visible_if": "{{ section.settings.use_content_blocks == false }}"
     },
     {
       "type": "text",
       "id": "label",
-      "label": "t:ps4.label"
+      "label": "t:ps4.label",
+      "visible_if": "{{ section.settings.use_content_blocks == false }}"
     },
     {
       "type": "url",
       "id": "link",
-      "label": "t:ps4.link"
+      "label": "t:ps4.link",
+      "visible_if": "{{ section.settings.use_content_blocks == false }}"
     },
     {
       "type": "color",
@@ -123,7 +140,97 @@
       "settings": {
         "heading": "Jules - Rescue. Family. Forever.",
         "asset": "jules",
-        "background": "#f7e6e1"
+        "background": "#f7e6e1",
+        "use_content_blocks": true
+      },
+      "blocks": {
+        "content": {
+          "type": "_content-without-appearance",
+          "static": true,
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 18
+          },
+          "blocks": {
+            "eyebrow": {
+              "type": "text",
+              "name": "t:names.caption",
+              "settings": {
+                "text": "<p>Meet Jules — the heart behind PS4PETS</p>",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "0.625rem",
+                "case": "uppercase",
+                "letter_spacing": "loose",
+                "line_height": "normal",
+                "width": "100%",
+                "max_width": "none"
+              }
+            },
+            "heading": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h2>Jules - Rescue. Family. Forever.</h2>",
+                "type_preset": "h2",
+                "width": "100%",
+                "max_width": "none"
+              }
+            },
+            "text": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Jules came into our family as a shelter pup and changed our lives forever.</p>",
+                "type_preset": "rte",
+                "width": "100%",
+                "max_width": "none"
+              }
+            },
+            "actions": {
+              "type": "group",
+              "settings": {
+                "content_direction": "row",
+                "vertical_on_mobile": false,
+                "horizontal_alignment": "space-between",
+                "vertical_alignment": "center",
+                "width": "fill",
+                "width_mobile": "fill",
+                "height": "fit",
+                "gap": 16
+              },
+              "blocks": {
+                "button": {
+                  "type": "button",
+                  "settings": {
+                    "label": "Meet Jules",
+                    "link": "/pages/meet-jules",
+                    "style_class": "button",
+                    "width": "fit-content",
+                    "width_mobile": "fit-content"
+                  }
+                },
+                "symbol": {
+                  "type": "icon",
+                  "settings": {
+                    "icon": "paw_print",
+                    "width": 48
+                  }
+                }
+              },
+              "block_order": [
+                "button",
+                "symbol"
+              ]
+            }
+          },
+          "block_order": [
+            "eyebrow",
+            "heading",
+            "text",
+            "actions"
+          ]
+        }
       }
     }
   ]

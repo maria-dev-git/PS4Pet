@@ -9,36 +9,10 @@
  */
 {
   "current": {
-    "color_schemes": {
-      "scheme-1": {
-        "settings": {
-          "background": "#ffffff",
-          "text": "#222222",
-          "border": "#dddddd",
-          "primary_button_background": "#222222",
-          "primary_button_text": "#ffffff",
-          "primary_button_border": "#222222",
-          "secondary_button_background": "#ffffff",
-          "secondary_button_text": "#222222",
-          "secondary_button_border": "#222222"
-        }
-      },
-      "scheme-2": {
-        "settings": {
-          "background": "#222222",
-          "text": "#ffffff",
-          "border": "#666666",
-          "primary_button_background": "#ffffff",
-          "primary_button_text": "#222222",
-          "primary_button_border": "#ffffff",
-          "secondary_button_background": "#222222",
-          "secondary_button_text": "#ffffff",
-          "secondary_button_border": "#ffffff"
-        }
-      }
-    },
-    "logo_height": 36,
-    "logo_height_mobile": 28,
+    "logo": "shopify://shop_images/ps4pets-logo.webp",
+    "logo_inverse": "shopify://shop_images/ps4pets-logo.webp",
+    "logo_height": 45,
+    "logo_height_mobile": 45,
     "page_text_color": "{{ settings.color_palette.foreground }}",
     "type_body_font": "inter_n4",
     "type_subheading_font": "inter_n5",
@@ -104,7 +78,7 @@
     "palette_input_text": "{{ settings.color_palette.color1 }}",
     "palette_input_border": "{{ settings.color_palette.color2 }}",
     "input_border_width": 1,
-    "inputs_border_radius": 4,
+    "inputs_border_radius": 25,
     "popover_background_color": "{{ settings.color_palette.background }}",
     "popover_text_color": "{{ settings.color_palette.foreground }}",
     "popover_border_radius": 14,
@@ -131,6 +105,47 @@
     "variant_button_radius": 14,
     "variant_button_width": "equal-width-buttons",
     "content_for_index": [],
+    "color_schemes": {
+      "scheme-1": {
+        "settings": {
+          "background": "#fbf7f3",
+          "text": "#09232e",
+          "border": "#dddddd",
+          "primary_button_background": "#222222",
+          "primary_button_text": "#ffffff",
+          "primary_button_border": "#222222",
+          "secondary_button_background": "#ffffff",
+          "secondary_button_text": "#222222",
+          "secondary_button_border": "#222222"
+        }
+      },
+      "scheme-2": {
+        "settings": {
+          "background": "#222222",
+          "text": "#ffffff",
+          "border": "#666666",
+          "primary_button_background": "#ffffff",
+          "primary_button_text": "#222222",
+          "primary_button_border": "#ffffff",
+          "secondary_button_background": "#222222",
+          "secondary_button_text": "#ffffff",
+          "secondary_button_border": "#ffffff"
+        }
+      },
+      "scheme-b40907af-5ea4-416e-8a08-f7633f30eeae": {
+        "settings": {
+          "background": "#f7e6e1",
+          "text": "#09232e",
+          "border": "#dddddd",
+          "primary_button_background": "#396E70",
+          "primary_button_text": "#ffffff",
+          "primary_button_border": "#222222",
+          "secondary_button_background": "#ffffff",
+          "secondary_button_text": "#222222",
+          "secondary_button_border": "#222222"
+        }
+      }
+    },
     "color_palette": {
       "background": "#ffffff",
       "foreground": "#000000",
