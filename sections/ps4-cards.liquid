@@ -1,0 +1,194 @@
+{% comment %}
+  Editable PS4PETS homepage region. Images selected in the editor replace bundled artwork.
+  @example Add this section through the homepage theme editor.
+{% endcomment %}
+{% render 'ps4-home-styles' %}
+{% render 'contrast-override', background_color: section.settings.background, section_id: section.id %}
+<section class="ps4-home color-custom-{{ section.id }}" style="--ps4-background: {{ section.settings.background }}; --ps4-heading-font: {% if section.settings.heading_style == 'theme' %}var(--font-heading--family){% else %}Georgia, 'Times New Roman', serif{% endif %};"><div class="ps4-container ps4-cards ps4-cards--{{ section.settings.style }}">{% if section.settings.heading != blank %}<div class="ps4-section-heading"><h2>{{ section.settings.heading | escape }}</h2>{% if section.settings.label != blank and section.settings.link != blank %}<a href="{{ section.settings.link }}">{{ section.settings.label | escape }} <span aria-hidden="true">→</span></a>{% endif %}</div>{% endif %}<div class="ps4-card-grid">{% for block in section.blocks %}{% liquid
+assign card_image = block.settings.image | default: block.settings.collection.featured_image | default: block.settings.article.image
+assign card_link = block.settings.link | default: block.settings.collection.url | default: block.settings.article.url
+assign card_heading = block.settings.heading | default: block.settings.collection.title | default: block.settings.article.title
+%}<article class="ps4-card" {{ block.shopify_attributes }} style="--ps4-card-background: {{ block.settings.background }};">{% if card_link != blank %}<a class="ps4-card__link" href="{{ card_link }}">{% endif %}{% if section.settings.style != 'benefit' %}<div class="ps4-card__image">{% render 'ps4-home-image', image: card_image, asset: block.settings.asset, alt: block.settings.image_alt %}</div>{% elsif block.settings.symbol != blank %}<span class="ps4-symbol" aria-hidden="true">{{ block.settings.symbol | escape }}</span>{% endif %}<div class="ps4-card__body">{% if block.settings.eyebrow != blank %}<p class="ps4-eyebrow">{{ block.settings.eyebrow | escape }}</p>{% endif %}<h3>{{ card_heading | escape }}</h3>{% if block.settings.text != blank %}<div class="ps4-copy">{{ block.settings.text }}</div>{% endif %}{% if block.settings.label != blank %}<span class="ps4-card__cta">{{ block.settings.label | escape }} <span aria-hidden="true">→</span></span>{% endif %}</div>{% if card_link != blank %}</a>{% endif %}</article>{% endfor %}</div></div></section>
+{% schema %}
+{
+  "name": "t:ps4.cards",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:ps4.heading"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "t:ps4.label"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:ps4.link"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "t:ps4.background",
+      "default": "#fbf7f3"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "t:ps4.style",
+      "options": [
+        {
+          "value": "category",
+          "label": "t:ps4.category"
+        },
+        {
+          "value": "benefit",
+          "label": "t:ps4.benefit"
+        },
+        {
+          "value": "journal",
+          "label": "t:ps4.journal"
+        },
+        {
+          "value": "promo",
+          "label": "t:ps4.promo"
+        }
+      ],
+      "default": "category"
+    },
+    {
+      "type": "select",
+      "id": "heading_style",
+      "label": "t:ps4.heading_style",
+      "options": [
+        {
+          "value": "serif",
+          "label": "t:ps4.serif"
+        },
+        {
+          "value": "theme",
+          "label": "t:ps4.theme"
+        }
+      ],
+      "default": "serif"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "t:ps4.card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "t:ps4.eyebrow"
+        },
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "t:ps4.heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:ps4.text"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "t:ps4.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:ps4.link"
+        },
+        {
+          "type": "color",
+          "id": "background",
+          "label": "t:ps4.background",
+          "default": "#fbf7f3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:ps4.image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "t:ps4.image_alt"
+        },
+        {
+          "type": "select",
+          "id": "asset",
+          "label": "t:ps4.asset",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:ps4.none"
+            },
+            {
+              "value": "hero",
+              "label": "t:ps4.hero_asset"
+            },
+            {
+              "value": "jules",
+              "label": "t:ps4.jules_asset"
+            },
+            {
+              "value": "collar",
+              "label": "t:ps4.collar_asset"
+            },
+            {
+              "value": "toy",
+              "label": "t:ps4.toy_asset"
+            },
+            {
+              "value": "pouch",
+              "label": "t:ps4.pouch_asset"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "text",
+          "id": "symbol",
+          "label": "t:ps4.symbol"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:ps4.collection"
+        },
+        {
+          "type": "article",
+          "id": "article",
+          "label": "t:ps4.article"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:ps4.cards",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "heading": "Dog Essentials"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "heading": "Cat Essentials"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

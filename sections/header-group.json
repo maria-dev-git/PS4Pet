@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "type": "header",
   "name": "t:names.header",
@@ -17,7 +8,7 @@
         "announcement_BxgCk9": {
           "type": "_announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "Pets today. A brighter tomorrow. ♡ Every order helps support shelter pets.",
             "font": "var(--font-subheading--family)",
             "font_size": "0.75rem",
             "letter_spacing": "normal",
@@ -33,7 +24,7 @@
       "settings": {
         "speed": 5,
         "section_width": "page-width",
-        "background_color": "{{ settings.color_palette.background }}",
+        "background_color": "#4d7465",
         "divider_width": 1,
         "divider_color": "{{ settings.color_palette.color2 }}",
         "padding-block-start": 15,

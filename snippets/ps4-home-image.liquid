@@ -1,0 +1,42 @@
+{% doc %}
+  Renders an editable image with bundled homepage artwork as a fallback.
+  @param {image} [image] - Merchant-selected image.
+  @param {string} [asset] - Bundled artwork key.
+  @param {string} [alt] - Image description.
+  @param {boolean} [eager] - Prioritize the hero image.
+  @example
+  {% render 'ps4-home-image', asset: 'hero', alt: 'Jules with her favorite toy', eager: true %}
+{% enddoc %}
+{% liquid
+assign loading = 'lazy'
+assign priority = 'auto'
+if eager
+assign loading = 'eager'
+assign priority = 'high'
+endif
+assign description = alt | default: image.alt
+assign filename = ''
+assign intrinsic_width = 1672
+assign intrinsic_height = 941
+case asset
+when 'hero'
+assign filename = 'ps4-hero.png'
+when 'jules'
+assign filename = 'ps4-jules.jpg'
+assign intrinsic_width = 1592
+assign intrinsic_height = 2166
+when 'collar'
+assign filename = 'ps4-collar.png'
+assign intrinsic_width = 518
+assign intrinsic_height = 500
+when 'toy'
+assign filename = 'ps4-toy.png'
+assign intrinsic_width = 518
+assign intrinsic_height = 500
+when 'pouch'
+assign filename = 'ps4-pouch.png'
+assign intrinsic_width = 481
+assign intrinsic_height = 500
+endcase
+%}
+{% if image != blank %}{{ image | image_url: width: 2400 | image_tag: widths: '320, 480, 750, 1100, 1600, 2400', sizes: '(min-width: 750px) 60vw, 100vw', loading: loading, fetchpriority: priority, alt: description }}{% elsif filename != blank %}<img src="{{ filename | asset_url }}" width="{{ intrinsic_width }}" height="{{ intrinsic_height }}" alt="{{ description | escape }}" loading="{{ loading }}" fetchpriority="{{ priority }}">{% else %}{{ 'collection-1' | placeholder_svg_tag: 'ps4-placeholder' }}{% endif %}
