@@ -378,7 +378,7 @@
           "type": "card",
           "settings": {
             "eyebrow": "",
-            "heading": "Dog Essentials",
+            "heading": "",
             "text": "",
             "label": "",
             "link": "/collections/dogs",
@@ -394,7 +394,7 @@
           "type": "card",
           "settings": {
             "eyebrow": "",
-            "heading": "Cat Essentials",
+            "heading": "",
             "text": "",
             "label": "",
             "link": "/collections/cats",
