@@ -504,21 +504,16 @@
     },
     "ps4_story": {
       "type": "ps4-feature",
-      "settings": {
-        "eyebrow": "Meet Jules — the heart behind PS4PETS",
-        "heading": "Jules - Rescue. Family. Forever.",
-        "text": "<p>Jules came into our family as a shelter pup and changed our lives forever. She’s a rescue pit bull, a baseball game regular, and the heart behind PS4PETS. Her story inspired our mission: give pets the things they need while helping shelter animals still waiting for their forever families.</p>",
-        "label": "Meet Jules",
-        "link": "/pages/meet-jules",
-        "background": "#f7e6e1",
-        "image_alt": "Jules, the rescue pup at the heart of PS4PETS",
-        "asset": "jules",
-        "heading_style": "serif",
-        "use_color_scheme": true,
-        "color_scheme": "scheme-b40907af-5ea4-416e-8a08-f7633f30eeae",
-        "use_content_blocks": true
-      },
       "blocks": {
+        "image": {
+          "type": "_ps4-story-image",
+          "static": true,
+          "settings": {
+            "image_alt": "Jules, the rescue pup at the heart of PS4PETS",
+            "asset": "jules"
+          },
+          "blocks": {}
+        },
         "content": {
           "type": "_content-without-appearance",
           "static": true,
@@ -533,34 +528,80 @@
               "name": "t:names.caption",
               "settings": {
                 "text": "<p>Meet Jules — the heart behind PS4PETS</p>",
+                "width": "100%",
+                "max_width": "none",
+                "alignment": "left",
                 "type_preset": "custom",
                 "font": "var(--font-body--family)",
                 "font_size": "0.625rem",
-                "case": "uppercase",
-                "letter_spacing": "loose",
+                "font_size_mobile": "",
                 "line_height": "normal",
-                "width": "100%",
-                "max_width": "none"
-              }
+                "letter_spacing": "loose",
+                "case": "uppercase",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             },
             "heading": {
               "type": "text",
               "name": "t:names.heading",
               "settings": {
                 "text": "<h2>Jules - Rescue. Family. Forever.</h2>",
-                "type_preset": "h2",
                 "width": "100%",
-                "max_width": "none"
-              }
+                "max_width": "none",
+                "alignment": "left",
+                "type_preset": "h2",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "font_size_mobile": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             },
             "text": {
               "type": "text",
               "settings": {
                 "text": "<p>Jules came into our family as a shelter pup and changed our lives forever. She’s a rescue pit bull, a baseball game regular, and the heart behind PS4PETS. Her story inspired our mission: give pets the things they need while helping shelter animals still waiting for their forever families.</p>",
-                "type_preset": "rte",
                 "width": "100%",
-                "max_width": "none"
-              }
+                "max_width": "none",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "font_size_mobile": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             },
             "actions": {
               "type": "group",
@@ -569,10 +610,36 @@
                 "vertical_on_mobile": false,
                 "horizontal_alignment": "space-between",
                 "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 16,
                 "width": "fill",
+                "custom_width": 100,
                 "width_mobile": "fill",
+                "custom_width_mobile": 100,
                 "height": "fit",
-                "gap": 16
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {
                 "button": {
@@ -580,17 +647,30 @@
                   "settings": {
                     "label": "Meet Jules",
                     "link": "/pages/meet-jules",
+                    "open_in_new_tab": false,
                     "style_class": "button",
+                    "custom_button_background": "{{ settings.color_palette.foreground }}",
+                    "custom_button_text": "{{ settings.color_palette.background }}",
+                    "custom_button_border": "{{ settings.color_palette.background }}",
+                    "link_text_color": "",
                     "width": "fit-content",
-                    "width_mobile": "fit-content"
-                  }
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 100
+                  },
+                  "blocks": {}
                 },
                 "symbol": {
                   "type": "icon",
                   "settings": {
                     "icon": "paw_print",
-                    "width": 48
-                  }
+                    "image_upload": "shopify://shop_images/Sage_Green_Paw_Print_Icon_97b87a70-78fa-47dd-a238-f11f12f2e188.webp",
+                    "width": 48,
+                    "link": "",
+                    "open_in_new_tab": false,
+                    "icon_color": ""
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
@@ -605,15 +685,21 @@
             "text",
             "actions"
           ]
-        },
-        "image": {
-          "type": "_ps4-story-image",
-          "static": true,
-          "settings": {
-            "asset": "jules",
-            "image_alt": "Jules, the rescue pup at the heart of PS4PETS"
-          }
         }
+      },
+      "settings": {
+        "use_content_blocks": true,
+        "eyebrow": "Meet Jules — the heart behind PS4PETS",
+        "heading": "Jules - Rescue. Family. Forever.",
+        "text": "<p>Jules came into our family as a shelter pup and changed our lives forever. She’s a rescue pit bull, a baseball game regular, and the heart behind PS4PETS. Her story inspired our mission: give pets the things they need while helping shelter animals still waiting for their forever families.</p>",
+        "label": "Meet Jules",
+        "link": "/pages/meet-jules",
+        "background": "#f7e6e1",
+        "image_alt": "Jules, the rescue pup at the heart of PS4PETS",
+        "asset": "jules",
+        "heading_style": "serif",
+        "use_color_scheme": true,
+        "color_scheme": "scheme-b40907af-5ea4-416e-8a08-f7633f30eeae"
       }
     },
     "ps4_promos": {
@@ -621,7 +707,9 @@
       "blocks": {
         "card_0": {
           "type": "_ps4-promo-card",
+          "static": true,
           "settings": {
+            "layout": "features",
             "eyebrow": "Our mission",
             "heading": "Shop for yours.\nHelp one waiting for theirs.",
             "text": "<p>We believe every pet deserves someone in their corner. That’s why PS4PETS is built to support pets and the people who love them — while helping shelter animals still waiting for their Forever Families.</p>",
@@ -630,32 +718,39 @@
             "background": "#e5e9dc",
             "image_alt": "",
             "asset": "none",
-            "layout": "features",
             "image_position": "bottom_right",
             "image_width": 42
           },
-          "static": true,
           "blocks": {
             "feature_1": {
               "type": "_ps4-promo-feature",
               "settings": {
+                "image": "shopify://shop_images/Forest_Green_Paw_Print.webp",
+                "image_alt": "",
                 "icon": "paw_print",
                 "text": "<p>Shop for yours. Help one waiting for theirs.</p>"
-              }
+              },
+              "blocks": {}
             },
             "feature_2": {
               "type": "_ps4-promo-feature",
               "settings": {
+                "image": "shopify://shop_images/Minimal_Teal_Heart_Outline.webp",
+                "image_alt": "",
                 "icon": "heart",
                 "text": "<p>Every pet deserves someone in their corner.</p>"
-              }
+              },
+              "blocks": {}
             },
             "feature_3": {
               "type": "_ps4-promo-feature",
               "settings": {
+                "image": "shopify://shop_images/Minimalist_Teal_Group_Icon_2c18c281-adcd-4920-b5fb-8b515ad413f6.webp",
+                "image_alt": "",
                 "icon": "heart",
                 "text": "<p>For Pets. For Families. For Those Still Waiting for Theirs.</p>"
-              }
+              },
+              "blocks": {}
             }
           },
           "block_order": [
@@ -666,7 +761,9 @@
         },
         "card_1": {
           "type": "_ps4-promo-card",
+          "static": true,
           "settings": {
+            "layout": "image",
             "eyebrow": "Auto-reorder",
             "heading": "Never Run Out\nof Their Favorites",
             "text": "<p>Set up easy auto-reorder for the essentials they always need — from food and treats to everyday must-haves. One less thing to worry about, more time for what matters.</p>",
@@ -675,25 +772,21 @@
             "background": "#b9d9d7",
             "image_alt": "Green pet treat pouch",
             "asset": "pouch",
-            "layout": "image",
             "image_position": "bottom_right",
             "image_width": 42
           },
-          "static": true
+          "blocks": {}
         }
       },
       "settings": {
         "heading": "",
-        "heading_alignment": "left",
-        "label": "",
-        "link": "",
         "background": "#fbf7f3",
-        "style": "promo",
+        "text_color": "",
         "heading_style": "serif",
         "padding-block-start": 22,
-        "padding-block-end": 32,
+        "padding-block-end": 22,
         "padding_block_start_mobile": 22,
-        "padding_block_end_mobile": 32,
+        "padding_block_end_mobile": 22,
         "use_color_scheme": false,
         "color_scheme": ""
       }

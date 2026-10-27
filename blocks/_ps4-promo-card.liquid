@@ -29,7 +29,7 @@
     {% if block.settings.text != blank %}<div class="ps4-promo-card__copy">{{ block.settings.text }}</div>{% endif %}
     <div class="ps4-promo-card__features">{% content_for 'blocks' %}</div>
     {% if block.settings.label != blank and block.settings.link != blank %}
-      <a class="button ps4-promo-card__button" href="{{ block.settings.link }}">{{ block.settings.label | escape }} <span aria-hidden="true">→</span></a>
+      <a class="button ps4-promo-card__button" href="{{ block.settings.link }}">{{ block.settings.label | escape }}</a>
     {% endif %}
   </div>
   {% unless block.settings.image_position contains 'top' %}{{ artwork }}{% endunless %}
