@@ -2,7 +2,7 @@
   Intended for use in a block similar to the button block.
 
   @param {string} link - link to render
-  @param {object} [block] - The block
+  @param {object} [block] - The block, including optional mobile pixel width and font size settings.
 
   @example
   {% render 'button', link: '/collections/all' %}
@@ -19,11 +19,20 @@
     href="{{ link }}"
   {% endif %}
   class="
-    size-style
+    size-style theme-button{% if block_settings.width_mobile == 'pixels' %} theme-button--mobile-pixels{% endif %}{% if block_settings.mobile_font_size != blank %} theme-button--mobile-font{% endif %}
     {{ block_settings.style_class }}
     {{ block_settings.style_class }}--{{ block.id }}
   "
-  style="{% render 'size-style', settings: block_settings %}"
+  style="
+    {% render 'size-style', settings: block_settings %}
+    {% if block_settings.width_mobile == 'pixels' %}
+      --size-style-width-mobile: min(100%, {{ block_settings.mobile_width_pixels }}px);
+      --size-style-width-mobile-min: 0px;
+    {% endif %}
+    {% if block_settings.mobile_font_size != blank %}
+      --theme-button-mobile-font-size: {{ block_settings.mobile_font_size }};
+    {% endif %}
+  "
   {%- if block_settings.open_in_new_tab -%}
     target="_blank"
     rel="noopener noreferrer"
@@ -32,3 +41,15 @@
 >
   {{ block_settings.label }}
 </a>
+
+{% stylesheet %}
+  @media screen and (max-width: 749px) {
+    .layout-panel-flex .theme-button.size-style.theme-button--mobile-pixels {
+      flex: 0 0 auto;
+    }
+
+    .theme-button.theme-button--mobile-font {
+      font-size: var(--theme-button-mobile-font-size);
+    }
+  }
+{% endstylesheet %}

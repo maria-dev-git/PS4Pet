@@ -120,6 +120,7 @@
       "id": "width_mobile",
       "label": "t:settings.width_mobile",
       "options": [
+        { "value": "pixels", "label": "t:options.pixel" },
         {
           "value": "fit-content",
           "label": "t:options.fit_content"
@@ -141,6 +142,33 @@
       "unit": "%",
       "default": 100,
       "visible_if": "{{ block.settings.width_mobile == \"custom\" }}"
+    },
+    {
+      "type": "range",
+      "id": "mobile_width_pixels",
+      "label": "t:settings.width_mobile",
+      "min": 40,
+      "max": 400,
+      "step": 5,
+      "unit": "px",
+      "default": 150,
+      "visible_if": "{{ block.settings.width_mobile == 'pixels' }}"
+    },
+    {
+      "type": "select",
+      "id": "mobile_font_size",
+      "label": "t:settings.mobile_font_size",
+      "options": [
+        { "value": "", "label": "t:options.default" },
+        { "value": "10px", "label": "t:ps4.button_font_10" },
+        { "value": "12px", "label": "t:ps4.button_font_12" },
+        { "value": "14px", "label": "t:ps4.button_font_14" },
+        { "value": "16px", "label": "t:ps4.button_font_16" },
+        { "value": "18px", "label": "t:ps4.button_font_18" },
+        { "value": "20px", "label": "t:ps4.button_font_20" },
+        { "value": "24px", "label": "t:ps4.button_font_24" }
+      ],
+      "default": ""
     }
   ],
   "presets": [

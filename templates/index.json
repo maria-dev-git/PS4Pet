@@ -67,7 +67,7 @@
                 "letter_spacing": "tight",
                 "case": "none",
                 "wrap": "pretty",
-                "text_color": "#09232e",
+                "text_color": "#00443b",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -94,7 +94,7 @@
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
-                "text_color": "#09232e",
+                "text_color": "#00443b",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -158,7 +158,8 @@
                     "link_text_color": "",
                     "width": "fit-content",
                     "custom_width": 100,
-                    "width_mobile": "fit-content",
+                    "width_mobile": "pixels",
+                    "mobile_width_pixels": 150,
                     "custom_width_mobile": 100
                   },
                   "blocks": {}
@@ -177,7 +178,8 @@
                     "link_text_color": "",
                     "width": "fit-content",
                     "custom_width": 100,
-                    "width_mobile": "fit-content",
+                    "width_mobile": "pixels",
+                    "mobile_width_pixels": 150,
                     "custom_width_mobile": 100
                   },
                   "blocks": {}
@@ -204,7 +206,7 @@
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
-                "text_color": "#09232e",
+                "text_color": "#00443b",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -263,7 +265,7 @@
         "heading_style": "theme",
         "use_bundled_image": false,
         "bundled_image_alt": "Jules wearing a birthday hat and holding her favorite lamb toy",
-        "use_color_scheme": false,
+        "use_color_scheme": true,
         "color_scheme": ""
       }
     },
@@ -348,6 +350,7 @@
       "settings": {
         "heading": "",
         "heading_alignment": "left",
+        "link_text": "",
         "label": "",
         "link": "",
         "background": "#fbf7f3",
@@ -489,6 +492,7 @@
       "settings": {
         "heading": "Shop by Category",
         "heading_alignment": "center",
+        "link_text": "",
         "label": "Explore everything they need",
         "link": "/collections/all",
         "background": "#fbf7f3",
@@ -767,7 +771,7 @@
             "eyebrow": "Auto-reorder",
             "heading": "Never Run Out\nof Their Favorites",
             "text": "<p>Set up easy auto-reorder for the essentials they always need — from food and treats to everyday must-haves. One less thing to worry about, more time for what matters.</p>",
-            "label": "Learn more",
+            "label": "Learn more →",
             "link": "/pages/auto-reorder",
             "background": "#b9d9d7",
             "image_alt": "Green pet treat pouch",
@@ -787,8 +791,8 @@
         "padding-block-end": 22,
         "padding_block_start_mobile": 22,
         "padding_block_end_mobile": 22,
-        "use_color_scheme": false,
-        "color_scheme": ""
+        "use_color_scheme": true,
+        "color_scheme": "scheme-1"
       }
     },
     "ps4_journal": {
@@ -803,6 +807,7 @@
             "label": "",
             "link": "/blogs/jules-journal",
             "background": "#fbf7f3",
+            "image": "shopify://shop_images/pawhaus-cozy-bandana-green.png",
             "image_alt": "Jules, our rescue pup",
             "asset": "jules",
             "symbol": "",
@@ -819,6 +824,7 @@
             "label": "",
             "link": "/blogs/jules-journal",
             "background": "#fbf7f3",
+            "image": "shopify://shop_images/pawhaus-haus-leash-green.png",
             "image_alt": "Green rope toy",
             "asset": "toy",
             "symbol": "",
@@ -835,6 +841,7 @@
             "label": "",
             "link": "/pages/contact",
             "background": "#fbf7f3",
+            "image": "shopify://shop_images/pawhaus-treat-pouch-green.png",
             "image_alt": "",
             "asset": "none",
             "symbol": "",
@@ -848,9 +855,11 @@
         "card_1",
         "card_2"
       ],
+      "name": "Journal & Community",
       "settings": {
         "heading": "Jules Journal & Community",
         "heading_alignment": "left",
+        "link_text": "Stories, Tips, Community, A brighter Tomorrow.",
         "label": "View all",
         "link": "/blogs/jules-journal",
         "background": "#fbf7f3",
@@ -860,7 +869,7 @@
         "padding-block-end": 32,
         "padding_block_start_mobile": 22,
         "padding_block_end_mobile": 32,
-        "use_color_scheme": false,
+        "use_color_scheme": true,
         "color_scheme": ""
       }
     },
@@ -872,8 +881,8 @@
         "label": "Sign up",
         "background": "#f4dcd5",
         "heading_style": "serif",
-        "use_color_scheme": false,
-        "color_scheme": ""
+        "use_color_scheme": true,
+        "color_scheme": "scheme-b40907af-5ea4-416e-8a08-f7633f30eeae"
       }
     },
     "product_list_fa6P9H": {

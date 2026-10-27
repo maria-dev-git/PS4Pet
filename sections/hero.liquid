@@ -570,6 +570,39 @@
   </div>
 </div>
 
+{% style %}
+  {% if section.settings.banner_height_desktop > 0 %}
+    @media screen and (min-width: 750px) {
+      #Hero-{{ section.id }} {
+        min-height: {{ section.settings.banner_height_desktop }}px;
+      }
+
+      #Hero-{{ section.id }}.hero--no-blocks-auto-height .hero__media-grid {
+        position: absolute;
+      }
+    }
+  {% endif %}
+
+  {% if section.settings.banner_height_mobile > 0 %}
+    @media screen and (max-width: 749px) {
+      #Hero-{{ section.id }} {
+        min-height: {{ section.settings.banner_height_mobile }}px;
+      }
+
+      #Hero-{{ section.id }}.hero--no-blocks-auto-height .hero__media-grid {
+        position: absolute;
+      }
+
+      #Hero-{{ section.id }}.hero--ps4 .hero__container {
+        padding-block-end: {{ section.settings.banner_height_mobile }}px;
+      }
+
+      #Hero-{{ section.id }}.hero--ps4 .hero__media-grid {
+        block-size: {{ section.settings.banner_height_mobile }}px;
+      }
+    }
+  {% endif %}
+{% endstyle %}
 {% stylesheet %}
   .hero-wrapper {
     --hero-height-offset: 0px;
@@ -1208,6 +1241,28 @@
       "default": 50,
       "unit": "%",
       "visible_if": "{{ section.settings.section_height == 'custom' }}"
+    },
+    {
+      "type": "range",
+      "id": "banner_height_desktop",
+      "label": "t:ps4.banner_height_desktop",
+      "info": "t:ps4.banner_height_info",
+      "min": 0,
+      "max": 1200,
+      "step": 20,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "banner_height_mobile",
+      "label": "t:ps4.banner_height_mobile",
+      "info": "t:ps4.banner_height_info",
+      "min": 0,
+      "max": 1200,
+      "step": 20,
+      "unit": "px",
+      "default": 0
     },
     {
       "type": "header",

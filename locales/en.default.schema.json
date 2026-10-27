@@ -9,6 +9,17 @@
  */
 {
   "ps4": {
+    "button_font_10": "10px",
+    "button_font_12": "12px",
+    "button_font_14": "14px",
+    "button_font_16": "16px",
+    "button_font_18": "18px",
+    "button_font_20": "20px",
+    "button_font_24": "24px",
+
+    "banner_height_desktop": "Desktop banner image height",
+    "banner_height_mobile": "Mobile banner image height",
+    "banner_height_info": "Set to 0 to use the existing Height setting. Content may make the banner taller.",
     "desktop_padding": "Desktop padding",
     "mobile_padding": "Mobile padding",
     "ps4_design": "Use PS4PETS banner styling",
