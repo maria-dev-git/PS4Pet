@@ -83,6 +83,52 @@
     .ps4-promo-card--top_left .ps4-promo-card__body { grid-row: 3; }
     .ps4-promo-card--bottom_left .ps4-promo-card__artwork,
     .ps4-promo-card--top_left .ps4-promo-card__artwork { justify-self: start; }
+
+    /* Keep the second promotion's copy full width and pair its CTA with artwork. */
+    .ps4-promos__grid > .ps4-promo-card--with-image:nth-child(2) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, var(--ps4-promo-image-width));
+    }
+
+    .ps4-promos__grid > .ps4-promo-card--with-image:nth-child(2) .ps4-promo-card__body {
+      display: contents;
+    }
+
+    .ps4-promos__grid > .ps4-promo-card--with-image:nth-child(2) .ps4-promo-card__copy {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+
+    .ps4-promos__grid > .ps4-promo-card--with-image:nth-child(2) .ps4-promo-card__features {
+      grid-column: 1 / -1;
+      grid-row: 3;
+    }
+
+    .ps4-promos__grid > .ps4-promo-card--with-image:nth-child(2) .ps4-promo-card__button {
+      grid-column: 1;
+      grid-row: 4;
+      align-self: center;
+      justify-self: start;
+      min-inline-size: 0;
+    }
+
+    .ps4-promos__grid > .ps4-promo-card--with-image:nth-child(2) .ps4-promo-card__artwork {
+      grid-column: 2;
+      grid-row: 4;
+      inline-size: 100%;
+      align-self: center;
+    }
+
+    .ps4-promos__grid > .ps4-promo-card--with-image:is(.ps4-promo-card--bottom_left, .ps4-promo-card--top_left):nth-child(2) {
+      grid-template-columns: minmax(0, var(--ps4-promo-image-width)) minmax(0, 1fr);
+    }
+
+    .ps4-promos__grid > .ps4-promo-card--with-image:is(.ps4-promo-card--bottom_left, .ps4-promo-card--top_left):nth-child(2) .ps4-promo-card__button {
+      grid-column: 2;
+    }
+
+    .ps4-promos__grid > .ps4-promo-card--with-image:is(.ps4-promo-card--bottom_left, .ps4-promo-card--top_left):nth-child(2) .ps4-promo-card__artwork {
+      grid-column: 1;
+    }
   }
 {% endstylesheet %}
 {% schema %}

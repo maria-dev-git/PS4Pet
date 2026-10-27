@@ -110,11 +110,11 @@
   .ps4-cards--category h3 { font-size: clamp(0.85rem, 1.25vw, 1.2rem); }
   .ps4-cards--benefit { padding-block: var(--ps4-cards-padding-start, 28px) var(--ps4-cards-padding-end, 28px); background-color: #f2f1Ea; border-radius: 25px;}
   .ps4-cards--benefit .ps4-card-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .ps4-cards--benefit .ps4-card { display: flex; gap: 20px; align-items: center; border-inline-end: 1px solid var(--color-border); border-radius: 0; padding-inline-end: 12px; }
+  .ps4-cards--benefit .ps4-card { display: flex; flex-direction: column; gap: 20px; align-items: center; text-align: center; border-inline-end: 1px solid var(--color-border); border-radius: 0; padding-inline-end: 12px; }
   .ps4-cards--benefit .ps4-card:last-child { border: 0; }
   .ps4-cards--benefit h3 { font-size: 1.1rem; }
   .ps4-cards--benefit .ps4-copy { font-size: 0.85rem; }
-  .ps4-cards--benefit .ps4-card__link { display: flex; align-items: center; gap: inherit; min-inline-size: 0; inline-size: 100%; block-size: auto; }
+  .ps4-cards--benefit .ps4-card__link { display: flex; flex-direction: column; align-items: center; gap: inherit; min-inline-size: 0; inline-size: 100%; block-size: auto; }
   .ps4-symbol { font: 3.5rem Georgia, serif; flex-shrink: 0; }
   .ps4-symbol--image { display: block; inline-size: 1em; block-size: 1em; }
   .ps4-symbol--image img { inline-size: 100%; block-size: 100%; object-fit: contain; }
@@ -196,11 +196,72 @@
       padding-block: var(--ps4-cards-padding-start-mobile, var(--ps4-cards-padding-start, 22px)) var(--ps4-cards-padding-end-mobile, var(--ps4-cards-padding-end, 32px));
     }
     .ps4-section-heading { flex-wrap: wrap; gap: 4px; }
+    .ps4-cards--category .ps4-section-heading {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--gap-sm);
+      text-align: start;
+    }
+
+    .ps4-home .ps4-cards--category .ps4-section-heading > h2 {
+      flex: 0 0 auto;
+      min-inline-size: 0;
+      font-size: 20px;
+      white-space: nowrap;
+      text-wrap: nowrap;
+      text-align: start;
+    }
+
+    .ps4-cards--category .ps4-section-heading > a,
+    .ps4-cards--category .ps4-section-heading__actions {
+      flex: 0 1 auto;
+      min-inline-size: 0;
+      inline-size: auto;
+      margin-inline-start: auto;
+      text-align: end;
+    }
+
+    .ps4-cards--category .ps4-section-heading a {
+      font-size: 0.85rem;
+      white-space: normal;
+      text-wrap: pretty;
+    }
+
+    .ps4-cards--category .ps4-section-heading a span {
+      margin-inline-start: var(--gap-2xs);
+    }
     .ps4-feature,
     .ps4-cards--promo .ps4-card-grid { grid-template-columns: 1fr; }
     .ps4-feature__image { min-block-size: 0; aspect-ratio: 1.3; }
     .ps4-feature__image img { max-block-size: none; }
-    .ps4-cards--category .ps4-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .ps4-cards--category .ps4-card-grid {
+      --ps4-mobile-card-gap: 12px;
+      grid-template-columns: none;
+      grid-auto-flow: column;
+      grid-auto-columns: var(--ps4-mobile-card-width, 160px);
+      gap: var(--ps4-mobile-card-gap);
+      overflow-x: auto;
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 0;
+      padding: 4px;
+    }
+
+    .ps4-cards--category .ps4-card-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .ps4-cards--category .ps4-card-grid > .ps4-card {
+      scroll-snap-align: start;
+    }
+
+    .ps4-cards--category .ps4-card-grid:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
     .ps4-cards--benefit .ps4-card { gap: 10px; border: 0; }
     .ps4-symbol { font-size: 2.3rem; }
     .ps4-cards--benefit h3 { font-size: 1rem; }

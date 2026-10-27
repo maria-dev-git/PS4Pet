@@ -660,6 +660,12 @@
     grid-template-columns: repeat(var(--hero-media-count, 1), 1fr);
   }
 
+  /* Media overlays are enabled only below the desktop breakpoint. */
+  @media screen and (min-width: 750px) {
+    .hero__media-grid > .overlay {
+      display: none;
+    }
+  }
   .hero--auto .hero__media {
     aspect-ratio: var(--hero-media-aspect-ratio);
   }
@@ -839,7 +845,7 @@
   @media (max-width: 749px) {
     .hero--ps4 .hero__container { padding-block-end: 280px; }
     .hero--ps4 .hero__media-grid { inset: auto 0 0; block-size: 280px; }
-    .hero--ps4 .hero__media-grid .overlay--gradient { display: none; }
+    .hero--ps4 .hero__media-grid .overlay--gradient { inset-inline-start: 0; transform: none; }
     .hero--ps4 .hero__content-wrapper h1 { font-size: clamp(2.25rem, 8vw, 3.5rem); }
     .hero--ps4 .hero__content-wrapper :is(.button, .button-secondary, .button-custom) { padding-inline: 18px; }
   }
@@ -1277,7 +1283,8 @@
     {
       "type": "checkbox",
       "id": "toggle_overlay",
-      "label": "t:settings.media_overlay"
+      "label": "t:settings.media_overlay",
+      "info": "t:ps4.hero_overlay_mobile_info"
     },
     {
       "type": "color",

@@ -9,6 +9,8 @@
  */
 {
   "ps4": {
+    "mobile_card_width": "Mobile card width",
+    "hero_overlay_mobile_info": "Applies only on mobile screens below 750px.",
     "button_font_10": "10px",
     "button_font_12": "12px",
     "button_font_14": "14px",

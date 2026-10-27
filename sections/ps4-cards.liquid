@@ -2,13 +2,20 @@
   Editable PS4PETS homepage region. Images selected in the editor replace bundled artwork.
   @example Add this section through the homepage theme editor.
 {% endcomment %}
+{% liquid
+  assign card_image_sizes = blank
+  if section.settings.style == 'category'
+    assign mobile_image_width = section.settings.mobile_card_width | default: 160
+    assign card_image_sizes = '(max-width: 749px) ' | append: mobile_image_width | append: 'px, (max-width: 989px) 25vw, 15vw'
+  endif
+%}
 {% render 'ps4-home-styles' %}
 {% render 'contrast-override', background_color: section.settings.background, section_id: section.id %}
-<section class="ps4-home color-custom-{{ section.id }}" style="--ps4-cards-padding-start: {{ section.settings['padding-block-start'] }}px; --ps4-cards-padding-end: {{ section.settings['padding-block-end'] }}px; --ps4-cards-padding-start-mobile: {{ section.settings.padding_block_start_mobile }}px; --ps4-cards-padding-end-mobile: {{ section.settings.padding_block_end_mobile }}px; --ps4-background: {{ section.settings.background }}; --ps4-heading-font: {% if section.settings.heading_style == 'theme' %}var(--font-heading--family){% else %}Georgia, 'Times New Roman', serif{% endif %};"><div class="ps4-container ps4-cards ps4-cards--{{ section.settings.style }}">{% if section.settings.heading != blank %}<div class="ps4-section-heading ps4-section-heading--{{ section.settings.heading_alignment | default: 'left' }}"><h2>{{ section.settings.heading | escape }}</h2>{% if section.settings.link_text != blank %}<div class="ps4-section-heading__actions"><span class="ps4-section-heading__text">{{ section.settings.link_text | escape }}</span>{% endif %}{% if section.settings.label != blank and section.settings.link != blank %}<a href="{{ section.settings.link }}">{{ section.settings.label | escape }} <span aria-hidden="true">→</span></a>{% endif %}{% if section.settings.link_text != blank %}</div>{% endif %}</div>{% endif %}<div class="ps4-card-grid">{% for block in section.blocks %}{% liquid
+<section class="ps4-home color-custom-{{ section.id }}" style="--ps4-mobile-card-width: {{ section.settings.mobile_card_width | default: 160 }}px; --ps4-cards-padding-start: {{ section.settings['padding-block-start'] }}px; --ps4-cards-padding-end: {{ section.settings['padding-block-end'] }}px; --ps4-cards-padding-start-mobile: {{ section.settings.padding_block_start_mobile }}px; --ps4-cards-padding-end-mobile: {{ section.settings.padding_block_end_mobile }}px; --ps4-background: {{ section.settings.background }}; --ps4-heading-font: {% if section.settings.heading_style == 'theme' %}var(--font-heading--family){% else %}Georgia, 'Times New Roman', serif{% endif %};"><div class="ps4-container ps4-cards ps4-cards--{{ section.settings.style }}">{% if section.settings.heading != blank %}<div class="ps4-section-heading ps4-section-heading--{{ section.settings.heading_alignment | default: 'left' }}"><h2>{{ section.settings.heading | escape }}</h2>{% if section.settings.link_text != blank %}<div class="ps4-section-heading__actions"><span class="ps4-section-heading__text">{{ section.settings.link_text | escape }}</span>{% endif %}{% if section.settings.label != blank and section.settings.link != blank %}<a href="{{ section.settings.link }}">{{ section.settings.label | escape }} <span aria-hidden="true">→</span></a>{% endif %}{% if section.settings.link_text != blank %}</div>{% endif %}</div>{% endif %}<div class="ps4-card-grid"{% if section.settings.style == 'category' %} tabindex="0"{% if section.settings.heading != blank %} role="region" aria-label="{{ section.settings.heading | escape }}"{% endif %}{% endif %}>{% for block in section.blocks %}{% liquid
 assign card_image = block.settings.image | default: block.settings.collection.featured_image | default: block.settings.article.image
 assign card_link = block.settings.link | default: block.settings.collection.url | default: block.settings.article.url
 assign card_heading = block.settings.heading | default: block.settings.collection.title | default: block.settings.article.title
-%}<article class="ps4-card" {{ block.shopify_attributes }} style="--ps4-card-background: {{ block.settings.background }};">{% if section.settings.style == 'journal' %}<div class="ps4-card__content">{% elsif card_link != blank %}<a class="ps4-card__link" href="{{ card_link }}">{% endif %}{% if section.settings.style != 'benefit' %}<div class="ps4-card__image">{% render 'ps4-home-image', image: card_image, asset: block.settings.asset, alt: block.settings.image_alt %}</div>{% elsif block.settings.image != blank %}
+%}<article class="ps4-card" {{ block.shopify_attributes }} style="--ps4-card-background: {{ block.settings.background }};">{% if section.settings.style == 'journal' %}<div class="ps4-card__content">{% elsif card_link != blank %}<a class="ps4-card__link" href="{{ card_link }}">{% endif %}{% if section.settings.style != 'benefit' %}<div class="ps4-card__image">{% render 'ps4-home-image', image: card_image, asset: block.settings.asset, alt: block.settings.image_alt, sizes: card_image_sizes %}</div>{% elsif block.settings.image != blank %}
   {% assign symbol_alt = block.settings.image_alt | default: block.settings.image.alt | default: '' %}
   <span class="ps4-symbol ps4-symbol--image">
     {{ block.settings.image | image_url: width: 112 | image_tag: widths: '40, 56, 80, 112', sizes: '(max-width: 749px) 37px, 56px', loading: 'lazy', alt: symbol_alt }}
@@ -90,6 +97,17 @@ assign card_heading = block.settings.heading | default: block.settings.collectio
         }
       ],
       "default": "category"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_width",
+      "label": "t:ps4.mobile_card_width",
+      "min": 80,
+      "max": 400,
+      "step": 5,
+      "unit": "px",
+      "default": 160,
+      "visible_if": "{{ section.settings.style == 'category' }}"
     },
     {
       "type": "select",
