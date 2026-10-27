@@ -386,7 +386,7 @@
             "image_alt": "Green everyday pet collar",
             "asset": "collar",
             "symbol": "",
-            "collection": "cozy-comfort",
+            "collection": "dog-essentials",
             "article": ""
           }
         },
@@ -418,7 +418,7 @@
             "image_alt": "Green pet treat pouch",
             "asset": "pouch",
             "symbol": "",
-            "collection": "",
+            "collection": "everyday-essential",
             "article": ""
           }
         },
@@ -434,7 +434,7 @@
             "image_alt": "Green everyday pet collar",
             "asset": "collar",
             "symbol": "",
-            "collection": "",
+            "collection": "everyday-essential",
             "article": ""
           }
         },
@@ -450,7 +450,7 @@
             "image_alt": "Green pet treat pouch",
             "asset": "pouch",
             "symbol": "",
-            "collection": "",
+            "collection": "waste-cleaning",
             "article": ""
           }
         },
@@ -466,7 +466,7 @@
             "image_alt": "Green rope toy",
             "asset": "toy",
             "symbol": "",
-            "collection": "",
+            "collection": "toys-enrichment",
             "article": ""
           }
         },
@@ -482,7 +482,7 @@
             "image_alt": "",
             "asset": "none",
             "symbol": "",
-            "collection": "",
+            "collection": "cozy-comfort",
             "article": ""
           }
         }
