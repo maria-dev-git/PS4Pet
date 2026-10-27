@@ -24,6 +24,7 @@
   "eyebrow": "Eyebrow",
   "image": "Image",
   "image_alt": "Image description",
+  "link_text": "Text before link",
   "label": "Button label",
   "link": "Button link",
   "secondary_label": "Second button label",
