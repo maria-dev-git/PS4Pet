@@ -6,6 +6,31 @@
 {%- enddoc -%}
 
 {% stylesheet %}
+  .quick-add--inline {
+    display: block;
+    position: relative;
+    z-index: var(--layer-raised);
+    width: 100%;
+    margin-block-start: auto;
+  }
+
+  .quick-add--inline .quick-add__product-form-component,
+  .quick-add--inline .shopify-product-form {
+    display: block;
+    height: auto;
+  }
+
+  .quick-add--inline .quick-add__inline-button {
+    width: 100%;
+    min-height: var(--button-size-md);
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .quick-add--inline .add-to-cart-icon {
+    display: none;
+  }
+
   /* Quick Add */
   .quick-add {
     --quick-add-offset: var(--padding-sm);

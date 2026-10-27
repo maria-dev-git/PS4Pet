@@ -4,12 +4,22 @@
   @param {object} product - The product object
   @param {string} section_id - The section ID
   @param {object} [block] - The block object
+  @param {boolean} [inline] - Show a full-width button in the card content instead of over the image.
 {%- enddoc -%}
 
 {% liquid
   assign product_form_id = 'QuickAdd-ProductForm-' | append: product.id | append: '-' | append: block.id
   assign add_to_cart_text = 'actions.add' | t
   assign choose_options_text = 'actions.choose' | t
+  assign button_class = 'quick-add__button'
+  if inline
+    assign button_class = 'quick-add__inline-button'
+    assign add_to_cart_text = 'actions.add_to_cart' | t
+    assign choose_options_text = add_to_cart_text
+    unless product.available
+      assign add_to_cart_text = 'products.product.sold_out' | t
+    endunless
+  endif
   # Logic to determine which variant to use (matching swatch selection logic from product-card)
   assign variant = product.selected_or_first_available_variant
 
@@ -54,6 +64,14 @@
     assign render_add = false
     assign render_choose = true
   endif
+
+  if inline and product.available == false
+    assign initial_button = 'add'
+    assign render_add = true
+    assign render_choose = false
+  endif
+
+  assign add_button_class = button_class | append: ' quick-add__button--add add-to-cart-button'
 %}
 
 {% render 'fly-to-cart-styles' %}
@@ -78,9 +96,9 @@
   quick-add modal via quick-add-component/handleClick - so it lives outside the form.
 {% endcomment %}
 <quick-add-component
-  class="quick-add custom-color-quick-add"
+  class="{% if inline %}quick-add--inline{% else %}quick-add custom-color-quick-add{% endif %}"
   ref="quickAdd"
-  data-product-title="{{ product.title }}"
+  data-product-title="{{ product.title | escape }}"
   data-product-id="{{ product.id }}"
   data-quick-add-button="{{ initial_button }}"
   data-product-options-count="{{ product.options.size }}"
@@ -118,7 +136,7 @@
         >
         {% render 'add-to-cart-button',
           add_to_cart_text: add_to_cart_text,
-          class: 'quick-add__button quick-add__button--add add-to-cart-button',
+          class: add_button_class,
           can_add_to_cart: can_add_to_cart,
           show_icon: true,
           product: product
@@ -129,7 +147,8 @@
 
   {% if render_choose %}
     <button
-      class="button quick-add__button quick-add__button--choose add-to-cart-button"
+      class="button {{ button_class }} quick-add__button--choose add-to-cart-button"
+      type="button"
       name="add"
       on:click="quick-add-component/handleClick"
     >

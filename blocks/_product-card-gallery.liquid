@@ -26,9 +26,11 @@
         </div>
       </div>
     {%- endif -%}
-    {% if product.available and settings.quick_add or settings.mobile_quick_add %}
-      {% render 'quick-add', product: product, section_id: section.id %}
-    {% endif %}
+    {% unless block.settings.show_quick_add == false %}
+      {% if product.available and settings.quick_add or settings.mobile_quick_add %}
+        {% render 'quick-add', product: product, section_id: section.id %}
+      {% endif %}
+    {% endunless %}
   {% endunless %}
 {% endcapture %}
 
@@ -51,6 +53,12 @@
   "name": "t:names.product_image",
   "tag": null,
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_quick_add",
+      "label": "t:settings.quick_add",
+      "default": true
+    },
     {
       "type": "paragraph",
       "content": "t:content.resource_reference_product_media"

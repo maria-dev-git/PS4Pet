@@ -7,6 +7,18 @@
 {%- enddoc -%}
 
 {% stylesheet %}
+  collection-component .main-collection-grid [ref='productTitleLink'] [role='heading'] {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    min-block-size: 2lh;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+
   .product-grid__card.product-grid__card {
     display: flex;
     flex-flow: column nowrap;

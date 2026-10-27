@@ -41,7 +41,7 @@
             "large_first_image": false,
             "icons_style": "arrow",
             "slideshow_controls_style": "thumbnails",
-            "slideshow_mobile_controls_style": "dots",
+            "slideshow_mobile_controls_style": "thumbnails",
             "thumbnail_position": "bottom",
             "thumbnail_width": 120,
             "thumbnail_radius": 10,
@@ -388,11 +388,11 @@
                   "type": "info-card",
                   "name": "t:names.image_with_text",
                   "settings": {
-                    "image": "shopify://shop_images/paw-security.webp",
+                    "image": "shopify://shop_images/Minimalist_Green_Delivery_Truck_Icon_3cfe1bc6-4488-414b-84a7-9b7ccf1dd942.webp",
                     "heading": "Shipping & Returns",
                     "text": "<p>Details about shipping times and our return policy will appear here.</p>",
                     "image_width": 56,
-                    "background_color": "#f2f1ea",
+                    "background_color": "#e5e9dc",
                     "text_color": "#00443b",
                     "corner_radius": 12,
                     "padding": 16,
@@ -413,10 +413,10 @@
                   "name": "t:names.image_with_text",
                   "settings": {
                     "image": "shopify://shop_images/paw-security.webp",
-                    "heading": "Shipping & Returns",
-                    "text": "<p>Details about shipping times and our return policy will appear here.</p>",
+                    "heading": "Pet Safety First",
+                    "text": "<p>Always ensure a proper fit and supervise your pet while using this product.</p>",
                     "image_width": 56,
-                    "background_color": "#f2f1ea",
+                    "background_color": "#e5e9dc",
                     "text_color": "#00443b",
                     "corner_radius": 12,
                     "padding": 16,
@@ -1107,8 +1107,8 @@
       "name": "t:names.icons_with_text",
       "settings": {
         "content_direction": "row",
-        "mobile_columns": "2",
         "vertical_on_mobile": true,
+        "mobile_columns": "2",
         "horizontal_alignment": "flex-start",
         "vertical_alignment": "center",
         "align_baseline": false,
@@ -1136,7 +1136,10 @@
         "use_color_scheme": true,
         "color_scheme": "",
         "item_dividers": true,
-        "item_divider_color": "{{ settings.color_palette.color2 }}"
+        "item_divider_color": "{{ settings.color_palette.color2 }}",
+        "three_part_layout": false,
+        "left_image_width": 40,
+        "right_image_width": 15
       }
     },
     "section_iwLWLE": {
@@ -1449,6 +1452,7 @@
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
+        "mobile_columns": "1",
         "horizontal_alignment": "flex-start",
         "vertical_alignment": "center",
         "align_baseline": false,
@@ -1476,7 +1480,10 @@
         "use_color_scheme": true,
         "color_scheme": "",
         "item_dividers": false,
-        "item_divider_color": "{{ settings.color_palette.color2 }}"
+        "item_divider_color": "{{ settings.color_palette.color2 }}",
+        "three_part_layout": false,
+        "left_image_width": 40,
+        "right_image_width": 15
       }
     },
     "section_f6ggXY": {
@@ -1485,6 +1492,7 @@
         "image_WJCaCg": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/jules-portrait_66fe9c3c-ba9b-4c97-9b84-1b08da50839a.jpg",
             "link": "",
             "image_ratio": "landscape",
             "width": "fill",
@@ -1543,6 +1551,32 @@
             "padding-inline-end": 0
           },
           "blocks": {
+            "mission_eyebrow": {
+              "type": "text",
+              "settings": {
+                "text": "<p>OUR MISSION</p>",
+                "width": "fit-content",
+                "max_width": "narrow",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "0.75rem",
+                "font_size_mobile": "",
+                "line_height": "normal",
+                "letter_spacing": "loose",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "text_AjMLP7": {
               "type": "text",
               "name": "t:names.heading",
@@ -1595,32 +1629,6 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
-            },
-            "mission_eyebrow": {
-              "type": "text",
-              "settings": {
-                "text": "<p>OUR MISSION</p>",
-                "width": "fit-content",
-                "max_width": "narrow",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-body--family)",
-                "font_size": "0.75rem",
-                "font_size_mobile": "",
-                "line_height": "normal",
-                "letter_spacing": "loose",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
             }
           },
           "block_order": [
@@ -1638,6 +1646,7 @@
       "settings": {
         "content_direction": "row",
         "vertical_on_mobile": true,
+        "mobile_columns": "1",
         "horizontal_alignment": "flex-start",
         "vertical_alignment": "center",
         "align_baseline": false,
@@ -1648,7 +1657,7 @@
         "section_height": "",
         "section_height_custom": 50,
         "background_media": "none",
-        "background_color": "#E5E9DC",
+        "background_color": "#e5e9dc",
         "video_position": "cover",
         "background_image_position": "cover",
         "toggle_overlay": false,
@@ -1662,12 +1671,13 @@
         "border_radius": 16,
         "padding-block-start": 16,
         "padding-block-end": 16,
-        "use_color_scheme": false,
-        "color_scheme": "",
+        "use_color_scheme": true,
+        "color_scheme": "scheme-6f294b19-1bab-497b-b38b-2db6a76a0e14",
         "item_dividers": false,
         "item_divider_color": "{{ settings.color_palette.color2 }}",
         "three_part_layout": true,
         "left_image_width": 40,
+        "right_image": "shopify://shop_images/Sage_Green_Paw_Print_Icon_97b87a70-78fa-47dd-a238-f11f12f2e188.webp",
         "right_image_width": 15
       }
     },
@@ -1678,14 +1688,14 @@
           "type": "text",
           "name": "t:names.header",
           "settings": {
-            "text": "<h3>You may also like </h3>",
+            "text": "<h3>You may also like&nbsp;</h3>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
-            "type_preset": "h4",
+            "type_preset": "custom",
             "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "font_size_mobile": "",
+            "font_size": "1.5rem",
+            "font_size_mobile": "1.25rem",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "none",
@@ -1799,9 +1809,10 @@
       "name": "t:names.product_recommendations",
       "settings": {
         "product": "{{ closest.product }}",
+        "fallback_image": "shopify://shop_images/pawhaus-haus-leash-green.png",
         "recommendation_type": "related",
         "layout_type": "grid",
-        "carousel_on_mobile": false,
+        "carousel_on_mobile": true,
         "max_products": 4,
         "columns": 4,
         "mobile_columns": "2",
@@ -1814,8 +1825,8 @@
         "background_color": "{{ settings.color_palette.background }}",
         "padding-block-start": 48,
         "padding-block-end": 48,
-        "use_color_scheme": false,
-        "color_scheme": ""
+        "use_color_scheme": true,
+        "color_scheme": "scheme-1"
       }
     }
   },

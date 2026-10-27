@@ -134,6 +134,7 @@
             "card-gallery": {
               "type": "_product-card-gallery",
               "settings": {
+                "show_quick_add": false,
                 "image_ratio": "adapt",
                 "border": "none",
                 "border_width": 1,
@@ -170,6 +171,21 @@
               },
               "blocks": {}
             },
+            "color_swatches": {
+              "type": "swatches",
+              "settings": {
+                "product_swatches_alignment": "flex-start",
+                "product_swatches_alignment_mobile": "flex-start",
+                "product_swatches_padding_top": 0,
+                "product_swatches_padding_bottom": 0,
+                "product_swatches_padding_left": 0,
+                "product_swatches_padding_right": 0
+              }
+            },
+            "card_add_to_cart": {
+              "type": "product-card-quick-add",
+              "settings": {}
+            },
             "price_EzJzMm": {
               "type": "price",
               "settings": {
@@ -195,7 +211,9 @@
           "block_order": [
             "card-gallery",
             "product_title_4nY4eT",
-            "price_EzJzMm"
+            "color_swatches",
+            "price_EzJzMm",
+            "card_add_to_cart"
           ]
         }
       },

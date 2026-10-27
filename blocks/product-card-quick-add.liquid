@@ -1,0 +1,26 @@
+{% doc %}
+  Renders the card's full-width cart action, using the existing option picker when required.
+  @example
+  <!-- Add after the swatches in a product card. -->
+{% enddoc %}
+
+<div class="product-card__cart-action" {{ block.shopify_attributes }}>
+  {% if closest.product != blank %}
+    {% render 'quick-add', product: closest.product, section_id: section.id, block: block, inline: true %}
+  {% endif %}
+</div>
+
+{% stylesheet %}
+  .product-card__cart-action {
+    width: 100%;
+    margin-block-start: auto;
+    padding-block-start: var(--padding-xs);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.add_to_cart",
+  "tag": null
+}
+{% endschema %}
