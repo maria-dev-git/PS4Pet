@@ -59,7 +59,7 @@
                 "width": "100%",
                 "max_width": "none",
                 "alignment": "left",
-                "type_preset": "custom",
+                "type_preset": "h1",
                 "font": "var(--font-heading--family)",
                 "font_size": "4.5rem",
                 "font_size_mobile": "1.5rem",
@@ -82,9 +82,9 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>For Pets. For Families. For Those Still Waiting for Theirs.</p>",
+                "text": "<p>For Pets. For Families.<br/>For Those Still Waiting for Theirs.</p>",
                 "width": "100%",
-                "max_width": "none",
+                "max_width": "narrow",
                 "alignment": "left",
                 "type_preset": "custom",
                 "font": "var(--font-body--family)",
@@ -159,8 +159,9 @@
                     "width": "fit-content",
                     "custom_width": 100,
                     "width_mobile": "pixels",
-                    "mobile_width_pixels": 150,
-                    "custom_width_mobile": 100
+                    "custom_width_mobile": 100,
+                    "mobile_width_pixels": 135,
+                    "mobile_font_size": "12px"
                   },
                   "blocks": {}
                 },
@@ -179,8 +180,9 @@
                     "width": "fit-content",
                     "custom_width": 100,
                     "width_mobile": "pixels",
-                    "mobile_width_pixels": 150,
-                    "custom_width_mobile": 100
+                    "custom_width_mobile": 100,
+                    "mobile_width_pixels": 135,
+                    "mobile_font_size": "12px"
                   },
                   "blocks": {}
                 }
@@ -194,14 +196,14 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>PETS TODAY. A BRIGHTER TOMORROW. ♡</p>",
+                "text": "<p>PETS TODAY. A BRIGHTER TOMORROW.&nbsp;</p>",
                 "width": "100%",
                 "max_width": "none",
                 "alignment": "left",
                 "type_preset": "custom",
                 "font": "var(--font-body--family)",
                 "font_size": "0.75rem",
-                "font_size_mobile": "",
+                "font_size_mobile": "0.625rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -232,12 +234,12 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
-        "image_1": "shopify://shop_images/hero-banner-1.png",
+        "image_1": "shopify://shop_images/hero-banner-1.webp",
         "media_type_2": "image",
         "stack_media_on_mobile": true,
-        "custom_mobile_media": false,
+        "custom_mobile_media": true,
         "media_type_1_mobile": "image",
-        "image_1_mobile": "shopify://shop_images/hero-banner-1.png",
+        "image_1_mobile": "shopify://shop_images/herobanner-mobile.webp",
         "media_type_2_mobile": "image",
         "link": "",
         "open_in_new_tab": false,
@@ -252,9 +254,11 @@
         "section_width": "page-width",
         "section_height": "large",
         "section_height_custom": 50,
+        "banner_height_desktop": 0,
+        "banner_height_mobile": 300,
         "background_color": "#fbf7f3",
-        "toggle_overlay": false,
-        "overlay_color": "#ffffff",
+        "toggle_overlay": true,
+        "overlay_color": "#fbf7f3",
         "overlay_style": "gradient",
         "gradient_direction": "to right",
         "blurred_reflection": false,
@@ -355,6 +359,9 @@
         "link": "",
         "background": "#fbf7f3",
         "style": "benefit",
+        "mobile_card_width": 160,
+        "mobile_card_gap": 18,
+        "mobile_card_padding_block": 0,
         "heading_style": "serif",
         "padding-block-start": 16,
         "padding-block-end": 16,
@@ -489,6 +496,7 @@
         "card_5",
         "card_6"
       ],
+      "name": "Shop by Category",
       "settings": {
         "heading": "Shop by Category",
         "heading_alignment": "center",
@@ -497,11 +505,14 @@
         "link": "/collections/all",
         "background": "#fbf7f3",
         "style": "category",
+        "mobile_card_width": 200,
+        "mobile_card_gap": 18,
+        "mobile_card_padding_block": 0,
         "heading_style": "serif",
         "padding-block-start": 22,
         "padding-block-end": 32,
-        "padding_block_start_mobile": 22,
-        "padding_block_end_mobile": 32,
+        "padding_block_start_mobile": 10,
+        "padding_block_end_mobile": 10,
         "use_color_scheme": true,
         "color_scheme": ""
       }
@@ -558,7 +569,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Jules - Rescue. Family. Forever.</h2>",
+                "text": "<h2>Jules - Rescue, Family, Forever</h2>",
                 "width": "100%",
                 "max_width": "none",
                 "alignment": "left",
@@ -660,7 +671,9 @@
                     "width": "fit-content",
                     "custom_width": 100,
                     "width_mobile": "fit-content",
-                    "custom_width_mobile": 100
+                    "custom_width_mobile": 100,
+                    "mobile_width_pixels": 150,
+                    "mobile_font_size": ""
                   },
                   "blocks": {}
                 },
@@ -864,11 +877,14 @@
         "link": "/blogs/jules-journal",
         "background": "#fbf7f3",
         "style": "journal",
+        "mobile_card_width": 160,
+        "mobile_card_gap": 0,
+        "mobile_card_padding_block": 10,
         "heading_style": "serif",
         "padding-block-start": 22,
-        "padding-block-end": 32,
-        "padding_block_start_mobile": 22,
-        "padding_block_end_mobile": 32,
+        "padding-block-end": 22,
+        "padding_block_start_mobile": 20,
+        "padding_block_end_mobile": 20,
         "use_color_scheme": true,
         "color_scheme": ""
       }
@@ -880,6 +896,7 @@
         "text": "<p>Be the first to know about pet updates, Jules Journal, offers, birthdays/community news.</p>",
         "label": "Sign up",
         "background": "#f4dcd5",
+        "input_background": "#ffffff",
         "heading_style": "serif",
         "use_color_scheme": true,
         "color_scheme": "scheme-b40907af-5ea4-416e-8a08-f7633f30eeae"

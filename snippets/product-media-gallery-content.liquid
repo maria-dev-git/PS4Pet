@@ -991,6 +991,14 @@
   /*
    * Product media gallery slideshow context styles
    */
+  media-gallery :where(:not(.dialog-zoomed-gallery)) > .product-media-container {
+    border-radius: var(--media-radius);
+  }
+
+  media-gallery :where(:not(.dialog-zoomed-gallery)) > .product-media-container .product-media__image {
+    border-radius: var(--media-radius);
+  }
+
   .product-media-gallery__slideshow--single-media slideshow-container {
     @media screen and (max-width: 749px) {
       grid-area: unset;
@@ -1025,7 +1033,6 @@
         display: grid;
         grid-template:
           'container controls' auto
-          'arrows controls' min-content
           / 1fr auto;
       }
 
@@ -1033,7 +1040,6 @@
         display: grid;
         grid-template:
           'controls container' auto
-          'controls arrows' min-content
           / auto 1fr;
       }
 
@@ -1041,10 +1047,24 @@
         order: -1;
       }
     }
+
+    .media-gallery--carousel .slideshow-controls__thumbnail {
+      width: var(--thumbnail-width);
+      flex-shrink: 0;
+    }
+  }
+
+  /* Anchor navigation to the main media, independently of thumbnail placement. */
+  .media-gallery--carousel slideshow-container > slideshow-arrows {
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: var(--padding-sm);
   }
 
   .media-gallery--carousel slideshow-arrows .slideshow-control {
-    padding-inline: 0 var(--padding-md);
+    padding-inline: var(--padding-xs);
     opacity: 1;
   }
 

@@ -15,7 +15,17 @@
   }
 
   .variant-picker__form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+    align-items: start;
+    gap: var(--gap-lg);
     width: 100%;
+  }
+
+  .variant-picker__form > .variant-option {
+    width: auto;
+    min-width: 0;
+    margin-block-start: 0;
   }
 
   .variant-picker[data-shopify-visual-preview] {
@@ -114,7 +124,7 @@
   }
 
   .variant-option + .variant-option {
-    margin-top: var(--padding-lg);
+    margin-top: 0; /*var(--padding-lg);*/
   }
 
   .variant-option--swatches {
@@ -365,6 +375,12 @@
     border-color: var(--color-foreground);
     outline: var(--focus-outline-width) solid var(--color-foreground);
     outline-offset: var(--focus-outline-offset);
+  }
+
+  .variant-picker .variant-option__button-label:not(.variant-option__button-label--has-swatch) {
+    aspect-ratio: 1;
+    min-height: auto;
+    padding: var(--padding-xs);
   }
 
   .variant-option__button-label--has-swatch {
