@@ -2651,7 +2651,7 @@
         "id": "variant_button_border_width",
         "min": 0,
         "max": 4,
-        "step": 1,
+        "step": 0.5,
         "unit": "px",
         "label": "t:settings.border_width",
         "default": 1

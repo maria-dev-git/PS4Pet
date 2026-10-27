@@ -453,7 +453,8 @@
       slideshow_arrows: slideshow_arrows,
       arrows_position: icons_position,
       animate_arrows: animate_arrows,
-      controls: controls
+      controls: controls,
+      attributes: 'loop-swipes'
     %}
 
     {% if media_presentation == 'grid' %}
@@ -891,12 +892,22 @@
 
   /* Mobile thumbnails styling */
   @media screen and (max-width: 749px) {
-    .media-gallery__mobile-controls[thumbnails] {
-      --thumbnail-width: 44px;
+    media-gallery slideshow-controls[thumbnails]:not(.mobile\:hidden) {
+      width: 100%;
+      min-width: 0;
     }
 
-    .media-gallery__mobile-controls[thumbnails] .slideshow-controls__thumbnail {
-      width: var(--thumbnail-width);
+    media-gallery slideshow-controls[thumbnails]:not(.mobile\:hidden) .slideshow-controls__thumbnails {
+      flex: 0 0 100%;
+      width: 100%;
+      padding-inline: var(--focus-outline-offset);
+      margin-inline: 0;
+    }
+
+    media-gallery slideshow-controls[thumbnails]:not(.mobile\:hidden) .slideshow-controls__thumbnail {
+      flex: 0 0 calc((100% - var(--gap-xs) * 3) / 4);
+      width: calc((100% - var(--gap-xs) * 3) / 4);
+      min-width: 0;
       height: auto;
     }
   }

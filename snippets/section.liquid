@@ -66,6 +66,8 @@
         layout-panel-flex
         layout-panel-flex--{{ section.settings.content_direction }}
         section-content-wrapper
+        {% if section.settings.content_direction == 'row' and section.settings.mobile_columns == '2' and section.settings.three_part_layout != true %} section-content-wrapper--mobile-two-columns{% endif %}
+        {% if section.settings.three_part_layout %} section-content-wrapper--image-text-art{% endif %}
         {% if section.settings.item_dividers %} section-content-wrapper--item-dividers{% endif %}
         {% if section.settings.vertical_on_mobile %} mobile-column{% endif %}
       "
@@ -74,15 +76,56 @@
         {% render 'spacing-style', settings: section.settings %}
         --item-divider-color: {{ section.settings.item_divider_color | default: 'var(--color-border)' }};
         --item-divider-offset: calc({{ section.settings.gap }}px / -2);
+        --section-left-image-width: {{ section.settings.left_image_width }}%;
+        --section-right-image-width: {{ section.settings.right_image_width }}%;
       "
       data-testid="section-content"
     >
       {{ children }}
+      {% if section.settings.three_part_layout and section.settings.right_image != blank %}
+        {% assign right_image_sizes = section.settings.right_image_width | append: 'vw' %}
+        <div class="section-content-wrapper__art">
+          {{ section.settings.right_image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '120, 240, 400, 600, 800', sizes: right_image_sizes }}
+        </div>
+      {% endif %}
     </div>
   </div>
 </div>
 
 {% stylesheet %}
+  .section-content-wrapper--image-text-art {
+    display: grid;
+    grid-template-columns: minmax(0, var(--section-left-image-width)) minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .section-content-wrapper--image-text-art:has(> .section-content-wrapper__art) {
+    grid-template-columns: minmax(0, var(--section-left-image-width)) minmax(0, 1fr) minmax(0, var(--section-right-image-width));
+  }
+
+  .section-content-wrapper--image-text-art > :is(.image-block, .group-block) {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .section-content-wrapper__art img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-content-wrapper--image-text-art,
+    .section-content-wrapper--image-text-art:has(> .section-content-wrapper__art) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .section-content-wrapper__art {
+      width: var(--section-right-image-width);
+      justify-self: end;
+    }
+  }
+
   .section-content-wrapper--item-dividers > .group-block {
     position: relative;
   }
@@ -109,6 +152,24 @@
       inset-inline: 0;
       border-inline-start: 0;
       border-block-start: 1px solid var(--item-divider-color);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-content-wrapper--mobile-two-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
+    .section-content-wrapper--mobile-two-columns > .group-block {
+      min-width: 0;
+      width: 100%;
+    }
+
+    .section-content-wrapper--mobile-two-columns.section-content-wrapper--item-dividers
+      > .group-block + .group-block::before {
+      content: none;
     }
   }
 

@@ -108,4 +108,18 @@
   .quantity-selector input[type='number'] {
     appearance: textfield;
   }
+
+  @media screen and (max-width: 749px) {
+    .product-details .quantity-selector {
+      --quantity-selector-width: 120px;
+
+      flex: 0 0 var(--quantity-selector-width);
+      inline-size: var(--quantity-selector-width);
+    }
+
+    .product-details .quantity-selector input[type='number'] {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+  }
 {% endstylesheet %}

@@ -63,6 +63,17 @@
     },
     {
       "type": "select",
+      "id": "mobile_columns",
+      "label": "t:settings.mobile_columns",
+      "options": [
+        { "value": "1", "label": "t:options.one_number" },
+        { "value": "2", "label": "t:options.two_number" }
+      ],
+      "default": "1",
+      "visible_if": "{{ section.settings.content_direction == 'row' }}"
+    },
+    {
+      "type": "select",
       "id": "horizontal_alignment",
       "label": "t:settings.alignment",
       "options": [
@@ -469,6 +480,54 @@
       "label": "t:settings.divider_color",
       "default": "{{ settings.color_palette.color2 }}",
       "visible_if": "{{ section.settings.item_dividers }}"
+    },
+    {
+      "type": "header",
+      "content": "t:names.image_with_text"
+    },
+    {
+      "type": "checkbox",
+      "id": "three_part_layout",
+      "label": "t:names.image_with_text",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:options.left",
+      "visible_if": "{{ section.settings.three_part_layout }}"
+    },
+    {
+      "type": "range",
+      "id": "left_image_width",
+      "label": "t:settings.width",
+      "min": 20,
+      "max": 50,
+      "step": 1,
+      "unit": "%",
+      "default": 40,
+      "visible_if": "{{ section.settings.three_part_layout }}"
+    },
+    {
+      "type": "header",
+      "content": "t:options.right",
+      "visible_if": "{{ section.settings.three_part_layout }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "t:settings.image",
+      "visible_if": "{{ section.settings.three_part_layout }}"
+    },
+    {
+      "type": "range",
+      "id": "right_image_width",
+      "label": "t:settings.width",
+      "min": 5,
+      "max": 20,
+      "step": 1,
+      "unit": "%",
+      "default": 15,
+      "visible_if": "{{ section.settings.three_part_layout }}"
     }
   ],
   "presets": [

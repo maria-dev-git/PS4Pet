@@ -149,6 +149,9 @@ export class Slideshow extends Component {
     if (this.#scroll) {
       const { scroller } = this.refs;
       scroller.removeEventListener('mousedown', this.#handleMouseDown);
+      scroller.removeEventListener('touchstart', this.#handleLoopTouchStart);
+      scroller.removeEventListener('touchend', this.#handleLoopTouchEnd);
+      this.#loopTouch = null;
       this.#scroll.destroy();
     }
 
@@ -552,6 +555,8 @@ export class Slideshow extends Component {
     });
 
     scroller.addEventListener('mousedown', this.#handleMouseDown);
+    scroller.addEventListener('touchstart', this.#handleLoopTouchStart, { passive: true });
+    scroller.addEventListener('touchend', this.#handleLoopTouchEnd, { passive: true });
 
     this.addEventListener('mouseenter', this.suspend);
     this.addEventListener('mouseleave', this.resume);
@@ -666,6 +671,33 @@ export class Slideshow extends Component {
 
   #dragging = false;
 
+  /** @type {{ x: number, y: number, index: number } | null} */
+  #loopTouch = null;
+
+  /** @param {TouchEvent} event */
+  #handleLoopTouchStart = (event) => {
+    this.#loopTouch = null;
+    if (!this.infinite || !this.hasAttribute('loop-swipes') || this.disabled || event.touches.length !== 1) return;
+    if (event.target instanceof Element && event.target.closest('model-viewer')) return;
+    const touch = event.touches[0];
+    if (touch) this.#loopTouch = { x: touch.clientX, y: touch.clientY, index: this.current };
+  };
+
+  /** @param {TouchEvent} event */
+  #handleLoopTouchEnd = (event) => {
+    const start = this.#loopTouch;
+    this.#loopTouch = null;
+    const touch = event.changedTouches[0];
+    const slides = this.slides;
+    if (!start || !touch || !slides || slides.length < 2 || this.disabled) return;
+    const delta = start.x - touch.clientX;
+    if (Math.abs(delta) < 40 || Math.abs(delta) <= Math.abs(start.y - touch.clientY)) return;
+    const direction = Math.sign(delta) * (getComputedStyle(this).direction === 'rtl' ? -1 : 1);
+    if ((start.index === 0 && direction < 0) || (start.index === slides.length - 1 && direction > 0)) {
+      void this.select(start.index + direction, undefined).catch(() => {});
+    }
+  };
+
   /**
    * Handles the 'mousedown' event to start dragging slides.
    * @param {MouseEvent} event - The mousedown event.
@@ -687,6 +719,7 @@ export class Slideshow extends Component {
     // Store initial position but don't start handling yet
     const { axis } = this.#scroll;
     const startPosition = event[axis];
+    const startIndex = this.current;
 
     const controller = new AbortController();
     const { signal } = controller;
@@ -762,6 +795,23 @@ export class Slideshow extends Component {
       const next = this.#sync();
 
       const modifier = current !== next || Math.abs(velocity) < 10 || distanceTravelled < 10 ? 0 : direction;
+      const loopDelta = (startPosition - event[axis]) * (getComputedStyle(this).direction === 'rtl' ? -1 : 1);
+      const loopDirection = Math.sign(loopDelta);
+      const wrapDrag =
+        Math.abs(loopDelta) >= 40 &&
+        ((startIndex === 0 && loopDirection < 0) || (startIndex === slides.length - 1 && loopDirection > 0));
+      const requestedIndex = wrapDrag ? startIndex + loopDirection : next + modifier;
+      if (this.infinite && this.hasAttribute('loop-swipes') && (requestedIndex < 0 || requestedIndex >= slides.length)) {
+        this.removeAttribute('dragging');
+        this.releasePointerCapture(event.pointerId);
+        try {
+          await this.select(requestedIndex);
+        } finally {
+          this.#scroll.snap = true;
+          this.resume();
+        }
+        return;
+      }
       const newIndex = clamp(next + modifier, 0, slides.length - 1);
 
       const newSlide = slides[newIndex];
