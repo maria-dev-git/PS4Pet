@@ -1,0 +1,878 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_jVaWmY": {
+      "type": "hero",
+      "blocks": {
+        "ps4_copy": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 22,
+            "width": "custom",
+            "custom_width": 56,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_YLPk4p": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h1>Everything They Need.<br/>More Love With<br/>Every Order.</h1>",
+                "width": "100%",
+                "max_width": "none",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "4.5rem",
+                "font_size_mobile": "1.5rem",
+                "line_height": "tight",
+                "letter_spacing": "tight",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#09232e",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "ps4_intro": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>For Pets. For Families. For Those Still Waiting for Theirs.</p>",
+                "width": "100%",
+                "max_width": "none",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "1.25rem",
+                "font_size_mobile": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#09232e",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "ps4_buttons": {
+              "type": "group",
+              "settings": {
+                "content_direction": "row",
+                "vertical_on_mobile": false,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 16,
+                "width": "fill",
+                "custom_width": 56,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "button_H9gpTf": {
+                  "type": "button",
+                  "name": "t:names.button",
+                  "settings": {
+                    "label": "SHOP DOGS →",
+                    "link": "/collections/dogs",
+                    "open_in_new_tab": false,
+                    "style_class": "button-custom",
+                    "custom_button_background": "#396e70",
+                    "custom_button_text": "#ffffff",
+                    "custom_button_border": "#396e70",
+                    "link_text_color": "",
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 100
+                  },
+                  "blocks": {}
+                },
+                "ps4_shop_cats": {
+                  "type": "button",
+                  "name": "t:names.button",
+                  "settings": {
+                    "label": "SHOP CATS →",
+                    "link": "/collections/cats",
+                    "open_in_new_tab": false,
+                    "style_class": "button-custom",
+                    "custom_button_background": "#bc7867",
+                    "custom_button_text": "#ffffff",
+                    "custom_button_border": "#bc7867",
+                    "link_text_color": "",
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 100
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "button_H9gpTf",
+                "ps4_shop_cats"
+              ]
+            },
+            "ps4_tagline": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>PETS TODAY. A BRIGHTER TOMORROW. ♡</p>",
+                "width": "100%",
+                "max_width": "none",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "0.75rem",
+                "font_size_mobile": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#09232e",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_YLPk4p",
+            "ps4_intro",
+            "ps4_buttons",
+            "ps4_tagline"
+          ]
+        }
+      },
+      "block_order": [
+        "ps4_copy"
+      ],
+      "name": "t:names.hero",
+      "settings": {
+        "media_type_1": "image",
+        "image_1": "shopify://shop_images/hero-banner-1.png",
+        "media_type_2": "image",
+        "stack_media_on_mobile": true,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "image_1_mobile": "shopify://shop_images/hero-banner-1.png",
+        "media_type_2_mobile": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "space-between",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "flex-end",
+        "gap": 24,
+        "section_width": "page-width",
+        "section_height": "large",
+        "section_height_custom": 50,
+        "background_color": "#fbf7f3",
+        "toggle_overlay": false,
+        "overlay_color": "#ffffff",
+        "overlay_style": "gradient",
+        "gradient_direction": "to right",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 44,
+        "padding-block-end": 44,
+        "ps4_design": false,
+        "heading_style": "theme",
+        "use_bundled_image": false,
+        "bundled_image_alt": "Jules wearing a birthday hat and holding her favorite lamb toy",
+        "use_color_scheme": false,
+        "color_scheme": ""
+      }
+    },
+    "ps4_benefits": {
+      "type": "ps4-cards",
+      "blocks": {
+        "card_0": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Pet Safety First",
+            "text": "<p>Trusted products for happier, healthier pets.</p>",
+            "label": "",
+            "link": "",
+            "background": "#f2f1ea",
+            "image": "shopify://shop_images/paw-security.webp",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "♧",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Everyday Value",
+            "text": "<p>Quality essentials for real life with pets.</p>",
+            "label": "",
+            "link": "",
+            "background": "#f2f1ea",
+            "image": "shopify://shop_images/Minimalist_Teal_Piggy_Bank_Icon_0a79c237-e9fe-4bde-b889-829f155f2da0.webp",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "♡",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Easy Auto-Reorder",
+            "text": "<p>Never run out of their favorites.</p>",
+            "label": "",
+            "link": "",
+            "background": "#f2f1ea",
+            "image": "shopify://shop_images/Isometric_Teal_Cardboard_Box_Icon_8d4eb8ef-0e01-435f-adb9-4fbbc6ad0f9b.webp",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "◇",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Helping Shelter Pets",
+            "text": "<p>Every order supports a brighter tomorrow.</p>",
+            "label": "",
+            "link": "",
+            "background": "#f2f1ea",
+            "image": "shopify://shop_images/Glossy_Blush_Pink_Heart_Icon_1655adcb-e437-47ec-a2c6-7fa9d7fc4b2c.webp",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "♡",
+            "collection": "",
+            "article": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_0",
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_alignment": "left",
+        "label": "",
+        "link": "",
+        "background": "#fbf7f3",
+        "style": "benefit",
+        "heading_style": "serif",
+        "padding-block-start": 16,
+        "padding-block-end": 16,
+        "padding_block_start_mobile": 14,
+        "padding_block_end_mobile": 14,
+        "use_color_scheme": true,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "ps4_categories": {
+      "type": "ps4-cards",
+      "blocks": {
+        "card_0": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Dog Essentials",
+            "text": "",
+            "label": "",
+            "link": "/collections/dogs",
+            "background": "#fbf7f3",
+            "image_alt": "Green everyday pet collar",
+            "asset": "collar",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Cat Essentials",
+            "text": "",
+            "label": "",
+            "link": "/collections/cats",
+            "background": "#fbf7f3",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Treats & Dental",
+            "text": "",
+            "label": "",
+            "link": "/collections/treats-dental",
+            "background": "#fbf7f3",
+            "image_alt": "Green pet treat pouch",
+            "asset": "pouch",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Walking Gear",
+            "text": "",
+            "label": "",
+            "link": "/collections/walking-gear",
+            "background": "#fbf7f3",
+            "image_alt": "Green everyday pet collar",
+            "asset": "collar",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Waste & Cleanup",
+            "text": "",
+            "label": "",
+            "link": "/collections/waste-cleanup",
+            "background": "#fbf7f3",
+            "image_alt": "Green pet treat pouch",
+            "asset": "pouch",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_5": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Toys & Enrichment",
+            "text": "",
+            "label": "",
+            "link": "/collections/toys-enrichment",
+            "background": "#fbf7f3",
+            "image_alt": "Green rope toy",
+            "asset": "toy",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_6": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Personalized Pet Gear",
+            "text": "",
+            "label": "",
+            "link": "/collections/personalized-pet-gear",
+            "background": "#fbf7f3",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_0",
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4",
+        "card_5",
+        "card_6"
+      ],
+      "settings": {
+        "heading": "Shop by Category",
+        "heading_alignment": "center",
+        "label": "Explore everything they need",
+        "link": "/collections/all",
+        "background": "#fbf7f3",
+        "style": "category",
+        "heading_style": "serif",
+        "padding-block-start": 22,
+        "padding-block-end": 32,
+        "padding_block_start_mobile": 22,
+        "padding_block_end_mobile": 32,
+        "use_color_scheme": true,
+        "color_scheme": ""
+      }
+    },
+    "ps4_story": {
+      "type": "ps4-feature",
+      "settings": {
+        "eyebrow": "Meet Jules — the heart behind PS4PETS",
+        "heading": "Jules - Rescue. Family. Forever.",
+        "text": "<p>Jules came into our family as a shelter pup and changed our lives forever. She’s a rescue pit bull, a baseball game regular, and the heart behind PS4PETS. Her story inspired our mission: give pets the things they need while helping shelter animals still waiting for their forever families.</p>",
+        "label": "Meet Jules",
+        "link": "/pages/meet-jules",
+        "background": "#f7e6e1",
+        "image_alt": "Jules, the rescue pup at the heart of PS4PETS",
+        "asset": "jules",
+        "heading_style": "serif",
+        "use_color_scheme": true,
+        "color_scheme": "scheme-b40907af-5ea4-416e-8a08-f7633f30eeae"
+      }
+    },
+    "ps4_promos": {
+      "type": "ps4-cards",
+      "blocks": {
+        "card_0": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Our mission",
+            "heading": "Shop for yours.\nHelp one waiting for theirs.",
+            "text": "<p>We believe every pet deserves someone in their corner. That’s why PS4PETS is built to support pets and the people who love them — while helping shelter animals still waiting for their Forever Families.</p><p>♡ Shop for yours. Help one waiting for theirs.</p><p>♡ Every pet deserves someone in their corner.</p><p>♡ For Pets. For Families. For Those Still Waiting for Theirs.</p>",
+            "label": "Our mission",
+            "link": "/pages/mission",
+            "background": "#e5e9dc",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Auto-reorder",
+            "heading": "Never Run Out\nof Their Favorites",
+            "text": "<p>Set up easy auto-reorder for the essentials they always need — from food and treats to everyday must-haves. One less thing to worry about, more time for what matters.</p>",
+            "label": "Learn more",
+            "link": "/pages/auto-reorder",
+            "background": "#b9d9d7",
+            "image_alt": "Green pet treat pouch",
+            "asset": "pouch",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_0",
+        "card_1"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_alignment": "left",
+        "label": "",
+        "link": "",
+        "background": "#fbf7f3",
+        "style": "promo",
+        "heading_style": "serif",
+        "padding-block-start": 22,
+        "padding-block-end": 32,
+        "padding_block_start_mobile": 22,
+        "padding_block_end_mobile": 32,
+        "use_color_scheme": false,
+        "color_scheme": ""
+      }
+    },
+    "ps4_journal": {
+      "type": "ps4-cards",
+      "blocks": {
+        "card_0": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Official Baseball Pup\nWhere’s Jules?",
+            "text": "<p>From the stands to the snacks, Jules loves a good game. Relive some of our favorite baseball adventures!</p>",
+            "label": "",
+            "link": "/blogs/jules-journal",
+            "background": "#fbf7f3",
+            "image_alt": "Jules, our rescue pup",
+            "asset": "jules",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Pet Care Tips & Happier Lives",
+            "text": "<p>Helpful tips, seasonal advice and real life with pets.</p>",
+            "label": "",
+            "link": "/blogs/jules-journal",
+            "background": "#fbf7f3",
+            "image_alt": "Green rope toy",
+            "asset": "toy",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Share Your Pet Story",
+            "text": "<p>We love celebrating our community! Share your pet’s story and be part of the PS4PETS family.</p>",
+            "label": "",
+            "link": "/pages/contact",
+            "background": "#fbf7f3",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "",
+            "collection": "",
+            "article": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_0",
+        "card_1",
+        "card_2"
+      ],
+      "settings": {
+        "heading": "Jules Journal & Community",
+        "heading_alignment": "left",
+        "label": "View all",
+        "link": "/blogs/jules-journal",
+        "background": "#fbf7f3",
+        "style": "journal",
+        "heading_style": "serif",
+        "padding-block-start": 22,
+        "padding-block-end": 32,
+        "padding_block_start_mobile": 22,
+        "padding_block_end_mobile": 32,
+        "use_color_scheme": false,
+        "color_scheme": ""
+      }
+    },
+    "ps4_newsletter": {
+      "type": "ps4-newsletter",
+      "settings": {
+        "heading": "Join the PS4PETS Family",
+        "text": "<p>Be the first to know about pet updates, Jules Journal, offers, birthdays/community news.</p>",
+        "label": "Sign up",
+        "background": "#f4dcd5",
+        "heading_style": "serif",
+        "use_color_scheme": false,
+        "color_scheme": ""
+      }
+    },
+    "product_list_fa6P9H": {
+      "type": "product-list",
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "name": "t:names.header",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_list_text_YFtzcL": {
+              "type": "_product-list-text",
+              "name": "t:names.collection_title",
+              "settings": {
+                "text": "<h3>{{ closest.collection.title }}</h3>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "font_size_mobile": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_list_button_MWeP9V": {
+              "type": "_product-list-button",
+              "name": "t:names.product_list_button",
+              "settings": {
+                "label": "View all",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "custom_button_background": "{{ settings.color_palette.foreground }}",
+                "custom_button_text": "{{ settings.color_palette.background }}",
+                "custom_button_border": "{{ settings.color_palette.background }}",
+                "link_text_color": "",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_list_text_YFtzcL",
+            "product_list_button_MWeP9V"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 4,
+            "background_color": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_677WP3": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "adapt",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_title_YXxMTj": {
+              "type": "product-title",
+              "name": "t:names.product_title",
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "font_size_mobile": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "price_JQzVV4": {
+              "type": "price",
+              "name": "t:names.product_price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "font_size_mobile": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "text_color": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_card_gallery_677WP3",
+            "product_title_YXxMTj",
+            "price_JQzVV4"
+          ]
+        }
+      },
+      "disabled": true,
+      "name": "t:names.product_list",
+      "settings": {
+        "collection": "all",
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "max_products": 8,
+        "columns": 4,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 8,
+        "rows_gap": 24,
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "horizontal_alignment": "flex-start",
+        "gap": 28,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 48,
+        "padding-block-end": 48,
+        "use_color_scheme": false,
+        "color_scheme": ""
+      }
+    }
+  },
+  "order": [
+    "hero_jVaWmY",
+    "ps4_benefits",
+    "ps4_categories",
+    "ps4_story",
+    "ps4_promos",
+    "ps4_journal",
+    "ps4_newsletter",
+    "product_list_fa6P9H"
+  ]
+}

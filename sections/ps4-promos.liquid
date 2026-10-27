@@ -1,0 +1,195 @@
+{% comment %}
+  Two editable promotions with nested image/text features and positioned artwork.
+  @example The homepage uses this section for the mission and auto-reorder cards.
+{% endcomment %}
+{% render 'ps4-home-styles' %}
+{% render 'contrast-override', background_color: section.settings.background, text_color: section.settings.text_color, section_id: section.id %}
+<section class="ps4-home ps4-home--blocks color-custom-{{ section.id }}" style="--ps4-background: {{ section.settings.background }}; --ps4-heading-font: {% if section.settings.heading_style == 'theme' %}var(--font-heading--family){% else %}Georgia, 'Times New Roman', serif{% endif %}; --ps4-promo-padding-start: {{ section.settings['padding-block-start'] }}px; --ps4-promo-padding-end: {{ section.settings['padding-block-end'] }}px; --ps4-promo-padding-start-mobile: {{ section.settings.padding_block_start_mobile }}px; --ps4-promo-padding-end-mobile: {{ section.settings.padding_block_end_mobile }}px;">
+  <div class="ps4-container ps4-promos">
+    {% if section.settings.heading != blank %}<h2 class="ps4-promos__heading">{{ section.settings.heading | escape }}</h2>{% endif %}
+    <div class="ps4-promos__grid">
+      {% content_for 'block', type: '_ps4-promo-card', id: 'card_0' %}
+      {% content_for 'block', type: '_ps4-promo-card', id: 'card_1' %}
+    </div>
+  </div>
+</section>
+{% render 'section-color-scheme', section: section %}
+{% stylesheet %}
+  .ps4-promos { padding-block: var(--ps4-promo-padding-start) var(--ps4-promo-padding-end); }
+  .ps4-promos__heading { margin-block: 0 var(--margin-lg); }
+  .ps4-promos__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: var(--gap-md); }
+  @media (max-width: 749px) {
+    .ps4-promos { padding-block: var(--ps4-promo-padding-start-mobile) var(--ps4-promo-padding-end-mobile); }
+    .ps4-promos__grid { grid-template-columns: minmax(0, 1fr); }
+  }
+{% endstylesheet %}
+{% schema %}
+{
+  "name": "t:ps4.promo",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:ps4.heading"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "t:ps4.background",
+      "default": "#fbf7f3"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "visible_if": "{{ section.settings.use_color_scheme == false }}"
+    },
+    {
+      "type": "select",
+      "id": "heading_style",
+      "label": "t:ps4.heading_style",
+      "options": [
+        {
+          "value": "serif",
+          "label": "t:ps4.serif"
+        },
+        {
+          "value": "theme",
+          "label": "t:ps4.theme"
+        }
+      ],
+      "default": "serif"
+    },
+    {
+      "type": "header",
+      "content": "t:ps4.desktop_padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "t:ps4.mobile_padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_block_start_mobile",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "padding_block_end_mobile",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "checkbox",
+      "id": "use_color_scheme",
+      "label": "t:settings.use_color_scheme",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1",
+      "visible_if": "{{ section.settings.use_color_scheme }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:ps4.promo",
+      "blocks": {
+        "card_0": {
+          "type": "_ps4-promo-card",
+          "settings": {
+            "eyebrow": "Our mission",
+            "heading": "Shop for yours.\nHelp one waiting for theirs.",
+            "text": "<p>We believe every pet deserves someone in their corner. That’s why PS4PETS is built to support pets and the people who love them — while helping shelter animals still waiting for their Forever Families.</p>",
+            "label": "",
+            "link": "/pages/mission",
+            "background": "#e5e9dc",
+            "image_alt": "",
+            "asset": "none",
+            "layout": "features",
+            "image_position": "bottom_right",
+            "image_width": 42
+          },
+          "static": true,
+          "blocks": {
+            "feature_1": {
+              "type": "_ps4-promo-feature",
+              "settings": {
+                "icon": "paw_print",
+                "text": "<p>Shop for yours. Help one waiting for theirs.</p>"
+              }
+            },
+            "feature_2": {
+              "type": "_ps4-promo-feature",
+              "settings": {
+                "icon": "heart",
+                "text": "<p>Every pet deserves someone in their corner.</p>"
+              }
+            },
+            "feature_3": {
+              "type": "_ps4-promo-feature",
+              "settings": {
+                "icon": "heart",
+                "text": "<p>For Pets. For Families. For Those Still Waiting for Theirs.</p>"
+              }
+            }
+          },
+          "block_order": [
+            "feature_1",
+            "feature_2",
+            "feature_3"
+          ]
+        },
+        "card_1": {
+          "type": "_ps4-promo-card",
+          "settings": {
+            "eyebrow": "Auto-reorder",
+            "heading": "Never Run Out\nof Their Favorites",
+            "text": "<p>Set up easy auto-reorder for the essentials they always need — from food and treats to everyday must-haves. One less thing to worry about, more time for what matters.</p>",
+            "label": "Learn more",
+            "link": "/pages/auto-reorder",
+            "background": "#b9d9d7",
+            "image_alt": "Green pet treat pouch",
+            "asset": "pouch",
+            "layout": "image",
+            "image_position": "bottom_right",
+            "image_width": 42
+          },
+          "static": true
+        }
+      }
+    }
+  ]
+}
+{% endschema %}

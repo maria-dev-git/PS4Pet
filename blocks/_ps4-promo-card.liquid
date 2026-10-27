@@ -1,0 +1,228 @@
+{% doc %}
+  Editable promotion card: full-width caption and heading above copy, features and positioned artwork.
+  Card backgrounds are independent; all card text inherits the section color context.
+  @example
+  {% content_for 'block', type: '_ps4-promo-card', id: 'card_0' %}
+{% enddoc %}
+{% liquid
+  assign has_image = false
+  if block.settings.image != blank or block.settings.asset != 'none' and block.settings.asset != blank
+    assign has_image = true
+  endif
+%}
+{% capture artwork %}
+  {% if block.settings.layout == 'image' and has_image %}
+    <div class="ps4-promo-card__artwork">
+      {% render 'ps4-home-image', image: block.settings.image, asset: block.settings.asset, alt: block.settings.image_alt, sizes: '(min-width: 750px) 24vw, 45vw' %}
+    </div>
+  {% endif %}
+{% endcapture %}
+<article class="ps4-promo-card ps4-promo-card--{{ block.settings.layout }}{% if block.settings.layout == 'image' and has_image %} ps4-promo-card--with-image ps4-promo-card--{{ block.settings.image_position }}{% endif %}" style="--ps4-promo-card-background: {{ block.settings.background }}; --ps4-promo-image-width: {{ block.settings.image_width }}%;" {{ block.shopify_attributes }}>
+  {% if block.settings.eyebrow != blank or block.settings.heading != blank %}
+    <div class="ps4-promo-card__header">
+      {% if block.settings.eyebrow != blank %}<p class="ps4-eyebrow">{{ block.settings.eyebrow | escape }}</p>{% endif %}
+      {% if block.settings.heading != blank %}<h3 class="ps4-promo-card__heading">{{ block.settings.heading | escape }}</h3>{% endif %}
+    </div>
+  {% endif %}
+  {% if block.settings.image_position contains 'top' %}{{ artwork }}{% endif %}
+  <div class="ps4-promo-card__body">
+    {% if block.settings.text != blank %}<div class="ps4-promo-card__copy">{{ block.settings.text }}</div>{% endif %}
+    <div class="ps4-promo-card__features">{% content_for 'blocks' %}</div>
+    {% if block.settings.label != blank and block.settings.link != blank %}
+      <a class="button ps4-promo-card__button" href="{{ block.settings.link }}">{{ block.settings.label | escape }} <span aria-hidden="true">→</span></a>
+    {% endif %}
+  </div>
+  {% unless block.settings.image_position contains 'top' %}{{ artwork }}{% endunless %}
+</article>
+{% stylesheet %}
+  .ps4-promo-card {
+    min-inline-size: 0;
+    color: inherit;
+    background-color: var(--ps4-promo-card-background, var(--color-background));
+    padding: clamp(20px, 3vw, 40px);
+    border-radius: var(--style-border-radius-lg);
+    overflow: hidden;
+  }
+  .ps4-promo-card__header { grid-column: 1 / -1; grid-row: 1; min-inline-size: 0; }
+  .ps4-promo-card__body { min-inline-size: 0; }
+  .ps4-promo-card__heading {
+    margin: 0;
+    color: inherit;
+    font-family: var(--ps4-heading-font, var(--font-heading--family));
+    font-size: var(--font-h2--size);
+    font-weight: var(--font-heading--weight);
+    line-height: var(--font-h2--line-height);
+    letter-spacing: var(--font-h2--letter-spacing);
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+  }
+  .ps4-promo-card__copy { margin-block: var(--margin-sm); font-size: var(--font-paragraph--size); line-height: var(--font-paragraph--line-height); }
+  .ps4-promo-card__copy p { margin-block: var(--margin-xs); }
+  .ps4-promo-card__features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(8px, 1.5vw, 20px); margin-block-start: var(--margin-lg); }
+  .ps4-promo-card__features:empty { display: none; }
+  .ps4-promo-card--with-image { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, var(--ps4-promo-image-width)); gap: var(--gap-sm); align-items: start; }
+  .ps4-promo-card--with-image .ps4-promo-card__body { grid-column: 1; grid-row: 2; }
+  .ps4-promo-card__artwork { grid-column: 2; grid-row: 2; align-self: end; min-inline-size: 0; }
+  .ps4-promo-card__artwork img { inline-size: 100%; block-size: auto; object-fit: contain; }
+  .ps4-promo-card--top_right .ps4-promo-card__artwork,
+  .ps4-promo-card--top_left .ps4-promo-card__artwork { align-self: start; }
+  .ps4-promo-card--bottom_left,
+  .ps4-promo-card--top_left { grid-template-columns: minmax(0, var(--ps4-promo-image-width)) minmax(0, 1fr); }
+  .ps4-promo-card--bottom_left .ps4-promo-card__body,
+  .ps4-promo-card--top_left .ps4-promo-card__body { grid-column: 2; }
+  .ps4-promo-card--bottom_left .ps4-promo-card__artwork,
+  .ps4-promo-card--top_left .ps4-promo-card__artwork { grid-column: 1; }
+  .ps4-promo-card__button { margin-block-start: var(--margin-sm); max-inline-size: 100%; white-space: normal; overflow-wrap: anywhere; }
+  @media (max-width: 749px) {
+    .ps4-promo-card--with-image { grid-template-columns: minmax(0, 1fr); }
+    .ps4-promo-card--with-image .ps4-promo-card__body { grid-column: 1; grid-row: 2; }
+    .ps4-promo-card--with-image .ps4-promo-card__artwork { grid-column: 1; grid-row: 3; inline-size: var(--ps4-promo-image-width); justify-self: end; }
+    .ps4-promo-card--top_right .ps4-promo-card__artwork,
+    .ps4-promo-card--top_left .ps4-promo-card__artwork { grid-row: 2; }
+    .ps4-promo-card--top_right .ps4-promo-card__body,
+    .ps4-promo-card--top_left .ps4-promo-card__body { grid-row: 3; }
+    .ps4-promo-card--bottom_left .ps4-promo-card__artwork,
+    .ps4-promo-card--top_left .ps4-promo-card__artwork { justify-self: start; }
+  }
+{% endstylesheet %}
+{% schema %}
+{
+  "name": "t:ps4.card",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_ps4-promo-feature"
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "t:settings.layout",
+      "options": [
+        {
+          "value": "features",
+          "label": "t:settings.icons"
+        },
+        {
+          "value": "image",
+          "label": "t:options.image"
+        }
+      ],
+      "default": "features"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:ps4.eyebrow"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "t:ps4.heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:ps4.text"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "t:ps4.label"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:ps4.link"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "t:ps4.background",
+      "default": "#fbf7f3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:ps4.image",
+      "visible_if": "{{ block.settings.layout == 'image' }}"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "t:ps4.image_alt",
+      "visible_if": "{{ block.settings.layout == 'image' }}"
+    },
+    {
+      "type": "select",
+      "id": "asset",
+      "label": "t:ps4.asset",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:ps4.none"
+        },
+        {
+          "value": "hero",
+          "label": "t:ps4.hero_asset"
+        },
+        {
+          "value": "jules",
+          "label": "t:ps4.jules_asset"
+        },
+        {
+          "value": "collar",
+          "label": "t:ps4.collar_asset"
+        },
+        {
+          "value": "toy",
+          "label": "t:ps4.toy_asset"
+        },
+        {
+          "value": "pouch",
+          "label": "t:ps4.pouch_asset"
+        }
+      ],
+      "default": "none",
+      "visible_if": "{{ block.settings.layout == 'image' }}"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "t:settings.image_position",
+      "options": [
+        {
+          "value": "bottom_right",
+          "label": "t:options.bottom_right"
+        },
+        {
+          "value": "bottom_left",
+          "label": "t:options.bottom_left"
+        },
+        {
+          "value": "top_right",
+          "label": "t:options.top_right"
+        },
+        {
+          "value": "top_left",
+          "label": "t:options.top_left"
+        }
+      ],
+      "default": "bottom_right",
+      "visible_if": "{{ block.settings.layout == 'image' }}"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "label": "t:settings.width",
+      "min": 25,
+      "max": 55,
+      "step": 1,
+      "unit": "%",
+      "default": 42,
+      "visible_if": "{{ block.settings.layout == 'image' }}"
+    }
+  ]
+}
+{% endschema %}

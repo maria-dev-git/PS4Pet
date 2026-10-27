@@ -617,26 +617,55 @@
       }
     },
     "ps4_promos": {
-      "type": "ps4-cards",
+      "type": "ps4-promos",
       "blocks": {
         "card_0": {
-          "type": "card",
+          "type": "_ps4-promo-card",
           "settings": {
             "eyebrow": "Our mission",
             "heading": "Shop for yours.\nHelp one waiting for theirs.",
-            "text": "<p>We believe every pet deserves someone in their corner. That’s why PS4PETS is built to support pets and the people who love them — while helping shelter animals still waiting for their Forever Families.</p><p>♡ Shop for yours. Help one waiting for theirs.</p><p>♡ Every pet deserves someone in their corner.</p><p>♡ For Pets. For Families. For Those Still Waiting for Theirs.</p>",
-            "label": "Our mission",
+            "text": "<p>We believe every pet deserves someone in their corner. That’s why PS4PETS is built to support pets and the people who love them — while helping shelter animals still waiting for their Forever Families.</p>",
+            "label": "",
             "link": "/pages/mission",
             "background": "#e5e9dc",
             "image_alt": "",
             "asset": "none",
-            "symbol": "",
-            "collection": "",
-            "article": ""
-          }
+            "layout": "features",
+            "image_position": "bottom_right",
+            "image_width": 42
+          },
+          "static": true,
+          "blocks": {
+            "feature_1": {
+              "type": "_ps4-promo-feature",
+              "settings": {
+                "icon": "paw_print",
+                "text": "<p>Shop for yours. Help one waiting for theirs.</p>"
+              }
+            },
+            "feature_2": {
+              "type": "_ps4-promo-feature",
+              "settings": {
+                "icon": "heart",
+                "text": "<p>Every pet deserves someone in their corner.</p>"
+              }
+            },
+            "feature_3": {
+              "type": "_ps4-promo-feature",
+              "settings": {
+                "icon": "heart",
+                "text": "<p>For Pets. For Families. For Those Still Waiting for Theirs.</p>"
+              }
+            }
+          },
+          "block_order": [
+            "feature_1",
+            "feature_2",
+            "feature_3"
+          ]
         },
         "card_1": {
-          "type": "card",
+          "type": "_ps4-promo-card",
           "settings": {
             "eyebrow": "Auto-reorder",
             "heading": "Never Run Out\nof Their Favorites",
@@ -646,16 +675,13 @@
             "background": "#b9d9d7",
             "image_alt": "Green pet treat pouch",
             "asset": "pouch",
-            "symbol": "",
-            "collection": "",
-            "article": ""
-          }
+            "layout": "image",
+            "image_position": "bottom_right",
+            "image_width": 42
+          },
+          "static": true
         }
       },
-      "block_order": [
-        "card_0",
-        "card_1"
-      ],
       "settings": {
         "heading": "",
         "heading_alignment": "left",
