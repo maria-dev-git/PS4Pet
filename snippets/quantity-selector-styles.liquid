@@ -9,7 +9,7 @@
 {% stylesheet %}
   /* Quantity selector */
   .quantity-selector {
-    --quantity-selector-width: 124px;
+    --quantity-selector-width: 160px;
 
     display: flex;
     justify-content: space-between;
@@ -36,17 +36,21 @@
     align-items: center;
     cursor: pointer;
     width: var(--minimum-touch-target);
-    height: var(--minimum-touch-target);
+    height: auto;
+    min-height: var(--minimum-touch-target);
+    align-self: stretch;
     flex-shrink: 0;
     color: var(--color-input-text);
   }
 
   .quantity-selector .quantity-minus {
+    border-inline-end: 1px solid var(--color-input-border);
     border-start-start-radius: var(--style-border-radius-inputs);
     border-end-start-radius: var(--style-border-radius-inputs);
   }
 
   .quantity-selector .quantity-plus {
+    border-inline-start: 1px solid var(--color-input-border);
     border-start-end-radius: var(--style-border-radius-inputs);
     border-end-end-radius: var(--style-border-radius-inputs);
   }

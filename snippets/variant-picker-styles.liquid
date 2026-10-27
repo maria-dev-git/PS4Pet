@@ -383,6 +383,69 @@
     padding: var(--padding-xs);
   }
 
+  .variant-picker__form > .variant-option--buttons {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, var(--minimum-touch-target)));
+    gap: var(--gap-2xs);
+    padding: var(--focus-outline-offset);
+  }
+
+  .variant-picker__form > .variant-option--buttons > legend {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-block-size: 1.5em;
+    margin-block-end: var(--margin-xs);
+    line-height: 1.5;
+    text-align: start;
+    overflow-wrap: anywhere;
+  }
+
+  .variant-picker__form > .variant-option--buttons > .variant-option__button-label {
+    display: flex;
+    flex: 0 1 var(--minimum-touch-target);
+    align-self: flex-start;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    inline-size: 100%;
+    block-size: auto;
+    min-block-size: 0;
+    min-width: 0;
+    padding: var(--padding-2xs);
+    border: var(--options-border-width) solid var(--color-variant-border);
+    border-radius: var(--options-border-radius);
+    white-space: normal;
+  }
+
+  .variant-picker__form > .variant-option--buttons > .variant-option__button-label--has-swatch {
+    border-radius: 50%;
+  }
+
+  .variant-picker__form > .variant-option--buttons > .variant-option__button-label:has(:checked) {
+    border-color: var(--color-selected-variant-border);
+    outline: none;
+  }
+
+  .variant-picker__form > .variant-option--buttons > .variant-option__button-label:has(:focus-visible) {
+    outline: var(--focus-outline-width) solid var(--color-foreground);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  .variant-picker__form .variant-option__button-label > .swatch {
+    --swatch-width: min(var(--variant-picker-swatch-width), 100%);
+    --swatch-height: min(var(--variant-picker-swatch-height), 100%);
+    max-inline-size: 100%;
+    max-block-size: 100%;
+  }
+
+  .variant-picker__form .variant-option__button-label__text {
+    min-width: 0;
+    overflow-wrap: normal;
+    white-space: nowrap;
+    text-wrap: nowrap;
+    text-align: center;
+  }
+
   .variant-option__button-label--has-swatch {
     --focus-outline-radius: var(--variant-picker-swatch-radius);
 
