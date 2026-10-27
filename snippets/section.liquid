@@ -66,11 +66,14 @@
         layout-panel-flex
         layout-panel-flex--{{ section.settings.content_direction }}
         section-content-wrapper
+        {% if section.settings.item_dividers %} section-content-wrapper--item-dividers{% endif %}
         {% if section.settings.vertical_on_mobile %} mobile-column{% endif %}
       "
       style="
         {% render 'layout-panel-style', settings: section.settings %}
         {% render 'spacing-style', settings: section.settings %}
+        --item-divider-color: {{ section.settings.item_divider_color | default: 'var(--color-border)' }};
+        --item-divider-offset: calc({{ section.settings.gap }}px / -2);
       "
       data-testid="section-content"
     >
@@ -80,6 +83,35 @@
 </div>
 
 {% stylesheet %}
+  .section-content-wrapper--item-dividers > .group-block {
+    position: relative;
+  }
+
+  .section-content-wrapper--item-dividers > .group-block + .group-block::before {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: var(--item-divider-offset);
+    border-inline-start: 1px solid var(--item-divider-color);
+    pointer-events: none;
+  }
+
+  .section-content-wrapper--item-dividers.layout-panel-flex--column > .group-block + .group-block::before {
+    inset-block: var(--item-divider-offset) auto;
+    inset-inline: 0;
+    border-inline-start: 0;
+    border-block-start: 1px solid var(--item-divider-color);
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-content-wrapper--item-dividers.mobile-column > .group-block + .group-block::before {
+      inset-block: var(--item-divider-offset) auto;
+      inset-inline: 0;
+      border-inline-start: 0;
+      border-block-start: 1px solid var(--item-divider-color);
+    }
+  }
+
   .section-wrapper {
     --section-height-offset: 0px;
   }

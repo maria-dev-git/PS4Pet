@@ -444,6 +444,12 @@
     white-space: nowrap;
     text-wrap: nowrap;
     text-align: center;
+    color: var(--color-variant-text);
+  }
+
+  .variant-picker__form .variant-option__button-label:has([data-option-available='false'])
+    .variant-option__button-label__text {
+    color: rgb(var(--color-variant-text-rgb) / var(--opacity-60));
   }
 
   .variant-option__button-label--has-swatch {

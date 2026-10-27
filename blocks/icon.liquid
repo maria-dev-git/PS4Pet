@@ -21,6 +21,15 @@
   %}
 {% endcapture %}
 
+{% if block_settings.circle_background %}
+  {% render 'contrast-override', background_color: block_settings.circle_color, text_color: block_settings.icon_color, section_id: block.id %}
+  {% capture icon %}
+    <span class="icon-block__circle color-custom-{{ block.id }}" style="--icon-circle-padding: {{ block_settings.circle_padding }}px;">
+      {{ icon }}
+    </span>
+  {% endcapture %}
+{% endif %}
+
 {%- if block_settings.link != blank -%}
   <a
     href="{{ block_settings.link }}"
@@ -43,6 +52,21 @@
 
   .icon-block__media {
     height: auto;
+  }
+
+  .icon-block__circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--icon-circle-padding);
+    border-radius: 50%;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+  }
+
+  .icon-block__circle .icon-block__media {
+    aspect-ratio: 1;
+    object-fit: contain;
   }
 {% endstylesheet %}
 
@@ -326,6 +350,34 @@
       "id": "icon_color",
       "label": "t:settings.color",
       "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "checkbox",
+      "id": "circle_background",
+      "label": "t:settings.background",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "circle_color",
+      "label": "t:settings.background_color",
+      "default": "{{ settings.color_palette.color2 }}",
+      "visible_if": "{{ block.settings.circle_background }}"
+    },
+    {
+      "type": "range",
+      "id": "circle_padding",
+      "label": "t:settings.padding",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 20,
+      "visible_if": "{{ block.settings.circle_background }}"
     }
   ],
   "presets": [
