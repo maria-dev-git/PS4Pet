@@ -66,6 +66,7 @@ class ProductRecommendations extends Component {
     super.disconnectedCallback();
     this.#intersectionObserver.disconnect();
     this.#mutationObserver.disconnect();
+    this.#activeFetch?.abort();
   }
 
   /**
@@ -74,9 +75,8 @@ class ProductRecommendations extends Component {
   #loadRecommendations() {
     const { productId, recommendationsPerformed, sectionId, intent } = this.dataset;
 
-    if (!productId || !sectionId) {
-      throw new Error('Product ID and a section ID are required');
-    }
+    // Empty sections render their preview cards directly in Liquid.
+    if (!productId || !sectionId) return;
 
     // If the recommendations have already been loaded, accounts for the case where the Theme Editor
     // is loaded the section from the editor's visual preview context.
@@ -85,7 +85,7 @@ class ProductRecommendations extends Component {
     }
 
     this.#fetchCachedRecommendations(productId, sectionId, intent)
-      .then((result) => {
+      .then(async (result) => {
         if (!result.success) {
           // The Theme Editor will place a section element element in the DOM whose section_id is not available
           // to the Section Renderer API. In this case, we can safely ignore the error.
@@ -97,12 +97,13 @@ class ProductRecommendations extends Component {
 
         if (result.data?.trim().length) {
           this.dataset.recommendationsPerformed = 'true';
-          morphSection(sectionId, result.data, { mode: 'hydration', injectStylesheet: true });
+          await morphSection(sectionId, result.data, { mode: 'hydration', injectStylesheet: true });
         } else {
           this.#handleError(new Error('No recommendations available'));
         }
       })
       .catch((e) => {
+        if (e.name === 'AbortError') return;
         this.#handleError(e);
       });
   }

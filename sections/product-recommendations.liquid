@@ -1,4 +1,8 @@
-
+{% comment %}
+  Section contract: renders recommendations, or preview cards with a merchant-selected
+  fallback image when no product or recommendations are available.
+  @example Add Product recommendations and select a Fallback image before adding products.
+{% endcomment %}
 <script
   src="{{ 'product-recommendations.js' | asset_url }}"
   type="module"
@@ -6,6 +10,7 @@
 ></script>
 
 {% liquid
+  assign recommendations_product = section.settings.product | default: product
   case section.settings.layout_type
     when 'grid'
       assign classes = 'resource-list--grid'
@@ -38,7 +43,7 @@
   class="product-recommendations"
   data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.max_products }}"
   data-section-id="{{ section.id }}"
-  data-product-id="{{ section.settings.product.id | default: product.id }}"
+  data-product-id="{{ recommendations_product.id }}"
   data-intent="{{ section.settings.recommendation_type }}"
   data-testid="product-recommendations-section"
   data-recommendations-performed="{{ recommendations.performed }}"
@@ -73,19 +78,16 @@
       {% content_for 'blocks' %}
     </div>
 
-    {%- if recommendations.performed or section.settings.product == blank -%}
+    {%- if recommendations.performed or recommendations_product == blank -%}
       {% liquid
-        if section.settings.product == blank
-          assign products = null
-          # Onboarding mode: Show placeholder products
-          for i in (1..section.settings.max_products)
-            assign products = products | append: ', '
-            assign products = products | split: ','
-          endfor
+        assign show_fallback = false
+        assign products = null
+        if recommendations_product == blank
+          assign show_fallback = true
         elsif recommendations.performed and recommendations.products_count == 0
           # No recommendations found, pull from catalog
           if section.settings.recommendation_type == 'related'
-            assign products = collections.all.products | reject: 'id', section.settings.product.id
+            assign products = collections.all.products | reject: 'id', recommendations_product.id
           elsif section.settings.recommendation_type == 'complementary'
             # Do not recommend the All collection as complementary products
             assign products = null
@@ -94,16 +96,41 @@
         else
           assign products = recommendations.products
         endif
+
+        if products == blank and section.settings.fallback_image != blank
+          assign show_fallback = true
+        endif
+
+        if show_fallback
+          assign products = (1..section.settings.max_products)
+        endif
+
+        capture fallback_sizes
+          echo '(min-width: 750px) calc(100vw / ' | append: section.settings.columns | append: '), calc(100vw / ' | append: section.settings.mobile_columns | append: ')'
+        endcapture
       %}
       {% capture list_items %}
         {% for product in products limit: section.settings.max_products %}
           <div class="resource-list__item">
-            {% content_for 'block',
-              type: '_product-card',
-              id: 'static-product-card',
-              closest.product: product,
-              product_view_context: 'recommendation'
-            %}
+            {% if show_fallback %}
+              <div class="product-recommendations__fallback">
+                {% if section.settings.fallback_image != blank %}
+                  {{ section.settings.fallback_image
+                    | image_url: width: 1600
+                    | image_tag: loading: 'lazy', widths: '180, 360, 540, 750, 1100, 1600', sizes: fallback_sizes
+                  }}
+                {% else %}
+                  {{ 'product-1' | placeholder_svg_tag: 'product-recommendations__fallback-placeholder' }}
+                {% endif %}
+              </div>
+            {% else %}
+              {% content_for 'block',
+                type: '_product-card',
+                id: 'static-product-card',
+                closest.product: product,
+                product_view_context: 'recommendation'
+              %}
+            {% endif %}
           </div>
           {% unless forloop.last %}
             <!--@list/split-->
@@ -146,7 +173,7 @@
             {% render 'resource-list-carousel',
               ref: 'resourceListCarousel',
               slides: slides,
-              slide_count: recommendations.products.size,
+              slide_count: products.size,
               settings: section.settings
             %}
         {% endcase %}
@@ -170,7 +197,7 @@
           {% render 'resource-list-carousel',
             ref: 'resourceListCarouselMobile',
             slides: slides,
-            slide_count: recommendations.products.size,
+            slide_count: products.size,
             settings: section.settings
           %}
         </div>
@@ -191,6 +218,21 @@
 </product-recommendations>
 
 {% render 'section-color-scheme', section: section %}
+
+{% stylesheet %}
+  .product-recommendations__fallback {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: var(--product-corner-radius, 0);
+  }
+
+  .product-recommendations__fallback img,
+  .product-recommendations__fallback-placeholder {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
@@ -235,6 +277,12 @@
       "type": "product",
       "id": "product",
       "label": "t:settings.product"
+    },
+    {
+      "type": "image_picker",
+      "id": "fallback_image",
+      "label": "t:ps4.recommendations_fallback_image",
+      "info": "t:ps4.recommendations_fallback_image_info"
     },
     {
       "type": "select",

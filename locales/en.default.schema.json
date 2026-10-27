@@ -9,6 +9,8 @@
  */
 {
   "ps4": {
+    "recommendations_fallback_image": "Fallback image",
+    "recommendations_fallback_image_info": "Shown in preview cards when no product is selected or no recommendations are available. Real products replace these cards automatically.",
     "mobile_card_padding_block": "Mobile card vertical padding",
     "footer_menu_accordion": "Collapse footer menus on mobile",
     "footer_menu_accordion_info": "Below 750px, use the first text block as the accordion heading. Desktop menus remain expanded.",

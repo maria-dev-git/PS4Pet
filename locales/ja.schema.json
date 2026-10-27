@@ -9,6 +9,8 @@
  */
 {
   "ps4": {
+    "recommendations_fallback_image": "Fallback image",
+    "recommendations_fallback_image_info": "Shown in preview cards when no product is selected or no recommendations are available. Real products replace these cards automatically.",
     "desktop_padding": "デスクトップの余白",
     "mobile_padding": "モバイルの余白",
     "ps4_design": "Use PS4PETS banner styling",
