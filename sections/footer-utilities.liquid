@@ -29,7 +29,7 @@
     flex-direction: column;
     align-items: center;
     gap: var(--gap);
-    text-wrap: nowrap;
+    overflow-wrap: anywhere;
     border-top: var(--border-width) solid var(--divider-color, var(--color-border));
     color: var(--color-foreground-muted);
 
@@ -49,6 +49,7 @@
   }
 
   .utilities > * {
+    min-inline-size: 0;
     text-align: center;
 
     @media screen and (min-width: 750px) {
@@ -59,6 +60,32 @@
 
   /* Dynamic positioning based on number of blocks */
   @media screen and (min-width: 750px) {
+    .utilities--blocks-4 {
+      grid-template-columns: repeat(4, max-content);
+    }
+
+    .utilities--blocks-5 {
+      grid-template-columns: repeat(5, max-content);
+    }
+
+    .utilities--blocks-4,
+    .utilities--blocks-5 {
+      justify-content: space-between;
+      overflow-x: auto;
+    }
+
+    .utilities--blocks-4 > *,
+    .utilities--blocks-5 > *,
+    .utilities--blocks-4 > .text-block > *,
+    .utilities--blocks-5 > .text-block > * {
+      white-space: nowrap;
+      text-wrap: nowrap;
+      overflow-wrap: normal;
+    }
+    .utilities--blocks-4 > :nth-child(even),
+    .utilities--blocks-5 > :nth-child(even) {
+      justify-self: end;
+    }
     /* 1 block: Single column, left aligned */
     .utilities--blocks-1 {
       grid-template-columns: 1fr;
@@ -104,7 +131,7 @@
   "name": "t:names.policies_and_links",
   "tag": "div",
   "class": "footer-utilities",
-  "max_blocks": 3,
+  "max_blocks": 5,
   "enabled_on": {
     "groups": ["footer"]
   },
@@ -196,6 +223,7 @@
     }
   ],
   "blocks": [
+    { "type": "text" },
     {
       "type": "footer-copyright"
     },

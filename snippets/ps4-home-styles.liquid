@@ -42,7 +42,6 @@
     justify-content: center;
     gap: 1.2rem;
     min-block-size: 48px;
-    padding: 13px 30px;
     background: var(--button-background-color);
     color: var(--button-color);
     border: var(--style-border-width-primary) solid var(--button-border-color);
@@ -94,7 +93,7 @@
     max-inline-size: 100%;
     margin-inline-start: auto;
   }
-  ps4-section-heading__actions a {
+  .ps4-section-heading__actions a {
     font-weight: 700;
   }
   .ps4-section-heading__text { min-inline-size: 0; font-size: 0.85rem; }
@@ -133,14 +132,55 @@
   .ps4-cards--promo .ps4-placeholder { display: none; }
   .ps4-card__cta { display: inline-flex; align-items: center; gap: 20px; margin-block-start: 14px; font-weight: 600; }
   .ps4-cards--journal .ps4-card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .ps4-cards--journal .ps4-card__link { display: grid; grid-template-columns: 42% 1fr; gap: 16px; padding: 10px; border: 1px solid var(--color-border); border-radius: var(--style-border-radius-lg); }
+  .ps4-cards--journal .ps4-card__content { position: relative; display: grid; grid-template-columns: minmax(0, 42%) minmax(0, 1fr); gap: 16px; block-size: 100%; padding: 10px 10px 45px; border: 1px solid var(--color-border); border-radius: var(--style-border-radius-lg); }
+  .ps4-card__arrow {
+    position: absolute;
+    inset-block-end: 10px;
+    inset-inline-end: 10px;
+    display: grid;
+    place-items: center;
+    inline-size: 30px;
+    block-size: 30px;
+    border-radius: 50%;
+    background: var(--color-secondary-button-background);
+    color: var(--color-secondary-button-text);
+  }
+  .ps4-card__arrow::before,
+  .ps4-card__arrow::after { content: ''; grid-area: 1 / 1; }
+  .ps4-card__arrow::before { inline-size: 11px; border-block-start: 2px solid currentColor; }
+  .ps4-card__arrow::after {
+    inline-size: 7px;
+    block-size: 7px;
+    border-block-start: 2px solid currentColor;
+    border-inline-end: 2px solid currentColor;
+    transform: translateX(2px) rotate(45deg);
+  }
+  .ps4-card__arrow:dir(rtl)::after { transform: translateX(-2px) rotate(-45deg); }
+  .ps4-card__arrow:hover { background: var(--color-secondary-button-hover-background); color: var(--color-secondary-button-hover-text); }
+  .ps4-card__arrow:focus-visible { outline-color: var(--color-foreground); outline-offset: 3px; }
   .ps4-cards--journal .ps4-card__image { aspect-ratio: 1; min-block-size: 180px; }
   .ps4-cards--journal .ps4-card__body { align-self: center; }
   .ps4-cards--journal .ps4-copy { font-size: 0.85rem; }
   .ps4-newsletter { display: grid; grid-template-columns: 1.1fr 1fr; gap: 30px; align-items: center; padding-block: 28px; }
+  .ps4-newsletter__intro {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xl);
+    min-inline-size: 0;
+  }
+  .ps4-newsletter__icon {
+    flex-shrink: 0;
+    inline-size: clamp(40px, 5vw, 64px);
+    block-size: auto;
+  }
+  .ps4-newsletter__text { min-inline-size: 0; }
   .ps4-newsletter h2 { font-size: clamp(1.6rem, 2.3vw, 2.3rem); }
   .ps4-newsletter .ps4-copy { font-size: 0.85rem; }
   .ps4-newsletter__fields { display: flex; gap: 12px; }
+  .ps4-home .ps4-newsletter__fields .ps4-button {
+    border-radius: 25px;
+    padding: 10px 32px;
+  }
   .ps4-newsletter input { min-inline-size: 0; inline-size: 100%; border: 1px solid var(--color-input-border); border-radius: var(--style-border-radius-inputs); background: var(--color-input-background); color: var(--color-input-text); padding: 14px 20px; }
   .ps4-newsletter__form { min-inline-size: 0; }
   .ps4-newsletter button { flex-shrink: 0; }

@@ -16,18 +16,18 @@
     assign total_blocks = section.blocks.size
 
     # Grid layout calculations
-    assign grid_columns = total_blocks | at_most: 4
+    assign grid_columns = total_blocks | at_least: 1
 
     # Calculate last row counts using modulo arithmetic
     # last_row_count = (total_blocks - 1) % N + 1
-    assign last_row_count = total_blocks | minus: 1 | modulo: 4 | plus: 1
+    assign last_row_count = total_blocks | minus: 1 | modulo: grid_columns | plus: 1
     assign tablet_last_row_count = total_blocks | minus: 1 | modulo: 2 | plus: 1
 
     # Check if there are orphaned elements (single item in last row)
     assign has_isolated_grid_item_desktop = false
     assign has_isolated_grid_item_tablet = false
 
-    if total_blocks > 4 and last_row_count == 1
+    if total_blocks > grid_columns and last_row_count == 1
       assign has_isolated_grid_item_desktop = true
     endif
 
@@ -64,6 +64,12 @@
     align-items: start;
   }
 
+  .footer-content > .group-block { min-inline-size: 0; }
+  .footer-content > .group-block:first-child .social-icons__wrapper {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    color: var(--color-foreground);
+  }
   .footer-content .menu__heading__default {
     font-weight: var(--font-heading--weight);
   }
@@ -85,11 +91,25 @@
 
   @media screen and (min-width: 990px) {
     .footer-content {
-      grid-template-columns: repeat(var(--grid-columns), 1fr);
+      grid-template-columns: minmax(0, 1.7fr) repeat(calc(var(--grid-columns) - 1), minmax(0, 1fr));
     }
 
+    .footer-content > .group-block:first-child:not(:last-child) {
+      position: relative;
+      align-self: stretch;
+    }
+
+    .footer-content > .group-block:first-child:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      inset-block: 0;
+      inset-inline-end: calc(var(--footer-gap) / -2);
+      border-inline-end: 1px solid var(--color-border);
+      pointer-events: none;
+    }
     /* Single item centered */
     .footer-content[style*='--grid-columns: 1'] {
+      grid-template-columns: minmax(0, 1fr);
       justify-items: center;
     }
 

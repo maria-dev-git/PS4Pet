@@ -15,7 +15,7 @@
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 6,
+            "gap": 12,
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
@@ -41,28 +41,17 @@
           },
           "blocks": {
             "text_LWt8Pz": {
-              "type": "text",
+              "blocks": {},
               "settings": {
-                "text": "<h2>PS4PETS</h2>",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
                 "padding-block-end": 0,
+                "padding-inline-end": 0,
                 "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-block-start": 0,
+                "unit": "percent",
+                "percent_width": 100,
+                "inverse": true
               },
-              "blocks": {}
+              "type": "logo"
             },
             "text_f9CFLH": {
               "type": "text",
@@ -87,11 +76,23 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "social_links_Ew63Kq": {
+              "type": "social-links",
+              "settings": {
+                "facebook_url": "",
+                "instagram_url": "",
+                "youtube_url": "",
+                "tiktok_url": "",
+                "twitter_url": ""
+              },
+              "blocks": {}
             }
           },
           "block_order": [
             "text_LWt8Pz",
-            "text_f9CFLH"
+            "text_f9CFLH",
+            "social_links_Ew63Kq"
           ]
         },
         "ps4_footer_0": {
@@ -667,22 +668,34 @@
           },
           "blocks": {}
         },
-        "social_links_Ew63Kq": {
-          "type": "social-links",
+        "ps4_tagline": {
+          "type": "text",
           "settings": {
-            "facebook_url": "",
-            "instagram_url": "",
-            "youtube_url": "",
-            "tiktok_url": "",
-            "twitter_url": ""
+            "text": "<p>PETS TODAY. A BRIGHTER TOMORROW.</p>",
+            "width": "100%",
+            "alignment": "left",
+            "type_preset": "paragraph",
+            "max_width": "none"
+          },
+          "blocks": {}
+        },
+        "ps4_mission": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For Pets. For Families. For Those Still Waiting for Theirs.</p>",
+            "width": "100%",
+            "alignment": "right",
+            "type_preset": "paragraph",
+            "max_width": "none"
           },
           "blocks": {}
         }
       },
       "block_order": [
+        "ps4_tagline",
+        "ps4_mission",
         "footer_copyright_jweRK8",
-        "footer_policy_list_VCdnpa",
-        "social_links_Ew63Kq"
+        "footer_policy_list_VCdnpa"
       ],
       "name": "t:names.utilities",
       "settings": {
