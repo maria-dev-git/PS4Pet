@@ -11,7 +11,7 @@
 %}
 {% render 'ps4-home-styles' %}
 {% render 'contrast-override', background_color: section.settings.background, section_id: section.id %}
-<section class="ps4-home color-custom-{{ section.id }}" style="--ps4-mobile-card-width: {{ section.settings.mobile_card_width | default: 160 }}px; --ps4-cards-padding-start: {{ section.settings['padding-block-start'] }}px; --ps4-cards-padding-end: {{ section.settings['padding-block-end'] }}px; --ps4-cards-padding-start-mobile: {{ section.settings.padding_block_start_mobile }}px; --ps4-cards-padding-end-mobile: {{ section.settings.padding_block_end_mobile }}px; --ps4-background: {{ section.settings.background }}; --ps4-heading-font: {% if section.settings.heading_style == 'theme' %}var(--font-heading--family){% else %}Georgia, 'Times New Roman', serif{% endif %};"><div class="ps4-container ps4-cards ps4-cards--{{ section.settings.style }}">{% if section.settings.heading != blank %}<div class="ps4-section-heading ps4-section-heading--{{ section.settings.heading_alignment | default: 'left' }}"><h2>{{ section.settings.heading | escape }}</h2>{% if section.settings.link_text != blank %}<div class="ps4-section-heading__actions"><span class="ps4-section-heading__text">{{ section.settings.link_text | escape }}</span>{% endif %}{% if section.settings.label != blank and section.settings.link != blank %}<a href="{{ section.settings.link }}">{{ section.settings.label | escape }} <span aria-hidden="true">→</span></a>{% endif %}{% if section.settings.link_text != blank %}</div>{% endif %}</div>{% endif %}<div class="ps4-card-grid"{% if section.settings.style == 'category' %} tabindex="0"{% if section.settings.heading != blank %} role="region" aria-label="{{ section.settings.heading | escape }}"{% endif %}{% endif %}>{% for block in section.blocks %}{% liquid
+<section class="ps4-home color-custom-{{ section.id }}" style="--ps4-journal-mobile-card-padding: {{ section.settings.mobile_card_padding_block | default: 0 }}px; --ps4-journal-mobile-card-gap: {{ section.settings.mobile_card_gap | default: 18 }}px; --ps4-mobile-card-width: {{ section.settings.mobile_card_width | default: 160 }}px; --ps4-cards-padding-start: {{ section.settings['padding-block-start'] }}px; --ps4-cards-padding-end: {{ section.settings['padding-block-end'] }}px; --ps4-cards-padding-start-mobile: {{ section.settings.padding_block_start_mobile }}px; --ps4-cards-padding-end-mobile: {{ section.settings.padding_block_end_mobile }}px; --ps4-background: {{ section.settings.background }}; --ps4-heading-font: {% if section.settings.heading_style == 'theme' %}var(--font-heading--family){% else %}Georgia, 'Times New Roman', serif{% endif %};"><div class="ps4-container ps4-cards ps4-cards--{{ section.settings.style }}">{% if section.settings.heading != blank %}<div class="ps4-section-heading ps4-section-heading--{{ section.settings.heading_alignment | default: 'left' }}"><h2>{{ section.settings.heading | escape }}</h2>{% if section.settings.link_text != blank %}<div class="ps4-section-heading__actions"><span class="ps4-section-heading__text">{{ section.settings.link_text | escape }}</span>{% endif %}{% if section.settings.label != blank and section.settings.link != blank %}<a href="{{ section.settings.link }}">{{ section.settings.label | escape }} <span aria-hidden="true">→</span></a>{% endif %}{% if section.settings.link_text != blank %}</div>{% endif %}</div>{% endif %}<div class="ps4-card-grid"{% if section.settings.style == 'category' %} tabindex="0"{% if section.settings.heading != blank %} role="region" aria-label="{{ section.settings.heading | escape }}"{% endif %}{% endif %}>{% for block in section.blocks %}{% liquid
 assign card_image = block.settings.image | default: block.settings.collection.featured_image | default: block.settings.article.image
 assign card_link = block.settings.link | default: block.settings.collection.url | default: block.settings.article.url
 assign card_heading = block.settings.heading | default: block.settings.collection.title | default: block.settings.article.title
@@ -108,6 +108,28 @@ assign card_heading = block.settings.heading | default: block.settings.collectio
       "unit": "px",
       "default": 160,
       "visible_if": "{{ section.settings.style == 'category' }}"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_gap",
+      "label": "t:ps4.mobile_card_gap",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 18,
+      "visible_if": "{{ section.settings.style == 'journal' }}"
+    },
+    {
+      "type": "range",
+      "id": "mobile_card_padding_block",
+      "label": "t:ps4.mobile_card_padding_block",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.style == 'journal' }}"
     },
     {
       "type": "select",

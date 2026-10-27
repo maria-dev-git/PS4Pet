@@ -35,7 +35,7 @@
       assign has_isolated_grid_item_tablet = true
     endif
   %}
-  <div
+  <footer-menus data-enabled="{{ section.settings.footer_menu_accordion }}"
     class="
       footer-content
       spacing-style
@@ -51,8 +51,10 @@
     "
   >
     {% content_for 'blocks' %}
-  </div>
+  </footer-menus>
 </div>
+
+<script src="{{ 'footer-menus.js' | asset_url }}" type="module"></script>
 
 {% stylesheet %}
   .footer-content {
@@ -64,6 +66,55 @@
     align-items: start;
   }
 
+
+
+  .footer-content .text-block a,
+  .footer-content .text-block a:hover {
+    text-decoration: none;
+  }
+
+  .footer-menu-accordion {
+    inline-size: 100%;
+    min-inline-size: 0;
+  }
+
+  .footer-menu-accordion__heading {
+    justify-content: space-between;
+    gap: var(--gap-sm);
+    min-block-size: 44px;
+    font-weight: 600;
+    color: inherit;
+  }
+
+  .footer-menu-accordion__heading:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  .footer-menu-accordion__indicator {
+    flex: 0 0 8px;
+    inline-size: 8px;
+    block-size: 8px;
+    margin-inline-end: 2px;
+    border-inline-end: 1.5px solid currentColor;
+    border-block-end: 1.5px solid currentColor;
+    transform: rotate(45deg);
+  }
+
+  .footer-menu-accordion[open] .footer-menu-accordion__indicator {
+    transform: rotate(225deg);
+  }
+  .footer-menu-accordion__heading > .text-block {
+    flex: 1 1 auto;
+    min-inline-size: 0;
+  }
+  .footer-menu-accordion__heading > .text-block > * { margin-block: 0; }
+  .footer-menu-accordion__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+    min-inline-size: 0;
+  }
   .footer-content > .group-block { min-inline-size: 0; }
   .footer-content > .group-block:first-child .social-icons__wrapper {
     flex-wrap: wrap;
@@ -117,6 +168,12 @@
       grid-column: 1 / -1;
     }
   }
+
+    @media screen and (max-width: 750px) {
+      .footer-content {
+        gap: 10px;
+      }
+    }
 {% endstylesheet %}
 
 {% render 'section-color-scheme', section: section %}
@@ -173,6 +230,13 @@
     "groups": ["footer"]
   },
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "footer_menu_accordion",
+      "label": "t:ps4.footer_menu_accordion",
+      "info": "t:ps4.footer_menu_accordion_info",
+      "default": true
+    },
     {
       "type": "select",
       "id": "section_width",

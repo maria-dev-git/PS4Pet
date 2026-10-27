@@ -158,8 +158,8 @@
   .ps4-card__arrow:dir(rtl)::after { transform: translateX(-2px) rotate(-45deg); }
   .ps4-card__arrow:hover { background: var(--color-secondary-button-hover-background); color: var(--color-secondary-button-hover-text); }
   .ps4-card__arrow:focus-visible { outline-color: var(--color-foreground); outline-offset: 3px; }
-  .ps4-cards--journal .ps4-card__image { aspect-ratio: 1; min-block-size: 180px; }
-  .ps4-cards--journal .ps4-card__body { align-self: center; }
+  .ps4-cards--journal .ps4-card__image { inline-size: 100%; min-inline-size: 0; aspect-ratio: 1; min-block-size: 0; }
+  .ps4-cards--journal .ps4-card__body { min-inline-size: 0; align-self: center; }
   .ps4-cards--journal .ps4-copy { font-size: 0.85rem; }
   .ps4-newsletter { display: grid; grid-template-columns: 1.1fr 1fr; gap: 30px; align-items: center; padding-block: 28px; }
   .ps4-newsletter__intro {
@@ -261,6 +261,66 @@
     .ps4-cards--category .ps4-card-grid:focus-visible {
       outline: 2px solid currentColor;
       outline-offset: 2px;
+    }
+    .ps4-cards--journal .ps4-card {
+      padding-block: var(--ps4-journal-mobile-card-padding, 0px);
+    }
+
+    .ps4-cards--journal .ps4-card-grid {
+      gap: var(--ps4-journal-mobile-card-gap, 18px);
+    }
+
+    .ps4-cards--journal .ps4-section-heading {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--gap-xs);
+      text-align: start;
+    }
+
+    .ps4-home .ps4-cards--journal .ps4-section-heading > h2 {
+      font-size: 20px;
+      white-space: nowrap;
+      text-wrap: nowrap;
+    }
+
+    .ps4-cards--journal .ps4-section-heading__actions {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      column-gap: var(--gap-sm);
+      row-gap: 0;
+      inline-size: 100%;
+      margin-inline-start: 0;
+    }
+
+    .ps4-cards--journal .ps4-section-heading a {
+      justify-self: end;
+      padding-block: 0;
+      white-space: nowrap;
+    }
+
+    .ps4-cards--journal .ps4-section-heading a span {
+      margin-inline-start: var(--gap-2xs);
+    }
+
+    .ps4-cards--journal .ps4-card__content {
+      grid-template-columns: minmax(0, 0.38fr) minmax(0, 0.62fr);
+      gap: var(--gap-sm);
+    }
+
+    .ps4-cards--journal .ps4-card__image {
+      max-block-size: none;
+    }
+
+    .ps4-home .ps4-cards--journal h3 {
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+
+    .ps4-cards--journal .ps4-copy {
+      font-size: 0.8125rem;
+      line-height: 1.4;
     }
     .ps4-cards--benefit .ps4-card { gap: 10px; border: 0; }
     .ps4-symbol { font-size: 2.3rem; }

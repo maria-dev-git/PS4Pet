@@ -9,6 +9,10 @@
  */
 {
   "ps4": {
+    "mobile_card_padding_block": "Mobile card vertical padding",
+    "footer_menu_accordion": "Collapse footer menus on mobile",
+    "footer_menu_accordion_info": "Below 750px, use the first text block as the accordion heading. Desktop menus remain expanded.",
+    "mobile_card_gap": "Gap between cards on mobile",
     "mobile_card_width": "Mobile card width",
     "hero_overlay_mobile_info": "Applies only on mobile screens below 750px.",
     "button_font_10": "10px",
