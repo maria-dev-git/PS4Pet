@@ -928,7 +928,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Jules' Story</h2>",
+                "text": "<p>Jules - Rescue. Family. Forever.</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -954,9 +954,9 @@
             "text_EaVTke": {
               "type": "text",
               "settings": {
-                "text": "<p>Made with care and unconditionally loved by our customers, this signature bestseller exceeds all expectations.</p>",
-                "width": "fit-content",
-                "max_width": "narrow",
+                "text": "<p>Hi, I’m Jules.</p><p>A few years ago, I was a shelter dog waiting for someone to give me a chance.</p><p>I’m a pit bull, and sometimes people make up their minds about dogs like me before they ever get to know us.</p><p>Luckily, one family looked past all of that.</p><p>They didn’t see a breed.</p><p>They saw me.</p><p>They brought me home, gave me a family, and changed my life forever.</p><p><br/>Today, I’m not a shelter dog anymore.</p><p>I’m a spoiled family dog, a best friend, and even a baseball pup.</p><p>I go to the baseball field to watch my human brother play, and apparently I’ve become pretty popular. People show up and ask:</p><p>“Where’s Jules?”</p><p>Some people who weren’t sure about pit bulls before meeting me have gotten to know me and discovered something my family already knew:</p><p>Sometimes the dogs people misunderstand the most just need someone willing to give them a chance.</p><p>And that’s a big part of why my family created PS4PETS.</p><p>They’ve rescued dogs like me and know firsthand how much love shelter animals have to give.</p><p>PS4PETS isn’t supposed to be just another place that sells pet supplies.</p><p>We want it to be a place for people who consider their pets part of their family.</p><p>A place where buying the things your pet already needs can also help another animal who’s still sitting in a shelter waiting for their family to arrive.</p><p>That’s why we’re building ways for our customers to help shelters, donate rewards and supplies, share their own rescue stories, and become part of our PS4PETS family.</p><p>And I’ll be here too.</p><p>We’re calling it The Jules Journal.</p><p>I’ll share pictures, adventures, trips to the baseball field, rescue stories, and hopefully introduce you to some incredible animals who are still looking for their forever homes.</p><p>Because I know something about second chances.</p><p>I got mine.</p><p>Now we want to help more animals get theirs.</p><p>Welcome to our family.</p><p>Love,<br/>Jules</p>",
+                "width": "100%",
+                "max_width": "none",
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
@@ -1044,7 +1044,7 @@
         "border_radius": 0,
         "padding-block-start": 40,
         "padding-block-end": 40,
-        "use_color_scheme": false,
+        "use_color_scheme": true,
         "color_scheme": "",
         "item_dividers": false,
         "item_divider_color": "{{ settings.color_palette.color2 }}",
