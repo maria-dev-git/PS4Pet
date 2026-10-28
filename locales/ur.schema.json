@@ -733,8 +733,10 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
-    "story_photo_pair": "Two tilted story photos",
+    "story_photo_pair": "Three stacked story photos",
     "story_second_image": "Second photo",
+    "story_third_image": "Third photo",
+    "story_third_caption": "Third photo caption",
     "story_first_caption": "First photo caption",
     "story_second_caption": "Second photo caption",
     "use_content_blocks": "مواد کے بلاکس استعمال کریں",
