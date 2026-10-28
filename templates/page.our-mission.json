@@ -88,7 +88,7 @@
                 "type_preset": "custom",
                 "font": "var(--font-heading--family)",
                 "font_size": "1.5rem",
-                "font_size_mobile": "1rem",
+                "font_size_mobile": "1.125rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -478,7 +478,7 @@
         "horizontal_alignment_flex_direction_column": "flex-start",
         "vertical_alignment_flex_direction_column": "center",
         "gap": 24,
-        "section_width": "full-width",
+        "section_width": "page-width",
         "section_width_mobile": "inherit",
         "section_height": "",
         "section_height_custom": 50,
@@ -1392,10 +1392,10 @@
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h3",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "font_size_mobile": "",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "2rem",
+                "font_size_mobile": "1.5rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -1500,7 +1500,7 @@
                 "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
-                "padding-inline-start": 0,
+                "padding-inline-start": 6,
                 "padding-inline-end": 0
               },
               "blocks": {
@@ -1590,8 +1590,8 @@
         "horizontal_alignment_flex_direction_column": "flex-start",
         "vertical_alignment_flex_direction_column": "center",
         "gap": 24,
-        "section_width": "full-width",
-        "section_width_mobile": "inherit",
+        "section_width": "page-width",
+        "section_width_mobile": "full-width",
         "section_height": "",
         "section_height_custom": 50,
         "background_media": "none",
@@ -1623,8 +1623,8 @@
         "padding_inline_desktop": 0,
         "padding_inline_mobile": 0,
         "show_right_image_mobile": true,
-        "padding_block_start_mobile": 32,
-        "padding_block_end_mobile": 0
+        "padding_block_start_mobile": 0,
+        "padding_block_end_mobile": 32
       }
     },
     "section_XfYrLp": {
@@ -1633,7 +1633,7 @@
         "image_AG3qYq": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ps4-meet-jules.webp",
+            "image": "shopify://shop_images/IMG_4715.webp",
             "story_photo_pair": false,
             "third_caption": "",
             "caption": "",
@@ -1641,7 +1641,7 @@
             "white_border_width": 0,
             "second_caption": "",
             "link": "",
-            "image_ratio": "landscape",
+            "image_ratio": "square",
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "custom",
@@ -1669,7 +1669,7 @@
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
+            "gap": 18,
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "fit-content",
@@ -1693,7 +1693,7 @@
             "open_in_new_tab": false,
             "placeholder": "",
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 32,
             "padding-inline-start": 16,
             "padding-inline-end": 16
           },
@@ -1702,15 +1702,15 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Inspiring a Brighter Tomorrow</h2>",
+                "text": "<p>Jules found her family.<br/>Now we want to help more animals find theirs.</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h3",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "font_size_mobile": "",
-                "line_height": "normal",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "2rem",
+                "font_size_mobile": "1.5rem",
+                "line_height": "tight",
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
@@ -1728,7 +1728,7 @@
             "text_iq9Yjm": {
               "type": "text",
               "settings": {
-                "text": "<p>Jules is the heart behind PS4PETS. His story reminds us why we support shelter and rescue animals and why we're committed to making a positive difference for pets today and a brighter tomorrow</p>",
+                "text": "<p>Jules is the heart behind PS4PETS. a rescue who found a second chance and changed our lives. Her story reminds us why this mission matters — every pet deserves a loving home, and every pet deserves someone in their comer.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1754,7 +1754,7 @@
             "button_ejm6d4": {
               "type": "button",
               "settings": {
-                "label": "Learn About Our Mission  →",
+                "label": "Meet Jules  →",
                 "link": "#",
                 "open_in_new_tab": false,
                 "style_class": "button",
@@ -1783,7 +1783,7 @@
         "image_AG3qYq",
         "group_gFK6B6"
       ],
-      "name": "t:names.image_with_text",
+      "name": "Jules Found Her Family",
       "settings": {
         "content_direction": "row",
         "vertical_on_mobile": true,
@@ -1797,7 +1797,7 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 24,
         "section_width": "page-width",
-        "section_width_mobile": "inherit",
+        "section_width_mobile": "full-width",
         "section_height": "",
         "section_height_custom": 50,
         "background_media": "none",

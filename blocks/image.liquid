@@ -1,5 +1,5 @@
 {% doc %}
-  Renders an image with optional tilt, white frame and caption, or three story photos.
+  Renders an image with optional pixel heights, tilt, frame and caption, or three story photos.
   @example
   {% content_for 'block', type: 'image', id: 'story-photos' %}
 {% enddoc %}
@@ -30,6 +30,10 @@
 
 {% capture class %}
   image-block image-block--{{ block.id }} image-block--height-{{ block_settings.height }} spacing-style size-style
+  {% unless block_settings.story_photo_pair %}
+    {% if block_settings.image_height_desktop > 0 %} image-block--pixel-height-desktop{% endif %}
+    {% if block_settings.image_height_mobile > 0 %} image-block--pixel-height-mobile{% endif %}
+  {% endunless %}
 {% endcapture %}
 
 {% capture style %}
@@ -37,6 +41,8 @@
   --image-block-tilt: {{ block_settings.image_tilt | default: 0 }}deg;
   --image-block-frame-width: {{ block_settings.white_border_width | default: 0 }}px;
   --image-block-frame-radius: {{ block_settings.border_radius }}px;
+  --image-block-height-desktop: {{ block_settings.image_height_desktop | default: 0 }}px;
+  --image-block-height-mobile: {{ block_settings.image_height_mobile | default: 0 }}px;
   {% render 'size-style', settings: block_settings %}
   {% render 'spacing-style', settings: block_settings %}
 {% endcapture %}
@@ -239,6 +245,28 @@
     object-fit: cover;
     aspect-ratio: var(--ratio);
   }
+
+  @media screen and (min-width: 750px) {
+    .image-block.image-block--pixel-height-desktop {
+      height: auto;
+    }
+
+    .image-block--pixel-height-desktop :is(.image-block__image, .placeholder-image) {
+      height: var(--image-block-height-desktop);
+      aspect-ratio: auto;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .image-block.image-block--pixel-height-mobile {
+      height: auto;
+    }
+
+    .image-block--pixel-height-mobile :is(.image-block__image, .placeholder-image) {
+      height: var(--image-block-height-mobile);
+      aspect-ratio: auto;
+    }
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -419,6 +447,30 @@
       ],
       "default": "fit",
       "visible_if": "{{ block.settings.image_ratio == 'adapt' }}"
+    },
+    {
+      "type": "range",
+      "id": "image_height_desktop",
+      "label": "t:ps4.image_height_desktop",
+      "info": "t:ps4.image_height_pixels_info",
+      "min": 0,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.story_photo_pair == false }}"
+    },
+    {
+      "type": "range",
+      "id": "image_height_mobile",
+      "label": "t:ps4.image_height_mobile",
+      "info": "t:ps4.image_height_pixels_info",
+      "min": 0,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.story_photo_pair == false }}"
     },
     {
       "type": "header",

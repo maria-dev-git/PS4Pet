@@ -66,6 +66,7 @@
         layout-panel-flex
         layout-panel-flex--{{ section.settings.content_direction }}
         section-content-wrapper
+        {% if page.handle == 'our-mission' and section.id contains 'section_XfYrLp' %} section-content-wrapper--jules-family{% endif %}
         {% if section.settings.mobile_icons_beside_text %} section-content-wrapper--mobile-inline-icons{% endif %}
         {% if section.settings.content_direction == 'row' and section.settings.mobile_columns == '2' and section.settings.three_part_layout != true %} section-content-wrapper--mobile-two-columns{% endif %}
         {% if section.settings.three_part_layout %} section-content-wrapper--image-text-art{% endif %}
@@ -94,7 +95,7 @@
       "
       data-testid="section-content"
     >
-      {{ children }}
+      {% capture right_art %}
       {% if section.settings.three_part_layout and section.settings.right_image != blank %}
         {% assign right_image_sizes = section.settings.right_image_width | append: 'vw' %}
         {% if section.settings.pixel_image_layout %}
@@ -104,12 +105,24 @@
           {{ section.settings.right_image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '120, 240, 400, 600, 800', sizes: right_image_sizes }}
         </div>
       {% endif %}
+      {% endcapture %}
+      {% if section.settings.pixel_image_layout and section.settings.show_right_image_mobile %}
+        {{ right_art }}
+      {% endif %}
+      {{ children }}
+      {% unless section.settings.pixel_image_layout and section.settings.show_right_image_mobile %}
+        {{ right_art }}
+      {% endunless %}
     </div>
   </div>
 </div>
 
 {% stylesheet %}
   @media screen and (max-width: 749px) {
+    .section-content-wrapper--jules-family > .section-content-wrapper__art {
+      display: none;
+    }
+
     .section-content-wrapper--mobile-inline-icons > .group-block > .group-block-content {
       display: grid;
       grid-template-columns: auto minmax(0, 1fr);

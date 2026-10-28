@@ -9,6 +9,9 @@
  */
 {
   "ps4": {
+    "image_height_desktop": "Desktop image height",
+    "image_height_mobile": "Mobile image height",
+    "image_height_pixels_info": "Set to 0 to keep automatic sizing. A fixed height crops the image to fill without stretching. Frame and caption add to the total block height.",
     "show_right_image_mobile": "Show right image on mobile",
     "pixel_image_layout": "Use pixel image widths and mobile image layout",
     "left_image_width_px": "Left image width",
