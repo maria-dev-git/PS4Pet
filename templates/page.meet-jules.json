@@ -9,6 +9,128 @@
  */
 {
   "sections": {
+    "hero_mYU4rU": {
+      "type": "hero",
+      "blocks": {
+        "text_aEVQqf": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>New arrivals</h2>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "h1",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "font_size_mobile": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_KTU9LF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Made with care and unconditionally loved by our customers.</p>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "font_size_mobile": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 32,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "button_CQbaHA": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Shop now",
+            "link": "shopify://collections/all",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "custom_button_background": "{{ settings.color_palette.foreground }}",
+            "custom_button_text": "{{ settings.color_palette.background }}",
+            "custom_button_border": "{{ settings.color_palette.background }}",
+            "link_text_color": "",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100,
+            "mobile_width_pixels": 150,
+            "mobile_font_size": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_aEVQqf",
+        "text_KTU9LF",
+        "button_CQbaHA"
+      ],
+      "name": "t:names.hero",
+      "settings": {
+        "media_type_1": "image",
+        "media_type_2": "image",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "large",
+        "section_height_custom": 50,
+        "banner_height_desktop": 0,
+        "banner_height_mobile": 0,
+        "background_color": "",
+        "toggle_overlay": true,
+        "overlay_color": "#00000026",
+        "overlay_style": "gradient",
+        "gradient_direction": "to top",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 40,
+        "padding-block-end": 40,
+        "ps4_design": false,
+        "heading_style": "theme",
+        "use_bundled_image": false,
+        "bundled_image_alt": "Jules wearing a birthday hat and holding her favorite lamb toy",
+        "use_color_scheme": false,
+        "color_scheme": ""
+      }
+    },
     "main": {
       "type": "main-page",
       "blocks": {
@@ -22,10 +144,13 @@
             "alignment": "left",
             "type_preset": "h2",
             "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "font_size_mobile": "",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "none",
             "wrap": "pretty",
+            "text_color": "",
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
@@ -38,7 +163,9 @@
         },
         "page-content": {
           "type": "page-content",
-          "settings": {},
+          "settings": {
+            "text_color": ""
+          },
           "blocks": {}
         }
       },
@@ -51,11 +178,14 @@
         "gap": 32,
         "background_color": "{{ settings.color_palette.background }}",
         "padding-block-start": 40,
-        "padding-block-end": 80
+        "padding-block-end": 80,
+        "use_color_scheme": false,
+        "color_scheme": ""
       }
     }
   },
   "order": [
+    "hero_mYU4rU",
     "main"
   ]
 }
