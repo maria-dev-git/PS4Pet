@@ -550,7 +550,7 @@
       "step": 1,
       "unit": "%",
       "default": 40,
-      "visible_if": "{{ section.settings.three_part_layout }}"
+      "visible_if": "{{ section.settings.three_part_layout and section.settings.pixel_image_layout != true }}"
     },
     {
       "type": "header",
@@ -572,7 +572,36 @@
       "step": 1,
       "unit": "%",
       "default": 15,
+      "visible_if": "{{ section.settings.three_part_layout and section.settings.pixel_image_layout != true }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "pixel_image_layout",
+      "label": "t:ps4.pixel_image_layout",
+      "default": false,
       "visible_if": "{{ section.settings.three_part_layout }}"
+    },
+    {
+      "type": "range",
+      "id": "left_image_width_px",
+      "label": "t:ps4.left_image_width_px",
+      "min": 0,
+      "max": 600,
+      "step": 10,
+      "unit": "px",
+      "default": 120,
+      "visible_if": "{{ section.settings.three_part_layout and section.settings.pixel_image_layout }}"
+    },
+    {
+      "type": "range",
+      "id": "right_image_width_px",
+      "label": "t:ps4.right_image_width_px",
+      "min": 0,
+      "max": 600,
+      "step": 10,
+      "unit": "px",
+      "default": 120,
+      "visible_if": "{{ section.settings.three_part_layout and section.settings.pixel_image_layout }}"
     }
   ],
   "presets": [

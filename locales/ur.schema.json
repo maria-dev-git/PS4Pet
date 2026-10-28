@@ -9,6 +9,9 @@
  */
 {
   "ps4": {
+    "pixel_image_layout": "Use pixel image widths and hide images on mobile",
+    "left_image_width_px": "Left image width",
+    "right_image_width_px": "Right image width",
     "recommendations_fallback_image": "Fallback image",
     "recommendations_fallback_image_info": "Shown in preview cards when no product is selected or no recommendations are available. Real products replace these cards automatically.",
     "desktop_padding": "ڈیسک ٹاپ اندرونی فاصلہ",

@@ -69,6 +69,7 @@
         {% if section.settings.mobile_icons_beside_text %} section-content-wrapper--mobile-inline-icons{% endif %}
         {% if section.settings.content_direction == 'row' and section.settings.mobile_columns == '2' and section.settings.three_part_layout != true %} section-content-wrapper--mobile-two-columns{% endif %}
         {% if section.settings.three_part_layout %} section-content-wrapper--image-text-art{% endif %}
+        {% if section.settings.three_part_layout and section.settings.pixel_image_layout %} section-content-wrapper--pixel-image-art{% endif %}
         {% if section.settings.item_dividers %} section-content-wrapper--item-dividers{% endif %}
         {% if section.settings.vertical_on_mobile %} mobile-column{% endif %}
       "
@@ -79,12 +80,19 @@
         --item-divider-offset: calc({{ section.settings.gap }}px / -2);
         --section-left-image-width: {{ section.settings.left_image_width }}%;
         --section-right-image-width: {{ section.settings.right_image_width }}%;
+        {% if section.settings.three_part_layout and section.settings.pixel_image_layout %}
+          --section-left-image-width: {{ section.settings.left_image_width_px }}px;
+          --section-right-image-width: {{ section.settings.right_image_width_px }}px;
+        {% endif %}
       "
       data-testid="section-content"
     >
       {{ children }}
       {% if section.settings.three_part_layout and section.settings.right_image != blank %}
         {% assign right_image_sizes = section.settings.right_image_width | append: 'vw' %}
+        {% if section.settings.pixel_image_layout %}
+          {% assign right_image_sizes = section.settings.right_image_width_px | append: 'px' %}
+        {% endif %}
         <div class="section-content-wrapper__art">
           {{ section.settings.right_image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '120, 240, 400, 600, 800', sizes: right_image_sizes }}
         </div>
@@ -152,6 +160,20 @@
     .section-content-wrapper__art {
       width: var(--section-right-image-width);
       justify-self: end;
+    }
+  }
+
+  /* Pixel sizing is opt-in; existing percentage layouts retain their behavior. */
+  .section-content-wrapper--pixel-image-art > .image-block,
+  .section-content-wrapper--pixel-image-art > .section-content-wrapper__art {
+    overflow: hidden;
+    min-inline-size: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-content-wrapper--pixel-image-art > .image-block,
+    .section-content-wrapper--pixel-image-art > .section-content-wrapper__art {
+      display: none;
     }
   }
 
