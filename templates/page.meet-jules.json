@@ -12,10 +12,37 @@
     "hero_mYU4rU": {
       "type": "hero",
       "blocks": {
+        "text_RgD4WD": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>MEET JULES</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "font_size_mobile": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
         "text_aEVQqf": {
           "type": "text",
           "settings": {
-            "text": "<h2>New arrivals</h2>",
+            "text": "<h2>The heart<br/>Behind PS4PETS</h2>",
             "width": "fit-content",
             "max_width": "narrow",
             "alignment": "left",
@@ -41,7 +68,7 @@
         "text_KTU9LF": {
           "type": "text",
           "settings": {
-            "text": "<p>Made with care and unconditionally loved by our customers.</p>",
+            "text": "<p>Jules is more than our inspiration.<br/>He's a reminder of why we do what we do - for pets today, and a brighter tomorrow.</p>",
             "width": "fit-content",
             "max_width": "narrow",
             "alignment": "left",
@@ -87,6 +114,7 @@
         }
       },
       "block_order": [
+        "text_RgD4WD",
         "text_aEVQqf",
         "text_KTU9LF",
         "button_CQbaHA"
@@ -97,8 +125,9 @@
         "image_1": "shopify://shop_images/hero-banner-1.webp",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
-        "custom_mobile_media": false,
+        "custom_mobile_media": true,
         "media_type_1_mobile": "image",
+        "image_1_mobile": "shopify://shop_images/herobanner-mobile.webp",
         "media_type_2_mobile": "image",
         "link": "",
         "open_in_new_tab": false,
