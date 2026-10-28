@@ -9,7 +9,8 @@
  */
 {
   "ps4": {
-    "pixel_image_layout": "Use pixel image widths and hide images on mobile",
+    "show_right_image_mobile": "Show right image on mobile",
+    "pixel_image_layout": "Use pixel image widths and mobile image layout",
     "left_image_width_px": "Left image width",
     "right_image_width_px": "Right image width",
     "recommendations_fallback_image": "Fallback image",

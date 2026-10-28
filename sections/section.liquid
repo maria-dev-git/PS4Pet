@@ -602,6 +602,62 @@
       "unit": "px",
       "default": 120,
       "visible_if": "{{ section.settings.three_part_layout and section.settings.pixel_image_layout }}"
+    },
+    {
+      "type": "range",
+      "id": "padding_inline_desktop",
+      "label": "t:ps4.desktop_padding",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.three_part_layout and section.settings.pixel_image_layout }}"
+    },
+    {
+      "type": "range",
+      "id": "padding_inline_mobile",
+      "label": "t:ps4.mobile_padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.three_part_layout and section.settings.pixel_image_layout }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_right_image_mobile",
+      "label": "t:ps4.show_right_image_mobile",
+      "default": false,
+      "visible_if": "{{ section.settings.three_part_layout and section.settings.pixel_image_layout }}"
+    },
+    {
+      "type": "header",
+      "content": "t:ps4.mobile_padding",
+      "visible_if": "{{ section.settings.show_right_image_mobile and section.settings.pixel_image_layout }}"
+    },
+    {
+      "type": "range",
+      "id": "padding_block_start_mobile",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.show_right_image_mobile and section.settings.pixel_image_layout }}"
+    },
+    {
+      "type": "range",
+      "id": "padding_block_end_mobile",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.show_right_image_mobile and section.settings.pixel_image_layout }}"
     }
   ],
   "presets": [

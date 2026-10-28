@@ -70,6 +70,7 @@
         {% if section.settings.content_direction == 'row' and section.settings.mobile_columns == '2' and section.settings.three_part_layout != true %} section-content-wrapper--mobile-two-columns{% endif %}
         {% if section.settings.three_part_layout %} section-content-wrapper--image-text-art{% endif %}
         {% if section.settings.three_part_layout and section.settings.pixel_image_layout %} section-content-wrapper--pixel-image-art{% endif %}
+        {% if section.settings.show_right_image_mobile %} section-content-wrapper--mobile-right-art{% endif %}
         {% if section.settings.item_dividers %} section-content-wrapper--item-dividers{% endif %}
         {% if section.settings.vertical_on_mobile %} mobile-column{% endif %}
       "
@@ -83,6 +84,12 @@
         {% if section.settings.three_part_layout and section.settings.pixel_image_layout %}
           --section-left-image-width: {{ section.settings.left_image_width_px }}px;
           --section-right-image-width: {{ section.settings.right_image_width_px }}px;
+          --section-padding-inline-desktop: {{ section.settings.padding_inline_desktop | default: 0 }}px;
+          --section-padding-inline-mobile: {{ section.settings.padding_inline_mobile | default: 0 }}px;
+          {% if section.settings.show_right_image_mobile %}
+            --section-padding-block-start-mobile: {{ section.settings.padding_block_start_mobile }}px;
+            --section-padding-block-end-mobile: {{ section.settings.padding_block_end_mobile }}px;
+          {% endif %}
         {% endif %}
       "
       data-testid="section-content"
@@ -164,16 +171,58 @@
   }
 
   /* Pixel sizing is opt-in; existing percentage layouts retain their behavior. */
+  .section-content-wrapper--pixel-image-art {
+    padding-inline: var(--section-padding-inline-desktop);
+  }
+
   .section-content-wrapper--pixel-image-art > .image-block,
   .section-content-wrapper--pixel-image-art > .section-content-wrapper__art {
     overflow: hidden;
     min-inline-size: 0;
   }
 
+  @media screen and (min-width: 750px) {
+    /* Keep each role in its column even when the editor omits a hidden block. */
+    .section-content-wrapper--pixel-image-art,
+    .section-content-wrapper--pixel-image-art:has(> .section-content-wrapper__art) {
+      grid-template-columns: minmax(0, var(--section-left-image-width)) minmax(0, 1fr) minmax(0, var(--section-right-image-width));
+    }
+
+    .section-content-wrapper--pixel-image-art > .image-block {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .section-content-wrapper--pixel-image-art > .group-block {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .section-content-wrapper--pixel-image-art > .section-content-wrapper__art {
+      grid-column: 3;
+      grid-row: 1;
+    }
+  }
+
   @media screen and (max-width: 749px) {
+    .section-content-wrapper--pixel-image-art {
+      padding-inline: var(--section-padding-inline-mobile);
+    }
+
     .section-content-wrapper--pixel-image-art > .image-block,
     .section-content-wrapper--pixel-image-art > .section-content-wrapper__art {
       display: none;
+    }
+
+    .section-content-wrapper--pixel-image-art.section-content-wrapper--mobile-right-art {
+      padding-block-start: var(--section-padding-block-start-mobile);
+      padding-block-end: var(--section-padding-block-end-mobile);
+    }
+
+    .section-content-wrapper--pixel-image-art.section-content-wrapper--mobile-right-art > .section-content-wrapper__art {
+      display: block;
+      inline-size: min(100%, var(--section-right-image-width));
+      justify-self: center;
     }
   }
 

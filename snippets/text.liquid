@@ -79,6 +79,9 @@
   "
 
   {{ block.shopify_attributes }}
+  {% if class contains 'text-block--information-icon' %}
+    aria-hidden="true"
+  {% endif %}
 {% endcapture %}
 
 {% liquid

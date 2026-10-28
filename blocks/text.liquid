@@ -1,6 +1,50 @@
 
 
-{% render 'text', block: block %}
+{% liquid
+  assign text_class = ''
+  if page.handle == 'our-mission' and block.id contains 'text_JxAtPw'
+    assign text_class = 'text-block--information-icon'
+  endif
+%}
+{% render 'text', block: block, class: text_class %}
+
+{% stylesheet %}
+  /* The mission transparency note uses this text block as a decorative icon. */
+  .text-block--information-icon {
+    flex: 0 0 auto;
+    inline-size: 24px;
+    min-inline-size: 24px;
+    max-inline-size: 24px;
+  }
+
+  @media screen and (max-width: 749px) {
+    /* Override the row layout's mobile text expansion for this icon only. */
+    .layout-panel-flex.layout-panel-flex--row > .text-block.text-block--information-icon {
+      flex: 0 0 auto;
+      inline-size: 24px;
+    }
+  }
+
+  .text-block--information-icon > p {
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    inline-size: 24px;
+    block-size: 24px;
+    max-inline-size: none;
+    margin: 0;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    font-family: var(--font-body--family);
+    font-size: 17px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: none;
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
