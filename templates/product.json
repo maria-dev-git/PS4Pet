@@ -388,7 +388,7 @@
                   "type": "info-card",
                   "name": "t:names.image_with_text",
                   "settings": {
-                    "image": "shopify://shop_images/Minimalist_Green_Delivery_Truck_Icon_3cfe1bc6-4488-414b-84a7-9b7ccf1dd942.webp",
+                    "image": "shopify://shop_images/Minimalist_Green_Delivery_Truck_Icon_a15c6a27-0283-4cef-855a-0a2b9970d1b8.webp",
                     "heading": "Shipping & Returns",
                     "text": "<p>Details about shipping times and our return policy will appear here.</p>",
                     "image_width": 56,
@@ -512,7 +512,6 @@
               "type": "icon",
               "settings": {
                 "icon": "eye",
-                "image_upload": "shopify://shop_images/Isometric_Teal_Cardboard_Box_Icon_8d4eb8ef-0e01-435f-adb9-4fbbc6ad0f9b.webp",
                 "width": 60,
                 "link": "",
                 "open_in_new_tab": false,
@@ -1492,7 +1491,11 @@
         "image_WJCaCg": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/jules-portrait_66fe9c3c-ba9b-4c97-9b84-1b08da50839a.jpg",
+            "image": "shopify://shop_images/ps4-meet-jules.webp",
+            "story_photo_pair": false,
+            "third_caption": "",
+            "caption": "",
+            "second_caption": "",
             "link": "",
             "image_ratio": "landscape",
             "width": "fill",
@@ -1504,7 +1507,7 @@
             "border_width": 1,
             "border_opacity": 100,
             "border_color": "",
-            "border_radius": 12,
+            "border_radius": 18,
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -1608,8 +1611,8 @@
               "type": "text",
               "settings": {
                 "text": "<p>PS4PETS was inspired by Jules, our rescue pup. Her story shaped our mission: support pets and the people who love them while helping shelter animals still waiting for their forever families.</p>",
-                "width": "fit-content",
-                "max_width": "narrow",
+                "width": "100%",
+                "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
@@ -1677,7 +1680,6 @@
         "item_divider_color": "{{ settings.color_palette.color2 }}",
         "three_part_layout": true,
         "left_image_width": 40,
-        "right_image": "shopify://shop_images/Sage_Green_Paw_Print_Icon_97b87a70-78fa-47dd-a238-f11f12f2e188.webp",
         "right_image_width": 15
       }
     },
@@ -1733,6 +1735,7 @@
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
+                "show_quick_add": true,
                 "image_ratio": "adapt",
                 "border": "none",
                 "border_width": 1,
@@ -1809,7 +1812,6 @@
       "name": "t:names.product_recommendations",
       "settings": {
         "product": "{{ closest.product }}",
-        "fallback_image": "shopify://shop_images/pawhaus-haus-leash-green.png",
         "recommendation_type": "related",
         "layout_type": "grid",
         "carousel_on_mobile": true,

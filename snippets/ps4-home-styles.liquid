@@ -184,6 +184,20 @@
   .ps4-newsletter input { min-inline-size: 0; inline-size: 100%; border: 1px solid var(--color-input-border); border-radius: var(--style-border-radius-inputs); background: var(--color-input-background); color: var(--color-input-text); padding: 14px 20px; }
   .ps4-newsletter__form { min-inline-size: 0; }
   .ps4-newsletter button { flex-shrink: 0; }
+  @media (min-width: 990px) {
+    .ps4-cards--benefit .ps4-card,
+    .ps4-cards--benefit .ps4-card__link {
+      flex-direction: row;
+      gap: var(--gap-md);
+      text-align: start;
+    }
+
+    .ps4-cards--benefit .ps4-card__body {
+      min-inline-size: 0;
+      flex: 1;
+    }
+  }
+
   @media (max-width: 989px) {
     .ps4-cards--category .ps4-card-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     .ps4-cards--journal .ps4-card-grid { grid-template-columns: 1fr; }
