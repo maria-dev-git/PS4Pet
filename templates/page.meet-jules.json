@@ -94,6 +94,7 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
+        "image_1": "shopify://shop_images/hero-banner-1.webp",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
@@ -114,9 +115,9 @@
         "section_height_custom": 50,
         "banner_height_desktop": 0,
         "banner_height_mobile": 0,
-        "background_color": "",
+        "background_color": "{{ settings.color_palette.background }}",
         "toggle_overlay": true,
-        "overlay_color": "#00000026",
+        "overlay_color": "{{ settings.color_palette.background }}",
         "overlay_style": "gradient",
         "gradient_direction": "to top",
         "blurred_reflection": false,
@@ -127,7 +128,7 @@
         "heading_style": "theme",
         "use_bundled_image": false,
         "bundled_image_alt": "Jules wearing a birthday hat and holding her favorite lamb toy",
-        "use_color_scheme": false,
+        "use_color_scheme": true,
         "color_scheme": ""
       }
     },
