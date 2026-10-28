@@ -885,6 +885,33 @@
     "section_XrnkTB": {
       "type": "section",
       "blocks": {
+        "image_mPLPic": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ps4-meet-jules.webp",
+            "story_photo_pair": true,
+            "second_image": "shopify://shop_images/herobanner-mobile.webp",
+            "caption": "",
+            "second_caption": "",
+            "link": "",
+            "image_ratio": "square",
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
         "group_rVj7EE": {
           "type": "group",
           "settings": {
@@ -982,42 +1009,15 @@
             "text_nBUY86",
             "text_EaVTke"
           ]
-        },
-        "image_mPLPic": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/ps4-meet-jules.webp",
-            "story_photo_pair": true,
-            "second_image": "shopify://shop_images/herobanner-mobile.webp",
-            "caption": "",
-            "second_caption": "",
-            "link": "",
-            "image_ratio": "square",
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "group_rVj7EE",
-        "image_mPLPic"
+        "image_mPLPic",
+        "group_rVj7EE"
       ],
       "name": "t:names.image_with_text",
       "settings": {
-        "content_direction": "row",
+        "content_direction": "column",
         "vertical_on_mobile": true,
         "mobile_columns": "1",
         "horizontal_alignment": "flex-start",
