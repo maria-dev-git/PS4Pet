@@ -221,10 +221,15 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "mobile_icons_beside_text": "Icons beside text on mobile",
     "mobile_content_order": "Mobile image/text order",
     "mobile_order_default": "Use block order",
     "mobile_order_image_first": "Image first",
     "mobile_order_text_first": "Text first",
+    "hero_mobile_gradient_angle": "Mobile gradient tilt",
+    "hero_mobile_gradient_angle_info": "0° fades straight upward. Positive angles tilt the transition downward from left to right; negative angles reverse the tilt.",
+    "hero_mobile_bottom_content": "Bottom content on mobile",
+    "hero_mobile_bottom_content_info": "Positions hero content at the bottom on mobile. Gradient overlays fade upward from 40% to 55% using the selected overlay color.",
     "story_photo_pair": "Three stacked story photos",
     "story_second_image": "Second photo",
     "story_third_image": "Third photo",

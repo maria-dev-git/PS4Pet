@@ -66,6 +66,7 @@
         layout-panel-flex
         layout-panel-flex--{{ section.settings.content_direction }}
         section-content-wrapper
+        {% if section.settings.mobile_icons_beside_text %} section-content-wrapper--mobile-inline-icons{% endif %}
         {% if section.settings.content_direction == 'row' and section.settings.mobile_columns == '2' and section.settings.three_part_layout != true %} section-content-wrapper--mobile-two-columns{% endif %}
         {% if section.settings.three_part_layout %} section-content-wrapper--image-text-art{% endif %}
         {% if section.settings.item_dividers %} section-content-wrapper--item-dividers{% endif %}
@@ -93,6 +94,24 @@
 </div>
 
 {% stylesheet %}
+  @media screen and (max-width: 749px) {
+    .section-content-wrapper--mobile-inline-icons > .group-block > .group-block-content {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: center;
+      gap: var(--gap-lg);
+    }
+
+    .section-content-wrapper--mobile-inline-icons > .group-block > .group-block-content > .group-block {
+      min-inline-size: 0;
+      inline-size: 100%;
+    }
+
+    .section-content-wrapper--mobile-inline-icons > .group-block .text-block > * {
+      text-align: start;
+    }
+  }
+
   @media screen and (max-width: 749px) {
     .section--content-mobile-page-width > .custom-section-content {
       grid-column: 2;

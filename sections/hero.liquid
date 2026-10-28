@@ -479,6 +479,7 @@
 
 <div
   id="Hero-{{ section.id }}"
+  data-mobile-bottom-content="{{ section.settings.mobile_bottom_content }}"
   class="hero{% if section.settings.ps4_design %} hero--ps4{% endif %}{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}{% if section.blocks.size == 0 and section.settings.section_height == 'auto' %} hero--no-blocks-auto-height{% endif %}{% if section.settings.stack_media_on_mobile %} hero--stack-mobile{% endif %}"
   style="
     {% if section.settings.ps4_design and section.settings.heading_style == 'serif' %}
@@ -489,6 +490,7 @@
     --hero-border-width: {{ section.settings.border_width }}px;
     --hero-border-opacity: {{ section.settings.border_opacity }}%;
     --blur-opacity: {{ section.settings.reflection_opacity | divided_by: 100.0 }};
+    --hero-mobile-gradient-angle: {{ section.settings.mobile_gradient_angle | default: 0 }}deg;
     {% if section.settings.section_height == 'custom' %}
       --hero-min-height: {{ section.settings.section_height_custom }}svh;
     {% elsif section.settings.section_height == "full-screen" %}
@@ -604,6 +606,21 @@
   {% endif %}
 {% endstyle %}
 {% stylesheet %}
+  @media screen and (max-width: 749px) {
+    .hero[data-mobile-bottom-content='true'] .hero__container {
+      align-items: end;
+    }
+
+    .hero[data-mobile-bottom-content='true'] .hero__content-wrapper {
+      align-self: end;
+      justify-content: flex-end;
+    }
+
+    .hero[data-mobile-bottom-content='true'] .hero__media-grid > .overlay--gradient {
+      background: linear-gradient(var(--hero-mobile-gradient-angle), var(--overlay-color) 40%, var(--overlay-color--end) 55%);
+    }
+  }
+
   .hero-wrapper {
     --hero-height-offset: 0px;
   }
@@ -1285,6 +1302,25 @@
       "id": "toggle_overlay",
       "label": "t:settings.media_overlay",
       "info": "t:ps4.hero_overlay_mobile_info"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_bottom_content",
+      "label": "t:settings.hero_mobile_bottom_content",
+      "info": "t:settings.hero_mobile_bottom_content_info",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "mobile_gradient_angle",
+      "label": "t:settings.hero_mobile_gradient_angle",
+      "info": "t:settings.hero_mobile_gradient_angle_info",
+      "min": -45,
+      "max": 45,
+      "step": 1,
+      "unit": "°",
+      "default": 0,
+      "visible_if": "{{ section.settings.mobile_bottom_content and section.settings.toggle_overlay and section.settings.overlay_style == 'gradient' }}"
     },
     {
       "type": "color",
