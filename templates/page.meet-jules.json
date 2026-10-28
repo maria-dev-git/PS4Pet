@@ -888,9 +888,12 @@
         "image_mPLPic": {
           "type": "image",
           "settings": {
+<<<<<<< HEAD
             "story_photo_pair": true,
             "caption": "Adventure buddy ♡",
             "second_caption": "Big heart. Bigger cuddles ♡",
+=======
+>>>>>>> 15fe1cffae92e69d7e78054ae67cb325edf7bdf2
             "link": "",
             "image_ratio": "square",
             "width": "fill",
@@ -953,7 +956,11 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
+<<<<<<< HEAD
                 "text": "<h2>Jules’s Story</h2>",
+=======
+                "text": "<h2>Our signature product</h2>",
+>>>>>>> 15fe1cffae92e69d7e78054ae67cb325edf7bdf2
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1031,8 +1038,13 @@
         }
       },
       "block_order": [
+<<<<<<< HEAD
         "group_rVj7EE",
         "image_mPLPic"
+=======
+        "image_mPLPic",
+        "group_rVj7EE"
+>>>>>>> 15fe1cffae92e69d7e78054ae67cb325edf7bdf2
       ],
       "name": "t:names.image_with_text",
       "settings": {
