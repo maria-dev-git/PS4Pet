@@ -1,11 +1,18 @@
 {% doc %}
-  Renders an image or a column of three tilted story photos using block settings.
+  Renders an image with optional tilt, white frame and caption, or three story photos.
   @example
   {% content_for 'block', type: 'image', id: 'story-photos' %}
 {% enddoc %}
 {% liquid
   assign block_settings = block.settings
   assign ratio = 1
+  assign has_photo_frame = false
+  if block_settings.image_tilt != blank and block_settings.image_tilt != 0
+    assign has_photo_frame = true
+  endif
+  if block_settings.white_border_width > 0 or block_settings.caption != blank
+    assign has_photo_frame = true
+  endif
 
   case block_settings.image_ratio
     when 'landscape'
@@ -27,6 +34,9 @@
 
 {% capture style %}
   --ratio: {{ ratio }};
+  --image-block-tilt: {{ block_settings.image_tilt | default: 0 }}deg;
+  --image-block-frame-width: {{ block_settings.white_border_width | default: 0 }}px;
+  --image-block-frame-radius: {{ block_settings.border_radius }}px;
   {% render 'size-style', settings: block_settings %}
   {% render 'spacing-style', settings: block_settings %}
 {% endcapture %}
@@ -71,6 +81,7 @@
       {% endfor %}
     </div>
   {% else %}
+  {% capture single_image %}
   {%- if block_settings.image -%}
     {{
       block_settings.image
@@ -88,6 +99,17 @@
       {{ 'detailed-apparel-1' | placeholder_svg_tag: 'image-block__placeholder' }}
     </div>
   {%- endif -%}
+  {% endcapture %}
+  {% if has_photo_frame %}
+    <div class="image-block__photo-stage{% if block_settings.image_tilt != blank and block_settings.image_tilt != 0 %} image-block__photo-stage--tilted{% endif %}">
+      <figure class="image-block__framed-photo{% if block_settings.white_border_width > 0 %} image-block__framed-photo--white{% endif %}">
+        {{ single_image }}
+        {% if block_settings.caption != blank %}<figcaption>{{ block_settings.caption | escape }}</figcaption>{% endif %}
+      </figure>
+    </div>
+  {% else %}
+    {{ single_image }}
+  {% endif %}
   {% endif %}
 {% endcapture %}
 
@@ -111,6 +133,37 @@
 {% endif %}
 
 {% stylesheet %}
+  .image-block__photo-stage {
+    inline-size: 100%;
+    min-inline-size: 0;
+  }
+
+  .image-block__photo-stage--tilted {
+    /* Reserve space for the rotated corners within the image column. */
+    padding: 14%;
+  }
+
+  .image-block__framed-photo {
+    margin: 0;
+    min-inline-size: 0;
+    padding: var(--image-block-frame-width);
+    border-radius: var(--image-block-frame-radius);
+    transform: rotate(var(--image-block-tilt));
+  }
+
+  .image-block__framed-photo--white {
+    background: #fff;
+    color: inherit;
+    box-shadow: var(--shadow-button);
+  }
+
+  .image-block__framed-photo figcaption {
+    padding-block-start: var(--padding-sm);
+    text-align: center;
+    font-family: inherit;
+    overflow-wrap: anywhere;
+  }
+
   .image-block:has(.image-block__story-pair) {
     min-inline-size: 0;
   }
@@ -152,7 +205,7 @@
   .image-block__story-photo figcaption {
     padding-block: var(--padding-sm) var(--padding-xs);
     text-align: center;
-    font-family: var(--font-heading--family);
+    font-family: inherit;
     overflow-wrap: anywhere;
   }
 
@@ -225,8 +278,29 @@
     {
       "type": "text",
       "id": "caption",
-      "label": "t:settings.story_first_caption",
-      "visible_if": "{{ block.settings.story_photo_pair }}"
+      "label": "t:settings.story_first_caption"
+    },
+    {
+      "type": "range",
+      "id": "image_tilt",
+      "label": "t:settings.story_image_tilt",
+      "min": -15,
+      "max": 15,
+      "step": 1,
+      "unit": "°",
+      "default": 0,
+      "visible_if": "{{ block.settings.story_photo_pair == false }}"
+    },
+    {
+      "type": "range",
+      "id": "white_border_width",
+      "label": "t:settings.story_white_border_width",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.story_photo_pair == false }}"
     },
     {
       "type": "text",

@@ -271,6 +271,7 @@
                 },
                 "accelerated-checkout": {
                   "type": "accelerated-checkout",
+                  "disabled": true,
                   "static": true,
                   "settings": {},
                   "blocks": {}
@@ -512,6 +513,7 @@
               "type": "icon",
               "settings": {
                 "icon": "eye",
+                "image_upload": "shopify://shop_images/Isometric_Teal_Cardboard_Box_Icon_b3904f4a-1ccd-4813-bf31-a8cc928b9122.webp",
                 "width": 60,
                 "link": "",
                 "open_in_new_tab": false,
@@ -564,13 +566,13 @@
                 "text_iJAnq3": {
                   "type": "text",
                   "settings": {
-                    "text": "<h2>Intentional design</h2>",
+                    "text": "<h2>Adjustable Fit</h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
                     "type_preset": "custom",
                     "font": "var(--font-body--family)",
-                    "font_size": "1.5rem",
+                    "font_size": "1.25rem",
                     "font_size_mobile": "1rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
@@ -590,7 +592,7 @@
                 "text_8w9g46": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Everything we do starts with why</p>",
+                    "text": "<p>Designed for a secure, comfortable fit for everyday use</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -721,13 +723,13 @@
                 "text_4Aw8cW": {
                   "type": "text",
                   "settings": {
-                    "text": "<h2>Made with care</h2>",
+                    "text": "<h2>Comfortable Everyday Wear</h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
                     "type_preset": "custom",
                     "font": "var(--font-body--family)",
-                    "font_size": "1.5rem",
+                    "font_size": "1.25rem",
                     "font_size_mobile": "1rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
@@ -747,7 +749,7 @@
                 "text_DDXjLy": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>We believe in building better</p>",
+                    "text": "<p>Soft, padded design keeps your dog comfortable</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -878,13 +880,13 @@
                 "text_AGDQ6f": {
                   "type": "text",
                   "settings": {
-                    "text": "<h2>A team with a goal</h2>",
+                    "text": "<h2>Durable Hardware</h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
                     "type_preset": "custom",
                     "font": "var(--font-body--family)",
-                    "font_size": "1.5rem",
+                    "font_size": "1.25rem",
                     "font_size_mobile": "1rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
@@ -904,7 +906,7 @@
                 "text_kRmCwV": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Real people making great products</p>",
+                    "text": "<p>Quality materials made for daily adventures</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -1041,7 +1043,7 @@
                     "alignment": "center",
                     "type_preset": "custom",
                     "font": "var(--font-body--family)",
-                    "font_size": "1.5rem",
+                    "font_size": "1.25rem",
                     "font_size_mobile": "1rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
@@ -1495,6 +1497,8 @@
             "story_photo_pair": false,
             "third_caption": "",
             "caption": "",
+            "image_tilt": 0,
+            "white_border_width": 0,
             "second_caption": "",
             "link": "",
             "image_ratio": "landscape",
@@ -1584,7 +1588,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Shop for yours. Help one waiting for theirs.</h2>",
+                "text": "<h2><strong>Shop for yours. Help one waiting for theirs.</strong></h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1680,7 +1684,8 @@
         "item_divider_color": "{{ settings.color_palette.color2 }}",
         "three_part_layout": true,
         "left_image_width": 40,
-        "right_image_width": 15
+        "right_image": "shopify://shop_images/Sage_Green_Paw_Print_Icon_86901a8c-ea43-4a64-ac7a-0fc537d5d73d.webp",
+        "right_image_width": 10
       }
     },
     "product_recommendations_qggXJq": {
@@ -1736,7 +1741,7 @@
               "name": "t:names.product_card_media",
               "settings": {
                 "show_quick_add": true,
-                "image_ratio": "adapt",
+                "image_ratio": "square",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -1818,7 +1823,7 @@
         "max_products": 4,
         "columns": 4,
         "mobile_columns": "2",
-        "columns_gap": 12,
+        "columns_gap": 24,
         "rows_gap": 24,
         "icons_style": "arrow",
         "icons_shape": "none",

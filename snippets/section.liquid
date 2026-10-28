@@ -21,7 +21,7 @@
 
 <div class="section-background color-custom-{{ section_id }}"></div>
 <div
-  class="section section--{{ section.settings.section_width }} color-custom-{{ section_id }}"
+  class="section section--{{ section.settings.section_width }}{% if section.settings.section_width_mobile == 'page-width' or section.settings.section_width_mobile == 'full-width' %} section--content-mobile-{{ section.settings.section_width_mobile }}{% endif %} color-custom-{{ section_id }}"
   data-testid="ui-test-section"
 
   {% if request.visual_preview_mode %}
@@ -93,6 +93,16 @@
 </div>
 
 {% stylesheet %}
+  @media screen and (max-width: 749px) {
+    .section--content-mobile-page-width > .custom-section-content {
+      grid-column: 2;
+    }
+
+    .section--content-mobile-full-width > .custom-section-content {
+      grid-column: 1 / -1;
+    }
+  }
+
   .section-content-wrapper--image-text-art {
     display: grid;
     grid-template-columns: minmax(0, var(--section-left-image-width)) minmax(0, 1fr);

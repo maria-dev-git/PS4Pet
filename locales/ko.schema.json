@@ -221,11 +221,17 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "mobile_content_order": "Mobile image/text order",
+    "mobile_order_default": "Use block order",
+    "mobile_order_image_first": "Image first",
+    "mobile_order_text_first": "Text first",
     "story_photo_pair": "Three stacked story photos",
     "story_second_image": "Second photo",
     "story_third_image": "Third photo",
     "story_third_caption": "Third photo caption",
-    "story_first_caption": "First photo caption",
+    "story_first_caption": "Image caption",
+    "story_image_tilt": "Image tilt",
+    "story_white_border_width": "White border width",
     "story_second_caption": "Second photo caption",
     "use_content_blocks": "콘텐츠 블록 사용",
     "use_color_scheme": "공유 색상 구성표 사용",

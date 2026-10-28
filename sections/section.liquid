@@ -4,12 +4,19 @@
   {% content_for 'blocks' %}
 {% endcapture %}
 
+{% if section.settings.mobile_content_order != blank and section.settings.mobile_content_order != 'default' %}
+  <section-mobile-order data-mobile-order="{{ section.settings.mobile_content_order }}" style="display: contents;">
+{% endif %}
 {% render 'section',
   section: section,
   children: children,
   section_id: section.id,
   background_color: section.settings.background_color
 %}
+{% if section.settings.mobile_content_order != blank and section.settings.mobile_content_order != 'default' %}
+  </section-mobile-order>
+  <script src="{{ 'section-mobile-order.js' | asset_url }}" type="module"></script>
+{% endif %}
 
 {% render 'section-color-scheme', section: section %}
 
@@ -71,6 +78,18 @@
       ],
       "default": "1",
       "visible_if": "{{ section.settings.content_direction == 'row' }}"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_order",
+      "label": "t:settings.mobile_content_order",
+      "options": [
+        { "value": "default", "label": "t:settings.mobile_order_default" },
+        { "value": "image_first", "label": "t:settings.mobile_order_image_first" },
+        { "value": "text_first", "label": "t:settings.mobile_order_text_first" }
+      ],
+      "default": "default",
+      "visible_if": "{{ section.settings.content_direction == 'row' and section.settings.vertical_on_mobile }}"
     },
     {
       "type": "select",
@@ -200,6 +219,26 @@
         }
       ],
       "default": "page-width"
+    },
+    {
+      "type": "select",
+      "id": "section_width_mobile",
+      "label": "t:settings.width_mobile",
+      "options": [
+        {
+          "value": "inherit",
+          "label": "t:options.auto"
+        },
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "inherit"
     },
     {
       "type": "select",
