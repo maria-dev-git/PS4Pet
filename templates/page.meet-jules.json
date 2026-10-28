@@ -68,7 +68,7 @@
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
-                "text_color": "#B95757",
+                "text_color": "#b95757",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -885,34 +885,6 @@
     "section_XrnkTB": {
       "type": "section",
       "blocks": {
-        "image_mPLPic": {
-          "type": "image",
-          "settings": {
-<<<<<<< HEAD
-            "story_photo_pair": true,
-            "caption": "Adventure buddy ♡",
-            "second_caption": "Big heart. Bigger cuddles ♡",
-=======
->>>>>>> 15fe1cffae92e69d7e78054ae67cb325edf7bdf2
-            "link": "",
-            "image_ratio": "square",
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
         "group_rVj7EE": {
           "type": "group",
           "settings": {
@@ -956,11 +928,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-<<<<<<< HEAD
-                "text": "<h2>Jules’s Story</h2>",
-=======
-                "text": "<h2>Our signature product</h2>",
->>>>>>> 15fe1cffae92e69d7e78054ae67cb325edf7bdf2
+                "text": "<h2>Jules' Story</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1008,43 +976,44 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
-            },
-            "button_hnQePp": {
-              "type": "button",
-              "settings": {
-                "label": "Shop now",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "custom_button_background": "{{ settings.color_palette.foreground }}",
-                "custom_button_text": "{{ settings.color_palette.background }}",
-                "custom_button_border": "{{ settings.color_palette.background }}",
-                "link_text_color": "",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100,
-                "mobile_width_pixels": 150,
-                "mobile_font_size": ""
-              },
-              "blocks": {}
             }
           },
           "block_order": [
             "text_nBUY86",
-            "text_EaVTke",
-            "button_hnQePp"
+            "text_EaVTke"
           ]
+        },
+        "image_mPLPic": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ps4-meet-jules.webp",
+            "story_photo_pair": true,
+            "second_image": "shopify://shop_images/herobanner-mobile.webp",
+            "caption": "",
+            "second_caption": "",
+            "link": "",
+            "image_ratio": "square",
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-<<<<<<< HEAD
         "group_rVj7EE",
         "image_mPLPic"
-=======
-        "image_mPLPic",
-        "group_rVj7EE"
->>>>>>> 15fe1cffae92e69d7e78054ae67cb325edf7bdf2
       ],
       "name": "t:names.image_with_text",
       "settings": {
