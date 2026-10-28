@@ -1,5 +1,8 @@
-
-
+{% doc %}
+  Renders an image or a pair of tilted story photos using block settings.
+  @example
+  {% content_for 'block', type: 'image', id: 'story-photos' %}
+{% enddoc %}
 {% liquid
   assign block_settings = block.settings
   assign ratio = 1
@@ -41,6 +44,30 @@
 %}
 
 {% capture image %}
+  {% if block_settings.story_photo_pair %}
+    <div class="image-block__story-pair">
+      {% for index in (1..2) %}
+        {% liquid
+          assign photo = block_settings.image
+          assign caption = block_settings.caption
+          if index == 2
+            assign photo = block_settings.second_image
+            assign caption = block_settings.second_caption
+          endif
+        %}
+        {% if photo != blank or request.design_mode %}
+          <figure class="image-block__story-photo">
+            {% if photo != blank %}
+              {{ photo | image_url: width: 1200 | image_tag: widths: '180, 320, 480, 750, 1000, 1200', sizes: '(min-width: 750px) 28vw, 42vw', loading: 'lazy' }}
+            {% else %}
+              {{ 'image' | placeholder_svg_tag }}
+            {% endif %}
+            {% if caption != blank %}<figcaption>{{ caption | escape }}</figcaption>{% endif %}
+          </figure>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
   {%- if block_settings.image -%}
     {{
       block_settings.image
@@ -58,6 +85,7 @@
       {{ 'detailed-apparel-1' | placeholder_svg_tag: 'image-block__placeholder' }}
     </div>
   {%- endif -%}
+  {% endif %}
 {% endcapture %}
 
 {% if block_settings.link == blank %}
@@ -80,6 +108,51 @@
 {% endif %}
 
 {% stylesheet %}
+  .image-block:has(.image-block__story-pair) {
+    min-inline-size: 0;
+  }
+
+  .image-block__story-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: var(--padding-lg);
+    inline-size: 100%;
+    min-inline-size: 0;
+    padding: 8% 5%;
+  }
+
+  .image-block__story-photo {
+    margin: 0;
+    min-inline-size: 0;
+    padding: var(--padding-xs);
+    background: var(--color-background);
+    color: var(--color-foreground);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-button);
+    transform: rotate(-7deg);
+  }
+
+  .image-block__story-photo:nth-child(2) {
+    transform: translateY(5%) rotate(7deg);
+  }
+
+  .image-block__story-photo :is(img, svg) {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: var(--border-radius-sm);
+  }
+
+  .image-block__story-photo figcaption {
+    padding-block: var(--padding-sm) var(--padding-xs);
+    text-align: center;
+    font-family: var(--font-heading--family);
+    overflow-wrap: anywhere;
+  }
+
   .image-block__placeholder {
     height: 100%;
     width: 100%;
@@ -121,6 +194,30 @@
       "type": "image_picker",
       "id": "image",
       "label": "t:settings.image"
+    },
+    {
+      "type": "checkbox",
+      "id": "story_photo_pair",
+      "label": "t:settings.story_photo_pair",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "second_image",
+      "label": "t:settings.story_second_image",
+      "visible_if": "{{ block.settings.story_photo_pair }}"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "t:settings.story_first_caption",
+      "visible_if": "{{ block.settings.story_photo_pair }}"
+    },
+    {
+      "type": "text",
+      "id": "second_caption",
+      "label": "t:settings.story_second_caption",
+      "visible_if": "{{ block.settings.story_photo_pair }}"
     },
     {
       "type": "url",

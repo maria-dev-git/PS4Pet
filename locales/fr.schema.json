@@ -221,6 +221,10 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "story_photo_pair": "Two tilted story photos",
+    "story_second_image": "Second photo",
+    "story_first_caption": "First photo caption",
+    "story_second_caption": "Second photo caption",
     "use_content_blocks": "Utiliser des blocs de contenu",
     "use_color_scheme": "Utiliser un nuancier partagé",
     "mobile_font_size": "Taille de police sur mobile",

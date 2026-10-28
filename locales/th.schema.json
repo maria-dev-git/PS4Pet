@@ -221,6 +221,10 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "story_photo_pair": "Two tilted story photos",
+    "story_second_image": "Second photo",
+    "story_first_caption": "First photo caption",
+    "story_second_caption": "Second photo caption",
     "use_content_blocks": "ใช้บล็อกเนื้อหา",
     "use_color_scheme": "ใช้รูปแบบสีร่วมกัน",
     "mobile_font_size": "ขนาดแบบอักษรบนมือถือ",

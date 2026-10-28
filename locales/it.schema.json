@@ -221,6 +221,10 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "story_photo_pair": "Two tilted story photos",
+    "story_second_image": "Second photo",
+    "story_first_caption": "First photo caption",
+    "story_second_caption": "Second photo caption",
     "use_content_blocks": "Usa blocchi di contenuto",
     "use_color_scheme": "Usa schema di colori condiviso",
     "mobile_font_size": "Dimensione carattere su mobile",

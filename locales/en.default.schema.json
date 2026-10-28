@@ -1257,7 +1257,11 @@
     "top_row_background": "Top row background",
     "top_row_text": "Top row text",
     "bottom_row_background": "Bottom row background",
-    "bottom_row_text": "Bottom row text"
+    "bottom_row_text": "Bottom row text",
+    "story_photo_pair": "Two tilted story photos",
+    "story_second_image": "Second photo",
+    "story_first_caption": "First photo caption",
+    "story_second_caption": "Second photo caption"
   },
   "text_defaults": {
     "accordion_heading": "Accordion heading",

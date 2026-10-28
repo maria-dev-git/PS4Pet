@@ -733,6 +733,10 @@
     "below_media": "מתחת למדיה"
   },
   "settings": {
+    "story_photo_pair": "Two tilted story photos",
+    "story_second_image": "Second photo",
+    "story_first_caption": "First photo caption",
+    "story_second_caption": "Second photo caption",
     "use_content_blocks": "שימוש בבלוקים של תוכן",
     "use_color_scheme": "שימוש בערכת צבעים משותפת",
     "mobile_font_size": "גודל גופן בנייד",

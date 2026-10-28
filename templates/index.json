@@ -302,7 +302,7 @@
             "label": "",
             "link": "",
             "background": "#f2f1ea",
-            "image": "shopify://shop_images/Minimalist_Teal_Piggy_Bank_Icon_0a79c237-e9fe-4bde-b889-829f155f2da0.webp",
+            "image": "shopify://shop_images/Minimalist_Teal_Piggy_Bank_Icon_6d5926bf-5464-4a3b-b5a6-091a1e715c1c.webp",
             "image_alt": "",
             "asset": "none",
             "symbol": "♡",
@@ -319,7 +319,7 @@
             "label": "",
             "link": "",
             "background": "#f2f1ea",
-            "image": "shopify://shop_images/Isometric_Teal_Cardboard_Box_Icon_8d4eb8ef-0e01-435f-adb9-4fbbc6ad0f9b.webp",
+            "image": "shopify://shop_images/Isometric_Teal_Cardboard_Box_Icon_b3904f4a-1ccd-4813-bf31-a8cc928b9122.webp",
             "image_alt": "",
             "asset": "none",
             "symbol": "◇",
@@ -336,7 +336,7 @@
             "label": "",
             "link": "",
             "background": "#f2f1ea",
-            "image": "shopify://shop_images/Glossy_Blush_Pink_Heart_Icon_1655adcb-e437-47ec-a2c6-7fa9d7fc4b2c.webp",
+            "image": "shopify://shop_images/Glossy_Blush_Pink_Heart_Icon_41929659-9085-436f-ab44-84113fec263f.webp",
             "image_alt": "",
             "asset": "none",
             "symbol": "♡",
@@ -378,7 +378,7 @@
           "type": "card",
           "settings": {
             "eyebrow": "",
-            "heading": "Dog Essentials",
+            "heading": "",
             "text": "",
             "label": "",
             "link": "/collections/dogs",
@@ -386,7 +386,7 @@
             "image_alt": "Green everyday pet collar",
             "asset": "collar",
             "symbol": "",
-            "collection": "",
+            "collection": "dog-essentials",
             "article": ""
           }
         },
@@ -394,7 +394,7 @@
           "type": "card",
           "settings": {
             "eyebrow": "",
-            "heading": "Cat Essentials",
+            "heading": "",
             "text": "",
             "label": "",
             "link": "/collections/cats",
@@ -402,7 +402,7 @@
             "image_alt": "",
             "asset": "none",
             "symbol": "",
-            "collection": "",
+            "collection": "cat-essentials",
             "article": ""
           }
         },
@@ -410,7 +410,7 @@
           "type": "card",
           "settings": {
             "eyebrow": "",
-            "heading": "Treats & Dental",
+            "heading": "",
             "text": "",
             "label": "",
             "link": "/collections/treats-dental",
@@ -418,7 +418,7 @@
             "image_alt": "Green pet treat pouch",
             "asset": "pouch",
             "symbol": "",
-            "collection": "",
+            "collection": "everyday-essential",
             "article": ""
           }
         },
@@ -426,7 +426,7 @@
           "type": "card",
           "settings": {
             "eyebrow": "",
-            "heading": "Walking Gear",
+            "heading": "",
             "text": "",
             "label": "",
             "link": "/collections/walking-gear",
@@ -434,7 +434,7 @@
             "image_alt": "Green everyday pet collar",
             "asset": "collar",
             "symbol": "",
-            "collection": "",
+            "collection": "walking-gear",
             "article": ""
           }
         },
@@ -442,7 +442,7 @@
           "type": "card",
           "settings": {
             "eyebrow": "",
-            "heading": "Waste & Cleanup",
+            "heading": "",
             "text": "",
             "label": "",
             "link": "/collections/waste-cleanup",
@@ -450,7 +450,7 @@
             "image_alt": "Green pet treat pouch",
             "asset": "pouch",
             "symbol": "",
-            "collection": "",
+            "collection": "waste-cleaning",
             "article": ""
           }
         },
@@ -458,7 +458,7 @@
           "type": "card",
           "settings": {
             "eyebrow": "",
-            "heading": "Toys & Enrichment",
+            "heading": "",
             "text": "",
             "label": "",
             "link": "/collections/toys-enrichment",
@@ -466,7 +466,7 @@
             "image_alt": "Green rope toy",
             "asset": "toy",
             "symbol": "",
-            "collection": "",
+            "collection": "toys-enrichment",
             "article": ""
           }
         },
@@ -474,7 +474,7 @@
           "type": "card",
           "settings": {
             "eyebrow": "",
-            "heading": "Personalized Pet Gear",
+            "heading": "",
             "text": "",
             "label": "",
             "link": "/collections/personalized-pet-gear",
@@ -482,7 +482,7 @@
             "image_alt": "",
             "asset": "none",
             "symbol": "",
-            "collection": "",
+            "collection": "cozy-comfort",
             "article": ""
           }
         }
@@ -681,11 +681,14 @@
                   "type": "icon",
                   "settings": {
                     "icon": "paw_print",
-                    "image_upload": "shopify://shop_images/Sage_Green_Paw_Print_Icon_97b87a70-78fa-47dd-a238-f11f12f2e188.webp",
+                    "image_upload": "shopify://shop_images/Sage_Green_Paw_Print_Icon_86901a8c-ea43-4a64-ac7a-0fc537d5d73d.webp",
                     "width": 48,
                     "link": "",
                     "open_in_new_tab": false,
-                    "icon_color": ""
+                    "icon_color": "",
+                    "circle_background": false,
+                    "circle_color": "{{ settings.color_palette.color2 }}",
+                    "circle_padding": 20
                   },
                   "blocks": {}
                 }
@@ -762,7 +765,7 @@
             "feature_3": {
               "type": "_ps4-promo-feature",
               "settings": {
-                "image": "shopify://shop_images/Minimalist_Teal_Group_Icon_2c18c281-adcd-4920-b5fb-8b515ad413f6.webp",
+                "image": "shopify://shop_images/Minimalist_Teal_Group_Icon_f181c0d5-2eb7-48cd-8baa-4697f81715fc.webp",
                 "image_alt": "",
                 "icon": "heart",
                 "text": "<p>For Pets. For Families. For Those Still Waiting for Theirs.</p>"
@@ -820,7 +823,6 @@
             "label": "",
             "link": "/blogs/jules-journal",
             "background": "#fbf7f3",
-            "image": "shopify://shop_images/pawhaus-cozy-bandana-green.png",
             "image_alt": "Jules, our rescue pup",
             "asset": "jules",
             "symbol": "",
@@ -837,7 +839,6 @@
             "label": "",
             "link": "/blogs/jules-journal",
             "background": "#fbf7f3",
-            "image": "shopify://shop_images/pawhaus-haus-leash-green.png",
             "image_alt": "Green rope toy",
             "asset": "toy",
             "symbol": "",
@@ -854,7 +855,6 @@
             "label": "",
             "link": "/pages/contact",
             "background": "#fbf7f3",
-            "image": "shopify://shop_images/pawhaus-treat-pouch-green.png",
             "image_alt": "",
             "asset": "none",
             "symbol": "",

@@ -733,6 +733,10 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "story_photo_pair": "Two tilted story photos",
+    "story_second_image": "Second photo",
+    "story_first_caption": "First photo caption",
+    "story_second_caption": "Second photo caption",
     "use_content_blocks": "استخدام كتل المحتوى",
     "use_color_scheme": "استخدام نظام ألوان مشترك",
     "mobile_font_size": "حجم الخط على الجوال",
