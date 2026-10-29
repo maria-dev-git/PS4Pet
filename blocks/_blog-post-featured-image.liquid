@@ -2,6 +2,9 @@
 
 {%- doc -%}
   Renders the blog post featured image block.
+  Image alignment positions the block when its width is smaller than its container.
+  @example
+  <!-- Add Featured image to Blog post, choose a custom width and image alignment. -->
 {%- enddoc -%}
 
 {% liquid
@@ -11,6 +14,7 @@
 
 {%- if image != blank -%}
   <div
+    data-image-alignment="{{ block_settings.image_alignment | default: 'center' }}"
     class="blog-post-featured-image blog-post-featured-image--{{ block.id }} blog-post-featured-image--height-{{ block_settings.height }} spacing-style size-style"
     style="
       --ratio: {% case block_settings.image_ratio %}
@@ -60,6 +64,16 @@
     --width: var(--size-style-width, 100%);
   }
 
+  .blog-post-featured-image[data-image-alignment='start'] {
+    align-self: flex-start;
+    margin-inline: 0 auto;
+  }
+
+  .blog-post-featured-image[data-image-alignment='end'] {
+    align-self: flex-end;
+    margin-inline: auto 0;
+  }
+
   .blog-post-featured-image--height-fit {
     height: fit-content;
   }
@@ -94,6 +108,17 @@
   "tag": null,
   "blocks": [],
   "settings": [
+    {
+      "type": "select",
+      "id": "image_alignment",
+      "label": "t:settings.alignment",
+      "options": [
+        { "value": "start", "label": "t:options.left" },
+        { "value": "center", "label": "t:options.center" },
+        { "value": "end", "label": "t:options.right" }
+      ],
+      "default": "center"
+    },
     {
       "type": "header",
       "content": "t:content.size"
