@@ -1,6 +1,6 @@
 {% comment %}Section contract: editable journal filters. Configure on the Jules Journal blog template.{% endcomment %}
 
-<div class="section section--page-width journal-surface"><journal-filters><div class="journal-filters" style="--journal-filter-count: {{ section.blocks.size }};">
+<div class="section section--page-width journal-surface"><journal-filters><div class="journal-filters" style="--journal-filter-count: {{ section.blocks.size }}; --journal-mobile-columns: {{ section.settings.mobile_columns }};">
 {% for block in section.blocks %}
 <button type="button" on:click="/filter" data-tag="{{ block.settings.tag | escape }}" data-tag-handle="{{ block.settings.tag | handleize }}" style="--journal-icon-size: {{ block.settings.icon_size }}px;" aria-pressed="{% if block.settings.tag == blank %}true{% else %}false{% endif %}" {{ block.shopify_attributes }}>
 {% if block.settings.image %}{{ block.settings.image | image_url: width: 240 | image_tag: width: 40, height: 40, alt: '', loading: 'lazy' }}{% elsif block.settings.icon != blank %}
@@ -13,15 +13,28 @@
 {% stylesheet %}
 .journal-surface:has(> journal-filters) { background-color:var(--color-background); color:var(--color-foreground); }
 .journal-filters { display:grid; grid-template-columns:repeat(var(--journal-filter-count),minmax(0,1fr)); gap:12px; padding-block:24px; }
+.journal-filters button { min-inline-size:0; }
 .journal-filters button { font:inherit; cursor:pointer; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:16px 8px; text-align:center; overflow-wrap:anywhere; border:1px solid var(--color-border); border-radius:8px; color:var(--color-foreground); background:var(--color-background); text-decoration:none; }
 .journal-filters button[aria-pressed="true"] { color:#00443B; background:#E5E9DC; }
 .journal-filters :is(svg, img) { inline-size:min(var(--journal-icon-size), 100%); block-size:var(--journal-icon-size); object-fit:contain; flex-shrink:0; }
-@media(max-width:749px) { .journal-filters { grid-template-columns:repeat(var(--journal-filter-count),minmax(125px,1fr)); overflow-x:auto; } }
+@media(max-width:749px) {
+  .journal-filters { grid-template-columns:repeat(var(--journal-mobile-columns),minmax(0,1fr)); }
+  .journal-filters > button:first-child { grid-column:1 / -1; }
+}
 {% endstylesheet %}
 {% schema %}
 {
   "name": "t:journal.filters",
   "settings": [
+    {
+      "type": "range",
+      "id": "mobile_columns",
+      "label": "t:settings.mobile_columns",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
     {
       "type": "blog",
       "id": "blog",

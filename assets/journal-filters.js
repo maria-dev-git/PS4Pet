@@ -13,7 +13,7 @@ class JournalFilters extends Component {
   }
 
   /** @param {MouseEvent} event - Category activation. */
-  async filter(event) {
+  async filter(event, expand = false) {
     const button = event.target instanceof Element ? event.target.closest('button[data-tag]') : null;
     const section = this.closest('.shopify-section');
     let sibling = section?.nextElementSibling;
@@ -66,9 +66,16 @@ class JournalFilters extends Component {
       const grid = results.querySelector('.journal-grid');
       if (grid) grid.replaceChildren(...matching.map((card) => card.cloneNode(true)));
       results.querySelector('[data-journal-pagination]')?.remove();
+      results.toggleAttribute('data-expanded', expand);
+      const expandButton = results.querySelector('[aria-controls]');
+      if (expandButton) {
+        expandButton.setAttribute('aria-expanded', String(expand));
+        expandButton.hidden = expand || matching.length <= 3;
+      }
       const empty = results.querySelector('[data-journal-empty]');
       if (empty instanceof HTMLElement) empty.hidden = matching.length !== 0;
     } catch (error) {
+      if (intent === this.#intent && expand) results.removeAttribute('data-expanded');
       if (intent === this.#intent && error.name !== 'AbortError' && status) {
         status.textContent = results.dataset.error || '';
       }
@@ -79,3 +86,23 @@ class JournalFilters extends Component {
 }
 
 if (!customElements.get('journal-filters')) customElements.define('journal-filters', JournalFilters);
+
+class JournalArticles extends Component {
+  /** Expand the currently selected category in this article section. */
+  async expand() {
+    let sibling = this.closest('.shopify-section')?.previousElementSibling;
+    let filters;
+    while (sibling && !filters) {
+      filters = sibling.querySelector('journal-filters');
+      sibling = sibling.previousElementSibling;
+    }
+    const selected = filters?.querySelector('button[aria-pressed="true"]');
+    if (filters instanceof JournalFilters && selected) {
+      await filters.filter({ target: selected }, true);
+    } else {
+      this.setAttribute('data-expanded', '');
+      this.querySelector('[aria-controls]')?.setAttribute('aria-expanded', 'true');
+    }
+  }
+}
+if (!customElements.get('journal-articles')) customElements.define('journal-articles', JournalArticles);

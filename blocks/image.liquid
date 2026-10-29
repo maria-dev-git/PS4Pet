@@ -49,6 +49,9 @@
 
 {% capture image_border_style %}
   --ratio: {{ ratio }};
+  {% if block_settings.image_position != blank %}
+    object-position: {{ block_settings.image_position }};
+  {% endif %}
   {% render 'border-override', settings: block_settings %}
 {% endcapture %}
 
@@ -274,6 +277,19 @@
   "name": "t:names.image",
   "tag": null,
   "settings": [
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "t:settings.image_position",
+      "options": [
+        { "value": "", "label": "t:options.auto" },
+        { "value": "center top", "label": "t:options.top" },
+        { "value": "center center", "label": "t:options.center" },
+        { "value": "center bottom", "label": "t:options.bottom" }
+      ],
+      "default": "",
+      "visible_if": "{{ block.settings.story_photo_pair == false }}"
+    },
     {
       "type": "image_picker",
       "id": "image",

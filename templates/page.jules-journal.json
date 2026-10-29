@@ -107,7 +107,7 @@
             "text_LmTDUQ": {
               "type": "text",
               "settings": {
-                "text": "<p>The Jules Journal is your space for pet caro tips, rescue stories.happy moments, and inspiration for a kinder, brighter world for pets today and Ermâ€¢tomorrroovs</p>",
+                "text": "<p>The Jules Journal is your space for pet caro tips, rescue stories, happy moments, and inspiration for a kinder, brighter world for pets today and tomorrows</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -264,6 +264,16 @@
             "icon_size": 32
           }
         },
+        "category_grNqjh": {
+          "type": "category",
+          "settings": {
+            "label": "Jules' Adventures",
+            "tag": "Jules Adventures",
+            "image": "shopify://shop_images/camera.webp",
+            "icon": "grid",
+            "icon_size": 60
+          }
+        },
         "category_1": {
           "type": "category",
           "settings": {
@@ -317,6 +327,7 @@
       },
       "block_order": [
         "category_0",
+        "category_grNqjh",
         "category_1",
         "category_2",
         "category_3",
@@ -380,7 +391,7 @@
             "link": "",
             "open_in_new_tab": false,
             "placeholder": "",
-            "padding-block-start": 0,
+            "padding-block-start": 24,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
@@ -390,7 +401,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>A More Caring Community</p>",
+                "text": "<p>Shop for Yours. Help One Waiting for Theirs</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -416,7 +427,7 @@
             "text_iq9Yjm": {
               "type": "text",
               "settings": {
-                "text": "<p>Your purchases. referrals. and participation can help create brighter tomorrows for more pets. Together, we can support happier. healthier lives for pets at home and those still waiting for theirs.</p>",
+                "text": "<p>Every article is a reminder that happier pets and brighter tomorrows are possible. Together, we can make a difference.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -442,8 +453,8 @@
             "button_ejm6d4": {
               "type": "button",
               "settings": {
-                "label": "Learn About Our Mission  â†’",
-                "link": "#",
+                "label": "Our Mission  →",
+                "link": "shopify://pages/our-mission",
                 "open_in_new_tab": false,
                 "style_class": "button",
                 "custom_button_background": "{{ settings.color_palette.foreground }}",
@@ -469,7 +480,8 @@
         "image_AG3qYq": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Cozy_Dog_and_Cat_Companions.webp",
+            "image": "shopify://shop_images/Happy_Golden_Retriever_Sticker_Portrait.webp",
+            "image_position": "center top",
             "story_photo_pair": false,
             "third_caption": "",
             "caption": "",
@@ -502,7 +514,7 @@
         "group_gFK6B6",
         "image_AG3qYq"
       ],
-      "name": "Jules Found Her Family",
+      "name": "Shop for Yours",
       "settings": {
         "content_direction": "row",
         "vertical_on_mobile": true,
@@ -540,8 +552,7 @@
         "item_divider_color": "{{ settings.color_palette.color2 }}",
         "three_part_layout": true,
         "left_image_width": 50,
-        "right_image": "shopify://shop_images/Sage_Green_Paw_Print_Icon_86901a8c-ea43-4a64-ac7a-0fc537d5d73d.webp",
-        "right_image_width": 10,
+        "right_image_width": 6,
         "pixel_image_layout": false,
         "left_image_width_px": 120,
         "right_image_width_px": 120,

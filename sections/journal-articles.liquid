@@ -1,12 +1,15 @@
 {% comment %}Section contract: editable journal articles. Configure on the Jules Journal blog template.{% endcomment %}
 {% assign journal = blog | default: section.settings.blog %}
-<div class="section section--page-width journal-surface"><div data-journal-results data-section-id="{{ section.id }}" data-page-size="{{ section.settings.count }}" data-error="{{ 'journal.error' | t | escape }}" data-blog-url="{{ journal.url }}" class="journal-articles" style="--journal-columns:{{ section.settings.columns }};--journal-gap:{{ section.settings.gap }}px;--journal-radius:{{ section.settings.radius }}px;">
+<div class="section section--page-width journal-surface"><journal-articles data-journal-results data-section-id="{{ section.id }}" data-page-size="{{ section.settings.count }}" data-error="{{ 'journal.error' | t | escape }}" data-blog-url="{{ journal.url }}" class="journal-articles" style="--journal-card-width:{{ section.settings.card_width }}%;--journal-card-width-mobile:{{ section.settings.card_width_mobile }}%;--journal-image-height:{% if section.settings.image_height > 0 %}{{ section.settings.image_height }}px{% else %}auto{% endif %};--journal-image-height-mobile:{% if section.settings.image_height_mobile > 0 %}{{ section.settings.image_height_mobile }}px{% else %}auto{% endif %};--journal-columns:{{ section.settings.columns }};--journal-gap:{{ section.settings.gap }}px;--journal-radius:{{ section.settings.radius }}px;">
+<div class="journal-articles__header">
 {% if section.settings.heading != blank %}<h2>{{ section.settings.heading | escape }}</h2>{% endif %}
+<button type="button" on:click="/expand" aria-expanded="false" aria-controls="JournalGrid-{{ section.id }}">{{ 'journal.view_all' | t }}</button>
+</div>
 <div data-journal-content>
 {% paginate journal.articles by section.settings.count %}
-<div class="journal-grid">{% for article in journal.articles %}
+<div class="journal-grid" id="JournalGrid-{{ section.id }}">{% for article in journal.articles %}
 <article class="journal-card" data-journal-tags="{{ article.tags | json | escape }}"><a href="{{ article.url }}">
-{% if article.image %}{{ article.image | image_url: width: 1200 | image_tag: widths: '360, 600, 900, 1200', sizes: '(max-width: 749px) calc(100vw - 32px), 50vw', loading: 'lazy' }}{% endif %}
+{% if article.image %}{{ article.image | image_url: width: 1200 | image_tag: widths: '360, 600, 900, 1200', sizes: '(max-width: 749px) 38vw, 50vw', loading: 'lazy' }}{% endif %}
 <div class="journal-card__body">{% if article.tags.first %}<span>{{ article.tags.first | escape }}</span>{% endif %}
 <h3>{{ article.title | escape }}</h3>
 {% if section.settings.excerpt %}<p>{{ article.excerpt_or_content | strip_html | truncatewords: 24 | escape }}</p>{% endif %}
@@ -16,19 +19,32 @@
 </div>
 <p data-journal-empty hidden>{{ 'journal.empty' | t }}</p>
 <p data-journal-status role="status" aria-live="polite"></p>
-</div></div>
+</journal-articles></div>
+<script type="module" src="{{ 'journal-filters.js' | asset_url }}"></script>
 {% render 'section-color-scheme', section: section %}
 {% stylesheet %}
 .journal-surface:has(> .journal-articles) { background-color:var(--color-background); color:var(--color-foreground); }
-.journal-articles { padding-block:24px; }
+.journal-articles { display:block; padding-block:24px; }
+.journal-articles__header { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-block-end:20px; }
+.journal-articles__header h2 { margin:0; }
+.journal-articles__header button { flex-shrink:0; background:none; border:0; color:inherit; font:inherit; text-decoration:underline; cursor:pointer; padding:8px; }
+.journal-articles:not([data-expanded]) .journal-card:nth-child(n+4),
+.journal-articles:not([data-expanded]) [data-journal-pagination] { display:none; }
 .journal-grid { display:grid; grid-template-columns:repeat(var(--journal-columns),minmax(0,1fr)); gap:var(--journal-gap); }
-.journal-card { min-inline-size:0; overflow:hidden; border:1px solid var(--color-border); border-radius:var(--journal-radius); }
+.journal-card { inline-size:var(--journal-card-width); justify-self:center; min-inline-size:0; overflow:hidden; border:1px solid var(--color-border); border-radius:var(--journal-radius); }
 .journal-card a { display:block; color:inherit; text-decoration:none; }
-.journal-card img { width:100%; height:auto; aspect-ratio:2.4; object-fit:cover; }
+.journal-card img { display:block; width:100%; height:var(--journal-image-height); aspect-ratio:2.4; object-fit:cover; }
 .journal-card__body { padding:18px; overflow-wrap:anywhere; }
 .journal-card__body h3 { margin-block:10px; }
 .journal-card__body span,.journal-card time { font-size:.8rem; }
-@media(max-width:749px) { .journal-grid { grid-template-columns:minmax(0,1fr); } }
+@media(max-width:749px) { .journal-grid { grid-template-columns:minmax(0,1fr); } .journal-card { inline-size:var(--journal-card-width-mobile); } .journal-card { border:0; border-radius:0; }
+.journal-card a { display:grid; grid-template-columns:minmax(0,38%) minmax(0,1fr); gap:16px; align-items:center; }
+.journal-card a:not(:has(> img)) { grid-template-columns:minmax(0,1fr); }
+.journal-card img { height:var(--journal-image-height-mobile); aspect-ratio:1.6; border-radius:var(--journal-radius); }
+.journal-card__body { padding:0; display:flex; flex-direction:column; align-items:flex-start; gap:8px; }
+.journal-card__body h3 { order:-1; margin:0; }
+.journal-card__body > span { border-radius:20px; padding:3px 8px; background:var(--color-border); }
+.journal-card__body p { display:none; } }
 {% endstylesheet %}
 {% schema %}
 {
@@ -105,6 +121,48 @@
       "label": "t:settings.color_scheme",
       "default": "scheme-1",
       "visible_if": "{{ section.settings.use_color_scheme }}"
+    },
+    {
+      "type": "range",
+      "id": "card_width",
+      "label": "t:journal.card_width",
+      "min": 40,
+      "max": 100,
+      "step": 2,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "card_width_mobile",
+      "label": "t:journal.card_width_mobile",
+      "min": 40,
+      "max": 100,
+      "step": 2,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "label": "t:journal.image_height",
+      "min": 0,
+      "max": 600,
+      "step": 10,
+      "unit": "px",
+      "default": 0,
+      "info": "t:journal.image_height_info"
+    },
+    {
+      "type": "range",
+      "id": "image_height_mobile",
+      "label": "t:journal.image_height_mobile",
+      "min": 0,
+      "max": 600,
+      "step": 10,
+      "unit": "px",
+      "default": 0,
+      "info": "t:journal.image_height_info"
     }
   ],
   "presets": [

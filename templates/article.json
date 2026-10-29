@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "section": {
       "type": "main-blog-post",
@@ -21,10 +22,13 @@
             "alignment": "center",
             "type_preset": "h2",
             "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "font_size_mobile": "",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "none",
             "wrap": "pretty",
+            "text_color": "",
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
@@ -41,10 +45,14 @@
           "settings": {
             "show_date": true,
             "show_author": false,
+            "type_preset": "",
             "alignment": "center",
+            "text_color": "",
             "show_alignment": true,
             "padding-block-start": 0,
-            "padding-block-end": 0
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         },
@@ -53,14 +61,25 @@
           "name": "t:names.featured_image",
           "settings": {
             "image": "{{ article.image }}",
-            "width": "fill",
-            "custom_width": 100,
+            "story_photo_pair": false,
+            "third_caption": "",
+            "caption": "",
+            "image_tilt": 0,
+            "white_border_width": 0,
+            "second_caption": "",
+            "link": "",
+            "image_ratio": "square",
+            "width": "fit-content",
+            "custom_width": 44,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
             "height": "fit",
+            "image_height_desktop": 0,
+            "image_height_mobile": 0,
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
+            "border_color": "",
             "border_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
@@ -71,7 +90,9 @@
         },
         "blog-post-content": {
           "type": "_blog-post-content",
-          "settings": {},
+          "settings": {
+            "text_color": ""
+          },
           "blocks": {}
         }
       },
@@ -86,7 +107,9 @@
         "gap": 32,
         "background_color": "{{ settings.color_palette.background }}",
         "padding-block-start": 40,
-        "padding-block-end": 80
+        "padding-block-end": 80,
+        "use_color_scheme": true,
+        "color_scheme": ""
       }
     }
   },
