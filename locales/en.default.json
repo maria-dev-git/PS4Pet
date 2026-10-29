@@ -8,6 +8,7 @@
  * ------------------------------------------------------------
  */
 {
+"journal": {"empty":"No articles match this category.","error":"Unable to load articles. Please try again."},
   "accessibility": {
     "account": "Account",
     "active_filters": "Active filters:",

@@ -174,7 +174,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "Explore Articles â†’",
+                    "label": "Explore Articles  →",
                     "link": "shopify://collections/all",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -248,6 +248,98 @@
         "heading_style": "theme",
         "use_bundled_image": false,
         "bundled_image_alt": "Jules wearing a birthday hat and holding her favorite lamb toy",
+        "use_color_scheme": true,
+        "color_scheme": ""
+      }
+    },
+    "journal_categories": {
+      "type": "journal-filters",
+      "blocks": {
+        "category_0": {
+          "type": "category",
+          "settings": {
+            "label": "All Articles",
+            "tag": "",
+            "icon": "grid",
+            "icon_size": 32
+          }
+        },
+        "category_1": {
+          "type": "category",
+          "settings": {
+            "label": "Pet Care Tips",
+            "tag": "Pet Care Tips",
+            "image": "shopify://shop_images/Forest_Green_Paw_Print.webp",
+            "icon": "grid",
+            "icon_size": 60
+          }
+        },
+        "category_2": {
+          "type": "category",
+          "settings": {
+            "label": "Rescue Stories",
+            "tag": "Rescue Stories",
+            "image": "shopify://shop_images/Minimal_Teal_Heart_Outline.webp",
+            "icon": "grid",
+            "icon_size": 60
+          }
+        },
+        "category_3": {
+          "type": "category",
+          "settings": {
+            "label": "Life with Pets",
+            "tag": "Life with Pets",
+            "image": "shopify://shop_images/home-outline.webp",
+            "icon": "grid",
+            "icon_size": 60
+          }
+        },
+        "category_4": {
+          "type": "category",
+          "settings": {
+            "label": "Training & Behavior",
+            "tag": "Training & Behavior",
+            "image": "shopify://shop_images/pet-training-200.png",
+            "icon": "grid",
+            "icon_size": 60
+          }
+        },
+        "category_5": {
+          "type": "category",
+          "settings": {
+            "label": "Health & Wellness",
+            "tag": "Health & Wellness",
+            "image": "shopify://shop_images/ChatGPT_Image_Oct_29_2026_04_05_34_PM.png",
+            "icon": "grid",
+            "icon_size": 60
+          }
+        }
+      },
+      "block_order": [
+        "category_0",
+        "category_1",
+        "category_2",
+        "category_3",
+        "category_4",
+        "category_5"
+      ],
+      "settings": {
+        "blog": "",
+        "use_color_scheme": true,
+        "color_scheme": ""
+      }
+    },
+    "journal_articles": {
+      "type": "journal-articles",
+      "settings": {
+        "blog": "news",
+        "heading": "Latest from the Journal",
+        "columns": 3,
+        "gap": 20,
+        "radius": 10,
+        "count": 6,
+        "date": true,
+        "excerpt": true,
         "use_color_scheme": true,
         "color_scheme": ""
       }
@@ -440,8 +532,8 @@
         "border_opacity": 100,
         "border_color": "",
         "border_radius": 0,
-        "padding-block-start": 24,
-        "padding-block-end": 24,
+        "padding-block-start": 0,
+        "padding-block-end": 0,
         "use_color_scheme": true,
         "color_scheme": "scheme-6f294b19-1bab-497b-b38b-2db6a76a0e14",
         "item_dividers": false,
@@ -458,83 +550,6 @@
         "show_right_image_mobile": false,
         "padding_block_start_mobile": 0,
         "padding_block_end_mobile": 0
-      }
-    },
-    "journal_categories": {
-      "type": "journal-filters",
-      "blocks": {
-        "category_0": {
-          "type": "category",
-          "settings": {
-            "label": "All Articles",
-            "tag": "",
-            "icon": "grid"
-          }
-        },
-        "category_1": {
-          "type": "category",
-          "settings": {
-            "label": "Pet Care Tips",
-            "tag": "Pet Care Tips",
-            "icon": "grid"
-          }
-        },
-        "category_2": {
-          "type": "category",
-          "settings": {
-            "label": "Rescue Stories",
-            "tag": "Rescue Stories",
-            "icon": "grid"
-          }
-        },
-        "category_3": {
-          "type": "category",
-          "settings": {
-            "label": "Life with Pets",
-            "tag": "Life with Pets",
-            "icon": "grid"
-          }
-        },
-        "category_4": {
-          "type": "category",
-          "settings": {
-            "label": "Training & Behavior",
-            "tag": "Training & Behavior",
-            "icon": "grid"
-          }
-        },
-        "category_5": {
-          "type": "category",
-          "settings": {
-            "label": "Health & Wellness",
-            "tag": "Health & Wellness",
-            "icon": "grid"
-          }
-        }
-      },
-      "block_order": [
-        "category_0",
-        "category_1",
-        "category_2",
-        "category_3",
-        "category_4",
-        "category_5"
-      ],
-      "settings": {
-        "blog": ""
-      }
-    },
-    "journal_articles": {
-      "type": "journal-articles",
-      "settings": {
-        "blog": "news",
-        "heading": "Latest from the Journal",
-        "columns": 3,
-        "gap": 20,
-        "radius": 10,
-        "count": 6,
-        "date": true,
-        "excerpt": true
       }
     },
     "main": {
@@ -593,9 +608,9 @@
   },
   "order": [
     "hero_mYU4rU",
-    "section_XfYrLp",
     "journal_categories",
     "journal_articles",
+    "section_XfYrLp",
     "main"
   ]
 }

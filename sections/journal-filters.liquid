@@ -1,34 +1,21 @@
 {% comment %}Section contract: editable journal filters. Configure on the Jules Journal blog template.{% endcomment %}
-{% assign journal = section.settings.blog | default: blog %}
-<div class="section section--page-width journal-surface"><nav class="journal-filters" style="--journal-filter-count: {{ section.blocks.size }};">
+
+<div class="section section--page-width journal-surface"><journal-filters><div class="journal-filters" style="--journal-filter-count: {{ section.blocks.size }};">
 {% for block in section.blocks %}
-{% liquid
- assign destination = journal.url
- assign active = false
- if block.settings.tag != blank
- assign handle = block.settings.tag | handleize
- assign destination = journal.url | append: '/tagged/' | append: handle
- if current_tags contains block.settings.tag
- assign active = true
- endif
- elsif current_tags == blank
- assign active = true
- endif
-%}
-<a href="{{ destination }}" {% if active %}aria-current="page"{% endif %} {{ block.shopify_attributes }}>
-{% if block.settings.image %}{{ block.settings.image | image_url: width: 96 | image_tag: width: 40, height: 40, alt: '', loading: 'lazy' }}{% elsif block.settings.icon != blank %}
+<button type="button" on:click="/filter" data-tag="{{ block.settings.tag | escape }}" data-tag-handle="{{ block.settings.tag | handleize }}" style="--journal-icon-size: {{ block.settings.icon_size }}px;" aria-pressed="{% if block.settings.tag == blank %}true{% else %}false{% endif %}" {{ block.shopify_attributes }}>
+{% if block.settings.image %}{{ block.settings.image | image_url: width: 240 | image_tag: width: 40, height: 40, alt: '', loading: 'lazy' }}{% elsif block.settings.icon != blank %}
 {% render 'journal-category-icon', icon: block.settings.icon %}
 {% endif %}
-{{ block.settings.label | escape }}</a>{% endfor %}
-</nav></div>
+{{ block.settings.label | escape }}</button>{% endfor %}
+</div></journal-filters></div>
+<script type="module" src="{{ 'journal-filters.js' | asset_url }}"></script>
 {% render 'section-color-scheme', section: section %}
 {% stylesheet %}
-.journal-surface:has(> .journal-filters) { background-color:var(--color-background); color:var(--color-foreground); }
+.journal-surface:has(> journal-filters) { background-color:var(--color-background); color:var(--color-foreground); }
 .journal-filters { display:grid; grid-template-columns:repeat(var(--journal-filter-count),minmax(0,1fr)); gap:12px; padding-block:24px; }
-.journal-filters a { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:16px 8px; text-align:center; overflow-wrap:anywhere; border:1px solid var(--color-border); border-radius:8px; color:var(--color-foreground); background:var(--color-background); text-decoration:none; }
-.journal-filters a[aria-current] { color:var(--color-background); background:var(--color-foreground); }
-.journal-filters svg { inline-size:32px; block-size:32px; }
-.journal-filters img { object-fit:contain; }
+.journal-filters button { font:inherit; cursor:pointer; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:16px 8px; text-align:center; overflow-wrap:anywhere; border:1px solid var(--color-border); border-radius:8px; color:var(--color-foreground); background:var(--color-background); text-decoration:none; }
+.journal-filters button[aria-pressed="true"] { color:#00443B; background:#E5E9DC; }
+.journal-filters :is(svg, img) { inline-size:min(var(--journal-icon-size), 100%); block-size:var(--journal-icon-size); object-fit:contain; flex-shrink:0; }
 @media(max-width:749px) { .journal-filters { grid-template-columns:repeat(var(--journal-filter-count),minmax(125px,1fr)); overflow-x:auto; } }
 {% endstylesheet %}
 {% schema %}
@@ -110,6 +97,16 @@
             }
           ],
           "default": "grid"
+        },
+        {
+          "type": "range",
+          "id": "icon_size",
+          "label": "t:journal.icon_size",
+          "min": 16,
+          "max": 120,
+          "step": 2,
+          "unit": "px",
+          "default": 32
         }
       ]
     }

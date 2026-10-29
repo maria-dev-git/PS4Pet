@@ -1,17 +1,21 @@
 {% comment %}Section contract: editable journal articles. Configure on the Jules Journal blog template.{% endcomment %}
-{% assign journal = section.settings.blog | default: blog %}
-<div class="section section--page-width journal-surface"><div class="journal-articles" style="--journal-columns:{{ section.settings.columns }};--journal-gap:{{ section.settings.gap }}px;--journal-radius:{{ section.settings.radius }}px;">
+{% assign journal = blog | default: section.settings.blog %}
+<div class="section section--page-width journal-surface"><div data-journal-results data-section-id="{{ section.id }}" data-page-size="{{ section.settings.count }}" data-error="{{ 'journal.error' | t | escape }}" data-blog-url="{{ journal.url }}" class="journal-articles" style="--journal-columns:{{ section.settings.columns }};--journal-gap:{{ section.settings.gap }}px;--journal-radius:{{ section.settings.radius }}px;">
 {% if section.settings.heading != blank %}<h2>{{ section.settings.heading | escape }}</h2>{% endif %}
+<div data-journal-content>
 {% paginate journal.articles by section.settings.count %}
 <div class="journal-grid">{% for article in journal.articles %}
-<article class="journal-card"><a href="{{ article.url }}">
+<article class="journal-card" data-journal-tags="{{ article.tags | json | escape }}"><a href="{{ article.url }}">
 {% if article.image %}{{ article.image | image_url: width: 1200 | image_tag: widths: '360, 600, 900, 1200', sizes: '(max-width: 749px) calc(100vw - 32px), 50vw', loading: 'lazy' }}{% endif %}
 <div class="journal-card__body">{% if article.tags.first %}<span>{{ article.tags.first | escape }}</span>{% endif %}
 <h3>{{ article.title | escape }}</h3>
 {% if section.settings.excerpt %}<p>{{ article.excerpt_or_content | strip_html | truncatewords: 24 | escape }}</p>{% endif %}
 {% if section.settings.date %}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'date' }}</time>{% endif %}
-</div></a></article>{% endfor %}</div>
-{% if paginate.pages > 1 %}{{ paginate | default_pagination }}{% endif %}{% endpaginate %}
+</div></a></article>{% else %}<p>{{ 'journal.empty' | t }}</p>{% endfor %}</div>
+{% if paginate.pages > 1 %}<div data-journal-pagination>{{ paginate | default_pagination }}</div>{% endif %}{% endpaginate %}
+</div>
+<p data-journal-empty hidden>{{ 'journal.empty' | t }}</p>
+<p data-journal-status role="status" aria-live="polite"></p>
 </div></div>
 {% render 'section-color-scheme', section: section %}
 {% stylesheet %}
