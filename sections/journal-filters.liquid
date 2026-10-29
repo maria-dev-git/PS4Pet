@@ -1,0 +1,118 @@
+{% comment %}Section contract: editable journal filters. Configure on the Jules Journal blog template.{% endcomment %}
+{% assign journal = section.settings.blog | default: blog %}
+<div class="section section--page-width journal-surface"><nav class="journal-filters" style="--journal-filter-count: {{ section.blocks.size }};">
+{% for block in section.blocks %}
+{% liquid
+ assign destination = journal.url
+ assign active = false
+ if block.settings.tag != blank
+ assign handle = block.settings.tag | handleize
+ assign destination = journal.url | append: '/tagged/' | append: handle
+ if current_tags contains block.settings.tag
+ assign active = true
+ endif
+ elsif current_tags == blank
+ assign active = true
+ endif
+%}
+<a href="{{ destination }}" {% if active %}aria-current="page"{% endif %} {{ block.shopify_attributes }}>
+{% if block.settings.image %}{{ block.settings.image | image_url: width: 96 | image_tag: width: 40, height: 40, alt: '', loading: 'lazy' }}{% elsif block.settings.icon != blank %}
+{% render 'journal-category-icon', icon: block.settings.icon %}
+{% endif %}
+{{ block.settings.label | escape }}</a>{% endfor %}
+</nav></div>
+{% render 'section-color-scheme', section: section %}
+{% stylesheet %}
+.journal-surface:has(> .journal-filters) { background-color:var(--color-background); color:var(--color-foreground); }
+.journal-filters { display:grid; grid-template-columns:repeat(var(--journal-filter-count),minmax(0,1fr)); gap:12px; padding-block:24px; }
+.journal-filters a { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:16px 8px; text-align:center; overflow-wrap:anywhere; border:1px solid var(--color-border); border-radius:8px; color:var(--color-foreground); background:var(--color-background); text-decoration:none; }
+.journal-filters a[aria-current] { color:var(--color-background); background:var(--color-foreground); }
+.journal-filters svg { inline-size:32px; block-size:32px; }
+.journal-filters img { object-fit:contain; }
+@media(max-width:749px) { .journal-filters { grid-template-columns:repeat(var(--journal-filter-count),minmax(125px,1fr)); overflow-x:auto; } }
+{% endstylesheet %}
+{% schema %}
+{
+  "name": "t:journal.filters",
+  "settings": [
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "t:journal.blog"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_color_scheme",
+      "label": "t:settings.use_color_scheme",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1",
+      "visible_if": "{{ section.settings.use_color_scheme }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:journal.filters"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "t:journal.category",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "t:journal.label"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "t:journal.tag"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:journal.image"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "t:journal.icon",
+          "options": [
+            {
+              "value": "grid",
+              "label": "t:journal.icon_grid"
+            },
+            {
+              "value": "paw",
+              "label": "t:journal.icon_paw"
+            },
+            {
+              "value": "heart",
+              "label": "t:journal.icon_heart"
+            },
+            {
+              "value": "home",
+              "label": "t:journal.icon_home"
+            },
+            {
+              "value": "leaf",
+              "label": "t:journal.icon_leaf"
+            },
+            {
+              "value": "bowl",
+              "label": "t:journal.icon_bowl"
+            }
+          ],
+          "default": "grid"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

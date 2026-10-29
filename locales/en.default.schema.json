@@ -8,6 +8,7 @@
  * ------------------------------------------------------------
  */
 {
+"journal":{"icon":"Icon","icon_grid":"Grid","icon_paw":"Paw","icon_heart":"Heart","icon_home":"Home","icon_leaf":"Leaf","icon_bowl":"Bowl","filters": "Journal categories", "articles": "Journal articles", "category": "Category", "label": "Label", "tag": "Tag (empty for all articles)", "image": "Icon image", "blog": "Blog", "heading": "Heading", "columns": "Desktop columns", "gap": "Gap", "count": "Articles per page", "date": "Show date", "excerpt": "Show excerpt", "radius": "Card corner radius"},
   "ps4": {
     "image_height_desktop": "Desktop image height",
     "image_height_mobile": "Mobile image height",

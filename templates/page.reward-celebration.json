@@ -1968,7 +1968,7 @@
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
                 "height": "fit",
-                "image_height_desktop": 260,
+                "image_height_desktop": 280,
                 "image_height_mobile": 280,
                 "border": "none",
                 "border_width": 1,
