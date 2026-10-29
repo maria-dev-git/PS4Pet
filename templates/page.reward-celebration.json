@@ -945,7 +945,7 @@
         "image_AG3qYq": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_4715.webp",
+            "image": "shopify://shop_images/Alert_Tabby_Cat_on_White_Bedding.webp",
             "story_photo_pair": false,
             "third_caption": "",
             "caption": "",
@@ -1907,6 +1907,807 @@
         "padding_block_end_mobile": 0
       }
     },
+    "section_rewardCards": {
+      "type": "section",
+      "blocks": {
+        "group_celebrateCard": {
+          "type": "group",
+          "name": "Celebrate Their Special Day",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 0,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "background_color": "#e5e9dc",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 16,
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "image_celebrate": {
+              "type": "image",
+              "name": "Photo",
+              "settings": {
+                "image": "shopify://shop_images/Alert_Tabby_Cat_on_White_Bedding.webp",
+                "story_photo_pair": false,
+                "third_caption": "",
+                "caption": "",
+                "image_tilt": 0,
+                "white_border_width": 0,
+                "second_caption": "",
+                "link": "",
+                "image_ratio": "adapt",
+                "width": "custom",
+                "custom_width": 50,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "image_height_desktop": 260,
+                "image_height_mobile": 220,
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "group_celebrateContent": {
+              "type": "group",
+              "name": "Content",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 24,
+                "padding-block-end": 24,
+                "padding-inline-start": 24,
+                "padding-inline-end": 24
+              },
+              "blocks": {
+                "text_celebrateTitle": {
+                  "type": "text",
+                  "name": "Heading",
+                  "settings": {
+                    "text": "<h3><strong>Celebrate Their Special Day</strong></h3>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "1.5rem",
+                    "font_size_mobile": "1.5rem",
+                    "line_height": "tight",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "text_celebrateBody": {
+                  "type": "text",
+                  "name": "Description",
+                  "settings": {
+                    "text": "<p>Because every pet’s birthday deserves a little extra love.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "button_celebrate": {
+                  "type": "button",
+                  "name": "Button",
+                  "settings": {
+                    "label": "Learn More →",
+                    "link": "#",
+                    "open_in_new_tab": false,
+                    "style_class": "button",
+                    "custom_button_background": "{{ settings.color_palette.foreground }}",
+                    "custom_button_text": "{{ settings.color_palette.background }}",
+                    "custom_button_border": "{{ settings.color_palette.background }}",
+                    "link_text_color": "",
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 100,
+                    "mobile_width_pixels": 150,
+                    "mobile_font_size": ""
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_celebrateTitle",
+                "text_celebrateBody",
+                "button_celebrate"
+              ]
+            }
+          },
+          "block_order": [
+            "image_celebrate",
+            "group_celebrateContent"
+          ]
+        },
+        "group_referralCard": {
+          "type": "group",
+          "name": "Refer a Friend",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 0,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "background_color": "#e5e9dc",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 16,
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "image_referral": {
+              "type": "image",
+              "name": "Photo",
+              "settings": {
+                "image": "shopify://shop_images/Golden_Retriever_Handshake_at_Home.webp",
+                "story_photo_pair": false,
+                "third_caption": "",
+                "caption": "",
+                "image_tilt": 0,
+                "white_border_width": 0,
+                "second_caption": "",
+                "link": "",
+                "image_ratio": "adapt",
+                "width": "custom",
+                "custom_width": 50,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "image_height_desktop": 260,
+                "image_height_mobile": 220,
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "group_referralContent": {
+              "type": "group",
+              "name": "Content",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 24,
+                "padding-block-end": 24,
+                "padding-inline-start": 24,
+                "padding-inline-end": 24
+              },
+              "blocks": {
+                "text_referralTitle": {
+                  "type": "text",
+                  "name": "Heading",
+                  "settings": {
+                    "text": "<h3><strong>Refer a Friend</strong></h3>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "1.5rem",
+                    "font_size_mobile": "1.5rem",
+                    "line_height": "tight",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "text_referralBody": {
+                  "type": "text",
+                  "name": "Description",
+                  "settings": {
+                    "text": "<p>Share the love and earn rewards together.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "button_referral": {
+                  "type": "button",
+                  "name": "Button",
+                  "settings": {
+                    "label": "Get Your Link →",
+                    "link": "#",
+                    "open_in_new_tab": false,
+                    "style_class": "button",
+                    "custom_button_background": "{{ settings.color_palette.foreground }}",
+                    "custom_button_text": "{{ settings.color_palette.background }}",
+                    "custom_button_border": "{{ settings.color_palette.background }}",
+                    "link_text_color": "",
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 100,
+                    "mobile_width_pixels": 150,
+                    "mobile_font_size": ""
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_referralTitle",
+                "text_referralBody",
+                "button_referral"
+              ]
+            }
+          },
+          "block_order": [
+            "image_referral",
+            "group_referralContent"
+          ]
+        }
+      },
+      "block_order": [
+        "group_celebrateCard",
+        "group_referralCard"
+      ],
+      "name": "Celebrate & Refer",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "mobile_columns": "1",
+        "mobile_content_order": "default",
+        "mobile_icons_beside_text": false,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "flex-start",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_width_mobile": "inherit",
+        "section_height": "",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
+        "padding-block-start": 16,
+        "padding-block-end": 32,
+        "use_color_scheme": true,
+        "color_scheme": "scheme-1",
+        "item_dividers": false,
+        "item_divider_color": "{{ settings.color_palette.color2 }}",
+        "three_part_layout": false,
+        "left_image_width": 40,
+        "right_image_width": 15,
+        "pixel_image_layout": false,
+        "left_image_width_px": 120,
+        "right_image_width_px": 120,
+        "padding_inline_desktop": 0,
+        "padding_inline_mobile": 0,
+        "show_right_image_mobile": false,
+        "padding_block_start_mobile": 0,
+        "padding_block_end_mobile": 0
+      }
+    },
+    "section_rewardFaq": {
+      "type": "section",
+      "blocks": {
+        "text_A9QLja": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Frequently Asked Questions</h2>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "font_size_mobile": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "accordion_xKtrxX": {
+          "type": "accordion",
+          "name": "t:names.accordion",
+          "settings": {
+            "icon": "caret",
+            "dividers": true,
+            "divider_color": "",
+            "type_preset": "h6",
+            "background_color": "",
+            "text_color": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "accordion_row_zRpgCq": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "How do I choose the right size for my pet?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_bYYfLh": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Check the measurements and size guide on the product page before choosing a size. Measure your pet rather than relying on their breed or usual size, as sizing can vary between products. If you are unsure, <a href=\"/pages/contact\">contact us</a> with the product name and your pet’s measurements before ordering.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_bYYfLh"
+              ]
+            },
+            "accordion_row_tmCqJP": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "How should I care for my pet’s new gear?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_xVJGDr": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Follow the care instructions provided on the product page or product label. Check items regularly for wear, loose parts, or damage, and replace them when needed. Let cleaned items dry fully before your pet uses them again.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_xVJGDr"
+              ]
+            },
+            "accordion_row_6hMjXY": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Is this product suitable for my pet?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_8Mmw9i": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Review the product description for its intended use, sizing, materials, and any age or weight guidance. Choose items that suit your pet’s size and habits, introduce new gear gradually, and supervise use. Need help with a specific product? <a href=\"/pages/contact\">Ask us before ordering.</a></p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_8Mmw9i"
+              ]
+            },
+            "faq_pet_4": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "When will my order arrive?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "answer": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Delivery timing depends on the item and destination. Review the shipping information shown at checkout and in your order confirmation. If you have a question about an existing order, <a href=\"/pages/contact\">contact us</a> with your order number so we can help.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "answer"
+              ]
+            },
+            "faq_pet_5": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "What if an item does not fit or arrives damaged?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "answer": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Please review the store’s return policy for eligibility and conditions, then <a href=\"/pages/contact\">contact us</a> with your order number and a description of the issue. For a damaged or incorrect item, include clear photos of the item and packaging so we can review what happened.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "answer"
+              ]
+            },
+            "faq_pet_6": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "What inspired PS4PETS?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "answer": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>PS4PETS was inspired by Jules, a rescue pit bull who became part of our family. Her story shaped our mission: support pets and the people who love them while helping shelter animals still waiting for their forever families. <a href=\"/pages/mission\">Read more about our mission.</a></p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "answer"
+              ]
+            }
+          },
+          "block_order": [
+            "accordion_row_zRpgCq",
+            "accordion_row_tmCqJP",
+            "accordion_row_6hMjXY",
+            "faq_pet_4",
+            "faq_pet_5",
+            "faq_pet_6"
+          ]
+        }
+      },
+      "block_order": [
+        "text_A9QLja",
+        "accordion_xKtrxX"
+      ],
+      "name": "Frequently Asked Questions",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "mobile_columns": "1",
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "small",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0,
+        "use_color_scheme": true,
+        "color_scheme": "",
+        "item_dividers": false,
+        "item_divider_color": "{{ settings.color_palette.color2 }}",
+        "three_part_layout": false,
+        "left_image_width": 40,
+        "right_image_width": 15
+      }
+    },
     "main": {
       "type": "main-page",
       "blocks": {
@@ -1966,6 +2767,8 @@
     "section_UmxUaN",
     "section_XfYrLp",
     "section_igkV9t",
+    "section_rewardCards",
+    "section_rewardFaq",
     "main"
   ]
 }
