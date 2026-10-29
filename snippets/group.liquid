@@ -15,13 +15,27 @@
 
 {% liquid
   assign skip_contrast = false
+  assign group_tag = 'div'
+  assign content_tag = 'div'
+  assign reward_steps = false
+  if template.suffix == 'reward-celebration'
+    if block_id contains 'group_KzFkzq'
+      assign reward_steps = true
+      assign content_tag = 'ol'
+    elsif block_id contains 'group_mcryr4' or block_id contains 'group_MW49qg' or block_id contains 'group_dFFczV' or block_id contains 'group_MMzUVH'
+      assign group_tag = 'li'
+    endif
+  endif
   if settings.background_media != blank and settings.background_media != 'none'
     assign skip_contrast = true
   endif
 %}
+{% if reward_steps %}
+  {% render 'reward-steps-styles' %}
+{% endif %}
 {% render 'contrast-override', background_color: background_color, section_id: block_id, skip_contrast: skip_contrast %}
 
-<div
+<{{ group_tag }}
   class="
     group-block
     group-block--height-{{ settings.height }}
@@ -65,19 +79,21 @@
     {% endif %}
   </div>
 
-  <div
+  <{{ content_tag }}
     class="
       group-block-content
+      {% if reward_steps %} reward-steps{% endif %}
       {% if request.design_mode %}group-block-content--design-mode{% endif %}
       layout-panel-flex
       layout-panel-flex--{{ settings.content_direction | default: 'column' }}
       {% if settings.vertical_on_mobile %} mobile-column{% endif %}
     "
     style="{% render 'layout-panel-style', settings: settings %}"
+    {% if reward_steps %}role="list"{% endif %}
   >
     {{- children -}}
-  </div>
-</div>
+  </{{ content_tag }}>
+</{{ group_tag }}>
 
 {% stylesheet %}
   .group-block__link {

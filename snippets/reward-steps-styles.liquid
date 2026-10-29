@@ -1,0 +1,83 @@
+{% doc %}
+  Styles the Reward Celebration How It Works ordered group without replacing its editable children.
+  @example
+  {% render 'reward-steps-styles' %}
+{% enddoc %}
+
+{% stylesheet %}
+  .reward-steps {
+    --reward-steps-gap: clamp(24px, 3vw, 56px);
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--reward-steps-gap);
+    align-items: start;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: reward-step;
+  }
+
+  .reward-steps > .group-block {
+    position: relative;
+    min-inline-size: 0;
+    padding-inline-start: 56px;
+    counter-increment: reward-step;
+  }
+
+  .reward-steps > .group-block::before {
+    content: counter(reward-step);
+    position: absolute;
+    inset-block-start: 8px;
+    inset-inline-start: 0;
+    display: grid;
+    place-items: center;
+    inline-size: 44px;
+    block-size: 44px;
+    border-radius: 50%;
+    background: var(--color-foreground);
+    color: var(--color-background);
+    font-family: var(--font-body--family);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .reward-steps > .group-block:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    inset-block-start: 48px;
+    inset-inline-end: calc(var(--reward-steps-gap) / -2 - 10px);
+    inline-size: 20px;
+    block-size: 16px;
+    background: var(--color-foreground);
+    clip-path: polygon(0 42%, 70% 42%, 48% 15%, 60% 5%, 100% 50%, 60% 95%, 48% 85%, 70% 58%, 0 58%);
+  }
+
+  .reward-steps:dir(rtl) > .group-block::after {
+    transform: scaleX(-1);
+  }
+
+  .reward-steps > .group-block > .group-block-content {
+    align-items: start;
+    justify-content: start;
+  }
+
+  .reward-steps .text-block > * {
+    text-align: start;
+  }
+
+  @media screen and (max-width: 989px) {
+    .reward-steps {
+      --reward-steps-gap: 48px;
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .reward-steps > .group-block:not(:last-child)::after {
+      inset-block-start: auto;
+      inset-block-end: calc(var(--reward-steps-gap) / -2 - 8px);
+      inset-inline-start: 12px;
+      inset-inline-end: auto;
+      transform: rotate(90deg);
+    }
+  }
+{% endstylesheet %}
