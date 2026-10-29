@@ -1110,6 +1110,8 @@
         "content_direction": "row",
         "vertical_on_mobile": true,
         "mobile_columns": "2",
+        "mobile_content_order": "default",
+        "mobile_icons_beside_text": false,
         "horizontal_alignment": "flex-start",
         "vertical_alignment": "center",
         "align_baseline": false,
@@ -1117,6 +1119,7 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 16,
         "section_width": "page-width",
+        "section_width_mobile": "inherit",
         "section_height": "",
         "section_height_custom": 50,
         "background_media": "none",
@@ -1140,7 +1143,15 @@
         "item_divider_color": "{{ settings.color_palette.color2 }}",
         "three_part_layout": false,
         "left_image_width": 40,
-        "right_image_width": 15
+        "right_image_width": 15,
+        "pixel_image_layout": false,
+        "left_image_width_px": 120,
+        "right_image_width_px": 120,
+        "padding_inline_desktop": 0,
+        "padding_inline_mobile": 0,
+        "show_right_image_mobile": false,
+        "padding_block_start_mobile": 0,
+        "padding_block_end_mobile": 0
       }
     },
     "section_iwLWLE": {
@@ -1449,11 +1460,13 @@
         "text_A9QLja",
         "accordion_xKtrxX"
       ],
-      "name": "t:names.custom_section",
+      "name": "FAQ",
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
         "mobile_columns": "1",
+        "mobile_content_order": "default",
+        "mobile_icons_beside_text": false,
         "horizontal_alignment": "flex-start",
         "vertical_alignment": "center",
         "align_baseline": false,
@@ -1461,6 +1474,7 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 12,
         "section_width": "page-width",
+        "section_width_mobile": "inherit",
         "section_height": "small",
         "section_height_custom": 50,
         "background_media": "none",
@@ -1484,7 +1498,15 @@
         "item_divider_color": "{{ settings.color_palette.color2 }}",
         "three_part_layout": false,
         "left_image_width": 40,
-        "right_image_width": 15
+        "right_image_width": 15,
+        "pixel_image_layout": false,
+        "left_image_width_px": 120,
+        "right_image_width_px": 120,
+        "padding_inline_desktop": 0,
+        "padding_inline_mobile": 0,
+        "show_right_image_mobile": false,
+        "padding_block_start_mobile": 0,
+        "padding_block_end_mobile": 0
       }
     },
     "section_f6ggXY": {
@@ -1507,6 +1529,8 @@
             "width_mobile": "fill",
             "custom_width_mobile": 100,
             "height": "fit",
+            "image_height_desktop": 0,
+            "image_height_mobile": 0,
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
@@ -1654,6 +1678,8 @@
         "content_direction": "row",
         "vertical_on_mobile": true,
         "mobile_columns": "1",
+        "mobile_content_order": "default",
+        "mobile_icons_beside_text": false,
         "horizontal_alignment": "flex-start",
         "vertical_alignment": "center",
         "align_baseline": false,
@@ -1661,6 +1687,7 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 20,
         "section_width": "page-width",
+        "section_width_mobile": "inherit",
         "section_height": "",
         "section_height_custom": 50,
         "background_media": "none",
@@ -1685,7 +1712,15 @@
         "three_part_layout": true,
         "left_image_width": 40,
         "right_image": "shopify://shop_images/Sage_Green_Paw_Print_Icon_86901a8c-ea43-4a64-ac7a-0fc537d5d73d.webp",
-        "right_image_width": 10
+        "right_image_width": 10,
+        "pixel_image_layout": false,
+        "left_image_width_px": 120,
+        "right_image_width_px": 120,
+        "padding_inline_desktop": 0,
+        "padding_inline_mobile": 0,
+        "show_right_image_mobile": false,
+        "padding_block_start_mobile": 0,
+        "padding_block_end_mobile": 0
       }
     },
     "product_recommendations_qggXJq": {

@@ -264,7 +264,7 @@
             "vertical_alignment": "center",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "flex-start",
             "gap": 16,
             "width": "fill",
             "custom_width": 100,
@@ -355,7 +355,7 @@
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
-                    "type_preset": "h3",
+                    "type_preset": "h4",
                     "font": "var(--font-body--family)",
                     "font_size": "",
                     "font_size_mobile": "",
@@ -421,7 +421,7 @@
             "vertical_alignment": "center",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "flex-start",
             "gap": 16,
             "width": "fill",
             "custom_width": 100,
@@ -512,7 +512,7 @@
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
-                    "type_preset": "h3",
+                    "type_preset": "h4",
                     "font": "var(--font-body--family)",
                     "font_size": "",
                     "font_size_mobile": "",
@@ -669,7 +669,7 @@
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
-                    "type_preset": "h3",
+                    "type_preset": "h4",
                     "font": "var(--font-body--family)",
                     "font_size": "",
                     "font_size_mobile": "",
@@ -826,7 +826,7 @@
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
-                    "type_preset": "h3",
+                    "type_preset": "h4",
                     "font": "var(--font-body--family)",
                     "font_size": "",
                     "font_size_mobile": "",
@@ -894,9 +894,9 @@
       "settings": {
         "content_direction": "row",
         "vertical_on_mobile": true,
-        "mobile_columns": "1",
+        "mobile_columns": "2",
         "mobile_content_order": "default",
-        "mobile_icons_beside_text": true,
+        "mobile_icons_beside_text": false,
         "horizontal_alignment": "flex-start",
         "vertical_alignment": "flex-start",
         "align_baseline": false,
@@ -945,7 +945,7 @@
         "image_AG3qYq": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Alert_Tabby_Cat_on_White_Bedding.webp",
+            "image": "shopify://shop_images/Cozy_Dog_and_Cat_Companions.webp",
             "story_photo_pair": false,
             "third_caption": "",
             "caption": "",
@@ -959,8 +959,8 @@
             "width_mobile": "custom",
             "custom_width_mobile": 100,
             "height": "fit",
-            "image_height_desktop": 300,
-            "image_height_mobile": 0,
+            "image_height_desktop": 360,
+            "image_height_mobile": 260,
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
@@ -1007,7 +1007,7 @@
             "open_in_new_tab": false,
             "placeholder": "",
             "padding-block-start": 0,
-            "padding-block-end": 32,
+            "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -1954,7 +1954,7 @@
               "type": "image",
               "name": "Photo",
               "settings": {
-                "image": "shopify://shop_images/Alert_Tabby_Cat_on_White_Bedding.webp",
+                "image": "shopify://shop_images/Playful_Tabby_Cat_and_Feather_Toy_1.webp",
                 "story_photo_pair": false,
                 "third_caption": "",
                 "caption": "",
@@ -1969,7 +1969,7 @@
                 "custom_width_mobile": 100,
                 "height": "fit",
                 "image_height_desktop": 260,
-                "image_height_mobile": 220,
+                "image_height_mobile": 280,
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -2168,8 +2168,8 @@
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
                 "height": "fit",
-                "image_height_desktop": 260,
-                "image_height_mobile": 220,
+                "image_height_desktop": 280,
+                "image_height_mobile": 280,
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -2365,7 +2365,7 @@
       }
     },
     "section_rewardFaq": {
-      "type": "section",
+      "type": "faq",
       "blocks": {
         "text_A9QLja": {
           "type": "text",
@@ -2418,7 +2418,7 @@
             "accordion_row_zRpgCq": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "How do I choose the right size for my pet?",
+                "heading": "How do I earn points?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -2427,7 +2427,7 @@
                 "text_bYYfLh": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Check the measurements and size guide on the product page before choosing a size. Measure your pet rather than relying on their breed or usual size, as sizing can vary between products. If you are unsure, <a href=\"/pages/contact\">contact us</a> with the product name and your pet’s measurements before ordering.</p>",
+                    "text": "<p>Our planned rewards program includes points for eligible referrals. We’re still finalizing other ways to earn, point values, and redemption rules. We’ll share the full details here when the program is ready.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2458,7 +2458,7 @@
             "accordion_row_tmCqJP": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "How should I care for my pet’s new gear?",
+                "heading": "How do referrals work?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -2467,7 +2467,7 @@
                 "text_xVJGDr": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Follow the care instructions provided on the product page or product label. Check items regularly for wear, loose parts, or damage, and replace them when needed. Let cleaned items dry fully before your pet uses them again.</p>",
+                    "text": "<p>We’re planning a program where you can invite friends to PS4PETS and earn points for eligible referrals. Referral instructions, qualifying actions, and reward amounts will be shared when the program launches.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2498,7 +2498,7 @@
             "accordion_row_6hMjXY": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "Is this product suitable for my pet?",
+                "heading": "Can my rewards help support shelters?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -2507,7 +2507,7 @@
                 "text_8Mmw9i": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Review the product description for its intended use, sizing, materials, and any age or weight guidance. Choose items that suit your pet’s size and habits, introduce new gear gradually, and supervise use. Need help with a specific product? <a href=\"/pages/contact\">Ask us before ordering.</a></p>",
+                    "text": "<p>That’s our goal. We’re developing an option to use eligible rewards for your own pet or direct eligible value toward useful items for participating shelters and rescues. Qualifying spend thresholds, available items, and participating organizations are still being finalized. Shelter rewards are not available yet.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2538,7 +2538,7 @@
             "faq_pet_4": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "When will my order arrive?",
+                "heading": "Will there be birthday perks for my pet?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -2547,87 +2547,7 @@
                 "answer": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Delivery timing depends on the item and destination. Review the shipping information shown at checkout and in your order confirmation. If you have a question about an existing order, <a href=\"/pages/contact\">contact us</a> with your order number so we can help.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "font_size_mobile": "",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "answer"
-              ]
-            },
-            "faq_pet_5": {
-              "type": "_accordion-row",
-              "settings": {
-                "heading": "What if an item does not fit or arrives damaged?",
-                "open_by_default": false,
-                "icon": "none",
-                "width": 20
-              },
-              "blocks": {
-                "answer": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Please review the store’s return policy for eligibility and conditions, then <a href=\"/pages/contact\">contact us</a> with your order number and a description of the issue. For a damaged or incorrect item, include clear photos of the item and packaging so we can review what happened.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "font_size_mobile": "",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "answer"
-              ]
-            },
-            "faq_pet_6": {
-              "type": "_accordion-row",
-              "settings": {
-                "heading": "What inspired PS4PETS?",
-                "open_by_default": false,
-                "icon": "none",
-                "width": 20
-              },
-              "blocks": {
-                "answer": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>PS4PETS was inspired by Jules, a rescue pit bull who became part of our family. Her story shaped our mission: support pets and the people who love them while helping shelter animals still waiting for their forever families. <a href=\"/pages/mission\">Read more about our mission.</a></p>",
+                    "text": "<p>We’re planning birthday and homecoming celebrations for pets, including a possible Birthday Box with treats, toys, and a card. Perks, eligibility, pricing, and fulfillment are still being finalized, so gifts are not guaranteed. We’ll share how to register your pet’s special date when the program is ready.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2660,9 +2580,7 @@
             "accordion_row_zRpgCq",
             "accordion_row_tmCqJP",
             "accordion_row_6hMjXY",
-            "faq_pet_4",
-            "faq_pet_5",
-            "faq_pet_6"
+            "faq_pet_4"
           ]
         }
       },
@@ -2670,11 +2588,10 @@
         "text_A9QLja",
         "accordion_xKtrxX"
       ],
-      "name": "Frequently Asked Questions",
+      "name": "FAQ",
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
-        "mobile_columns": "1",
         "horizontal_alignment": "flex-start",
         "vertical_alignment": "center",
         "align_baseline": false,
@@ -2682,6 +2599,7 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 12,
         "section_width": "page-width",
+        "section_width_mobile": "inherit",
         "section_height": "small",
         "section_height_custom": 50,
         "background_media": "none",
@@ -2700,12 +2618,7 @@
         "padding-block-start": 0,
         "padding-block-end": 0,
         "use_color_scheme": true,
-        "color_scheme": "",
-        "item_dividers": false,
-        "item_divider_color": "{{ settings.color_palette.color2 }}",
-        "three_part_layout": false,
-        "left_image_width": 40,
-        "right_image_width": 15
+        "color_scheme": ""
       }
     },
     "main": {
