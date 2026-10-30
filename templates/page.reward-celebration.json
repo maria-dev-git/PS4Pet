@@ -174,8 +174,8 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "Join Our Pack  →",
-                    "link": "shopify://collections/all",
+                    "label": "Join Our Pack",
+                    "link": "#",
                     "open_in_new_tab": false,
                     "style_class": "button-secondary",
                     "custom_button_background": "{{ settings.color_palette.foreground }}",
@@ -892,6 +892,7 @@
       ],
       "name": "t:names.icons_with_text",
       "settings": {
+        "anchor_id": "",
         "content_direction": "row",
         "vertical_on_mobile": true,
         "mobile_columns": "2",
@@ -945,6 +946,7 @@
         "image_AG3qYq": {
           "type": "image",
           "settings": {
+            "image_position": "",
             "image": "shopify://shop_images/Cozy_Dog_and_Cat_Companions.webp",
             "story_photo_pair": false,
             "third_caption": "",
@@ -954,9 +956,12 @@
             "second_caption": "",
             "link": "",
             "image_ratio": "square",
+            "image_alignment": "auto",
             "width": "fill",
+            "width_pixels": 800,
             "custom_width": 100,
             "width_mobile": "custom",
+            "width_pixels_mobile": 360,
             "custom_width_mobile": 100,
             "height": "fit",
             "image_height_desktop": 360,
@@ -1068,8 +1073,8 @@
             "button_ejm6d4": {
               "type": "button",
               "settings": {
-                "label": "Learn About Our Mission  →",
-                "link": "#",
+                "label": "Learn About Our Mission",
+                "link": "shopify://pages/our-mission",
                 "open_in_new_tab": false,
                 "style_class": "button",
                 "custom_button_background": "{{ settings.color_palette.foreground }}",
@@ -1099,6 +1104,7 @@
       ],
       "name": "Jules Found Her Family",
       "settings": {
+        "anchor_id": "",
         "content_direction": "row",
         "vertical_on_mobile": true,
         "mobile_columns": "1",
@@ -1860,6 +1866,7 @@
       ],
       "name": "How It Works",
       "settings": {
+        "anchor_id": "",
         "content_direction": "column",
         "vertical_on_mobile": true,
         "mobile_columns": "1",
@@ -1954,6 +1961,7 @@
               "type": "image",
               "name": "Photo",
               "settings": {
+                "image_position": "",
                 "image": "shopify://shop_images/Playful_Tabby_Cat_and_Feather_Toy_1.webp",
                 "story_photo_pair": false,
                 "third_caption": "",
@@ -1963,9 +1971,12 @@
                 "second_caption": "",
                 "link": "",
                 "image_ratio": "adapt",
+                "image_alignment": "auto",
                 "width": "custom",
+                "width_pixels": 800,
                 "custom_width": 50,
                 "width_mobile": "fill",
+                "width_pixels_mobile": 360,
                 "custom_width_mobile": 100,
                 "height": "fit",
                 "image_height_desktop": 280,
@@ -2080,7 +2091,7 @@
                   "type": "button",
                   "name": "Button",
                   "settings": {
-                    "label": "Learn More →",
+                    "label": "Learn More",
                     "link": "#",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -2154,6 +2165,7 @@
               "type": "image",
               "name": "Photo",
               "settings": {
+                "image_position": "",
                 "image": "shopify://shop_images/Golden_Retriever_Handshake_at_Home.webp",
                 "story_photo_pair": false,
                 "third_caption": "",
@@ -2163,9 +2175,12 @@
                 "second_caption": "",
                 "link": "",
                 "image_ratio": "adapt",
+                "image_alignment": "auto",
                 "width": "custom",
+                "width_pixels": 800,
                 "custom_width": 50,
                 "width_mobile": "fill",
+                "width_pixels_mobile": 360,
                 "custom_width_mobile": 100,
                 "height": "fit",
                 "image_height_desktop": 280,
@@ -2280,7 +2295,7 @@
                   "type": "button",
                   "name": "Button",
                   "settings": {
-                    "label": "Get Your Link →",
+                    "label": "Get Your Link",
                     "link": "#",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -2317,6 +2332,7 @@
       ],
       "name": "Celebrate & Refer",
       "settings": {
+        "anchor_id": "",
         "content_direction": "row",
         "vertical_on_mobile": true,
         "mobile_columns": "1",
