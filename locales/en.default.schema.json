@@ -8,8 +8,9 @@
  * ------------------------------------------------------------
  */
 {
+"collection_selector":{"size_mobile":"Circle image size (mobile)","gap":"Desktop gap","gap_mobile":"Mobile gap","name":"Collection selector","size":"Circle image size"},
 "journal":{"card_width": "Card width within column (desktop)", "card_width_mobile": "Card width (mobile)", "image_height": "Image height (desktop)", "image_height_mobile": "Image height (mobile)", "image_height_info": "Set to 0 for the original automatic image proportions. Fixed heights crop the image to fill.","icon_size":"Icon size","icon":"Icon","icon_grid":"Grid","icon_paw":"Paw","icon_heart":"Heart","icon_home":"Home","icon_leaf":"Leaf","icon_bowl":"Bowl","filters": "Journal categories", "articles": "Journal articles", "category": "Category", "label": "Label", "tag": "Tag (empty for all articles)", "image": "Icon image", "blog": "Blog", "heading": "Heading", "columns": "Desktop columns", "gap": "Gap", "count": "Articles per page", "date": "Show date", "excerpt": "Show excerpt", "radius": "Card corner radius"},
-  "ps4": {
+  "ps4": {"body_font":"Body font","heading_size_desktop":"Heading size (desktop)","heading_size_mobile":"Heading size (mobile)",
 "width_pixels_option":"Pixels","width_pixels":"Image width (desktop)","width_pixels_mobile":"Image width (mobile)",
     "image_height_desktop": "Desktop image height",
     "image_height_mobile": "Mobile image height",

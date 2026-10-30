@@ -1,0 +1,124 @@
+{% comment %}
+Collection selector contract: collection blocks update the following collection product grid in place.
+@example Add above the main collection section and choose collections in each block.
+{% endcomment %}
+<collection-selector class="section section--page-width collection-selector" data-error="{{ 'journal.error' | t | escape }}" style="--collection-selector-gap:{{ section.settings.gap }}px;--collection-selector-gap-mobile:{{ section.settings.gap_mobile }}px;--collection-selector-size:{{ section.settings.image_size }}px;--collection-selector-size-mobile:{{ section.settings.image_size_mobile }}px;">
+<div class="collection-selector__list">
+{% for block in section.blocks %}
+{% assign item = block.settings.collection %}
+{% if item != blank %}
+<a href="{{ item.url }}" on:click="/select" aria-current="{% if item.id == collection.id %}true{% else %}false{% endif %}" {{ block.shopify_attributes }}>
+{% assign image = block.settings.image | default: item.featured_image %}
+{% if image %}{{ image | image_url: width: 320 | image_tag: widths: '80, 160, 240, 320', sizes: '160px', loading: 'lazy', alt: '' }}{% else %}<span class="collection-selector__placeholder">{{ 'collection-1' | placeholder_svg_tag }}</span>{% endif %}
+<span>{{ block.settings.label | default: item.title | escape }}</span></a>
+{% endif %}{% endfor %}
+</div><p role="status" data-status></p>
+</collection-selector>
+<script type="module" src="{{ 'collection-selector.js' | asset_url }}"></script>
+{% render 'section-color-scheme', section: section %}
+{% stylesheet %}
+.collection-selector { display:block; color:var(--color-foreground); background:var(--color-background); padding-block:20px; }
+.collection-selector__list { display:flex; flex-wrap:wrap; gap:var(--collection-selector-gap); justify-content:center; }
+.collection-selector__list a { display:flex; flex-direction:column; align-items:center; gap:8px; inline-size:var(--collection-selector-size); color:inherit; text-decoration:none; text-align:center; overflow-wrap:anywhere; }
+.collection-selector__list img,.collection-selector__placeholder { display:block; inline-size:100%; aspect-ratio:1; height:auto; object-fit:cover; border-radius:50%; overflow:hidden; }
+.collection-selector__list a[aria-current='true'] img,.collection-selector__list a[aria-current='true'] .collection-selector__placeholder { outline:2px solid currentColor; outline-offset:4px; }
+.collection-selector__list a[aria-current='true'] { font-weight:700; }
+@media(max-width:749px) {
+
+  .collection-selector__list { flex-wrap:nowrap; justify-content:flex-start; gap:var(--collection-selector-gap-mobile); overflow-x:auto; scroll-snap-type:x mandatory; padding:6px; scroll-padding-inline:6px; }
+  .collection-selector__list a { flex:0 0 var(--collection-selector-size-mobile); inline-size:var(--collection-selector-size-mobile); scroll-snap-align:start; }
+}
+{% endstylesheet %}
+{% schema %}
+{
+  "name": "t:collection_selector.name",
+  "enabled_on": {
+    "templates": [
+      "collection"
+    ]
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "image_size",
+      "label": "t:collection_selector.size",
+      "min": 60,
+      "max": 160,
+      "step": 10,
+      "unit": "px",
+      "default": 90
+    },
+    {
+      "type": "range",
+      "id": "image_size_mobile",
+      "label": "t:collection_selector.size_mobile",
+      "min": 40,
+      "max": 160,
+      "step": 10,
+      "unit": "px",
+      "default": 90
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "t:collection_selector.gap",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "label": "t:collection_selector.gap_mobile",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "checkbox",
+      "id": "use_color_scheme",
+      "label": "t:settings.use_color_scheme",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1",
+      "visible_if": "{{ section.settings.use_color_scheme }}"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "t:settings.collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:settings.collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:settings.image"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "t:journal.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:collection_selector.name"
+    }
+  ]
+}
+{% endschema %}

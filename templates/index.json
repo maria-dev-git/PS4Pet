@@ -148,7 +148,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "SHOP DOGS →",
+                    "label": "SHOP DOGS \u00e2\u2020\u2019",
                     "link": "/collections/dogs",
                     "open_in_new_tab": false,
                     "style_class": "button-custom",
@@ -169,7 +169,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "SHOP CATS →",
+                    "label": "SHOP CATS \u00e2\u2020\u2019",
                     "link": "/collections/cats",
                     "open_in_new_tab": false,
                     "style_class": "button-custom",
@@ -285,7 +285,7 @@
             "heading": "",
             "text": "",
             "label": "",
-            "link": "/collections/dogs",
+            "link": "",
             "background": "#fbf7f3",
             "image_alt": "Green everyday pet collar",
             "asset": "collar",
@@ -301,7 +301,7 @@
             "heading": "",
             "text": "",
             "label": "",
-            "link": "/collections/cats",
+            "link": "",
             "background": "#fbf7f3",
             "image_alt": "",
             "asset": "none",
@@ -317,7 +317,7 @@
             "heading": "",
             "text": "",
             "label": "",
-            "link": "/collections/treats-dental",
+            "link": "",
             "background": "#fbf7f3",
             "image_alt": "Green pet treat pouch",
             "asset": "pouch",
@@ -333,7 +333,7 @@
             "heading": "",
             "text": "",
             "label": "",
-            "link": "/collections/walking-gear",
+            "link": "",
             "background": "#fbf7f3",
             "image_alt": "Green everyday pet collar",
             "asset": "collar",
@@ -349,7 +349,7 @@
             "heading": "",
             "text": "",
             "label": "",
-            "link": "/collections/waste-cleanup",
+            "link": "",
             "background": "#fbf7f3",
             "image_alt": "Green pet treat pouch",
             "asset": "pouch",
@@ -365,7 +365,7 @@
             "heading": "",
             "text": "",
             "label": "",
-            "link": "/collections/toys-enrichment",
+            "link": "",
             "background": "#fbf7f3",
             "image_alt": "Green rope toy",
             "asset": "toy",
@@ -381,7 +381,7 @@
             "heading": "",
             "text": "",
             "label": "",
-            "link": "/collections/personalized-pet-gear",
+            "link": "",
             "background": "#fbf7f3",
             "image_alt": "",
             "asset": "none",
@@ -389,9 +389,20 @@
             "collection": "cozy-comfort",
             "article": ""
           }
+        },
+        "category_heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Shop by Category",
+            "font": "heading",
+            "font_size": 32,
+            "font_size_mobile": 26,
+            "alignment": "center"
+          }
         }
       },
       "block_order": [
+        "category_heading",
         "card_0",
         "card_1",
         "card_2",
@@ -402,8 +413,6 @@
       ],
       "name": "Shop by Category",
       "settings": {
-        "heading": "Shop by Category",
-        "heading_alignment": "center",
         "link_text": "",
         "label": "Explore everything they need",
         "link": "/collections/all",
@@ -412,9 +421,8 @@
         "mobile_card_width": 200,
         "mobile_card_gap": 18,
         "mobile_card_padding_block": 0,
-        "heading_style": "serif",
-        "padding-block-start": 22,
-        "padding-block-end": 32,
+        "padding-block-start": 24,
+        "padding-block-end": 12,
         "padding_block_start_mobile": 10,
         "padding_block_end_mobile": 10,
         "use_color_scheme": true,
@@ -436,7 +444,7 @@
             "image": "shopify://shop_images/paw-security.webp",
             "image_alt": "",
             "asset": "none",
-            "symbol": "♧",
+            "symbol": "\u00e2\u2122\u00a7",
             "collection": "",
             "article": ""
           }
@@ -453,7 +461,7 @@
             "image": "shopify://shop_images/Minimalist_Teal_Piggy_Bank_Icon_6d5926bf-5464-4a3b-b5a6-091a1e715c1c.webp",
             "image_alt": "",
             "asset": "none",
-            "symbol": "♡",
+            "symbol": "\u00e2\u2122\u00a1",
             "collection": "",
             "article": ""
           }
@@ -470,7 +478,7 @@
             "image": "shopify://shop_images/Isometric_Teal_Cardboard_Box_Icon_b3904f4a-1ccd-4813-bf31-a8cc928b9122.webp",
             "image_alt": "",
             "asset": "none",
-            "symbol": "◇",
+            "symbol": "\u00e2\u2014\u2021",
             "collection": "",
             "article": ""
           }
@@ -487,7 +495,7 @@
             "image": "shopify://shop_images/Glossy_Blush_Pink_Heart_Icon_41929659-9085-436f-ab44-84113fec263f.webp",
             "image_alt": "",
             "asset": "none",
-            "symbol": "♡",
+            "symbol": "\u00e2\u2122\u00a1",
             "collection": "",
             "article": ""
           }
@@ -500,8 +508,6 @@
         "card_3"
       ],
       "settings": {
-        "heading": "",
-        "heading_alignment": "left",
         "link_text": "",
         "label": "",
         "link": "",
@@ -510,7 +516,6 @@
         "mobile_card_width": 160,
         "mobile_card_gap": 18,
         "mobile_card_padding_block": 0,
-        "heading_style": "serif",
         "padding-block-start": 16,
         "padding-block-end": 16,
         "padding_block_start_mobile": 14,
@@ -544,7 +549,7 @@
               "type": "text",
               "name": "t:names.caption",
               "settings": {
-                "text": "<p>Meet Jules — the heart behind PS4PETS</p>",
+                "text": "<p>Meet Jules \u00e2\u20ac\u201d the heart behind PS4PETS</p>",
                 "width": "100%",
                 "max_width": "none",
                 "alignment": "left",
@@ -597,7 +602,7 @@
             "text": {
               "type": "text",
               "settings": {
-                "text": "<p>Jules came into our family as a shelter pup and changed our lives forever. She’s a rescue pit bull, a baseball game regular, and the heart behind PS4PETS. Her story inspired our mission: give pets the things they need while helping shelter animals still waiting for their forever families.</p>",
+                "text": "<p>Jules came into our family as a shelter pup and changed our lives forever. She\u00e2\u20ac\u2122s a rescue pit bull, a baseball game regular, and the heart behind PS4PETS. Her story inspired our mission: give pets the things they need while helping shelter animals still waiting for their forever families.</p>",
                 "width": "100%",
                 "max_width": "none",
                 "alignment": "left",
@@ -711,9 +716,9 @@
       },
       "settings": {
         "use_content_blocks": true,
-        "eyebrow": "Meet Jules — the heart behind PS4PETS",
+        "eyebrow": "Meet Jules \u00e2\u20ac\u201d the heart behind PS4PETS",
         "heading": "Jules - Rescue. Family. Forever.",
-        "text": "<p>Jules came into our family as a shelter pup and changed our lives forever. She’s a rescue pit bull, a baseball game regular, and the heart behind PS4PETS. Her story inspired our mission: give pets the things they need while helping shelter animals still waiting for their forever families.</p>",
+        "text": "<p>Jules came into our family as a shelter pup and changed our lives forever. She\u00e2\u20ac\u2122s a rescue pit bull, a baseball game regular, and the heart behind PS4PETS. Her story inspired our mission: give pets the things they need while helping shelter animals still waiting for their forever families.</p>",
         "label": "Meet Jules",
         "link": "/pages/meet-jules",
         "background": "#f7e6e1",
@@ -734,7 +739,7 @@
             "layout": "features",
             "eyebrow": "Our mission",
             "heading": "Shop for yours.\nHelp one waiting for theirs.",
-            "text": "<p>We believe every pet deserves someone in their corner. That’s why PS4PETS is built to support pets and the people who love them — while helping shelter animals still waiting for their Forever Families.</p>",
+            "text": "<p>We believe every pet deserves someone in their corner. That\u00e2\u20ac\u2122s why PS4PETS is built to support pets and the people who love them \u00e2\u20ac\u201d while helping shelter animals still waiting for their Forever Families.</p>",
             "label": "",
             "link": "/pages/mission",
             "background": "#e5e9dc",
@@ -788,8 +793,8 @@
             "layout": "image",
             "eyebrow": "Auto-reorder",
             "heading": "Never Run Out\nof Their Favorites",
-            "text": "<p>Set up easy auto-reorder for the essentials they always need — from food and treats to everyday must-haves. One less thing to worry about, more time for what matters.</p>",
-            "label": "Learn more →",
+            "text": "<p>Set up easy auto-reorder for the essentials they always need \u00e2\u20ac\u201d from food and treats to everyday must-haves. One less thing to worry about, more time for what matters.</p>",
+            "label": "Learn more \u00e2\u2020\u2019",
             "link": "/pages/auto-reorder",
             "background": "#b9d9d7",
             "image_alt": "Green pet treat pouch",
@@ -820,8 +825,8 @@
           "type": "card",
           "settings": {
             "eyebrow": "",
-            "heading": "Official Baseball Pup\nWhere’s Jules?",
-            "text": "<p>From the stands to the snacks, Jules loves a good game. Relive some of our favorite baseball adventures!</p>",
+            "heading": "",
+            "text": "",
             "label": "",
             "link": "/blogs/jules-journal",
             "background": "#fbf7f3",
@@ -829,15 +834,15 @@
             "asset": "jules",
             "symbol": "",
             "collection": "",
-            "article": ""
+            "article": "news/meet-jules-the-story-behind-the-jules-journal"
           }
         },
         "card_1": {
           "type": "card",
           "settings": {
             "eyebrow": "",
-            "heading": "Pet Care Tips & Happier Lives",
-            "text": "<p>Helpful tips, seasonal advice and real life with pets.</p>",
+            "heading": "",
+            "text": "",
             "label": "",
             "link": "/blogs/jules-journal",
             "background": "#fbf7f3",
@@ -845,44 +850,52 @@
             "asset": "toy",
             "symbol": "",
             "collection": "",
-            "article": ""
+            "article": "news/why-we-suppoert-shelter-pets"
           }
         },
         "card_2": {
           "type": "card",
           "settings": {
             "eyebrow": "",
-            "heading": "Share Your Pet Story",
-            "text": "<p>We love celebrating our community! Share your pet’s story and be part of the PS4PETS family.</p>",
+            "heading": "",
+            "text": "",
             "label": "",
-            "link": "/pages/contact",
+            "link": "",
             "background": "#fbf7f3",
             "image_alt": "",
             "asset": "none",
             "symbol": "",
             "collection": "",
-            "article": ""
+            "article": "news/meet-jules-the-story-behind-the-jules-journal"
+          }
+        },
+        "section_heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Jules Journal & Community",
+            "alignment": "left",
+            "font": "serif",
+            "font_size": 32,
+            "font_size_mobile": 26
           }
         }
       },
       "block_order": [
+        "section_heading",
         "card_0",
         "card_1",
         "card_2"
       ],
       "name": "Journal & Community",
       "settings": {
-        "heading": "Jules Journal & Community",
-        "heading_alignment": "left",
         "link_text": "Stories, Tips, Community, A brighter Tomorrow.",
         "label": "View all",
-        "link": "/blogs/jules-journal",
+        "link": "/pages/jules-journal",
         "background": "#fbf7f3",
         "style": "journal",
         "mobile_card_width": 160,
         "mobile_card_gap": 0,
         "mobile_card_padding_block": 10,
-        "heading_style": "serif",
         "padding-block-start": 22,
         "padding-block-end": 22,
         "padding_block_start_mobile": 20,
