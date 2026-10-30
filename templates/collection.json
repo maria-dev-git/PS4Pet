@@ -20,10 +20,10 @@
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "font_size_mobile": "",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "2rem",
+            "font_size_mobile": "1.5rem",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "none",
@@ -101,9 +101,9 @@
         "border_opacity": 100,
         "border_color": "",
         "border_radius": 0,
-        "padding-block-start": 48,
-        "padding-block-end": 48,
-        "use_color_scheme": false,
+        "padding-block-start": 32,
+        "padding-block-end": 18,
+        "use_color_scheme": true,
         "color_scheme": "",
         "item_dividers": false,
         "item_divider_color": "{{ settings.color_palette.color2 }}",
@@ -118,6 +118,77 @@
         "show_right_image_mobile": false,
         "padding_block_start_mobile": 0,
         "padding_block_end_mobile": 0
+      }
+    },
+    "collection_selector": {
+      "type": "collection-selector",
+      "blocks": {
+        "card_0": {
+          "type": "collection",
+          "settings": {
+            "collection": "dog-essentials",
+            "label": ""
+          }
+        },
+        "card_1": {
+          "type": "collection",
+          "settings": {
+            "collection": "cat-essentials",
+            "label": ""
+          }
+        },
+        "card_2": {
+          "type": "collection",
+          "settings": {
+            "collection": "everyday-essential",
+            "label": ""
+          }
+        },
+        "card_3": {
+          "type": "collection",
+          "settings": {
+            "collection": "walking-gear",
+            "label": ""
+          }
+        },
+        "card_4": {
+          "type": "collection",
+          "settings": {
+            "collection": "waste-cleaning",
+            "label": ""
+          }
+        },
+        "card_5": {
+          "type": "collection",
+          "settings": {
+            "collection": "toys-enrichment",
+            "label": ""
+          }
+        },
+        "card_6": {
+          "type": "collection",
+          "settings": {
+            "collection": "cozy-comfort",
+            "label": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_0",
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4",
+        "card_5",
+        "card_6"
+      ],
+      "settings": {
+        "image_size": 100,
+        "image_size_mobile": 80,
+        "gap": 32,
+        "gap_mobile": 12,
+        "use_color_scheme": true,
+        "color_scheme": ""
       }
     },
     "main": {
@@ -264,7 +335,7 @@
         "enable_infinite_scroll": true,
         "products_per_page": 24,
         "product_grid_width": "centered",
-        "full_width_on_mobile": true,
+        "full_width_on_mobile": false,
         "columns_gap_horizontal": 16,
         "columns_gap_vertical": 24,
         "padding-inline-start": 0,
@@ -272,66 +343,9 @@
         "background_color": "{{ settings.color_palette.background }}",
         "padding-block-start": 0,
         "padding-block-end": 32,
-        "use_color_scheme": false,
+        "use_color_scheme": true,
         "color_scheme": ""
       }
-    },
-    "collection_selector": {
-      "type": "collection-selector",
-      "blocks": {
-        "card_0": {
-          "type": "collection",
-          "settings": {
-            "collection": "dog-essentials"
-          }
-        },
-        "card_1": {
-          "type": "collection",
-          "settings": {
-            "collection": "cat-essentials"
-          }
-        },
-        "card_2": {
-          "type": "collection",
-          "settings": {
-            "collection": "everyday-essential"
-          }
-        },
-        "card_3": {
-          "type": "collection",
-          "settings": {
-            "collection": "walking-gear"
-          }
-        },
-        "card_4": {
-          "type": "collection",
-          "settings": {
-            "collection": "waste-cleaning"
-          }
-        },
-        "card_5": {
-          "type": "collection",
-          "settings": {
-            "collection": "toys-enrichment"
-          }
-        },
-        "card_6": {
-          "type": "collection",
-          "settings": {
-            "collection": "cozy-comfort"
-          }
-        }
-      },
-      "block_order": [
-        "card_0",
-        "card_1",
-        "card_2",
-        "card_3",
-        "card_4",
-        "card_5",
-        "card_6"
-      ],
-      "settings": {}
     }
   },
   "order": [

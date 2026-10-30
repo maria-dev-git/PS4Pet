@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "main": {
       "type": "main-page",
@@ -21,10 +22,13 @@
             "alignment": "center",
             "type_preset": "h2",
             "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "font_size_mobile": "",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "none",
             "wrap": "pretty",
+            "text_color": "",
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
@@ -45,10 +49,13 @@
             "alignment": "center",
             "type_preset": "rte",
             "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "font_size_mobile": "",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "none",
             "wrap": "pretty",
+            "text_color": "",
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
@@ -69,7 +76,9 @@
         "gap": 32,
         "background_color": "{{ settings.color_palette.background }}",
         "padding-block-start": 40,
-        "padding-block-end": 0
+        "padding-block-end": 0,
+        "use_color_scheme": true,
+        "color_scheme": ""
       }
     },
     "form": {
@@ -82,7 +91,13 @@
             "custom_width": 50,
             "width_mobile": "custom",
             "custom_width_mobile": 100,
+            "background_color": "",
             "input_style": "default",
+            "input_background_color": "{{ settings.color_palette.background }}",
+            "input_text_color": "{{ settings.color_palette.foreground }}",
+            "input_border_color": "{{ settings.color_palette.foreground }}",
+            "border_width": 1,
+            "border_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -95,6 +110,9 @@
               "settings": {
                 "label": "Submit",
                 "style_class": "button",
+                "custom_button_background": "{{ settings.color_palette.foreground }}",
+                "custom_button_text": "{{ settings.color_palette.background }}",
+                "custom_button_border": "{{ settings.color_palette.background }}",
                 "width": "fit-content",
                 "custom_width": 100,
                 "width_mobile": "fit-content",
@@ -113,6 +131,9 @@
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
+        "mobile_columns": "1",
+        "mobile_content_order": "default",
+        "mobile_icons_beside_text": false,
         "horizontal_alignment": "flex-start",
         "vertical_alignment": "center",
         "align_baseline": false,
@@ -120,21 +141,39 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 32,
         "section_width": "page-width",
+        "section_width_mobile": "inherit",
+        "section_height": "",
         "section_height_custom": 50,
         "background_media": "none",
         "background_color": "{{ settings.color_palette.background }}",
         "video_position": "cover",
         "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
         "toggle_overlay": false,
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
         "padding-block-start": 32,
-        "padding-block-end": 84
+        "padding-block-end": 84,
+        "use_color_scheme": true,
+        "color_scheme": "",
+        "item_dividers": false,
+        "item_divider_color": "{{ settings.color_palette.color2 }}",
+        "three_part_layout": false,
+        "left_image_width": 40,
+        "right_image_width": 15,
+        "pixel_image_layout": false,
+        "left_image_width_px": 120,
+        "right_image_width_px": 120,
+        "padding_inline_desktop": 0,
+        "padding_inline_mobile": 0,
+        "show_right_image_mobile": false,
+        "padding_block_start_mobile": 0,
+        "padding_block_end_mobile": 0
       }
     }
   },

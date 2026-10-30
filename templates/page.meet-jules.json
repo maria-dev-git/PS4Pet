@@ -136,7 +136,7 @@
               "name": "t:names.button",
               "settings": {
                 "label": "Jules's story  ↓",
-                "link": "shopify://collections/all",
+                "link": "",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
                 "custom_button_background": "{{ settings.color_palette.foreground }}",
@@ -999,6 +999,7 @@
         "image_GN9hGe": {
           "type": "image",
           "settings": {
+            "image_position": "",
             "image": "shopify://shop_images/herobanner-mobile.webp",
             "story_photo_pair": false,
             "third_caption": "",
@@ -1008,9 +1009,12 @@
             "second_caption": "",
             "link": "",
             "image_ratio": "square",
+            "image_alignment": "auto",
             "width": "fill",
+            "width_pixels": 800,
             "custom_width": 100,
             "width_mobile": "fill",
+            "width_pixels_mobile": 360,
             "custom_width_mobile": 100,
             "height": "fit",
             "image_height_desktop": 0,
@@ -1087,6 +1091,7 @@
         "image_dhWcXL": {
           "type": "image",
           "settings": {
+            "image_position": "",
             "image": "shopify://shop_images/playtime-cat-ball-green.webp",
             "story_photo_pair": false,
             "third_caption": "",
@@ -1096,9 +1101,12 @@
             "second_caption": "",
             "link": "",
             "image_ratio": "square",
+            "image_alignment": "auto",
             "width": "fill",
+            "width_pixels": 800,
             "custom_width": 100,
             "width_mobile": "fill",
+            "width_pixels_mobile": 360,
             "custom_width_mobile": 100,
             "height": "fit",
             "image_height_desktop": 0,
@@ -1315,6 +1323,7 @@
         "image_m8Rz8H": {
           "type": "image",
           "settings": {
+            "image_position": "",
             "image": "shopify://shop_images/herobanner-mobile.webp",
             "story_photo_pair": false,
             "third_caption": "",
@@ -1324,9 +1333,12 @@
             "second_caption": "",
             "link": "",
             "image_ratio": "square",
+            "image_alignment": "auto",
             "width": "fill",
+            "width_pixels": 800,
             "custom_width": 100,
             "width_mobile": "fill",
+            "width_pixels_mobile": 360,
             "custom_width_mobile": 100,
             "height": "fit",
             "image_height_desktop": 0,
@@ -1403,6 +1415,7 @@
         "image_qC4GRz": {
           "type": "image",
           "settings": {
+            "image_position": "",
             "image": "shopify://shop_images/ps4-meet-jules.webp",
             "story_photo_pair": false,
             "third_caption": "",
@@ -1412,9 +1425,12 @@
             "second_caption": "",
             "link": "",
             "image_ratio": "landscape",
+            "image_alignment": "auto",
             "width": "fill",
+            "width_pixels": 800,
             "custom_width": 100,
             "width_mobile": "custom",
+            "width_pixels_mobile": 360,
             "custom_width_mobile": 100,
             "height": "fit",
             "image_height_desktop": 300,

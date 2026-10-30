@@ -20,7 +20,7 @@
 assign card_image = block.settings.image | default: block.settings.collection.featured_image | default: block.settings.article.image
 assign card_link = block.settings.link | default: block.settings.collection.url | default: block.settings.article.url
 assign card_heading = block.settings.heading | default: block.settings.collection.title | default: block.settings.article.title
-%}<article class="ps4-card" {{ block.shopify_attributes }} style="--ps4-card-background: {{ block.settings.background }};">{% if section.settings.style == 'journal' %}<div class="ps4-card__content">{% elsif card_link != blank %}<a class="ps4-card__link" href="{{ card_link }}">{% endif %}{% if section.settings.style != 'benefit' %}<div class="ps4-card__image">{% render 'ps4-home-image', image: card_image, asset: block.settings.asset, alt: block.settings.image_alt, sizes: card_image_sizes %}</div>{% elsif block.settings.image != blank %}
+%}<article class="ps4-card" {{ block.shopify_attributes }} style="--ps4-card-background: {{ block.settings.background }}; --ps4-card-padding-desktop: {{ block.settings.card_padding_block }}px; --ps4-card-padding-mobile: {{ block.settings.card_padding_block_mobile }}px;">{% if section.settings.style == 'journal' %}<div class="ps4-card__content">{% elsif card_link != blank %}<a class="ps4-card__link" href="{{ card_link }}">{% endif %}{% if section.settings.style != 'benefit' %}<div class="ps4-card__image">{% render 'ps4-home-image', image: card_image, asset: block.settings.asset, alt: block.settings.image_alt, sizes: card_image_sizes %}</div>{% elsif block.settings.image != blank %}
   {% assign symbol_alt = block.settings.image_alt | default: block.settings.image.alt | default: '' %}
   <span class="ps4-symbol ps4-symbol--image">
     {{ block.settings.image | image_url: width: 112 | image_tag: widths: '40, 56, 80, 112', sizes: '(max-width: 749px) 37px, 56px', loading: 'lazy', alt: symbol_alt }}
@@ -42,6 +42,9 @@ assign card_heading = block.settings.heading | default: block.settings.collectio
   }
 {% endstyle %}
 {% stylesheet %}
+.ps4-home .ps4-cards--category .ps4-card { padding-block:var(--ps4-card-padding-desktop); }
+@media(max-width:749px) { .ps4-home .ps4-cards--category .ps4-card { padding-block:var(--ps4-card-padding-mobile); } }
+
 .ps4-home .ps4-cards .ps4-section-heading { display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; }
 .ps4-home .ps4-cards .ps4-section-heading > a,
 .ps4-home .ps4-cards .ps4-section-heading__actions { flex:0 1 auto; max-inline-size:100%; margin-inline-start:auto; }
@@ -361,6 +364,28 @@ assign card_heading = block.settings.heading | default: block.settings.collectio
           "type": "article",
           "id": "article",
           "label": "t:ps4.article"
+        },
+        {
+          "type": "range",
+          "id": "card_padding_block",
+          "label": "t:ps4.card_padding_block",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
+          "default": 0,
+          "visible_if": "{{ section.settings.style == 'category' }}"
+        },
+        {
+          "type": "range",
+          "id": "card_padding_block_mobile",
+          "label": "t:ps4.card_padding_block_mobile",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
+          "default": 0,
+          "visible_if": "{{ section.settings.style == 'category' }}"
         }
       ]
     }
