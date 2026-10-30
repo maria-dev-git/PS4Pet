@@ -48,6 +48,36 @@
     );
   }
 
+  .collection-card-swatches {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-sm);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .collection-card-swatches > .variant-option__swatch:nth-child(n+5) {
+    display: none;
+  }
+
+  .collection-card-swatches__more a {
+    color: var(--color-foreground);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 32px;
+  }
+
+  .collection-card-swatches__mobile-count { display: none; }
+
+  @media screen and (max-width: 749px) {
+    .collection-card-swatches > .variant-option__swatch:nth-child(n+4) { display: none; }
+    .collection-card-swatches__desktop-count { display: none; }
+    .collection-card-swatches__mobile-count { display: inline; }
+  }
+
   .hidden-swatches__count {
     display: flex;
     align-self: center;
@@ -209,6 +239,7 @@
           {%- endfor -%}
           <li
             slot="more"
+            {% if template.name == 'collection' or section.id contains 'section-rendering-product-card' %}hidden{% endif %}
           >
             <button
               class="hidden-swatches__count"
@@ -218,7 +249,23 @@
           </li>
         {% endcapture %}
 
-        {% render 'overflow-list', children: children, ref: 'overflowList' %}
+        {% if template.name == 'collection' or section.id contains 'section-rendering-product-card' %}
+          <ul class="collection-card-swatches">
+            {{ children }}
+            {% if product_option.values.size > 3 %}
+              <li class="collection-card-swatches__more">
+                <a href="{{ product_resource.url }}" aria-label="{{ 'actions.show_all_options' | t | escape }}">
+                  {% if product_option.values.size > 4 %}
+                    <span class="collection-card-swatches__desktop-count">+{{ product_option.values.size | minus: 4 }}</span>
+                  {% endif %}
+                  <span class="collection-card-swatches__mobile-count">+{{ product_option.values.size | minus: 3 }}</span>
+                </a>
+              </li>
+            {% endif %}
+          </ul>
+        {% else %}
+          {% render 'overflow-list', children: children, ref: 'overflowList' %}
+        {% endif %}
       </fieldset>
 
       {% comment %}

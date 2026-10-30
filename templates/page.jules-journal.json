@@ -335,6 +335,7 @@
         "category_5"
       ],
       "settings": {
+        "mobile_columns": 3,
         "blog": "",
         "use_color_scheme": true,
         "color_scheme": ""
@@ -346,13 +347,17 @@
         "blog": "news",
         "heading": "Latest from the Journal",
         "columns": 3,
-        "gap": 20,
+        "gap": 10,
         "radius": 10,
         "count": 6,
         "date": true,
         "excerpt": true,
         "use_color_scheme": true,
-        "color_scheme": ""
+        "color_scheme": "",
+        "card_width": 100,
+        "card_width_mobile": 100,
+        "image_height": 180,
+        "image_height_mobile": 100
       }
     },
     "section_XfYrLp": {
@@ -480,8 +485,8 @@
         "image_AG3qYq": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Happy_Golden_Retriever_Sticker_Portrait.webp",
             "image_position": "center top",
+            "image": "shopify://shop_images/Happy_Golden_Retriever_Sticker_Portrait.webp",
             "story_photo_pair": false,
             "third_caption": "",
             "caption": "",
@@ -496,7 +501,7 @@
             "custom_width_mobile": 100,
             "height": "fit",
             "image_height_desktop": 360,
-            "image_height_mobile": 260,
+            "image_height_mobile": 240,
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,

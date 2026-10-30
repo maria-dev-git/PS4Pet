@@ -24,6 +24,12 @@
         {% else %}1
       {% endcase %};
       {% render 'size-style', settings: block_settings %}
+      {% if block_settings.width == 'pixels' %}
+        --size-style-width: min(100%, {{ block_settings.width_pixels }}px);
+      {% endif %}
+      {% if block_settings.width_mobile == 'pixels' %}
+        --size-style-width-mobile: min(100%, {{ block_settings.width_pixels_mobile }}px);
+      {% endif %}
       {% render 'spacing-style', settings: block_settings %}
     "
     {{ block.shopify_attributes }}
@@ -113,9 +119,18 @@
       "id": "image_alignment",
       "label": "t:settings.alignment",
       "options": [
-        { "value": "start", "label": "t:options.left" },
-        { "value": "center", "label": "t:options.center" },
-        { "value": "end", "label": "t:options.right" }
+        {
+          "value": "start",
+          "label": "t:options.left"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "end",
+          "label": "t:options.right"
+        }
       ],
       "default": "center"
     },
@@ -163,9 +178,24 @@
         {
           "value": "custom",
           "label": "t:options.custom"
+        },
+        {
+          "value": "pixels",
+          "label": "t:ps4.width_pixels_option"
         }
       ],
       "default": "fill"
+    },
+    {
+      "type": "range",
+      "id": "width_pixels",
+      "label": "t:ps4.width_pixels",
+      "min": 100,
+      "max": 2000,
+      "step": 20,
+      "unit": "px",
+      "default": 800,
+      "visible_if": "{{ block.settings.width == 'pixels' }}"
     },
     {
       "type": "range",
@@ -194,9 +224,24 @@
         {
           "value": "custom",
           "label": "t:options.custom"
+        },
+        {
+          "value": "pixels",
+          "label": "t:ps4.width_pixels_option"
         }
       ],
       "default": "fill"
+    },
+    {
+      "type": "range",
+      "id": "width_pixels_mobile",
+      "label": "t:ps4.width_pixels_mobile",
+      "min": 100,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "default": 360,
+      "visible_if": "{{ block.settings.width_mobile == 'pixels' }}"
     },
     {
       "type": "range",

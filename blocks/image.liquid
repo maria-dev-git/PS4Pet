@@ -44,6 +44,18 @@
   --image-block-height-desktop: {{ block_settings.image_height_desktop | default: 0 }}px;
   --image-block-height-mobile: {{ block_settings.image_height_mobile | default: 0 }}px;
   {% render 'size-style', settings: block_settings %}
+  {% if block_settings.width == 'pixels' %}
+    --size-style-width: min(100%, {{ block_settings.width_pixels }}px);
+  {% endif %}
+  {% if block_settings.width_mobile == 'pixels' %}
+    --size-style-width-mobile: min(100%, {{ block_settings.width_pixels_mobile }}px);
+    --size-style-width-mobile-min: 0px;
+  {% endif %}
+  {% case block_settings.image_alignment %}
+    {% when 'start' %}align-self: flex-start; margin-inline: 0 auto;
+    {% when 'center' %}align-self: center; margin-inline: auto;
+    {% when 'end' %}align-self: flex-end; margin-inline: auto 0;
+  {% endcase %}
   {% render 'spacing-style', settings: block_settings %}
 {% endcapture %}
 
@@ -282,10 +294,22 @@
       "id": "image_position",
       "label": "t:settings.image_position",
       "options": [
-        { "value": "", "label": "t:options.auto" },
-        { "value": "center top", "label": "t:options.top" },
-        { "value": "center center", "label": "t:options.center" },
-        { "value": "center bottom", "label": "t:options.bottom" }
+        {
+          "value": "",
+          "label": "t:options.auto"
+        },
+        {
+          "value": "center top",
+          "label": "t:options.top"
+        },
+        {
+          "value": "center center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "center bottom",
+          "label": "t:options.bottom"
+        }
       ],
       "default": "",
       "visible_if": "{{ block.settings.story_photo_pair == false }}"
@@ -331,7 +355,7 @@
       "min": -15,
       "max": 15,
       "step": 1,
-      "unit": "°",
+      "unit": "\u00c2\u00b0",
       "default": 0,
       "visible_if": "{{ block.settings.story_photo_pair == false }}"
     },
@@ -387,6 +411,30 @@
     },
     {
       "type": "select",
+      "id": "image_alignment",
+      "label": "t:settings.alignment",
+      "options": [
+        {
+          "value": "auto",
+          "label": "t:options.auto"
+        },
+        {
+          "value": "start",
+          "label": "t:options.left"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "end",
+          "label": "t:options.right"
+        }
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "select",
       "id": "width",
       "label": "t:settings.width_desktop",
       "options": [
@@ -401,9 +449,24 @@
         {
           "value": "custom",
           "label": "t:options.custom"
+        },
+        {
+          "value": "pixels",
+          "label": "t:ps4.width_pixels_option"
         }
       ],
       "default": "fill"
+    },
+    {
+      "type": "range",
+      "id": "width_pixels",
+      "label": "t:ps4.width_pixels",
+      "min": 100,
+      "max": 2000,
+      "step": 20,
+      "unit": "px",
+      "default": 800,
+      "visible_if": "{{ block.settings.width == 'pixels' }}"
     },
     {
       "type": "range",
@@ -432,9 +495,24 @@
         {
           "value": "custom",
           "label": "t:options.custom"
+        },
+        {
+          "value": "pixels",
+          "label": "t:ps4.width_pixels_option"
         }
       ],
       "default": "fill"
+    },
+    {
+      "type": "range",
+      "id": "width_pixels_mobile",
+      "label": "t:ps4.width_pixels_mobile",
+      "min": 100,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "default": 360,
+      "visible_if": "{{ block.settings.width_mobile == 'pixels' }}"
     },
     {
       "type": "range",

@@ -258,6 +258,8 @@
         "banner_height_mobile": 300,
         "background_color": "#fbf7f3",
         "toggle_overlay": true,
+        "mobile_bottom_content": false,
+        "mobile_gradient_angle": 0,
         "overlay_color": "#fbf7f3",
         "overlay_style": "gradient",
         "gradient_direction": "to right",
@@ -271,104 +273,6 @@
         "bundled_image_alt": "Jules wearing a birthday hat and holding her favorite lamb toy",
         "use_color_scheme": true,
         "color_scheme": ""
-      }
-    },
-    "ps4_benefits": {
-      "type": "ps4-cards",
-      "blocks": {
-        "card_0": {
-          "type": "card",
-          "settings": {
-            "eyebrow": "",
-            "heading": "Pet Safety First",
-            "text": "<p>Trusted products for happier, healthier pets.</p>",
-            "label": "",
-            "link": "",
-            "background": "#f2f1ea",
-            "image": "shopify://shop_images/paw-security.webp",
-            "image_alt": "",
-            "asset": "none",
-            "symbol": "♧",
-            "collection": "",
-            "article": ""
-          }
-        },
-        "card_1": {
-          "type": "card",
-          "settings": {
-            "eyebrow": "",
-            "heading": "Everyday Value",
-            "text": "<p>Quality essentials for real life with pets.</p>",
-            "label": "",
-            "link": "",
-            "background": "#f2f1ea",
-            "image": "shopify://shop_images/Minimalist_Teal_Piggy_Bank_Icon_6d5926bf-5464-4a3b-b5a6-091a1e715c1c.webp",
-            "image_alt": "",
-            "asset": "none",
-            "symbol": "♡",
-            "collection": "",
-            "article": ""
-          }
-        },
-        "card_2": {
-          "type": "card",
-          "settings": {
-            "eyebrow": "",
-            "heading": "Easy Auto-Reorder",
-            "text": "<p>Never run out of their favorites.</p>",
-            "label": "",
-            "link": "",
-            "background": "#f2f1ea",
-            "image": "shopify://shop_images/Isometric_Teal_Cardboard_Box_Icon_b3904f4a-1ccd-4813-bf31-a8cc928b9122.webp",
-            "image_alt": "",
-            "asset": "none",
-            "symbol": "◇",
-            "collection": "",
-            "article": ""
-          }
-        },
-        "card_3": {
-          "type": "card",
-          "settings": {
-            "eyebrow": "",
-            "heading": "Helping Shelter Pets",
-            "text": "<p>Every order supports a brighter tomorrow.</p>",
-            "label": "",
-            "link": "",
-            "background": "#f2f1ea",
-            "image": "shopify://shop_images/Glossy_Blush_Pink_Heart_Icon_41929659-9085-436f-ab44-84113fec263f.webp",
-            "image_alt": "",
-            "asset": "none",
-            "symbol": "♡",
-            "collection": "",
-            "article": ""
-          }
-        }
-      },
-      "block_order": [
-        "card_0",
-        "card_1",
-        "card_2",
-        "card_3"
-      ],
-      "settings": {
-        "heading": "",
-        "heading_alignment": "left",
-        "link_text": "",
-        "label": "",
-        "link": "",
-        "background": "#fbf7f3",
-        "style": "benefit",
-        "mobile_card_width": 160,
-        "mobile_card_gap": 18,
-        "mobile_card_padding_block": 0,
-        "heading_style": "serif",
-        "padding-block-start": 16,
-        "padding-block-end": 16,
-        "padding_block_start_mobile": 14,
-        "padding_block_end_mobile": 14,
-        "use_color_scheme": true,
-        "color_scheme": "scheme-1"
       }
     },
     "ps4_categories": {
@@ -515,6 +419,104 @@
         "padding_block_end_mobile": 10,
         "use_color_scheme": true,
         "color_scheme": ""
+      }
+    },
+    "ps4_benefits": {
+      "type": "ps4-cards",
+      "blocks": {
+        "card_0": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Pet Safety First",
+            "text": "<p>Trusted products for happier, healthier pets.</p>",
+            "label": "",
+            "link": "",
+            "background": "#f2f1ea",
+            "image": "shopify://shop_images/paw-security.webp",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "♧",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Everyday Value",
+            "text": "<p>Quality essentials for real life with pets.</p>",
+            "label": "",
+            "link": "",
+            "background": "#f2f1ea",
+            "image": "shopify://shop_images/Minimalist_Teal_Piggy_Bank_Icon_6d5926bf-5464-4a3b-b5a6-091a1e715c1c.webp",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "♡",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Easy Auto-Reorder",
+            "text": "<p>Never run out of their favorites.</p>",
+            "label": "",
+            "link": "",
+            "background": "#f2f1ea",
+            "image": "shopify://shop_images/Isometric_Teal_Cardboard_Box_Icon_b3904f4a-1ccd-4813-bf31-a8cc928b9122.webp",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "◇",
+            "collection": "",
+            "article": ""
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Helping Shelter Pets",
+            "text": "<p>Every order supports a brighter tomorrow.</p>",
+            "label": "",
+            "link": "",
+            "background": "#f2f1ea",
+            "image": "shopify://shop_images/Glossy_Blush_Pink_Heart_Icon_41929659-9085-436f-ab44-84113fec263f.webp",
+            "image_alt": "",
+            "asset": "none",
+            "symbol": "♡",
+            "collection": "",
+            "article": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_0",
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_alignment": "left",
+        "link_text": "",
+        "label": "",
+        "link": "",
+        "background": "#fbf7f3",
+        "style": "benefit",
+        "mobile_card_width": 160,
+        "mobile_card_gap": 18,
+        "mobile_card_padding_block": 0,
+        "heading_style": "serif",
+        "padding-block-start": 16,
+        "padding-block-end": 16,
+        "padding_block_start_mobile": 14,
+        "padding_block_end_mobile": 14,
+        "use_color_scheme": true,
+        "color_scheme": "scheme-1"
       }
     },
     "ps4_story": {
@@ -905,8 +907,8 @@
   },
   "order": [
     "hero_jVaWmY",
-    "ps4_benefits",
     "ps4_categories",
+    "ps4_benefits",
     "ps4_story",
     "ps4_promos",
     "ps4_journal",
